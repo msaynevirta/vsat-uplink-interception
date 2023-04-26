@@ -530,6 +530,14 @@ Communications intelligence (COMINT) is often used as a synonym of signals intel
 \subsubsection{Signal detection}
 \subsubsection{Direction finding and radiopositioning}
 \subsubsection{Eavesdropping and traffic analysis}
+Fundamentally, secure communications rely on two core objectives being fulfilled. The intended receiver should be able to recover the original message without errors, while nobody else should be able to acquire any of the contained information. As is customary in cryptography, the transmitter is often referred to as Alice, the receiver as Bob and the eavesdropper as Eve.
+
+This core principle of secure communications was formalised by Shannon in his 1949 paper through the notion of perfect secrecy achieved through a one-time pad. Shannon’s secrecy system assumes that both the intended recipient and the eavesdropper acquire the encoded codeword without any degradation, i.e. the communication channel is error-free. This theoretical assumption applies very rarely to real world systems, where some noise is almost always present.
+
+Wyner expanded on Shannon’s original system by exploring the role of noise in the context of secure communications through the channel model called degraded wiretap channel (DWTC). The model assumes a situation where the sender (Alice) attempts to communicate with the legitimate recipient (Bob) over a noisy channel. Simultaneously an eavesdropper (Eve) observes a degraded version of the signal received by the legitimate recipient.
+
+Wyner’s wiretap channel introduced many mathematical tools for modelling information-theoretic security without the added complexity of fully general channel models. One of these important concepts is the secrecy capacity of the channel, which describes the greatest amount of information that can be confidentially communicated between the legitimate transmitter and receiver from the information-theoretic secrecy perspective.
+
 \clearpage
 
 \subsection{Threat model}
