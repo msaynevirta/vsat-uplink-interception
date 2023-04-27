@@ -187,12 +187,12 @@
 
 %% Edit to conform to your degree programme
 %%
-\degreeprogram{Electronics and electrical engineering}
+\degreeprogram{Master's Programme in Automation and Electrical Engineering}
 %%
 
 %% Your major
 %%
-\major{Electronics and Digital Systems}
+\major{Electronic and Digital Systems}
 %%
 
 %% Major subject code
@@ -234,7 +234,7 @@
 
 %% The date for the bachelor's thesis is the day it is presented
 %%
-\date{29.5.2023}
+\date{31.7.2023}
 %%
 
 %% Thesis supervisor
@@ -390,7 +390,7 @@ I want to thank Professor Pirjo Professori and my instructor Dr Alan Advisor for
 their good and poor guidance.\\
 
 \vspace{5cm}
-Espoo, 29.5.2023
+Espoo, 31.7.2023
 
 \vspace{5mm}
 {\hfill Markus\ Säynevirta \hspace{1cm}}
@@ -534,9 +534,11 @@ Fundamentally, secure communications rely on two core objectives being fulfilled
 
 This core principle of secure communications was formalised by Shannon \cite{shannon1949communication} in his 1949 paper through the notion of perfect secrecy achieved through a one-time pad. Shannon’s secrecy system assumes that both the intended recipient and the eavesdropper acquire the encoded codeword without any degradation, i.e. the communication channel is error-free. This theoretical assumption applies very rarely to real world systems, where some noise is almost always present. \cite{bloch2011physical}
 
-Wyner \cite{wyner1975thewiretap} expanded on Shannon’s original system by exploring the role of noise in the context of secure communications through the channel model called degraded wiretap channel (DWTC). The model assumes a situation where the sender (Alice) attempts to communicate with the legitimate recipient (Bob) over a noisy channel. Simultaneously an eavesdropper (Eve) observes a degraded version of the signal received by the legitimate recipient. \cite{barros2006secrecy}
+Wyner \cite{wyner1975thewiretap} expanded on Shannon’s original system by exploring the role of noise in the context of secure communications through the channel model called \textit{degraded wiretap channel} (DWTC). The model assumes a situation where the sender (Alice) attempts to communicate with the legitimate recipient (Bob) over a noisy channel. Simultaneously an eavesdropper (Eve) observes a degraded version of the signal received by the legitimate recipient. \cite{barros2006secrecy}
 
 Wyner’s wiretap channel introduced many mathematical tools for modelling information-theoretic security without the added complexity of fully general channel models. One of these important concepts is the secrecy capacity of the channel, which describes the greatest amount of information that can be confidentially communicated between the legitimate transmitter and receiver from the information-theoretic secrecy perspective. \cite{bloch2011physical}
+
+Csiszár and Körner \cite{csiszar1978broadcast} developed a more general model that they termed the \textit{broadcast model with confidential messages}. 
 
 \clearpage
 
