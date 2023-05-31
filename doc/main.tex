@@ -455,13 +455,13 @@ TEM        & transverse eletromagnetic
 %% This text will be translated to English soon.
 %%
 \section{Introduction (WIP)}
-During the last decade, the satellite communications industry has entered into an era of change. The most prominent new trend is the large megaconstellations with hundreds to thousands of satellites in low earth orbit (LEO). These have been enabled by the falling costs in space launches and the mass-production of satellite hardware based on COTS technology.
+During the last decade, the satellite communications industry has entered into an era of change. The most prominent new trend have been the large megaconstellations with hundreds to thousands of satellites in low earth orbit (LEO). These have been enabled by the falling costs in space launches and the mass-production of satellite hardware based on commercial off-the-shelf technology.
 
 Aside from commercial markets, governmental organisations, such as civilian public safety authorities and defence ministries, are looking into augmenting their existing connectivity infrastructure with commercial satcom services. Among a set of requirements, these organisations place a very stringent standard of security on the communications solutions they utilise.
 
-Prior experimental research into the security of traditional geostationary broadband services has revealed serious security vulnerabilities. Known attack vectors include for example the eavesdropping of network traffic with widely available and relatively inexpensive television equipment. Rapidly growing number of users and limits in launch capacity are exposing bottlenecks in the throughput of LEO satcom networks. In the worst case scenario, this may tempt the new operators to follow the questionable practices of their predecessors in trading information security for gains in network performance.
+Prior experimental research into the security of traditional geostationary broadband services has revealed serious security vulnerabilities. Known attack vectors include for example the eavesdropping of network traffic with widely available and relatively inexpensive television equipment. \cite{pavur2020tale} Rapidly growing number of users and limits in launch capacity are exposing bottlenecks in the throughput of LEO satcom networks. In the worst case scenario, this may tempt the new operators to follow the questionable practices of their predecessors in trading information security for gains in network performance.
 
-Considering this prior history and the recent rapid growth, it is important to better understand the security aspects of this emerging technology. This thesis will start by delving into the methods of eavesdropping a satellite network. General security architecture of the new LEO broadband services will be discussed in relation to this attack vector. Possible vulnerabilities will be further explored via simulation and field experiments with the OneWeb satellite constellation. Overall, the topic will be discussed from the viewpoint of the public safety and defence user groups.
+Considering this prior history and the recent rapid growth, it is important to better understand the security aspects of this emerging technology. This thesis will start by delving into the methods of eavesdropping a satellite network. General security architecture of the new LEO broadband services will be discussed in relation to this attack vector. Security of these emerging systems will be explored through a threat model comprising of a Walker-type LEO megaconstellation, fixed very small aperture terminals (VSAT) and airborne eavesdroppers. Overall, the topic will be discussed from the context of the public safety and defence user groups.
 
 The thesis seeks to answer what kind of risk space-borne uplink eavesdropping poses to modern very small aperture terminal satellite communications. The eavesdroppers are assumed to be randomly distributed at a set of altitudes according to homogenous binomial point processes. Eavesdroppers are assumed to be passive in nature and to be not colluding with each other, i.e. the received signals are decoded individually.
 
@@ -480,15 +480,13 @@ Areas of interest include the traffic flow security of the constellation and whe
 
 \subsection{LEO megaconstellations}
 \subsubsection{History and recent developments}
-During the last five years the satellite communications industry has entered into an era of change. The most prominent new trend is the large megaconstellations with hundreds to thousands of satellites in low earth orbit (LEO). These systems have been enabled by the falling costs in space launches and the mass-production of satellite hardware based on COTS technology.
+During the last five years the satellite communications industry has entered into an era of change. The most prominent new trend is the large megaconstellations with hundreds to thousands of satellites in low earth orbit (LEO). These systems have been enabled by the falling costs in space launches and the mass-production of satellite hardware based on COTS technology. \cite{portillo2019technical}
 
 While unlikely to widely replace terrestrial solutions, satellite systems have the potential to serve as a complimentary coverage and capacity solution for both commercial and public safety users. These systems could play a part in the ongoing broadband transition of the existing critical communications networks. Public safety users have more stringent requirements for their communication services when compared to the best effort service provided to normal commercial users.
 
 So far the furthest strides in the new telecom constellations have been made by four companies: SpaceX with its Starlink, OneWeb, Telesat and Amazon with its Project Kuiper. SpaceX and Amazon are U.S. companies and Telesat is Canadian, while OneWeb is controlled by its investors from India, the U.K., France and Japan. In addition to them, multiple other actors from around the world have expressed interest in similar projects. These include for example the EU’s Secure Connectivity Initiative and the Chinese Guo Wang constellation.
 
-All four projects furthest in development have significant funding behind their concepts and have secured the necessary regulatory approvals for the initial deployments of their systems.
-
-Multiple LEO megaconstellations are currently in the design and deployment phase, of which Starlink, OneWeb, Telesat and Kuiper are farthest in the development and deployment. These constellations are operating on dedicated bands and are likely the most viable near term solution. They are based on vendor-specific vendor-specific user terminals working as WiFi routers that relay the communications on Ka and Ku-band frequencies to the satellite constellation.
+All four projects furthest in development have significant funding behind their concepts and have secured the necessary regulatory approvals for the initial deployments of their systems. As of May 2023, OneWeb has finished its first generation constellation of 648 satellites while SpaceX was still rolling out its much larger first generation constellation of 4408 satellites. Technologically, these constellations are characterised by their employment of dedicated and vendor-specific technologies in their implementation. For example, all four previously mentioned constellations are currently operating or planning to operate on dedicated Ku and Ka-band frequencies. Also, their user equipment is vendor-specific in nature, be they more traditional parabolic or modern flat-panel phased array technology-based very small aperture terminals (VSAT).
 
 Two US companies, Lynk and AST SpaceMobile, are also planning on beaming broadband service from orbit directly to smartphone sized handsets on 5G frequencies. The latter services are less demonstrated and will need significant R\&D investment before becoming a viable option, while the prior are already reaching commercial operability in limited geographic regions.
 
@@ -524,8 +522,12 @@ OneWeb satellite system makes use of a bent pipe architecture for both its forwa
 \subsubsection{Technical capabilities}
 \subsubsection{Key trade-offs}
 
-\subsection{Communications intelligence}
-Communications intelligence (COMINT) is often used as a synonym of signals intelligence (SIGINT) but it is actually a subfield of that broader area, which also includes electronics intelligence (ELINT). Both of them share a common set of methods. 
+\subsection{Signals intelligence}
+Signals intelligence (SIGINT) is intelligence gathering through the exploitation of communication systems and noncommunications emitters. Based on the nature of the target system, the discipline of SIGINT can be further subdivided into the sub-disciplines of communications intelligence (COMINT) and electronic intelligence (ELINT). [JP 1-02, JP 2-0 (2013), NRC-Bulk-Collection]
+
+Considering satellite communication systems, the two disciplines of signals intelligence provide a wide range of tools for intelligence gathering at different levels of abstraction. On the most resource-intense end, we have the interception and extraction of user traffic, the defined scope of COMINT. However, less sophisticated methods, such as signal detection and fingerprinting, direction finding (DF) and radiopositiong may still yield valuable insights into the nature of the utilized systems, the user organisations, use patterns. As no 
+
+Interception of user traffic in satellite networks falls under the discipline COMINT. On  based on methods such as time of 
 
 \subsubsection{Signal detection}
 \subsubsection{Direction finding and radiopositioning}
@@ -538,7 +540,7 @@ Wyner \cite{wyner1975thewiretap} expanded on Shannon’s original system by expl
 
 Wyner’s wiretap channel introduced many mathematical tools for modelling information-theoretic security without the added complexity of fully general channel models. One of these important concepts is the secrecy capacity of the channel, which describes the greatest amount of information that can be confidentially communicated between the legitimate transmitter and receiver from the information-theoretic secrecy perspective. \cite{bloch2011physical}
 
-Csiszár and Körner \cite{csiszar1978broadcast} developed a more general model that they termed the \textit{broadcast model with confidential messages}. 
+Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approach that they termed the \textit{broadcast model with confidential messages}. 
 
 \clearpage
 
