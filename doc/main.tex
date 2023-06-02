@@ -224,7 +224,10 @@
 %% argument in box brackets. This is done because the title is part of the 
 %% metadata in the pdf/a file, and the metadata cannot contain linebreaks.
 %%
-\thesistitle{Uplink Interception of Very Small Aperture Satellite Terminals from Aerial Platforms}
+
+%% Uplink Interception of Very Small Aperture Satellite Terminals from Aerial Platforms
+
+\thesistitle{Uplink security against airborne adversaries in non-geostationary satellite communications}
 %\thesistitle[Title of the thesis]{Title of\\ the thesis}
 %%
 
@@ -365,7 +368,9 @@ text must be identical to the text on the abstract page.
 %%
 %% Abstract in Finnish.  Delete if you don't need it. 
 %%
-\thesistitle{LEO-megakonstellaatioiden salakuunteleminen}
+
+%%Uplink security of non-geostationary satellite communications against airborne adversaries
+\thesistitle{Uplink-liikenteen suojaus vihollisen ilma-aluksia vastaan ei-geostationaarisessa satelliittiviestinnässä}
 \supervisor{Apul. prof.\ Jaan Praks}
 \advisor{DI Tapio Savunen}
 \degreeprogram{Elektroniikka ja sähkötekniikka}
@@ -449,27 +454,55 @@ TEM        & transverse eletromagnetic
 %%
 \cleardoublepage
 
-%% Text body begins. Note that since the text body is mostly in Finnish the
-%% majority of comments are also in Finnish after this point. There is no point
-%% in explaining Finnish-language specific thesis conventions in English.
-%% This text will be translated to English soon.
-%%
-\section{Introduction (WIP)}
-During the last decade, the satellite communications industry has entered into an era of change. The most prominent new trend have been the large megaconstellations with hundreds to thousands of satellites in low earth orbit (LEO). These have been enabled by the falling costs in space launches and the mass-production of satellite hardware based on commercial off-the-shelf technology.
+\section{Introduction}
 
-Aside from commercial markets, governmental organisations, such as civilian public safety authorities and defence ministries, are looking into augmenting their existing connectivity infrastructure with commercial satcom services. Among a set of requirements, these organisations place a very stringent standard of security on the communications solutions they utilise.
+%% Centrality claim
 
-Prior experimental research into the security of traditional geostationary broadband services has revealed serious security vulnerabilities. Known attack vectors include for example the eavesdropping of network traffic with widely available and relatively inexpensive television equipment. \cite{pavur2020tale} Rapidly growing number of users and limits in launch capacity are exposing bottlenecks in the throughput of LEO satcom networks. In the worst case scenario, this may tempt the new operators to follow the questionable practices of their predecessors in trading information security for gains in network performance.
+During the last half-century, satellite systems have arguably become indispensable enablers of the modern way of life in the increasingly technology-driven human society. Technologies like global navigation satellite systems (GNSS), earth observation (EO) constellations as well as satellite communication (satcom) networks have enabled previously unimaginable capabilities in fields such as position, navigation and timing (PNT), intelligence, surveillance and reconnaissance (ISR) as well as ubiquitous connectivity in every corner of this world.
+
+Recently, the latter mentioned satellite communications industry has entered into an era of rapid change. Since the early 2010s, the most prominent new trend have been the large megaconstellations of hundreds to thousands of satellites in low earth orbit (LEO). These have been enabled by the falling cost of space launches and mass-production of satellite hardware based on commercial off-the-shelf (COTS) technology.
+
+%% Satelliittien kriittinen rooli nykyinfrassa. Starlink merkitys sotilasoperaatioille Ukrainassa.
+
+%% Problem statement
+
+Satellite systems lack widely accepted cybersecurity standards. \cite{lin2022defending} The wildly varying technological solutions in conjunction with their proprietary nature has lead to the systems being potentially vulnerable to a plethora of attack vectors. Wide-area broadcast nature of satellite transmissions poses also its own challenges. Attacks on terrestrial communications infrastructure tend to be more localised due to the inherent radio propagation limitations of these systems. On the other hand, satellite systems may face potential attacks from adversial groups from abroad or even across an entire continent, like demonstrated by \cite{pavur2020tale}.
+
+Commercial satellite industry has traditionally followed the paradigm of "security through obscurity" in securing their systems against potential attacks. This model relies on the complexity of the system and limiting of publicly available information on its implementation. However, both researchers and the cybersecurity industry have regarded the paradigm as obsolete for several decades. Within the field of wireless communications, key drivers for this observation have been the proliferation of inexpensive signals processing equipment, such as open source and open hardware software-defined radios (SDR), as well as generally more powerful and capable computing hardware. %% Nämä ovat tuoneet satelliittijärjestelmiä vastaan hyökkäämisen valtiotasoisten toimijoiden tasolta matalamman xyz saavutettaville. 
+
+%% Topic generalisations
+
+Aside from commercial markets, governmental organisations, such as civilian public safety authorities and defence ministries, have expressed great interest in these emerging commercial satellite communication solutions. In comparison to the prior, the latter tend to pay greater attention on the security aspects of the communications solutions they utilise, which has in turn raised questions regarding the conformity of these systems.
+
+%% Previous research - ongelmat
+
+Prior experimental research into the security of traditional geostationary broadband services has revealed serious security vulnerabilities. For example, recent research has proven the feasibility of eavesdropping of the downlink traffic with widely available and relatively inexpensive satellite television equipment. \cite{pavur2020tale} 
+
+%% Gap
+
+%% Previous research - solutions terrestrial security, 3GPP etc.
+
+%% Gap
+
+%% Ei tutkimusta uplinkista tai non-terrestrial alustoista.
+
+%% Research aims
+
+The thesis seeks to answer what kind of risk space-borne uplink eavesdropping poses to modern very small aperture terminal satellite communications. Knowing the history of the field and the prior vulnerabilities with geostationary satcom networks, the current hypothesis is that there could be information leakage happening in the over-the-air communications of the constellation. It is important to understand whether this is happening and if so, to what extent, as it might be possible to extract sensitive user information from these transmissions.
 
 Considering this prior history and the recent rapid growth, it is important to better understand the security aspects of this emerging technology. This thesis will start by delving into the methods of eavesdropping a satellite network. General security architecture of the new LEO broadband services will be discussed in relation to this attack vector. Security of these emerging systems will be explored through a threat model comprising of a Walker-type LEO megaconstellation, fixed very small aperture terminals (VSAT) and airborne eavesdroppers. Overall, the topic will be discussed from the context of the public safety and defence user groups.
 
-The thesis seeks to answer what kind of risk space-borne uplink eavesdropping poses to modern very small aperture terminal satellite communications. The eavesdroppers are assumed to be randomly distributed at a set of altitudes according to homogenous binomial point processes. Eavesdroppers are assumed to be passive in nature and to be not colluding with each other, i.e. the received signals are decoded individually.
+%% Methods
 
-Knowing the history of the field and the prior vulnerabilities with geostationary satcom networks, the current hypothesis is that there could be information leakage happening in the over-the-air communications of the constellation. It is important to understand whether this is happening and if so, to what extent, as it might be possible to extract sensitive user information from these transmissions.
+%% Scope
 
-The core goal of the thesis is to gain better understanding regarding the security of the over-the-air communications with modern LEO satcom constellations.
+%% Outcome
 
-Areas of interest include the traffic flow security of the constellation and whether transmissions sent over it are possible to be set up in a way that avoids information leakage to adversarial groups. This is of paramount importance for the defence user groups, as the traffic patterns or information in the packet headers could reveal factors such as location, number or identity of an individual or a group of users.
+The core goal of the thesis is to gain better understanding regarding the security of the over-the-air communications with modern LEO satcom constellations. 
+
+%% Structure
+
+The thesis is structured as follows. Section 2 will describe the key characteristics of the examined platforms, in essence LEO megaconstellations and the different aerial platforms. The overall theoretical background is completed by the examination of the discipline of signals intelligence as well as a threat model comprising passive and active eavesdropping, jamming as well as signal geolocation. Section 3 goes over the relevant research material and methods, which is in turn reflected against the previously described threat model in section 4. The results of the simulation are outlined in section 5 and discussed in section 6. Conclusions from the work are described in section 7.
 
 %% Opinn\"aytteess\"a jokainen osa alkaa uudelta sivulta, joten \clearpage
 %%
