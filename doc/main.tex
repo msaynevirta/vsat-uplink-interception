@@ -467,9 +467,11 @@ Recently, the satellite communications industry has entered into an era of rapid
 
 %% Problem statement
 
-However, the current satellite systems lack widely accepted cybersecurity standards. \cite{lin2022defending} Wildly varying technical solutions and their proprietary nature has raised a set of potential vulnerabilities. Additionally, the wide-area broadcast nature of satellite transmissions poses its own challenges. Attacks on terrestrial communications infrastructure are typically more localised due to the inherent limitations imposed by the laws of radio propagation. In contrast, satellite systems do not benefit from the same physics-driven protection, rendering them vulnerable to adversial groups from abroad or even across an entire continent, like demonstrated by \cite{pavur2020tale}.
+However, the current satellite systems lack widely accepted cybersecurity standards. \cite{lin2022defending} Wildly varying technical solutions and their proprietary nature has raised a set of potential vulnerabilities. Additionally, the wide-area broadcast nature of satellite transmissions poses its own challenges. Attacks on terrestrial communications infrastructure are typically more localised due to the inherent limitations imposed by the laws of radio propagation. In contrast, satellite systems do not benefit from the same physics-driven protection, rendering them vulnerable to adversial groups from abroad or even across an entire continent.
 
-Commercial satellite industry has traditionally followed the paradigm of "security through obscurity" in securing their systems against potential attacks. This model relies on the complexity of the system and limiting of publicly available information on its implementation. However, both researchers and the cybersecurity industry have regarded the paradigm as obsolete for several decades. Within the field of wireless communication, key drivers for this development have been the proliferation of inexpensive signals processing equipment, such as open source and open hardware software-defined radios (SDR), as well as generally more powerful and capable computing hardware. %% Nämä ovat tuoneet satelliittijärjestelmiä vastaan hyökkäämisen valtiotasoisten toimijoiden tasolta matalamman xyz saavutettaville. 
+This was demonstrated in \cite{pavur2020tale} where the feasibility of eavesdropping downlink satellite traffic was proven practically with widely available and relatively inexpensive satellite television equipment. Still, the issues are not only limited to the air interface of these commercial systems. Another third-party vulnerability assessment \cite{santamarta2014wake} uncovered serious design flaws in the implementation of satellite user terminal firmware, such as backdoors, hardcoded credentials, weak encryption algorithms as well as undocumented and insecure protocols.
+
+These empirical findings arise from the paradigm of "security through obscurity", which the commercial satellite industry has traditionally followed. The model relies on the complexity of the system and limiting of publicly available information on its implementation in securing their systems against potential attacks. However, both researchers and the cybersecurity industry have regarded the paradigm as obsolete for several decades. Within the field of wireless communication, key drivers for this development have been the proliferation of inexpensive signals processing equipment, such as open source and open hardware software-defined radios (SDR), as well as generally more powerful and capable computing hardware. %% Nämä ovat tuoneet satelliittijärjestelmiä vastaan hyökkäämisen valtiotasoisten toimijoiden tasolta matalamman xyz saavutettaville. 
 
 %% Topic generalisations
 
@@ -477,7 +479,7 @@ Aside from commercial markets, governmental organisations, such as civilian publ
 
 %% Previous research - ongelmat
 
-Prior experimental research into the security of traditional geostationary broadband services has revealed serious security vulnerabilities. For example, recent research has proven the feasibility of eavesdropping of the downlink traffic with widely available and relatively inexpensive satellite television equipment. \cite{pavur2020tale} 
+Prior experimental research into the security of traditional satellite broadband services has revealed serious security vulnerabilities. For example, recent research has proven the 
 
 %% Gap
 
