@@ -180,6 +180,8 @@
 %% Math fonts, symbols, and formatting; these are usually needed
 \usepackage{amsfonts,amssymb,amsbsy,amsmath}
 
+\usepackage{bm}
+
 %% Change the school field to specify your school if the automatically set name
 %% is wrong
 % \university{aalto-yliopisto}
@@ -444,6 +446,7 @@ COMINT  & communications intelligence \\
 ELINT   & electronic intelligence \\
 EO      & earth observation \\
 ES      & electromagnetic support \\
+FSS     & fixed satellite service \\
 GNSS    & global navigation satllite system \\
 ISR     & intelligence, surveillance, and reconnaissance \\
 satcom  & satellite communication \\
@@ -460,7 +463,7 @@ SIGINT  & signals intelligence
 
 %% Centrality claim
 
-Over the past five decades, satellite systems have emerged as indispensable enablers of the modern way of life within an increasingly technology-driven human society. Innovation in fields such as global navigation satellite systems (GNSS), earth observation (EO), and satellite communication (satcom) has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in position, navigation, and timing (PNT), as well as intelligence, surveillance, and reconnaissance (ISR).
+Over the past five decades, satellite systems have emerged as indispensable enablers of the modern way of life within an increasingly technology-driven human society. Innovation in fields such as global navigation satellite systems (GNSS), earth observation (EO), and satellite communication (satcom) has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in position, navigation, and timing (PNT), as well as intelligence, surveillance, and reconnaissance (ISR). \cite{oconnor2019economic, lupi2022socioeconomic, tassa2020socioeconomic}
 
 Recently, the satellite communications industry has entered into an era of rapid change. Since the early 2010s, the most prominent new trend have been the large megaconstellations of hundreds to thousands of satellites in low earth orbit (LEO). These have been enabled by the falling cost of space launches and mass-production of satellite hardware based on commercial off-the-shelf (COTS) technology.
 
@@ -531,11 +534,15 @@ All four projects furthest in development have significant funding behind their 
 
 Two US companies, Lynk and AST SpaceMobile, are also planning on beaming broadband service from orbit directly to smartphone sized handsets on 5G frequencies. The latter services are less demonstrated and will need significant R\&D investment before becoming a viable option, while the prior are already reaching commercial operability in limited geographic regions.
 
-\subsubsection{Key technical characteristics}
+\subsubsection{Key technical characteristics} \label{ch-constellation-characteristics}
 
-The main elements of a LEO satellite constellation were characterised into distinct space, ground and user segments in \cite{celikbilek2022survey}, which are visualised in figure \ref{figure}. Space segment comprises the satellite constellation flying in orbit. Constellation optimization is typically the primary design problem in LEO-based satellite networks as the parameters, such as orbital altitude, density of satellites, the number and inclination of orbital planes and the phasing between them, affect directly the feasibility of user applications.%and tend to drive the majority of implementation costs.
+The design of a complete satellite system is a complex, multi-objective and multi-modal optimisation problem due to the inherently varying conditions and constraints in the three segments. Practically speaking, this requires tackling the overall optimisation problem segment-by-segment while taking into account the requirements of the target application. In , the main elements of a LEO satellite system were characterised into distinct space, ground and user segments, which are visualised in figure \ref{fig-constellation-segments}. \cite{celikbilek2022survey}
 
-The user segment is the most case-specific of the three segments to optimise. End user applications range from communication to sensing and navigation with their optimization criteria often contradicting each other. Here \cite{celikbilek2022survey} raises the example of bandwidth and carrier frequency, where higher numbers are generally desired for example in high-throughput communication applications the opposite are better suited for achieving suitable link budgets for example when navigation satellite systems for challenging urban terrain or indoor use.
+Space segment comprises the satellite constellation flying in orbit. Constellation optimization is typically the primary design problem in LEO-based satellite networks as the parameters, such as orbital altitude, density of satellites, the number and inclination of orbital planes and the phasing between them, affect directly the feasibility of user applications.%and tend to drive the majority of implementation costs.
+
+Ground segment optimisation tends to be more straightforward . Ground station (GS) planning involves placing a number of stations in appropriate locations around the globe. Metrics for evaluation range from the achieved sky coverage and system throughput and link capacity to the overall deployment and maintenance costs of the GS network. \cite{celikbilek2022survey}
+
+When considering optimisation, the user segment is the most case-specific of the three. End user applications range from communication to sensing and navigation with their optimisation criteria often contradicting each other. Here, \cite{celikbilek2022survey} raises a good example with bandwidth and carrier frequency, where higher numbers are generally desired for example in high-throughput communication applications the opposite are better suited for achieving suitable link budgets for example when navigation satellite systems for challenging urban terrain or indoor use.
 
 The LEO altitude leads to significantly lower latency and the large number of satellites allows for relatively high overall data throughput when compared with the earlier satellite systems but still significantly lower when compared to terrestrial systems. While NGSO constellations are nothing new, the emerging operators are promising to offer magnitudes better broadband service when compared to the earlier services offered by e.g. SES O3b and Iridium while providing the services also at a price point that is competitive with other forms of connectivity [1].
 
@@ -564,7 +571,7 @@ OneWeb satellite system makes use of a bent pipe architecture for both its forwa
 
 OneWeb satellite system makes use of a bent pipe architecture for both its forward and return links. In the forward direction, each Ku-band user terminal downlink maps onto a predetermined Ka-band gateway uplink and vice-versa in the return direction. \cite{worldvu2016loi, portillo2019technical}
 
-\subsection{Aerial Platforms}
+\subsection{Aerial Platforms} \label{sect-aerial-platforms}
 \subsubsection{Technical capabilities}
 \subsubsection{Key trade-offs}
 
@@ -646,25 +653,175 @@ Regarding these two vectors, the research community has been thus far more focus
 \subsection{Link budgets}
 \subsection{Channel models}
 
+\subsection{Orbital mechanics}
+\subsubsection{Kepler's laws}
+
+Kepler III
+\begin{equation} \label{eq-kepler-3}
+  T^2 = (\frac{4\pi^2}{GM})r^3
+\end{equation}
+
+where $T$ is the orbital period, $G$ is the gravitational constant, $M$ is the mass of the orbited body and $r$ is the radius of the orbit %measured from the centre of mass of the orbited body.
+\subsection{Coordinate systems}
+
 \clearpage
 
 \section{Research material and methods}
 
-\subsection{Analysis toolchain}
-\subsubsection{Aerospace Toolbox}
-\subsubsection{Modelling of the HAPS}
-\subsubsection{Modelling of the satellite constellation}
-\subsubsection{Channel model}
+%\subsection{Analysis toolchain}
+%\subsubsection{Aerospace Toolbox}
+%\subsubsection{Modelling of the HAPS}
+%\subsubsection{Modelling of the satellite constellation}
+%\subsubsection{Channel model}
 
-\section{Threat scenarios in relation}
+\subsection{Interception range}
+
+%SELITÄ MIKSI VOIDAAN APROKSIMOIDA TOISESSA VIRKKEESSÄ
+Fundamental limits of interception range can be examined through a trigonometric approximation model. As discussed regarding the characteristics of the terminals, typical minimum elevation angles range from 20 to 55 degrees in the recent broadband megaconstellations in LEO. As the operational altitude of the Eve is known, theoretical maximum interception range can be computed for a range of the minimum elevation angles. The measurands form an orthogonal triangle with the minimum elevation as the acute angle opposite to the height of the triangle. The operational altitude of Eve is the height of the triangle, while the base is formed by the theoretical interception range of the system. Lastly, the hypotenuse is the line-of-sight (LOS) distance between Alice and Eve.
+
+Trigonometric tangent function of the interception range triangle is
+
+\begin{equation} \label{eq-range-1}
+  \tan(\theta_{Alice}) = \frac{h_{Eve}}{d_{Eve}}
+\end{equation}
+
+\noindent
+where $\theta_{Alice}$ is the minimum elevation angle of the user terminal, $h_{Eve}$ is the operational altitude of the intercepting airborne platform and $d_{Eve}$ is its distance from Alice on the ground, in essence the interception range. Rearranging (\ref{eq-range-1}) for $d_{Eve}$ gives
+
+\begin{align} \label{eq-range-2}
+  d_{Eve} = \frac{h_{Eve}}{\tan(\theta_{Alice})}
+\end{align}
+
+\subsection{Beam tracking potential}
+
+% Määritelmä
+
+On the other hand, the beam movement is primarily driven by the motion of the receiving satellite in orbit, which is in turn governed by Kepler's laws of orbital motion. Tracking capability of the aircraft can be evaluated by analysing the velocity of the sub-satellite point at the eavesdropper's operational altitude (point x on figure \ref{fig-geometry}). If this velocity exceeds the cruise speed of the eavesdropper, the airborne platform is not able to continuously follow the uplink RF beam, which limits the time window into individual satellite passes.
+
+\subsubsection{Equatorial orbits}
+
+Communication satellites reside often in circular orbits, which are a special case when evaluating Kepler's laws of orbital motion. Here, the velocity of the sub-satellite point can be computed by solving Kepler's third law for the orbital velocity at a set altitude. In equatorial orbits, Earth's rotation can be directly substracted from the angular velocity of the satellite, as both share roughly the same rotational axis.
+
+In essence, the aircraft can be modeled as a low-flying athmospheric satellite. This allows for the same equations to be used in modeling its kinematic characteristics. Solving the required velocity for successful beam tracking can be computed by equating the required orbital period of the aircraft to the one of the space-borne satellite.
+
+Orbital period is related to the angular velocity of the satellite $\omega_{sat}$ through the equation
+
+\begin{equation} \label{eq-ang-vel-1}
+  \omega_{sat} = \frac{2\pi}{T}
+\end{equation}
+
+\noindent
+which can be used to solve the tangential velocity component at a set altitude $v_r$
+
+\begin{equation} \label{eq-ang-vel-2}
+  v_r = \omega r
+\end{equation}
+
+\noindent
+As $\omega_{sat} = \omega_{air}$ in the case that the aircraft is able to continuosly track the satellite, the velocity of the sub-satellite point at the cruising altitude of the aircraft $v_{r, air}$ can be solved by combining equations (\ref{eq-kepler-3}), (\ref{eq-ang-vel-1}) and (\ref{eq-ang-vel-2}). Rearranging Kepler's third law to solve for $v_{r, air}$ gives
+
+\begin{equation} \label{eq-v-air-equatorial}
+  v_{r, air} = r_{air} \sqrt{\frac{G M_E}{r_{sat}^3}}
+\end{equation}
+
+\noindent
+Variables $r_{air}$ and $r_{sat}$ are the orbital radiuses of the eavesdropping aircraft and the receiving satellite measured from the center of the Earth while $M_E$ is the mass of the Earth. Equation (\ref{eq-v-air-equatorial}) gives $v_{r, air}$ in the ECI coordinate frame. To compute the actual movement of the sub-satellite point relative to the surface of the Earth, the velocity figure needs to be converted to the ECF coordinate system. For circular equatorial orbits, this can be simply achieved by substracting the spin of the Earth from $v_{r, air}$.
+
+\begin{equation}
+  v_{r, ECF} = v_{r, air} - \omega_E r_{air}
+\end{equation}
+
+\noindent
+$\omega_E$ is the angular velocity of the Earth at the equator.
+
+\subsubsection{Generalisation to inclined orbits}
+
+Circular equatorial orbits are a good starting point for listening window analysis but their real world applications are somewhat in limited when considering relationship of orbital altitude to coverage and latency. As discussed in section \ref{sect-orbits} and visualised in table \ref{table-megaconstellation-characteristics}, modern satellite megaconstellations aim to achieve worldwide coverage by placing a number of satellites into inclined circular Earth orbits. Common configurations include the Walker Star and Delta constellation configurations, the advantages and disadvantages of which are discussed in more detail in the aforementioned chapter.
+
+The same analysis methods remain valid for inclined orbits but some additional factors need to be considered. Equatorial orbits have only a single velocity component parallel to the xy-plane in both ECI and ECF coordinate frames. On the other hand, any inclination induces additional velocity component perpendicular to this original equatorial component. This velocity component is visualised by $v_z$ in figure \ref{fig-inclined-v-components}.
+
+Transitioning from the simple scalar representation into a vector space makes analyzing inclined orbital motion less cumbersome. Here, angular velocity is a very useful abstraction, as it allows to sum different rotational speed components together. As angular velocity does not vary in in circular motion, examining the magnitude of the sum of the angular velocity vectors allows us to gauge the tracking potential of differently inclined orbits at the desired range of altitudes.
+
+The ECI coordinate frame is a natural starting point for evaluating orbital motion. Angular velocity pseudovector of a circular orbit follows the right hand rule, being perpendicular to the rotational plane. Rotational motion in the equatorial plane can be represented with angular velocity pseudovector $\bm{\vec{\omega}} = [0,0,\omega]^T$. Inclined orbits can be generated by rotating this equatorial orbit about its diameter, which can be achieved with multiplying the pseudovector with a suitable three-dimensional rotational matrix. To rotate the orbits about the y-axis of the ECI coordinate frame by $\theta$ degrees, rotation matrix $\bm{R_y}$ can be used.
+
+\begin{equation*}
+  \bm{R_y}(\theta) = \begin{bmatrix}
+    \cos \theta & -\sin \theta & 0 \\[3pt]
+    \sin \theta &  \cos \theta & 0 \\[3pt]
+    0           &  0           & 1 \\
+    \end{bmatrix}
+\end{equation*}
+
+Multiplying the vector by matrix $\bm{R_y}(\theta)$ and substracting the rotation vector of the Earth gives angular velocity vector in the ECF coordinate frame. This can be in turn be converted to the velocity of the sub-satellite by taking the norm of the angular velocity pseudovector
+
+\begin{equation*}
+  \bm{\vec{\omega_{ECF}}} =
+  ||\bm{R_y}(\theta)\ \bm{\vec{\omega_{sat, i}}} - \bm{\vec{\omega_{E}}}||
+\end{equation*}
+
+$\omega_{ECF}$ is the scalar angular velocity of the satellite in the ECF coordinate frame. $\bm{\vec{\omega_{sat, i}}}$ and $\bm{\vec{\omega_{E}}}$ are the angular velocity vectors of the inclined satellite orbit and the spin of the Earth. Finally, the sub-satellite velocity figure can be solved based on the scalar angular velocity by applying equation (\ref{eq-ang-vel-2}), as the altitude of the airborne platform $h_{air}$ and the mean radius of the Earth $R_E$ are known.
+
+\begin{equation}
+  v_{air} = \omega_{ECF} (h_{air} + R_E)
+\end{equation}
+
+
+
+\subsection{Listening window}
+
+Listening window is the time that an airborne eavesdropper is able to intercept the uplink RF transmission from a user terminal on the ground. Analysing this window is somewhat more complex in terms of the model required and potential input parameters that need to be considered. On a high level, the window is primarily influenced by the relative motion between the uplink RF beam of the terminal and the kinematic characteristics of the airborne eavesdropper. The latter include qualities such as cruise speed, operational altitude, manoeuvrability and controllability. They define the ability of the aircraft to keep a lock on the moving RF beam. These are in turn defined by the characteristics of the platform, a topic discussed in more detail in section \ref{sect-aerial-platforms}.
+
+Beamin leikkaava aika. Pystyykö seuraamaan. Tracking ability vs theoretical beam time
+
+
+
+\subsection{Link budgets}
+\subsubsection{Characteristics of satellite terminals}
+Beamwidth, gain, EIRP.
+
+\subsection{Transmission characteristics of the uplink}
+Protocols, packet sizes.
+
+\section{Threat scenarios in relation to requirements}
 T\"ass\"a osassa kuvataan k\"aytetty tutkimusaineisto ja
 tutkimuksen metodologiset valinnat, sek\"a
 kerrotaan tutkimuksen toteutustapa ja k\"aytetyt menetelm\"at.
 
-
 \clearpage
 
 \section{Results}
+\subsection{Interception range}
+Interception range was investigated with a trigonometric approximation model. As discussed regarding the characteristics of the terminals, typical minimum elevation angles range from 20 to 55 degrees in the recent broadband megaconstellations in LEO. As the operational altitude of the Eve is known, theoretical maximum interception range can be computed for a range of the minimum elevation angles. The measurands form an orthogonal triangle with the minimum elevation as the acute angle opposite to the height of the triangle. The operational altitude of Eve is the height of the triangle, while the base is formed by the theoretical interception range of the system. Lastly, the hypotenuse is the line-of-sight (LOS) distance between Alice and Eve.
+
+Trigonometric tangent function of the interception range triangle is
+
+\begin{equation} \label{eq-range-1}
+  \tan(\theta_{Alice}) = \frac{h_{Eve}}{d_{Eve}}
+\end{equation}
+
+\noindent
+where $\theta_{Alice}$ is the minimum elevation angle of the user terminal, $h_{Eve}$ is the operational altitude of the intercepting airborne platform and $d_{Eve}$ is its distance from Alice on the ground, in essence the interception range. Rearranging (\ref{eq-range-1}) for $d_{Eve}$ gives
+
+\begin{align} \label{eq-range-2}
+  d_{Eve} = \frac{h_{Eve}}{\tan(\theta_{Alice})}
+\end{align}
+
+\noindent
+Figure \ref{fig-interception-range} shows $d_{Eve}$ in the range $\theta_{Alice} = [10^\circ, 85^\circ], h_{Eve} = [100,20000]$. In the resulting 3D plot, the x-axis is the minimum elevation angle of Alice, y represents the altitude of the eavesdropping platform, and z corresponds to the resulting distance between the terminal and the eavesdropping platform. Tangent function has asymptotes at $\theta_{Alice} = \pi / 2 + n\pi$ Within the given limits, the asymptotes are not reached and the resulting surface is smooth and continuous. The convex surface exhebits linear growth in relation to altitude $h_{Eve}$ and accelerating tangential growth in relation to $\theta_{Alice}$. 
+
+
+\subsection{Listening window}
+
+\subsubsection{Equatorial orbits}
+
+\subsubsection{Inclined orbits}
+
+
+\subsection{Link budgets}
+\subsubsection{Uplink transmission}
+\subsubsection{Airborne jamming}
+
+\section{Discussion}
 \subsubsection{Passive eavesdropping}
 \subsubsection{Active eavesdropping}
 \subsubsection{Jamming}
@@ -689,8 +846,6 @@ tulee >>Tarkastelu>>. Tutkimustulosten merkityst\"a voi arvioida my\"os
 T\"ass\"a osassa on syyt\"a my\"os arvioida tutkimustulosten luotettavuutta.
 Jos tutkimustulosten merkityst\"a arvioidaan >>Tarkastelu>>-osassa,
 voi luotettavuuden arviointi olla my\"os siell\"a. 
-
-\section{Discussion}
 
 \clearpage
 
