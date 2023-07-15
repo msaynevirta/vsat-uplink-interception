@@ -180,6 +180,14 @@
 %% Math fonts, symbols, and formatting; these are usually needed
 \usepackage{amsfonts,amssymb,amsbsy,amsmath}
 
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{tikz-3dplot}
+\usepackage{hyperref}
+\usepackage{pgfplots}
+
 \usepackage{bm}
 
 %% Change the school field to specify your school if the automatically set name
@@ -694,9 +702,14 @@ where $\theta_{Alice}$ is the minimum elevation angle of the user terminal, $h_{
 
 \subsection{Beam tracking potential}
 
-% Määritelmä
+\begin{figure}[h]
+  \centering
+  \input{figures/fig-orbit-geometry.tikz}
+  \caption{Geometry of circular Earth orbits.}
+  \label{fig-orbit-geometry}
+\end{figure}
 
-On the other hand, the beam movement is primarily driven by the motion of the receiving satellite in orbit, which is in turn governed by Kepler's laws of orbital motion. Tracking capability of the aircraft can be evaluated by analysing the velocity of the sub-satellite point at the eavesdropper's operational altitude (point x on figure \ref{fig-geometry}). If this velocity exceeds the cruise speed of the eavesdropper, the airborne platform is not able to continuously follow the uplink RF beam, which limits the time window into individual satellite passes.
+On the other hand, the beam movement is primarily driven by the motion of the receiving satellite in orbit, which is in turn governed by Kepler's laws of orbital motion. Tracking capability of the aircraft can be evaluated by analysing the velocity of the sub-satellite point at the eavesdropper's operational altitude (point x on figure \ref{fig-orbit-geometry}). If this velocity exceeds the cruise speed of the eavesdropper, the airborne platform is not able to continuously follow the uplink RF beam, which limits the time window into individual satellite passes.
 
 \subsubsection{Equatorial orbits}
 
@@ -755,17 +768,15 @@ The ECI coordinate frame is a natural starting point for evaluating orbital moti
 Multiplying the vector by matrix $\bm{R_y}(\theta)$ and substracting the rotation vector of the Earth gives angular velocity vector in the ECF coordinate frame. This can be in turn be converted to the velocity of the sub-satellite by taking the norm of the angular velocity pseudovector
 
 \begin{equation*}
-  \bm{\vec{\omega_{ECF}}} =
+  \omega_{ECF} =
   ||\bm{R_y}(\theta)\ \bm{\vec{\omega_{sat, i}}} - \bm{\vec{\omega_{E}}}||
 \end{equation*}
 
 $\omega_{ECF}$ is the scalar angular velocity of the satellite in the ECF coordinate frame. $\bm{\vec{\omega_{sat, i}}}$ and $\bm{\vec{\omega_{E}}}$ are the angular velocity vectors of the inclined satellite orbit and the spin of the Earth. Finally, the sub-satellite velocity figure can be solved based on the scalar angular velocity by applying equation (\ref{eq-ang-vel-2}), as the altitude of the airborne platform $h_{air}$ and the mean radius of the Earth $R_E$ are known.
 
 \begin{equation}
-  v_{air} = \omega_{ECF} (h_{air} + R_E)
+  v_{air} = \omega_{ECF}\ (h_{air} + R_E)
 \end{equation}
-
-
 
 \subsection{Listening window}
 
