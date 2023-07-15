@@ -415,12 +415,10 @@ Espoo, 31.7.2023
 \newpage
 
 
-%% Table of contents. 
+%% Table of contents.
 %%
 \thesistableofcontents
 
-
-%% Symbols and abbreviations
 \mysection{Symbols and abbreviations}
 
 \subsection*{Symbols}
@@ -434,19 +432,6 @@ $\uparrow$       & electron spin direction up\\
 $\downarrow$     & electron spin direction down
 \end{tabular}
 
-\subsection*{Operators}
-
-\begin{tabular}{ll}
-$\nabla \times \mathbf{A}$              & curl of vectorin $\mathbf{A}$\\
-$\displaystyle\frac{\mbox{d}}{\mbox{d} t}$ & derivative with respect to 
-variable $t$\\[3mm]
-$\displaystyle\frac{\partial}{\partial t}$  & partial derivative with respect 
-to variable $t$ \\[3mm]
-$\sum_i $                       & sum over index $i$\\
-$\mathbf{A} \cdot \mathbf{B}$    & dot product of vectors $\mathbf{A}$ and 
-$\mathbf{B}$
-\end{tabular}
-
 \subsection*{Abbreviations}
 
 \begin{tabular}{ll}
@@ -457,19 +442,15 @@ ES      & electromagnetic support \\
 FSS     & fixed satellite service \\
 GNSS    & global navigation satllite system \\
 ISR     & intelligence, surveillance, and reconnaissance \\
+MSS     & mobile satellite service \\
+NTN     & non-terrestrial network \\
 satcom  & satellite communication \\
 SIGINT  & signals intelligence
 \end{tabular}
 
-
-%% \clearpage is similar to \newpage, but it also flushes the floats (figures
-%% and tables).
-%%
 \cleardoublepage
 
 \section{Introduction}
-
-%% Centrality claim
 
 Over the past five decades, satellite systems have emerged as indispensable enablers of the modern way of life within an increasingly technology-driven human society. Innovation in fields such as global navigation satellite systems (GNSS), earth observation (EO), and satellite communication (satcom) has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in position, navigation, and timing (PNT), as well as intelligence, surveillance, and reconnaissance (ISR). \cite{oconnor2019economic, lupi2022socioeconomic, tassa2020socioeconomic}
 
@@ -477,55 +458,24 @@ Recently, the satellite communications industry has entered into an era of rapid
 
 %% Satelliittien kriittinen rooli nykyinfrassa. Starlink merkitys sotilasoperaatioille Ukrainassa.
 
-%% Problem statement
-
 However, the current satellite systems lack widely accepted cybersecurity standards. \cite{lin2022defending} Wildly varying technical solutions and their proprietary nature has raised a set of potential vulnerabilities. Additionally, the wide-area broadcast nature of satellite transmissions poses its own challenges. Attacks on terrestrial communications infrastructure are typically more localised due to the inherent limitations imposed by the laws of radio propagation. In contrast, satellite systems do not benefit from the same physics-driven protection, rendering them vulnerable to adversial groups from abroad or even across an entire continent.
 
-This was demonstrated in \cite{pavur2020tale} where the feasibility of eavesdropping downlink satellite traffic was proven practically with widely available and relatively inexpensive satellite television equipment. Still, the issues are not only limited to the air interface of these commercial systems. Another third-party vulnerability assessment \cite{santamarta2014wake} uncovered serious design flaws in the implementation of satellite user terminal firmware, such as backdoors, hardcoded credentials, weak encryption algorithms as well as undocumented and insecure protocols.
+This was demonstrated in \cite{pavur2020tale} where the feasibility of eavesdropping downlink satellite traffic was proven practically with widely available and relatively inexpensive satellite television equipment. Still, the issues are not only limited to the air interface of these commercial systems. Another third-party vulnerability assessment \cite{santamarta2014wake} uncovered serious design flaws in the implementation of satellite user terminal firmware, such as backdoors, hardcoded credentials, weak encryption algorithms as well as undocumented and insecure protocols. Within the field of wireless communication, one key driver for this development have been the proliferation of inexpensive signals processing equipment, such as open source and open hardware software-defined radios (SDR). These devices have brought interacting with satellite systems from the  of nation states to even individual enthusiast-level actors.
 
 One way to examine these empirical findings is through the paradigm of "security through obscurity", a practice with long-running history in the commercial satellite industry.  Practically, this model relies on the complexity of the system and limiting of publicly available information on its implementation in securing their systems against potential attacks. \cite{lin2022defending} The validity of this approach has been long debated within research and industry circles \cite{johansson2008great} with recent consensus being that security of a system should never rely exclusively on obscurity. \cite{diehl2016law, guo2018defending}
 
-Within the field of wireless communication, one key driver for this development have been the proliferation of inexpensive signals processing equipment, such as open source and open hardware software-defined radios (SDR). These devices have brought interacting with satellite systems from the  of nation states to even individual enthusiast-level actors.
-
-%% Topic generalisations
-
 Aside from commercial markets, governmental organisations, such as civilian public safety authorities and defence ministries, have expressed great interest in these emerging commercial satellite communication solutions. When comparing the user segments, the latter two tend to pay greater attention on the security aspects of the communications solutions they utilise, which has in turn raised questions regarding the conformity of these systems. 
 
-% KA-SAT hack, Starlink in Ukraine as a mission-critical system. 
-Satellites have proven an invaluable resource in the modern operational environment, Recent adversial actions against commercial and governmental satellite systems and infrastructure have raised questions on their vulnerability to a range of potential attack vectors. These range from everything from cyberattacks to the physical destruction of individual satellites or their supporting ground infrastructure. Recent examples include incidents like the cyberattack against the KA-SAT satellite network in February 2022, cable cut in one of the optical cables connecting the the SvalSat ground station to mainland Norway. Similarly, hostile actions, like the Chinese high-altitude balloons flying in North American airspace in early 2023, have highlighted the threat of aerial signals intelligence platforms. 
+Satellites have proven an invaluable resource in the modern operational environment, Recent adversial actions against commercial and governmental satellite systems and infrastructure have raised questions on their vulnerability to a range of potential attack vectors. These range from cyberattacks to the physical destruction of individual satellites or their supporting ground infrastructure. Recent examples include incidents like the cyberattack against the KA-SAT satellite network in February 2022 or the cable cut in one of the optical cables connecting the the SvalSat ground station to mainland Norway. Similarly, intrusive acts, like the Chinese high-altitude balloons flying in North American airspace in early 2023, have highlighted the threat of aerial signals intelligence platforms.
 
-Hardening these commercial satellite systems against a growing number of these increasingly cyber-capable adversaries is a prerequisite for their adoption in the mission critical user base, be they civilian or military in nature. Here, robust understanding on the nature of the evolving threat landscape is a key starting point for design of cybersecurity measures.
+Hardening these commercial satellite systems against a growing number of these increasingly cyber-capable adversaries is a prerequisite for their adoption in the mission critical user base, be they civilian or military in nature. Here, robust understanding on the nature of the evolving threat landscape is a key starting point for design of cybersecurity measures. 
 
-%making these systems robust communication solutions that can support the stringent requirements of the 
+Long operational geostationary broadband and non-geostationary narrowband systems, as well as the longer-term 5th or 6th generation non-terrestrial networks (NTN) have seen abundant research activity, but the emerging LEO broadband systems seem to fall into a gap in the literature especially when it comes to the examination of their security. At the same time, the prior have been mostly examined from the viewpoint of downlink communication between the satellite and different earth stations. In terms of signals intelligence platforms, the more capital-intensive space or airborne platforms have received relatively little attention and research effort, with a greater emphasis placed on the study of ground-based adversaries.
 
-%Cybersecurity has a longer running tradition in terrestrial wireless communications,  
-M%ission-critical broadband transition where one key enabler have been stronger cybersecurity, with standardisation
+Considering this prior history and the recent rapid growth, it is important to better understand the security aspects of this rapidly evolving technology. This thesis furthers this effort vai a numerical analysis of the fundamental constraints for airborne eavesdropping. Security of the emerging LEO broadband systems will be explored through a threat model comprising a Walker-type LEO megaconstellation, fixed very small aperture terminals (VSAT) and airborne eavesdroppers. Methods-wise, the problem will be explored via geometric and kinematic analysis, as well as link budgets based on typical hardware configurations. Developed analytical models will be evaluated numerically with results compared against the requirements set by both public safety and defence user groups.
 
-%% Previous research - solutions terrestrial security, 3GPP etc.
+The thesis is structured as follows. Section 2 will describe the key characteristics of the examined platforms, in essence LEO megaconstellations and the different aerial platforms. The overall theoretical background is completed by the examination of the discipline of signals intelligence as well as a threat model comprising passive and active eavesdropping, jamming as well as signal geolocation. Section 3 goes over the relevant research material and methods, which is in turn reflected against the previously described threat model in section 4. The results of the numerical modelling are outlined in section 5 and discussed against the context of the end-user requirements in section 6. Conclusions from the work are outlined in section 7.
 
-Thus far, the existing research literature has been focused on the security aspects of the long operational geostationary broadband and non-geostationary narrowband systems. These have been mostly examined from the viewpoint of downlink communication between the satellite and different earth stations with the opposite direction seeing relatively little research effort. In terms of signals intelligence platforms, the more capital-intensive space or airborne platforms have received comparatively less attention and research efforts, with a greater emphasis placed on the study of ground-based ones.
-
-%% Research aims
-
-%The thesis seeks to answer what kind of risk space-borne uplink eavesdropping poses to modern very small aperture terminal satellite communications. Knowing the history of the field and the prior vulnerabilities with geostationary satcom networks, the current hypothesis is that there could be information leakage happening in the over-the-air communications of the constellation. It is important to understand whether thHis is happening and if so, to what extent, as it might be possible to extract sensitive user information from these transmissions.
-
-Considering this prior history and the recent rapid growth, it is important to better understand the security aspects of this emerging technology. This thesis will start by delving into the methods of eavesdropping a satellite network. General security architecture of the new LEO broadband services will be discussed in relation to this attack vector. Security of these emerging systems will be explored through a threat model comprising of a Walker-type LEO megaconstellation, fixed very small aperture terminals (VSAT) and airborne eavesdroppers. Overall, the topic will be discussed from the context of the public safety and defence user groups.
-
-%% Methods
-
-%% Scope
-
-%% Outcome
-
-%The core goal of the thesis is to gain better understanding regarding the security of the over-the-air communications with modern LEO satcom constellations. 
-
-%% Structure
-
-The thesis is structured as follows. Section 2 will describe the key characteristics of the examined platforms, in essence LEO megaconstellations and the different aerial platforms. The overall theoretical background is completed by the examination of the discipline of signals intelligence as well as a threat model comprising passive and active eavesdropping, jamming as well as signal geolocation. Section 3 goes over the relevant research material and methods, which is in turn reflected against the previously described threat model in section 4. The results of the simulation are outlined in section 5 and discussed in section 6. Conclusions from the work are described in section 7.
-
-%% Opinn\"aytteess\"a jokainen osa alkaa uudelta sivulta, joten \clearpage
-%%
-%% In a thesis, every section starts a new page, hence \clearpage
 \clearpage
 
 \section{Background}
@@ -783,8 +733,6 @@ $\omega_{ECF}$ is the scalar angular velocity of the satellite in the ECF coordi
 Listening window is the time that an airborne eavesdropper is able to intercept the uplink RF transmission from a user terminal on the ground. Analysing this window is somewhat more complex in terms of the model required and potential input parameters that need to be considered. On a high level, the window is primarily influenced by the relative motion between the uplink RF beam of the terminal and the kinematic characteristics of the airborne eavesdropper. The latter include qualities such as cruise speed, operational altitude, manoeuvrability and controllability. They define the ability of the aircraft to keep a lock on the moving RF beam. These are in turn defined by the characteristics of the platform, a topic discussed in more detail in section \ref{sect-aerial-platforms}.
 
 Beamin leikkaava aika. Pystyykö seuraamaan. Tracking ability vs theoretical beam time
-
-
 
 \subsection{Link budgets}
 \subsubsection{Characteristics of satellite terminals}
