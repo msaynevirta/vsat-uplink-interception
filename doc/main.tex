@@ -414,7 +414,6 @@ Espoo, 31.7.2023
 %%
 \newpage
 
-
 %% Table of contents.
 %%
 \thesistableofcontents
@@ -593,6 +592,53 @@ Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approa
 
 \clearpage
 
+\subsection{Critical communications}
+\subsubsection{Technology evolution}
+\subsubsection{Requirements}
+6.3.1 Network Requirements
+
+Current drives to bring about the benefits of commercial broadband networks to mission‐critical service providers have developed solutions “over‐the‐top” of existing public networks. Doing so is, however, not sustainable in the long‐term since the public safety networks desire a level of sophistication that ensures they get priority in the systems (Tata and Kadoch 2014, p. 3). The networks should be managed in the same way that TETRA, TETRAPOL, and P25 works, giving priority bandwidths to public safety networks while ensuring that the communication is encrypted end to end. Even in extreme weather conditions, the dedicated broadband services for the mission‐critical services must ensure:
+
+    Survival over multiple failures
+    Priority for mission‐critical data
+    Offer the desired coverage and capacity
+    Maintain data integrity and ensure end‐to‐end encryption
+    Be interoperable with other networks to offer solutions when needed
+    Provide the desired support for devices and applications.
+
+
+
+
+    In this section, we address the important security features of the TETRA network. Here the scope of coverage spans the authentication, encryption mechanisms, and the key management of TETRA. It dictates that a secure communication network needs to provide (Stavroulakis, 2007):
+
+    Confidentiality
+    Integrity
+    Reliability
+    Non‐repudiation
+    Authentication.
+
+6.7.8.1 Confidentiality
+
+    Only authorized personnel or people should have access to the information being passed along.
+
+6.7.8.2 Integrity
+
+    This refers to the requirement that states that only authorized users need to be able to make any modifications to the information in exchange.
+
+6.7.8.3 Reliability
+
+    This refers to the requirement that the resources and the services are not denied and are available to the authorized users to accomplish various tasks.
+
+6.7.8.4 Non‐repudiation
+
+This requires that the sender cannot deny that he/she sent the message.
+6.7.8.5 Authentication
+
+    This refers to the requirement that the sender's identity is verifiable by the recipient.
+
+
+
+
 \subsection{Threat model}
 \subsubsection{Passive and active eavesdropping}
 Space uplink
@@ -627,7 +673,6 @@ where $T$ is the orbital period, $G$ is the gravitational constant, $M$ is the m
 \section{Research material and methods}
 
 %\subsection{Analysis toolchain}
-%\subsubsection{Aerospace Toolbox}
 %\subsubsection{Modelling of the HAPS}
 %\subsubsection{Modelling of the satellite constellation}
 %\subsubsection{Channel model}
