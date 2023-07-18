@@ -451,29 +451,58 @@ SIGINT  & signals intelligence
 
 \section{Introduction}
 
-Over the past five decades, satellite systems have emerged as indispensable enablers of the modern way of life within an increasingly technology-driven human society. Innovation in fields such as global navigation satellite systems (GNSS), earth observation (EO), and satellite communication (satcom) has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in position, navigation, and timing (PNT), as well as intelligence, surveillance, and reconnaissance (ISR). \cite{oconnor2019economic, lupi2022socioeconomic, tassa2020socioeconomic}
-
-Recently, the satellite communications industry has entered into an era of rapid change. Since the early 2010s, the most prominent new trend have been the large megaconstellations of hundreds to thousands of satellites in low earth orbit (LEO). These have been enabled by the falling cost of space launches and mass-production of satellite hardware based on commercial off-the-shelf (COTS) technology.
+Over the past five decades, satellite systems have emerged as indispensable enablers of our modern way of life within an increasingly technology-driven human society.
+Innovation in fields such as global navigation satellite systems (GNSS) \cite{oconnor2019economic}, earth observation (EO) \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and satellite communication (satcom) has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in position, navigation, and timing (PNT), as well as intelligence, surveillance, and reconnaissance (ISR).
+Recently, the satellite communications industry has entered into an era of rapid change.
+Since the early 2010s, the most prominent new trend have been the large megaconstellations of hundreds to thousands of satellites in Low Earth Orbit (LEO).
+These have been enabled by the falling cost of space launches and mass-production of satellite hardware based on Commercial Off-The-Shelf (COTS) technology.
 
 %% Satelliittien kriittinen rooli nykyinfrassa. Starlink merkitys sotilasoperaatioille Ukrainassa.
 
-However, the current satellite systems lack widely accepted cybersecurity standards. \cite{lin2022defending} Wildly varying technical solutions and their proprietary nature has raised a set of potential vulnerabilities. Additionally, the wide-area broadcast nature of satellite transmissions poses its own challenges. Attacks on terrestrial communications infrastructure are typically more localised due to the inherent limitations imposed by the laws of radio propagation. In contrast, satellite systems do not benefit from the same physics-driven protection, rendering them vulnerable to adversial groups from abroad or even across an entire continent.
+However, the current satellite systems lack widely accepted cybersecurity standards.
+\cite{lin2022defending} Wildly varying technical solutions and their proprietary nature has raised a set of potential vulnerabilities.
+Additionally, the wide-area broadcast nature of satellite transmissions poses its own challenges.
+Attacks on terrestrial communications infrastructure are typically more localised due to the inherent limitations imposed by the laws of radio propagation.
+In contrast, satellite systems do not benefit from the same physics-driven protection, rendering them vulnerable to adversial groups from abroad or even across an entire continent.
 
-This was demonstrated in \cite{pavur2020tale} where the feasibility of eavesdropping downlink satellite traffic was proven practically with widely available and relatively inexpensive satellite television equipment. Still, the issues are not only limited to the air interface of these commercial systems. Another third-party vulnerability assessment \cite{santamarta2014wake} uncovered serious design flaws in the implementation of satellite user terminal firmware, such as backdoors, hardcoded credentials, weak encryption algorithms as well as undocumented and insecure protocols. Within the field of wireless communication, one key driver for this development have been the proliferation of inexpensive signals processing equipment, such as open source and open hardware software-defined radios (SDR). These devices have brought interacting with satellite systems from the  of nation states to even individual enthusiast-level actors.
+This was demonstrated in \cite{pavur2020tale} where the feasibility of eavesdropping downlink satellite traffic was proven practically with widely available and relatively inexpensive satellite television equipment.
+Still, the issues are not only limited to the air .
+terface of these commercial systems.
+Another third-party vulnerability assessment \cite{santamarta2014wake} uncovered serious design flaws in the implementation of satellite user terminal firmware, such as backdoors, hardcoded credentials, weak encryption algorithms as well as undocumented and insecure protocols.
+Within the field of wireless communication, one key driver for this development have been.
+he proliferation of inexpensive signals processing equipment, such as open source and open hardware software-defined radios (SDR).
+These devices have brought interacting with satellite systems from the  of nation states to even individual enthusiast-level actors.
 
-One way to examine these empirical findings is through the paradigm of "security through obscurity", a practice with long-running history in the commercial satellite industry.  Practically, this model relies on the complexity of the system and limiting of publicly available information on its implementation in securing their systems against potential attacks. \cite{lin2022defending} The validity of this approach has been long debated within research and industry circles \cite{johansson2008great} with recent consensus being that security of a system should never rely exclusively on obscurity. \cite{diehl2016law, guo2018defending}
+One way to examine these empirical findings is through the paradigm of "security through obscurity", a practice with long-running history in the commercial satellite industry.
+Practically, this model relies on the complexity of the system and limiting of publicly available information on its implementation in securing their systems against potential attacks \cite{lin2022defending}.
+The validity of this approach has been long debated within research and industry circles \cite{johansson2008great} with recent consensus being that security of a system should never rely exclusively on obscurity \cite{diehl2016law, guo2018defending}.
 
-Aside from commercial markets, governmental organisations, such as civilian public safety authorities and defence ministries, have expressed great interest in these emerging commercial satellite communication solutions. When comparing the user segments, the latter two tend to pay greater attention on the security aspects of the communications solutions they utilise, which has in turn raised questions regarding the conformity of these systems. 
+Aside from commercial markets, governmental organisations, such as civilian public safety authorities and defence ministries, have expressed great interest in these emerging commercial satellite communication solutions.
+When comparing the user segments, the latter tend to pay greater attention on the security aspects of the communications solutions they utilise, which has in turn raised questions regarding the conformity of these systems.
 
-Satellites have proven an invaluable resource in the modern operational environment, Recent adversial actions against commercial and governmental satellite systems and infrastructure have raised questions on their vulnerability to a range of potential attack vectors. These range from cyberattacks to the physical destruction of individual satellites or their supporting ground infrastructure. Recent examples include incidents like the cyberattack against the KA-SAT satellite network in February 2022 or the cable cut in one of the optical cables connecting the the SvalSat ground station to mainland Norway. Similarly, intrusive acts, like the Chinese high-altitude balloons flying in North American airspace in early 2023, have highlighted the threat of aerial signals intelligence platforms.
+Satellites have proven an invaluable resource in the modern operational environment, Recent adversial actions against commercial and governmental satellite systems and infrastructure have raised questions on their vulnerability to a range of potential attack vectors.
+These range from cyberattacks to the physical destruction of individual satellites or their supporting ground infrastructure.
+Recent examples include incidents like the cyberattack against the KA-SAT satellite network in February 2022 or the cable cut in one of the optical cables connecting the the SvalSat ground station to mainland Norway.
+Similarly, intrusive acts, like the Chinese high-altitude balloons flying in North American airspace in early 2023, have highlighted the threat of aerial signals intelligence platforms.
 
-Hardening these commercial satellite systems against a growing number of these increasingly cyber-capable adversaries is a prerequisite for their adoption in the mission critical user base, be they civilian or military in nature. Here, robust understanding on the nature of the evolving threat landscape is a key starting point for design of cybersecurity measures. 
+Hardening these commercial satellite systems against a growing number of these increasingly cyber-capable adversaries is a prerequisite for their adoption in the mission critical user base, be they civilian or military in nature.
+Here, robust understanding on the nature of the evolving threat landscape is a key starting point for design of cybersecurity measures.
 
-Long operational geostationary broadband and non-geostationary narrowband systems, as well as the longer-term 5th or 6th generation non-terrestrial networks (NTN) have seen abundant research activity, but the emerging LEO broadband systems seem to fall into a gap in the literature especially when it comes to the examination of their security. At the same time, the prior have been mostly examined from the viewpoint of downlink communication between the satellite and different earth stations. In terms of signals intelligence platforms, the more capital-intensive space or airborne platforms have received relatively little attention and research effort, with a greater emphasis placed on the study of ground-based adversaries.
+Long operational geostationary broadband and non-geostationary narrowband systems, as well as the longer-term 5th or 6th generation non-terrestrial networks (NTN) have seen abundant research activity, but the emerging LEO broadband systems seem to fall into a gap in the literature especially when it comes to the examination of their security.
+At the same time, the prior have been mostly examined from the viewpoint of downlink communication between the satellite and different earth stations.
+In terms of signals intelligence platforms, the more capital-intensive space or airborne platforms have received relatively little attention and research effort, with a greater emphasis placed on the study of ground-based adversaries.
 
-Considering this prior history and the recent rapid growth, it is important to better understand the security aspects of this rapidly evolving technology. This thesis furthers this effort vai a numerical analysis of the fundamental constraints for airborne eavesdropping. Security of the emerging LEO broadband systems will be explored through a threat model comprising a Walker-type LEO megaconstellation, fixed very small aperture terminals (VSAT) and airborne eavesdroppers. Methods-wise, the problem will be explored via geometric and kinematic analysis, as well as link budgets based on typical hardware configurations. Developed analytical models will be evaluated numerically with results compared against the requirements set by both public safety and defence user groups.
+Considering this prior history and the recent rapid growth, it is important to better understand the security aspects of this rapidly evolving technology.
+This thesis furthers this effort vai a numerical analysis of the fundamental constraints for airborne eavesdropping.
+Security of the emerging LEO broadband systems will be explored through a threat model comprising a Walker-type LEO megaconstellation, fixed very small aperture terminals (VSAT) and airborne eavesdroppers.
+Methods-wise, the problem will be explored via geometric and kinematic analysis, as well as link budgets based on typical hardware configurations.
+Developed analytical models will be evaluated numerically with results compared against the requirements set by both public safety and defence user groups.
 
-The thesis is structured as follows. Section 2 will describe the key characteristics of the examined platforms, in essence LEO megaconstellations and the different aerial platforms. The overall theoretical background is completed by the examination of the discipline of signals intelligence as well as a threat model comprising passive and active eavesdropping, jamming as well as signal geolocation. Section 3 goes over the relevant research material and methods, which is in turn reflected against the previously described threat model in section 4. The results of the numerical modelling are outlined in section 5 and discussed against the context of the end-user requirements in section 6. Conclusions from the work are outlined in section 7.
+The thesis is structured as follows. Section 2 will describe the key characteristics of the examined platforms, in essence LEO megaconstellations and the different aerial platforms.
+The overall theoretical background is completed by the examination of the discipline of signals intelligence as well as a threat model comprising passive and active eavesdropping, jamming as well as signal geolocation.
+Section 3 goes over the relevant research material and methods, which is in turn reflected against the previously described threat model in section 4.
+The results of the numerical modelling are outlined in section 5 and discussed against the context of the end-user requirements in section 6.
+Conclusions from the work are outlined in section 7.
 
 \clearpage
 
@@ -481,114 +510,183 @@ The thesis is structured as follows. Section 2 will describe the key characteris
 
 \subsection{LEO megaconstellations}
 \subsubsection{History and recent developments}
-During the last five years the satellite communications industry has entered into an era of change. The most prominent new trend is the large megaconstellations with hundreds to thousands of satellites in low earth orbit (LEO). These systems have been enabled by the falling costs in space launches and the mass-production of satellite hardware based on COTS technology. \cite{portillo2019technical}
+During the last five years the satellite communications industry has entered into an era of change.
+The most prominent new trend is the large megaconstellations with hundreds to thousands of satellites in low earth orbit (LEO).
+These systems have been enabled by the falling costs in space launches and the mass-production of satellite hardware based on COTS technology \cite{portillo2019technical}.
 
-While unlikely to widely replace terrestrial solutions, satellite systems have the potential to serve as a complimentary coverage and capacity solution for both commercial and public safety users. These systems could play a part in the ongoing broadband transition of the existing critical communications networks. Public safety users have more stringent requirements for their communication services when compared to the best effort service provided to normal commercial users.
+While unlikely to widely replace terrestrial solutions, satellite systems have the potential to serve as a complimentary coverage and capacity solution for both commercial and public safety users.
+These systems could play a part in the ongoing broadband transition of the existing critical communications networks.
+Public safety users have more stringent requirements for their communication services when compared to the best effort service provided to normal commercial users.
 
-So far the furthest strides in the new telecom constellations have been made by four companies: SpaceX with its Starlink, OneWeb, Telesat and Amazon with its Project Kuiper. SpaceX and Amazon are U.S. companies and Telesat is Canadian, while OneWeb is controlled by its investors from India, the U.K., France and Japan. In addition to them, multiple other actors from around the world have expressed interest in similar projects. These include for example the EU’s Secure Connectivity Initiative and the Chinese Guo Wang constellation.
+So far the furthest strides in the new telecom constellations have been made by four companies: SpaceX with its Starlink, OneWeb, Telesat and Amazon with its Project Kuiper.
+SpaceX and Amazon are U.S.
+companies and Telesat is Canadian, while OneWeb is controlled by its investors from India, the U.K., France and Japan.
+In addition to them, multiple other actors from around the world have expressed interest in similar projects.
+These include for example the EU’s Secure Connectivity Initiative and the Chinese Guo Wang constellation.
 
-All four projects furthest in development have significant funding behind their concepts and have secured the necessary regulatory approvals for the initial deployments of their systems. As of May 2023, OneWeb has finished its first generation constellation of 648 satellites while SpaceX was still rolling out its much larger first generation constellation of 4408 satellites. Technologically, these constellations are characterised by their employment of dedicated and vendor-specific technologies in their implementation. For example, all four previously mentioned constellations are currently operating or planning to operate on dedicated Ku and Ka-band frequencies. Also, their user equipment is vendor-specific in nature, be they more traditional parabolic or modern flat-panel phased array technology-based very small aperture terminals (VSAT).
+All four projects furthest in development have significant funding behind their concepts and have secured the necessary regulatory approvals for the initial deployments of their systems.
+As of May 2023, OneWeb has finished its first generation constellation of 648 satellites while SpaceX was still rolling out its much larger first generation constellation of 4408 satellites.
+Technologically, these constellations are characterised by their employment of dedicated and vendor-specific technologies in their implementation.
+For example, all four previously mentioned constellations are currently operating or planning to operate on dedicated Ku and Ka-band frequencies.
+Also, their user equipment is vendor-specific in nature, be they more traditional parabolic or modern flat-panel phased array technology-based very small aperture terminals (VSAT).
 
-Two US companies, Lynk and AST SpaceMobile, are also planning on beaming broadband service from orbit directly to smartphone sized handsets on 5G frequencies. The latter services are less demonstrated and will need significant R\&D investment before becoming a viable option, while the prior are already reaching commercial operability in limited geographic regions.
+Two US companies, Lynk and AST SpaceMobile, are also planning on beaming broadband service from orbit directly to smartphone sized handsets on 5G frequencies.
+The latter services are less demonstrated and will need significant R\&D investment before becoming a viable option, while the prior are already reaching commercial operability in limited geographic regions.
 
 \subsubsection{Key technical characteristics} \label{ch-constellation-characteristics}
 
-The design of a complete satellite system is a complex, multi-objective and multi-modal optimisation problem due to the inherently varying conditions and constraints in the three segments. Practically speaking, this requires tackling the overall optimisation problem segment-by-segment while taking into account the requirements of the target application. In , the main elements of a LEO satellite system were characterised into distinct space, ground and user segments, which are visualised in figure \ref{fig-constellation-segments}. \cite{celikbilek2022survey}
+The design of a complete satellite system is a complex, multi-objective and multi-modal optimisation problem due to the inherently varying conditions and constraints in the three segments.
+Practically speaking, this requires tackling the overall optimisation problem segment-by-segment while taking into account the requirements of the target application.
+In , the main elements of a LEO satellite system were characterised into distinct space, ground and user segments, which are visualised in figure \ref{fig-constellation-segments} \cite{celikbilek2022survey}.
 
-Space segment comprises the satellite constellation flying in orbit. Constellation optimization is typically the primary design problem in LEO-based satellite networks as the parameters, such as orbital altitude, density of satellites, the number and inclination of orbital planes and the phasing between them, affect directly the feasibility of user applications.%and tend to drive the majority of implementation costs.
+Space segment comprises the satellite constellation flying in orbit.
+Constellation optimization is typically the primary design problem in LEO-based satellite networks as the parameters, such as orbital altitude, density of satellites, the number and inclination of orbital planes and the phasing between them, affect directly the feasibility of user applications.%and tend to drive the majority of implementation costs.
 
-Ground segment optimisation tends to be more straightforward . Ground station (GS) planning involves placing a number of stations in appropriate locations around the globe. Metrics for evaluation range from the achieved sky coverage and system throughput and link capacity to the overall deployment and maintenance costs of the GS network. \cite{celikbilek2022survey}
+Ground segment optimisation tends to be more straightforward .
+Ground station (GS) planning involves placing a number of stations in appropriate locations around the globe.
+Metrics for evaluation range from the achieved sky coverage and system throughput and link capacity to the overall deployment and maintenance costs of the GS network \cite{celikbilek2022survey}.
 
-When considering optimisation, the user segment is the most case-specific of the three. End user applications range from communication to sensing and navigation with their optimisation criteria often contradicting each other. Here, \cite{celikbilek2022survey} raises a good example with bandwidth and carrier frequency, where higher numbers are generally desired for example in high-throughput communication applications the opposite are better suited for achieving suitable link budgets for example when navigation satellite systems for challenging urban terrain or indoor use.
+When considering optimisation, the user segment is the most case-specific of the three.
+End user applications range from communication to sensing and navigation with their optimisation criteria often contradicting each other.
+Here, \cite{celikbilek2022survey} raises a good example with bandwidth and carrier frequency, where higher numbers are generally desired for example in high-throughput communication applications the opposite are better suited for achieving suitable link budgets for example when navigation satellite systems for challenging urban terrain or indoor use.
 
-The LEO altitude leads to significantly lower latency and the large number of satellites allows for relatively high overall data throughput when compared with the earlier satellite systems but still significantly lower when compared to terrestrial systems. While NGSO constellations are nothing new, the emerging operators are promising to offer magnitudes better broadband service when compared to the earlier services offered by e.g. SES O3b and Iridium while providing the services also at a price point that is competitive with other forms of connectivity [1].
+The LEO altitude leads to significantly lower latency and the large number of satellites allows for relatively high overall data throughput when compared with the earlier satellite systems but still significantly lower when compared to terrestrial systems.
+While NGSO constellations are nothing new, the emerging operators are promising to offer magnitudes better broadband service when compared to the earlier services offered by e.g.
+SES O3b and Iridium while providing the services also at a price point that is competitive with other forms of connectivity [x].
 
 The services are built around vendor-specific user terminals working as WiFi routers that relay the communications on dedicated Ka and Ku-band frequencies to the satellite constellation.
 
 \subsubsection{Example system architechtures (OneWeb / Starlink)}
 %%%%%%%%%%%%%%%%%%  APPENDIX: COMPARISON TABLE  %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%  FIGURE: ONEWEB NETWORK ARCHITECTURE HERE  %%%%%%%%%%%%%%%%%%
-The space segment of the OneWeb system comprises a megaconstellation of 648 LEO satellites distributed into 12 polar orbital planes of 49 evenly spaced satellites, as well as a number of in-orbit spares. Operational satellites fly in an inclined polar orbit with an altitude of 1200 km. Each satellite transmits and receives user terminal (UT) traffic via its 16 fixed Ku-band beams, each of which covers a geographic area with dimensions of 1600 km in longitude and 65 km in latitude. Gateway traffic is forwarded to the satellite network portals (SNP) via two identical steerable Ka-band spot beams with a significantly more focused circular coverage pattern. \cite{henri2020oneweb, worldvu2016loi}
+The space segment of the OneWeb system comprises a megaconstellation of 648 LEO satellites distributed into 12 polar orbital planes of 49 evenly spaced satellites, as well as a number of in-orbit spares.
+Operational satellites fly in an inclined polar orbit with an altitude of 1200 km.
+Each satellite transmits and receives user terminal (UT) traffic via its 16 fixed Ku-band beams, each of which covers a geographic area with dimensions of 1600 km in longitude and 65 km in latitude.
+Gateway traffic is forwarded to the satellite network portals (SNP) via two identical steerable Ka-band spot beams with a significantly more focused circular coverage pattern \cite{henri2020oneweb, worldvu2016loi}.
 
-Earth Stations of the OneWeb system can be broadly divided into three categories: tracking, telemetry and control (TT\&C) sites,  gateways and user terminals (UTs). In the following, we will focus on the two latter ones, as they are integral to describing the end-to-end configuration of the OneWeb network. \cite{worldvu2016loi}
+Earth Stations of the OneWeb system can be broadly divided into three categories: tracking, telemetry and control (TT\&C) sites,  gateways and user terminals (UTs).
+In the following, we will focus on the two latter ones, as they are integral to describing the end-to-end configuration of the OneWeb network \cite{worldvu2016loi}.
 
-Going deeper into the gateway-side architecture, the infrastructure can be further split into three components, which are network data centres (NDC), points-of-presence (PoP) and satellite network portals (SNP). NDCs host the authentication, authorization, policy and UT databases and are deployed in key global locations. PoPs connect the OneWeb network to the Internet and are deployed at key Internet peering points. Finally, SNPs maintain the connectivity to the LEO space segment composed of the OneWeb satellite constellation. They are situated in remote locations around the globe with room for large antenna arrays of 7 to 30 full motion antennas (on average 16) equipped with a 3.5 m Ka-band dish. \cite{henri2020oneweb}
+Going deeper into the gateway-side architecture, the infrastructure can be further split into three components, which are network data centres (NDC), points-of-presence (PoP) and satellite network portals (SNP).
+NDCs host the authentication, authorization, policy and UT databases and are deployed in key global locations.
+PoPs connect the OneWeb network to the Internet and are deployed at key Internet peering points.
+Finally, SNPs maintain the connectivity to the LEO space segment composed of the OneWeb satellite constellation.
+They are situated in remote locations around the globe with room for large antenna arrays of 7 to 30 full motion antennas (on average 16) equipped with a 3.5 m Ka-band dish \cite{henri2020oneweb}.
 
-On the user terminal side, a similar architectural breakdown can be made – the terminal consists of a satellite antenna, receiver and a customer network exchange (CNX) router. The latter connects the terminal to the end-user devices such as laptops or smartphones. 
-\cite{henri2020oneweb} RF transmissions received by the satellite antenna are demodulated and converted to a digital data stream by the receiver hardware of the terminal.
+On the user terminal side, a similar architectural breakdown can be made – the terminal consists of a satellite antenna, receiver and a customer network exchange (CNX) router.
+The latter connects the terminal to the end-user devices such as laptops or smartphones \cite{henri2020oneweb}. RF transmissions received by the satellite antenna are demodulated and converted to a digital data stream by the receiver hardware of the terminal.
 
-As OneWeb is a LEO satellite system, UTs need to track the movements of the orbiting satellites in real-time and handover between them as they move in and out of view in order to maintain constant connectivity. This can be achieved either with traditional steerable dish or more modern phased array antenna designs. With the prior, two apertures may need to be employed for uninterrupted connectivity, as retrace speed of a single aperture is the inherent limiting factor for hand-over time between satellites. On the other hand, phased array antennas require only a single aperture as their electronic switching can be considered almost instantaneous. \cite{worldvu2016loi}
+As OneWeb is a LEO satellite system, UTs need to track the movements of the orbiting satellites in real-time and handover between them as they move in and out of view in order to maintain constant connectivity.
+This can be achieved either with traditional steerable dish or more modern phased array antenna designs.
+With the prior, two apertures may need to be employed for uninterrupted connectivity, as retrace speed of a single aperture is the inherent limiting factor for hand-over time between satellites.
+On the other hand, phased array antennas require only a single aperture as their electronic switching can be considered almost instantaneous \cite{worldvu2016loi}.
 
-Continuing with the distinguishing qualities of the OneWeb system, maybe the most significant is the nature of its air interface coverage pattern, also known as the cell layout. In the OneWeb satellite RAN, the cells are inherently varying and mobile, while on the contrary they are practically geographically static and pre-defined in a terrestrial network of fixed eNBs. Consequently, the movement of the UTs (for example equipment mounted on an aircraft or a high-speed train) is relatively slow when compared to the relative velocities of the satellites in orbit. This means that UT handovers happen mostly due to the orbital movement of the satellites rather than the movement of the UT relative to the surface of the earth, which is the dominating cause of UE handovers in terrestrial systems. \cite{corson2019admission}
+Continuing with the distinguishing qualities of the OneWeb system, maybe the most significant is the nature of its air interface coverage pattern, also known as the cell layout.
+In the OneWeb satellite RAN, the cells are inherently varying and mobile, while on the contrary they are practically geographically static and pre-defined in a terrestrial network of fixed eNBs.
+Consequently, the movement of the UTs (for example equipment mounted on an aircraft or a high-speed train) is relatively slow when compared to the relative velocities of the satellites in orbit.
+This means that UT handovers happen mostly due to the orbital movement of the satellites rather than the movement of the UT relative to the surface of the earth, which is the dominating cause of UE handovers in terrestrial systems \cite{corson2019admission}.
 
-In addition to their moving nature, satellite cells are significantly larger in their coverage area when compared to their terrestrial counterparts. This has multiple consequences for 
- \cite{corson2019admission}
+In addition to their moving nature, satellite cells are significantly larger in their coverage area when compared to their terrestrial counterparts.
+This has multiple consequences for \cite{corson2019admission}
 
-OneWeb satellite system makes use of a bent pipe architecture for both its forward and return links. In the forward direction, each Ku-band user terminal downlink maps onto a predetermined Ka-band gateway uplink and vice-versa in the return direction. \cite{worldvu2016loi, portillo2019technical}
+OneWeb satellite system makes use of a bent pipe architecture for both its forward and return links.
+In the forward direction, each Ku-band user terminal downlink maps onto a predetermined Ka-band gateway uplink and vice-versa in the return direction \cite{worldvu2016loi, portillo2019technical}.
 
-OneWeb satellite system makes use of a bent pipe architecture for both its forward and return links. In the forward direction, each Ku-band user terminal downlink maps onto a predetermined Ka-band gateway uplink and vice-versa in the return direction. \cite{worldvu2016loi, portillo2019technical}
+OneWeb satellite system makes use of a bent pipe architecture for both its forward and return links.
+In the forward direction, each Ku-band user terminal downlink maps onto a predetermined Ka-band gateway uplink and vice-versa in the return direction \cite{worldvu2016loi, portillo2019technical}.
 
 \subsection{Aerial Platforms} \label{sect-aerial-platforms}
 \subsubsection{Technical capabilities}
 \subsubsection{Key trade-offs}
 
 \subsection{Signals intelligence}
-Signals intelligence (SIGINT) is intelligence gathering through the exploitation of communication systems and noncommunications emitters. Based on the nature of the target system, the discipline of SIGINT can be further subdivided into the sub-disciplines of communications intelligence (COMINT) and electronic intelligence (ELINT). \cite{national2015bulk} [JP 1-02, JP 2-0 (2013), JP 3-85]
+Signals intelligence (SIGINT) is intelligence gathering through the exploitation of communication systems and noncommunications emitters.
+Based on the nature of the target system, the discipline of SIGINT can be further subdivided into the sub-disciplines of communications intelligence (COMINT) and electronic intelligence (ELINT) \cite{national2015bulk} [JP 1-02, JP 2-0 (2013), JP 3-85].
 
-Considering satellite communication systems, the two disciplines of signals intelligence provide a wide range of tools for intelligence gathering at different levels of abstraction. On the most resource-intense end, we have the interception and extraction of user traffic, the defined scope of COMINT. However, less sophisticated methods, such as signal detection and fingerprinting, direction finding (DF) and radiopositiong may still yield valuable insights into the nature of the utilized systems, the user organisations, use patterns. As no 
+Considering satellite communication systems, the two disciplines of signals intelligence provide a wide range of tools for intelligence gathering at different levels of abstraction.
+On the most resource-intense end, we have the interception and extraction of user traffic, the defined scope of COMINT.
+However, less sophisticated methods, such as signal detection and fingerprinting, direction finding (DF) and radiopositiong may still yield valuable insights into the nature of the utilized systems, the user organisations, use patterns.
+As no 
 
 Interception of user traffic in satellite networks falls under the discipline COMINT. On  based on methods such as time of 
 
 EOB (WIP / J03-85)
 
-Electromagnetic support (ES) and SIGINT. ES is closely related to, but separate from, SIGINT.
+Electromagnetic support (ES) and SIGINT.
+ES is closely related to, but separate from, SIGINT.
 The distinction between an asset performing an ES mission or an intelligence mission is
 determined by who tasks or controls the collection assets, what they are tasked to provide,
-and for what purpose they are tasked. The distinction between ES and SIGINT is
-delineated by purpose, scope, and context. Operational commanders task ES assets to
+and for what purpose they are tasked.
+The distinction between ES and SIGINT is
+delineated by purpose, scope, and context.
+Operational commanders task ES assets to
 search for, intercept, identify, and locate or localize sources of intentional or unintentional
-radiated EM energy. In contrast, the Director, National Security Agency (NSA)/Chief,
+radiated EM energy.
+In contrast, the Director, National Security Agency (NSA)/Chief,
 Central Security Service, or an operational commander delegated SIGINT operational
-tasking authority, task SIGINT assets. The purpose of ES is immediate threat recognition,
+tasking authority, task SIGINT assets.
+The purpose of ES is immediate threat recognition,
 support to planning, and conduct of future operations and other tactical actions such as
-threat avoidance, targeting, and homing. ES is intended to respond to an immediate
-operational requirement. ES and SIGINT operations often share the same or similar assets
+threat avoidance, targeting, and homing.
+ES is intended to respond to an immediate
+operational requirement.
+ES and SIGINT operations often share the same or similar assets
 and resources and may be tasked to simultaneously collect information that meets both
-requirements. That is not to say that data collected for intelligence cannot meet immediate
-operational requirements. Information collected for ES purposes is normally also
+requirements.
+That is not to say that data collected for intelligence cannot meet immediate
+operational requirements.
+Information collected for ES purposes is normally also
 processed by the appropriate parts of the intelligence community (IC) for further
-exploitation after the operational commander’s ES requirements are met. As such, it can
+exploitation after the operational commander’s ES requirements are met.
+As such, it can
 be said that information collected from the EMS has “two lives.” The first is as ES,
 unprocessed information used by operational forces to develop and maintain SA for an
-operationally defined period of time. The second is as SIGINT, retained and processed
+operationally defined period of time.
+The second is as SIGINT, retained and processed
 under appropriate intelligence authorities in response to specified intelligence
 requirements.
 
-
 \subsubsection{Signal detection}
 \subsubsection{Direction finding and radiopositioning}
-Geolocating fixed VSAT terminals implemented as phased arrays, different direction finding techniques can be assessed for their suitability based on several factors. Some of the modern techniques include:
+Geolocating fixed VSAT terminals implemented as phased arrays, different direction finding techniques can be assessed for their suitability based on several factors.
+Some of the modern techniques include:
 
-Angle of Arrival (AoA): AoA techniques can be suitable for geolocating VSAT terminals. By measuring the angles from which the signals arrive at the aircraft's direction finding array, the azimuth and elevation of the terminals can be estimated. AoA techniques like beamforming, MUSIC, or ESPRIT can be effective in estimating the angles of arrival, especially if the phased array terminals have discernible sidelobes or beam characteristics.
+Angle of Arrival (AoA): AoA techniques can be suitable for geolocating VSAT terminals.
+By measuring the angles from which the signals arrive at the aircraft's direction finding array, the azimuth and elevation of the terminals can be estimated.
+AoA techniques like beamforming, MUSIC, or ESPRIT can be effective in estimating the angles of arrival, especially if the phased array terminals have discernible sidelobes or beam characteristics.
 
 Time Difference of Arrival (TDOA): TDOA relies on measuring the time delays between signals received at multiple spatially separated sensors.
 
-Frequency Difference of Arrival (FDOA): FDOA relies on measuring the frequency differences of signals arriving at different sensors or antennas. FDOA techniques may provide useful information if the signals have specific frequency characteristics or modulation patterns that can be exploited.
+Frequency Difference of Arrival (FDOA): FDOA relies on measuring the frequency differences of signals arriving at different sensors or antennas.
+FDOA techniques may provide useful information if the signals have specific frequency characteristics or modulation patterns that can be exploited.
 
 Beamforming: Since phased array VSATs employ beamforming, the listeners direction finding array can analyze the received signals' phase and amplitude information to estimate the direction of arrival.
 
-Additionally, multiple techinques can be combined into a hybrid approach if the complexity and capabilities of the direction finding array permit. For example, combining AoA and beamforming techniques can enhance the accuracy and robustness of geolocation estimates, especially if the phased array terminals exhibit unique radiation patterns or have challenging sidelobe characteristics.
+Additionally, multiple techinques can be combined into a hybrid approach if the complexity and capabilities of the direction finding array permit.
+For example, combining AoA and beamforming techniques can enhance the accuracy and robustness of geolocation estimates, especially if the phased array terminals exhibit unique radiation patterns or have challenging sidelobe characteristics.
 
 \subsubsection{Eavesdropping and traffic analysis}
-Fundamentally, secure communications rely on two core objectives being fulfilled. The intended receiver should be able to recover the original message without errors, while nobody else should be able to acquire any of the contained information. As is customary in cryptography, the transmitter is often referred to as Alice, the receiver as Bob and the eavesdropper as Eve. \cite{bloch2011physical}
+Fundamentally, secure communications rely on two core objectives being fulfilled.
+The intended receiver should be able to recover the original message without errors, while nobody else should be able to acquire any of the contained information.
+As is customary in cryptography, the transmitter is often referred to as Alice, the receiver as Bob and the eavesdropper as Eve.
+\cite{bloch2011physical}
 
-This core principle of secure communications was formalised by Shannon \cite{shannon1949communication} in his 1949 paper through the notion of perfect secrecy achieved through a one-time pad. Shannon’s secrecy system assumes that both the intended recipient and the eavesdropper acquire the encoded codeword without any degradation, i.e. the communication channel is error-free. This theoretical assumption applies very rarely to real world systems, where some noise is almost always present. \cite{bloch2011physical}
+This core principle of secure communications was formalised by Shannon \cite{shannon1949communication} in his 1949 paper through the notion of perfect secrecy achieved through a one-time pad.
+Shannon's secrecy system assumes that both the intended recipient and the eavesdropper acquire the encoded codeword without any degradation, i.e.
+the communication channel is error-free.
+This theoretical assumption applies very rarely to real world systems, where some noise is almost always present.
+\cite{bloch2011physical}
 
-Wyner \cite{wyner1975thewiretap} expanded on Shannon’s original system by exploring the role of noise in the context of secure communications through the channel model called \textit{degraded wiretap channel} (DWTC). The model assumes a situation where the sender (Alice) attempts to communicate with the legitimate recipient (Bob) over a noisy channel. Simultaneously an eavesdropper (Eve) observes a degraded version of the signal received by the legitimate recipient. \cite{barros2006secrecy}
+Wyner \cite{wyner1975thewiretap} expanded on Shannon's original system by exploring the role of noise in the context of secure communications through the channel model called \textit{degraded wiretap channel} (DWTC).
+The model assumes a situation where the sender (Alice) attempts to communicate with the legitimate recipient (Bob) over a noisy channel.
+Simultaneously an eavesdropper (Eve) observes a degraded version of the signal received by the legitimate recipient.
+\cite{barros2006secrecy}
 
-Wyner’s wiretap channel introduced many mathematical tools for modelling information-theoretic security without the added complexity of fully general channel models. One of these important concepts is the secrecy capacity of the channel, which describes the greatest amount of information that can be confidentially communicated between the legitimate transmitter and receiver from the information-theoretic secrecy perspective. \cite{bloch2011physical}
+Wyner's wiretap channel introduced many mathematical tools for modelling information-theoretic security without the added complexity of fully general channel models.
+One of these important concepts is the secrecy capacity of the channel, which describes the greatest amount of information that can be confidentially communicated between the legitimate transmitter and receiver from the information-theoretic secrecy perspective.
+\cite{bloch2011physical}
 
-Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approach that they termed the \textit{broadcast model with confidential messages}. 
+Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approach that they termed the \textit{broadcast model with confidential messages}.
 
 \clearpage
 
@@ -597,7 +695,11 @@ Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approa
 \subsubsection{Requirements}
 6.3.1 Network Requirements
 
-Current drives to bring about the benefits of commercial broadband networks to mission‐critical service providers have developed solutions “over‐the‐top” of existing public networks. Doing so is, however, not sustainable in the long‐term since the public safety networks desire a level of sophistication that ensures they get priority in the systems (Tata and Kadoch 2014, p. 3). The networks should be managed in the same way that TETRA, TETRAPOL, and P25 works, giving priority bandwidths to public safety networks while ensuring that the communication is encrypted end to end. Even in extreme weather conditions, the dedicated broadband services for the mission‐critical services must ensure:
+Current drives to bring about the benefits of commercial broadband networks to mission-critical service providers have developed solutions “over-the-top” of existing public networks.
+Doing so is, however, not sustainable in the long-term since the public safety networks desire a level of sophistication that ensures they get priority in the systems (Tata and Kadoch 2014, p.
+3).
+The networks should be managed in the same way that TETRA, TETRAPOL, and P25 works, giving priority bandwidths to public safety networks while ensuring that the communication is encrypted end to end.
+Even in extreme weather conditions, the dedicated broadband services for the mission-critical services must ensure:
 
     Survival over multiple failures
     Priority for mission‐critical data
@@ -609,7 +711,9 @@ Current drives to bring about the benefits of commercial broadband networks to m
 
 
 
-    In this section, we address the important security features of the TETRA network. Here the scope of coverage spans the authentication, encryption mechanisms, and the key management of TETRA. It dictates that a secure communication network needs to provide (Stavroulakis, 2007):
+In this section, we address the important security features of the TETRA network.
+Here the scope of coverage spans the authentication, encryption mechanisms, and the key management of TETRA.
+It dictates that a secure communication network needs to provide (Stavroulakis, 2007):
 
     Confidentiality
     Integrity
@@ -644,9 +748,11 @@ This requires that the sender cannot deny that he/she sent the message.
 Space uplink
 Ground downlink
 
-The eavesdropper can act both passively and actively. In the prior case 
+The eavesdropper can act both passively and actively.
+In the prior case 
 
-Regarding these two vectors, the research community has been thus far more focused on securing downlink communications from satellites to user terminals and gateways. Here, eavesdroppers have been assumed to be ground based, as space or airborne RF monitoring equipment has been seen as relatively limited in its performance compared to the terrestrial counterparts.
+Regarding these two vectors, the research community has been thus far more focused on securing downlink communications from satellites to user terminals and gateways.
+Here, eavesdroppers have been assumed to be ground based, as space or airborne RF monitoring equipment has been seen as relatively limited in its performance compared to the terrestrial counterparts.
 
 \subsubsection{Jamming}
 
@@ -680,7 +786,12 @@ where $T$ is the orbital period, $G$ is the gravitational constant, $M$ is the m
 \subsection{Interception range}
 
 %SELITÄ MIKSI VOIDAAN APROKSIMOIDA TOISESSA VIRKKEESSÄ
-Fundamental limits of interception range can be examined through a trigonometric approximation model. As discussed regarding the characteristics of the terminals, typical minimum elevation angles range from 20 to 55 degrees in the recent broadband megaconstellations in LEO. As the operational altitude of the Eve is known, theoretical maximum interception range can be computed for a range of the minimum elevation angles. The measurands form an orthogonal triangle with the minimum elevation as the acute angle opposite to the height of the triangle. The operational altitude of Eve is the height of the triangle, while the base is formed by the theoretical interception range of the system. Lastly, the hypotenuse is the line-of-sight (LOS) distance between Alice and Eve.
+Fundamental limits of interception range can be examined through a trigonometric approximation model.
+As discussed regarding the characteristics of the terminals, typical minimum elevation angles range from 20 to 55 degrees in the recent broadband megaconstellations in LEO.
+As the operational altitude of the Eve is known, theoretical maximum interception range can be computed for a range of the minimum elevation angles.
+The measurands form an orthogonal triangle with the minimum elevation as the acute angle opposite to the height of the triangle.
+The operational altitude of Eve is the height of the triangle, while the base is formed by the theoretical interception range of the system.
+Lastly, the hypotenuse is the line-of-sight (LOS) distance between Alice and Eve.
 
 Trigonometric tangent function of the interception range triangle is
 
@@ -689,7 +800,8 @@ Trigonometric tangent function of the interception range triangle is
 \end{equation}
 
 \noindent
-where $\theta_{Alice}$ is the minimum elevation angle of the user terminal, $h_{Eve}$ is the operational altitude of the intercepting airborne platform and $d_{Eve}$ is its distance from Alice on the ground, in essence the interception range. Rearranging (\ref{eq-range-1}) for $d_{Eve}$ gives
+where $\theta_{Alice}$ is the minimum elevation angle of the user terminal, $h_{Eve}$ is the operational altitude of the intercepting airborne platform and $d_{Eve}$ is its distance from Alice on the ground, in essence the interception range.
+Rearranging (\ref{eq-range-1}) for $d_{Eve}$ gives
 
 \begin{align} \label{eq-range-2}
   d_{Eve} = \frac{h_{Eve}}{\tan(\theta_{Alice})}
@@ -704,13 +816,19 @@ where $\theta_{Alice}$ is the minimum elevation angle of the user terminal, $h_{
   \label{fig-orbit-geometry}
 \end{figure}
 
-On the other hand, the beam movement is primarily driven by the motion of the receiving satellite in orbit, which is in turn governed by Kepler's laws of orbital motion. Tracking capability of the aircraft can be evaluated by analysing the velocity of the sub-satellite point at the eavesdropper's operational altitude (point x on figure \ref{fig-orbit-geometry}). If this velocity exceeds the cruise speed of the eavesdropper, the airborne platform is not able to continuously follow the uplink RF beam, which limits the time window into individual satellite passes.
+On the other hand, the beam movement is primarily driven by the motion of the receiving satellite in orbit, which is in turn governed by Kepler's laws of orbital motion.
+Tracking capability of the aircraft can be evaluated by analysing the velocity of the sub-satellite point at the eavesdropper's operational altitude (point x on figure \ref{fig-orbit-geometry}).
+If this velocity exceeds the cruise speed of the eavesdropper, the airborne platform is not able to continuously follow the uplink RF beam, which limits the time window into individual satellite passes.
 
 \subsubsection{Equatorial orbits}
 
-Communication satellites reside often in circular orbits, which are a special case when evaluating Kepler's laws of orbital motion. Here, the velocity of the sub-satellite point can be computed by solving Kepler's third law for the orbital velocity at a set altitude. In equatorial orbits, Earth's rotation can be directly substracted from the angular velocity of the satellite, as both share roughly the same rotational axis.
+Communication satellites reside often in circular orbits, which are a special case when evaluating Kepler's laws of orbital motion.
+Here, the velocity of the sub-satellite point can be computed by solving Kepler's third law for the orbital velocity at a set altitude.
+In equatorial orbits, Earth's rotation can be directly substracted from the angular velocity of the satellite, as both share roughly the same rotational axis.
 
-In essence, the aircraft can be modeled as a low-flying athmospheric satellite. This allows for the same equations to be used in modeling its kinematic characteristics. Solving the required velocity for successful beam tracking can be computed by equating the required orbital period of the aircraft to the one of the space-borne satellite.
+In essence, the aircraft can be modeled as a low-flying athmospheric satellite.
+This allows for the same equations to be used in modeling its kinematic characteristics.
+Solving the required velocity for successful beam tracking can be computed by equating the required orbital period of the aircraft to the one of the space-borne satellite.
 
 Orbital period is related to the angular velocity of the satellite $\omega_{sat}$ through the equation
 
@@ -726,14 +844,18 @@ which can be used to solve the tangential velocity component at a set altitude $
 \end{equation}
 
 \noindent
-As $\omega_{sat} = \omega_{air}$ in the case that the aircraft is able to continuosly track the satellite, the velocity of the sub-satellite point at the cruising altitude of the aircraft $v_{r, air}$ can be solved by combining equations (\ref{eq-kepler-3}), (\ref{eq-ang-vel-1}) and (\ref{eq-ang-vel-2}). Rearranging Kepler's third law to solve for $v_{r, air}$ gives
+As $\omega_{sat} = \omega_{air}$ in the case that the aircraft is able to continuosly track the satellite, the velocity of the sub-satellite point at the cruising altitude of the aircraft $v_{r, air}$ can be solved by combining equations (\ref{eq-kepler-3}), (\ref{eq-ang-vel-1}) and (\ref{eq-ang-vel-2}).
+Rearranging Kepler's third law to solve for $v_{r, air}$ gives
 
 \begin{equation} \label{eq-v-air-equatorial}
   v_{r, air} = r_{air} \sqrt{\frac{G M_E}{r_{sat}^3}}
 \end{equation}
 
 \noindent
-Variables $r_{air}$ and $r_{sat}$ are the orbital radiuses of the eavesdropping aircraft and the receiving satellite measured from the center of the Earth while $M_E$ is the mass of the Earth. Equation (\ref{eq-v-air-equatorial}) gives $v_{r, air}$ in the ECI coordinate frame. To compute the actual movement of the sub-satellite point relative to the surface of the Earth, the velocity figure needs to be converted to the ECF coordinate system. For circular equatorial orbits, this can be simply achieved by substracting the spin of the Earth from $v_{r, air}$.
+Variables $r_{air}$ and $r_{sat}$ are the orbital radiuses of the eavesdropping aircraft and the receiving satellite measured from the center of the Earth while $M_E$ is the mass of the Earth.
+Equation (\ref{eq-v-air-equatorial}) gives $v_{r, air}$ in the ECI coordinate frame.
+To compute the actual movement of the sub-satellite point relative to the surface of the Earth, the velocity figure needs to be converted to the ECF coordinate system.
+For circular equatorial orbits, this can be simply achieved by substracting the spin of the Earth from $v_{r, air}$.
 
 \begin{equation}
   v_{r, ECF} = v_{r, air} - \omega_E r_{air}
@@ -744,13 +866,24 @@ $\omega_E$ is the angular velocity of the Earth at the equator.
 
 \subsubsection{Generalisation to inclined orbits}
 
-Circular equatorial orbits are a good starting point for listening window analysis but their real world applications are somewhat in limited when considering relationship of orbital altitude to coverage and latency. As discussed in section \ref{sect-orbits} and visualised in table \ref{table-megaconstellation-characteristics}, modern satellite megaconstellations aim to achieve worldwide coverage by placing a number of satellites into inclined circular Earth orbits. Common configurations include the Walker Star and Delta constellation configurations, the advantages and disadvantages of which are discussed in more detail in the aforementioned chapter.
+Circular equatorial orbits are a good starting point for listening window analysis but their real world applications are somewhat in limited when considering relationship of orbital altitude to coverage and latency.
+As discussed in section \ref{sect-orbits} and visualised in table \ref{table-megaconstellation-characteristics}, modern satellite megaconstellations aim to achieve worldwide coverage by placing a number of satellites into inclined circular Earth orbits.
+Common configurations include the Walker Star and Delta constellation configurations, the advantages and disadvantages of which are discussed in more detail in the aforementioned chapter.
 
-The same analysis methods remain valid for inclined orbits but some additional factors need to be considered. Equatorial orbits have only a single velocity component parallel to the xy-plane in both ECI and ECF coordinate frames. On the other hand, any inclination induces additional velocity component perpendicular to this original equatorial component. This velocity component is visualised by $v_z$ in figure \ref{fig-inclined-v-components}.
+The same analysis methods remain valid for inclined orbits but some additional factors need to be considered.
+Equatorial orbits have only a single velocity component parallel to the xy-plane in both ECI and ECF coordinate frames.
+On the other hand, any inclination induces additional velocity component perpendicular to this original equatorial component.
+This velocity component is visualised by $v_z$ in figure \ref{fig-inclined-v-components}.
 
-Transitioning from the simple scalar representation into a vector space makes analyzing inclined orbital motion less cumbersome. Here, angular velocity is a very useful abstraction, as it allows to sum different rotational speed components together. As angular velocity does not vary in in circular motion, examining the magnitude of the sum of the angular velocity vectors allows us to gauge the tracking potential of differently inclined orbits at the desired range of altitudes.
+Transitioning from the simple scalar representation into a vector space makes analyzing inclined orbital motion less cumbersome.
+Here, angular velocity is a very useful abstraction, as it allows to sum different rotational speed components together.
+As angular velocity does not vary in in circular motion, examining the magnitude of the sum of the angular velocity vectors allows us to gauge the tracking potential of differently inclined orbits at the desired range of altitudes.
 
-The ECI coordinate frame is a natural starting point for evaluating orbital motion. Angular velocity pseudovector of a circular orbit follows the right hand rule, being perpendicular to the rotational plane. Rotational motion in the equatorial plane can be represented with angular velocity pseudovector $\bm{\vec{\omega}} = [0,0,\omega]^T$. Inclined orbits can be generated by rotating this equatorial orbit about its diameter, which can be achieved with multiplying the pseudovector with a suitable three-dimensional rotational matrix. To rotate the orbits about the y-axis of the ECI coordinate frame by $\theta$ degrees, rotation matrix $\bm{R_y}$ can be used.
+The ECI coordinate frame is a natural starting point for evaluating orbital motion.
+Angular velocity pseudovector of a circular orbit follows the right hand rule, being perpendicular to the rotational plane.
+Rotational motion in the equatorial plane can be represented with angular velocity pseudovector $\bm{\vec{\omega}} = [0,0,\omega]^T$.
+Inclined orbits can be generated by rotating this equatorial orbit about its diameter, which can be achieved with multiplying the pseudovector with a suitable three-dimensional rotational matrix.
+To rotate the orbits about the y-axis of the ECI coordinate frame by $\theta$ degrees, rotation matrix $\bm{R_y}$ can be used.
 
 \begin{equation*}
   \bm{R_y}(\theta) = \begin{bmatrix}
@@ -760,14 +893,17 @@ The ECI coordinate frame is a natural starting point for evaluating orbital moti
     \end{bmatrix}
 \end{equation*}
 
-Multiplying the vector by matrix $\bm{R_y}(\theta)$ and substracting the rotation vector of the Earth gives angular velocity vector in the ECF coordinate frame. This can be in turn be converted to the velocity of the sub-satellite by taking the norm of the angular velocity pseudovector
+Multiplying the vector by matrix $\bm{R_y}(\theta)$ and substracting the rotation vector of the Earth gives angular velocity vector in the ECF coordinate frame.
+This can be in turn be converted to the velocity of the sub-satellite by taking the norm of the angular velocity pseudovector
 
 \begin{equation*}
   \omega_{ECF} =
   ||\bm{R_y}(\theta)\ \bm{\vec{\omega_{sat, i}}} - \bm{\vec{\omega_{E}}}||
 \end{equation*}
 
-$\omega_{ECF}$ is the scalar angular velocity of the satellite in the ECF coordinate frame. $\bm{\vec{\omega_{sat, i}}}$ and $\bm{\vec{\omega_{E}}}$ are the angular velocity vectors of the inclined satellite orbit and the spin of the Earth. Finally, the sub-satellite velocity figure can be solved based on the scalar angular velocity by applying equation (\ref{eq-ang-vel-2}), as the altitude of the airborne platform $h_{air}$ and the mean radius of the Earth $R_E$ are known.
+$\omega_{ECF}$ is the scalar angular velocity of the satellite in the ECF coordinate frame.
+$\bm{\vec{\omega_{sat, i}}}$ and $\bm{\vec{\omega_{E}}}$ are the angular velocity vectors of the inclined satellite orbit and the spin of the Earth.
+Finally, the sub-satellite velocity figure can be solved based on the scalar angular velocity by applying equation (\ref{eq-ang-vel-2}), as the altitude of the airborne platform $h_{air}$ and the mean radius of the Earth $R_E$ are known.
 
 \begin{equation}
   v_{air} = \omega_{ECF}\ (h_{air} + R_E)
@@ -775,9 +911,16 @@ $\omega_{ECF}$ is the scalar angular velocity of the satellite in the ECF coordi
 
 \subsection{Listening window}
 
-Listening window is the time that an airborne eavesdropper is able to intercept the uplink RF transmission from a user terminal on the ground. Analysing this window is somewhat more complex in terms of the model required and potential input parameters that need to be considered. On a high level, the window is primarily influenced by the relative motion between the uplink RF beam of the terminal and the kinematic characteristics of the airborne eavesdropper. The latter include qualities such as cruise speed, operational altitude, manoeuvrability and controllability. They define the ability of the aircraft to keep a lock on the moving RF beam. These are in turn defined by the characteristics of the platform, a topic discussed in more detail in section \ref{sect-aerial-platforms}.
+Listening window is the time that an airborne eavesdropper is able to intercept the uplink RF transmission from a user terminal on the ground.
+Analysing this window is somewhat more complex in terms of the model required and potential input parameters that need to be considered.
+On a high level, the window is primarily influenced by the relative motion between the uplink RF beam of the terminal and the kinematic characteristics of the airborne eavesdropper.
+The latter include qualities such as cruise speed, operational altitude, manoeuvrability and controllability.
+They define the ability of the aircraft to keep a lock on the moving RF beam.
+These are in turn defined by the characteristics of the platform, a topic discussed in more detail in section \ref{sect-aerial-platforms}.
 
-Beamin leikkaava aika. Pystyykö seuraamaan. Tracking ability vs theoretical beam time
+Beamin leikkaava aika.
+Pystyykö seuraamaan.
+Tracking ability vs theoretical beam time
 
 \subsection{Link budgets}
 \subsubsection{Characteristics of satellite terminals}
@@ -795,7 +938,12 @@ kerrotaan tutkimuksen toteutustapa ja k\"aytetyt menetelm\"at.
 
 \section{Results}
 \subsection{Interception range}
-Interception range was investigated with a trigonometric approximation model. As discussed regarding the characteristics of the terminals, typical minimum elevation angles range from 20 to 55 degrees in the recent broadband megaconstellations in LEO. As the operational altitude of the Eve is known, theoretical maximum interception range can be computed for a range of the minimum elevation angles. The measurands form an orthogonal triangle with the minimum elevation as the acute angle opposite to the height of the triangle. The operational altitude of Eve is the height of the triangle, while the base is formed by the theoretical interception range of the system. Lastly, the hypotenuse is the line-of-sight (LOS) distance between Alice and Eve.
+Interception range was investigated with a trigonometric approximation model.
+As discussed regarding the characteristics of the terminals, typical minimum elevation angles range from 20 to 55 degrees in the recent broadband megaconstellations in LEO.
+As the operational altitude of the Eve is known, theoretical maximum interception range can be computed for a range of the minimum elevation angles.
+The measurands form an orthogonal triangle with the minimum elevation as the acute angle opposite to the height of the triangle.
+The operational altitude of Eve is the height of the triangle, while the base is formed by the theoretical interception range of the system.
+Lastly, the hypotenuse is the line-of-sight (LOS) distance between Alice and Eve.
 
 Trigonometric tangent function of the interception range triangle is
 
@@ -804,14 +952,19 @@ Trigonometric tangent function of the interception range triangle is
 \end{equation}
 
 \noindent
-where $\theta_{Alice}$ is the minimum elevation angle of the user terminal, $h_{Eve}$ is the operational altitude of the intercepting airborne platform and $d_{Eve}$ is its distance from Alice on the ground, in essence the interception range. Rearranging (\ref{eq-range-1}) for $d_{Eve}$ gives
+where $\theta_{Alice}$ is the minimum elevation angle of the user terminal, $h_{Eve}$ is the operational altitude of the intercepting airborne platform and $d_{Eve}$ is its distance from Alice on the ground, in essence the interception range.
+Rearranging (\ref{eq-range-1}) for $d_{Eve}$ gives
 
 \begin{align} \label{eq-range-2}
   d_{Eve} = \frac{h_{Eve}}{\tan(\theta_{Alice})}
 \end{align}
 
 \noindent
-Figure \ref{fig-interception-range} shows $d_{Eve}$ in the range $\theta_{Alice} = [10^\circ, 85^\circ], h_{Eve} = [100,20000]$. In the resulting 3D plot, the x-axis is the minimum elevation angle of Alice, y represents the altitude of the eavesdropping platform, and z corresponds to the resulting distance between the terminal and the eavesdropping platform. Tangent function has asymptotes at $\theta_{Alice} = \pi / 2 + n\pi$ Within the given limits, the asymptotes are not reached and the resulting surface is smooth and continuous. The convex surface exhebits linear growth in relation to altitude $h_{Eve}$ and accelerating tangential growth in relation to $\theta_{Alice}$. 
+Figure \ref{fig-interception-range} shows $d_{Eve}$ in the range $\theta_{Alice} = [10^\circ, 85^\circ], h_{Eve} = [100,20000]$.
+In the resulting 3D plot, the x-axis is the minimum elevation angle of Alice, y represents the altitude of the eavesdropping platform, and z corresponds to the resulting distance between the terminal and the eavesdropping platform.
+Tangent function has asymptotes at $\theta_{Alice} = \pi / 2 + n\pi$ Within the given limits, the asymptotes are not reached and the resulting surface is smooth and continuous.
+The convex surface exhebits linear growth in relation to altitude $h_{Eve}$ and accelerating tangential growth in relation to $\theta_{Alice}$.
+
 
 
 \subsection{Listening window}
@@ -833,8 +986,9 @@ Figure \ref{fig-interception-range} shows $d_{Eve}$ in the range $\theta_{Alice}
 
 
 T\"ass\"a osassa esitet\"a\"an tulokset ja vastataan tutkielman alussa
-esitettyihin tutkimuskysymyksiin. Tieteellisen kirjoitelman
-arvo mitataan t\"ass\"a osassa esitettyjen tulosten perusteella. 
+esitettyihin tutkimuskysymyksiin.
+Tieteellisen kirjoitelman
+arvo mitataan t\"ass\"a osassa esitettyjen tulosten perusteella.
 
 %% Huomaa seuraavassa kappaleessa lainausmerkkien ulkopuolella piste, 
 %% koska piste ei lopeta lainattua tekstinp\"atk\"a\"a.
@@ -845,11 +999,11 @@ Tutkimustuloksien merkityst\"a on aina syyt\"a arvioida ja tarkastella
 kriittisesti.  Joskus tarkastelu voi olla t\"ass\"a osassa, mutta se
 voidaan my\"os j\"att\"a\"a viimeiseen osaan, jolloin viimeisen osan nimeksi
 tulee >>Tarkastelu>>. Tutkimustulosten merkityst\"a voi arvioida my\"os
->>Johtop\"a\"at\"okset>>-otsikon alla viimeisess\"a osassa. 
+>>Johtop\"a\"at\"okset>>-otsikon alla viimeisess\"a osassa.
 
 T\"ass\"a osassa on syyt\"a my\"os arvioida tutkimustulosten luotettavuutta.
 Jos tutkimustulosten merkityst\"a arvioidaan >>Tarkastelu>>-osassa,
-voi luotettavuuden arviointi olla my\"os siell\"a. 
+voi luotettavuuden arviointi olla my\"os siell\"a.
 
 \clearpage
 
@@ -877,17 +1031,17 @@ kirjoittamaan ryhtyess\"a\"an hyv\"a ajatella p\"arj\"a\"av\"ans\"a ilman liitte
 Kokemattomat kirjoittajat, jotka ovat huolissaan
 tekstiosan pituudesta, paisuttavat turhan 
 helposti liitteit\"a pit\"a\"akseen tekstiosan pituuden annetuissa rajoissa.
-T\"all\"a tavalla ei synny hyv\"a\"a opinn\"aytett\"a.   
+T\"all\"a tavalla ei synny hyv\"a\"a opinn\"aytett\"a.
 
 Liite on itsen\"ainen kokonaisuus, vaikka se t\"aydent\"a\"akin tekstiosaa.
 Liite ei siten ole pelkk\"a listaus, kuva tai taulukko, vaan 
-liitteess\"a selitet\"a\"an aina sis\"all\"on laatu ja tarkoitus. 
+liitteess\"a selitet\"a\"an aina sis\"all\"on laatu ja tarkoitus.
 
 Liitteeseen voi laittaa esimerkiksi listauksia. Alla on 
-listausesimerkki t\"am\"an liitteen luomisesta. 
+listausesimerkki t\"am\"an liitteen luomisesta.
 
 %% Verbatim-ymp\"arist\"o ei muotoile tai tavuta teksti\"a. Fontti on monospace.
-%% Verbatim-ymp\"arist\"on sis\"all\"a annettuja komentoja ei LaTeX k\"asittele. 
+%% Verbatim-ymp\"arist\"on sis\"all\"a annettuja komentoja ei LaTeX k\"asittele.
 %% Vasta \end{verbatim}-komennon j\"alkeen jatketaan k\"asittely\"a.
 \begin{verbatim}
 	\clearpage
@@ -926,7 +1080,7 @@ Liitteiss\"a voi my\"os olla kuvia, jotka
 eiv\"at sovi leip\"atekstin joukkoon:
 %% Ymp\"arist\"on figure parametrit htb pakottavat
 %% kuvan t\"ah\"an, eik\"a LaTeX yrit\"a siirrell\"a niit\"a
-%% hyv\"aksi katsomaansa paikkaan. 
+%% hyv\"aksi katsomaansa paikkaan.
 %% Ymp\"arist\"o\"a center voi k\"aytt\"a\"a \centering-
 %% komennon sijaan
 %%
