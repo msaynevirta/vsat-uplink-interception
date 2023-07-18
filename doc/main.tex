@@ -452,7 +452,7 @@ SIGINT  & signals intelligence
 \section{Introduction}
 
 Over the past five decades, satellite systems have emerged as indispensable enablers of our modern way of life within an increasingly technology-driven human society.
-Innovation in fields such as Global Navigation Satellite Systems (GNSS) \cite{oconnor2019economic}, Earth Observation (EO) \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and Satellite Communication (satcom) has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in position, navigation, and timing (PNT), as well as intelligence, surveillance, and reconnaissance (ISR).
+Innovation in fields such as Global Navigation Satellite Systems (GNSS) \cite{oconnor2019economic}, Earth Observation (EO) \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and Satellite Communication (satcom) \cite{x} has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in position, navigation, and timing (PNT), as well as intelligence, surveillance, and reconnaissance (ISR).
 Recently, the satellite communications industry has entered into an era of rapid change.
 Since the early 2010s, the most prominent new trend has been the large megaconstellations of hundreds to thousands of satellites in Low Earth Orbit (LEO).
 These have been enabled by the falling cost of space launches and mass-production of satellite hardware based on Commercial Off-The-Shelf (COTS) technology.
@@ -469,36 +469,36 @@ These devices have enabled interaction with satellite systems by not only nation
 Moreover, the vulnerabilities in satellite systems are not limited to only the air interface of these commercial systems. 
 Another third-party vulnerability assessment \cite{santamarta2014wake} uncovered serious design flaws in the implementation of satellite user terminal firmware, such as backdoors, hardcoded credentials, weak encryption algorithms as well as undocumented and insecure protocols.
 
-One way to examine these empirical findings is through the paradigm of "security through obscurity", a practice with long-running history in the commercial satellite industry.
-Practically, this model relies on the complexity of the system and limiting of publicly available information on its implementation in securing their systems against potential attacks \cite{lin2022defending}.
-The validity of this approach has been long debated within research and industry circles \cite{johansson2008great} with recent consensus being that security of a system should never rely exclusively on obscurity \cite{diehl2016law, guo2018defending}.
+Recent adversarial actions against satellite systems and their supporting infrastructure have raised questions concerning their vulnerability to a range of potential attack vectors, including cyberattacks, as well as the physical destruction of individual satellites or their supporting ground infrastructure.
+Recent examples include the cyberattack against the KA-SAT satellite network in February 2022 \cite{wip} or the cable cut in one of the optical cables connecting the the SvalSat ground station to mainland Norway.
+Similarly, intrusive acts such as the Chinese high-altitude balloons flying in North American airspace in early 2023, have highlighted the threat of aerial signals intelligence platforms \cite{wip}.
 
-Aside from commercial markets, governmental organisations, such as civilian public safety authorities and defence ministries, have expressed great interest in these emerging commercial satellite communication solutions.
-When comparing the user segments, the latter tend to pay greater attention on the security aspects of the communications solutions they utilise, which has in turn raised questions regarding the conformity of these systems.
+One way to understand the reason for these vulnerabilities is through the paradigm of "security through obscurity", a practice with a long-running history in the commercial satellite industry that relies on hiding the structure and the interfaces of the system from the public \cite{lin2022defending}.
+The validity of this approach has long been debated within research and industry circles \cite{johansson2008great}, with the recent consensus being that security of a system should never rely exclusively on obscurity \cite{diehl2016law, guo2018defending}.
 
-Satellites have proven an invaluable resource in the modern operational environment, Recent adversarial actions against commercial and governmental satellite systems and infrastructure have raised questions on their vulnerability to a range of potential attack vectors.
-These range from cyberattacks to the physical destruction of individual satellites or their supporting ground infrastructure.
-Recent examples include incidents like the cyberattack against the KA-SAT satellite network in February 2022 or the cable cut in one of the optical cables connecting the the SvalSat ground station to mainland Norway.
-Similarly, intrusive acts, like the Chinese high-altitude balloons flying in North American airspace in early 2023, have highlighted the threat of aerial signals intelligence platforms.
+Aside from commercial markets, governmental organisations such as civilian public safety authorities and defense ministries have expressed great interest in the emerging commercial satellite communication solutions.
+When comparing the user segments, the latter two tend to pay greater attention on the security aspects of the communications solutions they utilise, which has in turn raised questions regarding the conformity of these systems.
 
-Hardening these commercial satellite systems against a growing number of these increasingly cyber-capable adversaries is a prerequisite for their adoption in the mission critical user base, be they civilian or military in nature.
-Here, robust understanding on the nature of the evolving threat landscape is a key starting point for design of cybersecurity measures.
+Protecting these commercial satellite systems against a growing number of these increasingly cyber-capable adversaries has become a prerequisite for adopting new satellite systems by governmental agencies.
+Here, robust understanding of the evolving threat landscape is a key starting point for design of effective cybersecurity measures.
+Recently, LEO broadband systems have been increasingly used by commercial and government actors for satellite system security.
 
-Long operational geostationary broadband and non-geostationary narrowband systems, as well as the longer-term 5th or 6th generation non-terrestrial networks (NTN) have seen abundant research activity, but the emerging LEO broadband systems seem to fall into a gap in the literature especially when it comes to the examination of their security.
-At the same time, the prior have been mostly examined from the viewpoint of downlink communication between the satellite and different earth stations.
-In terms of signals intelligence platforms, the more capital-intensive space or airborne platforms have received relatively little attention and research effort, with a greater emphasis placed on the study of ground-based adversaries.
+Although much work has focused on long operational geostationary broadband and non-geostationary narrowband systems, as well as longer-term 5th or 6th generation non-terrestrial networks (NTN), little attention has been directed towards the security of emerging LEO broadband systems.
+Moreover, most of the research on satellite system protection has examined downlink communication between the satellite and different earth stations \cite{wip}.
+Furthermore, more capital-intensive space or airborne platforms have received relatively little attention, with a greater emphasis being placed on the study of ground-based adversaries.
+Considering this prior history and recent rapid growth, it is important to better understand the security aspects of this rapidly evolving technology. 
 
-Considering this prior history and the recent rapid growth, it is important to better understand the security aspects of this rapidly evolving technology.
-This thesis furthers this effort vai a numerical analysis of the fundamental constraints for airborne eavesdropping.
-Security of the emerging LEO broadband systems will be explored through a threat model comprising a Walker-type LEO megaconstellation, fixed very small aperture terminals (VSAT) and airborne eavesdroppers.
-Methods-wise, the problem will be explored via geometric and kinematic analysis, as well as link budgets based on typical hardware configurations.
-Developed analytical models will be evaluated numerically with results compared against the requirements set by both public safety and defence user groups.
+Therefore, this thesis uses a numerical analysis to develop a threat model for evaluating the resilience of current and emerging technologies in terms of airborne eavesdropping.
+Security of the emerging LEO broadband systems will be explored through a threat model focusing on a Walker-type LEO megaconstellation, fixed Very Small Aperture Terminals (VSAT) and airborne eavesdroppers.
+The resilience of LEO broadband systems will be explored using geometric and kinematic analysis, as well as link budgets based on typical hardware configurations.
+The developed analytical model will be evaluated numerically by comparing its results against the requirements set by both public safety and defence user groups.
 
-The thesis is structured as follows. Section 2 will describe the key characteristics of the examined platforms, in essence LEO megaconstellations and the different aerial platforms.
-The overall theoretical background is completed by the examination of the discipline of signals intelligence as well as a threat model comprising passive and active eavesdropping, jamming as well as signal geolocation.
-Section 3 goes over the relevant research material and methods, which is in turn reflected against the previously described threat model in section 4.
-The results of the numerical modelling are outlined in section 5 and discussed against the context of the end-user requirements in section 6.
-Conclusions from the work are outlined in section 7.
+The thesis is structured as follows.
+Chapter 2 describes the key characteristics of LEO megaconstellations, the different aerial platforms used for eavesdropping, and signals intelligence.
+Chapter 3 develops a threat model comprising passive and active eavesdropping, jamming, as well as signal geolocation.
+Chapter 4 examines the scenarios of the model in relation to the requirements set by relevant critical communications user groups.
+Chapter 5 discusses the results and compares these against the end-user requirements.
+Chapter 6 summarizes this work by discussing the security performance the LEO broadband systems and suggesting directions for future work.
 
 \clearpage
 
