@@ -468,7 +468,7 @@ Moreover, the vulnerabilities in satellite systems are not limited to only the a
 Another third-party vulnerability assessment \cite{santamarta2014wake} uncovered serious design flaws in the implementation of satellite user terminal firmware, such as backdoors, hardcoded credentials, weak encryption algorithms as well as undocumented and insecure protocols.
 
 Recent adversarial actions against satellite systems and their supporting infrastructure have raised questions concerning the vulnerability of these systems to a range of potential attack vectors, including cyberattacks, as well as the physical destruction of individual satellites or their supporting ground infrastructure.
-Recent examples include the cyberattack against the KA-SAT satellite network in February 2022 \cite{wip} or the cable cut in one of the optical cables connecting the the SvalSat ground station to mainland Norway.
+Recent examples include the cyberattack against the KA-SAT satellite network in February 2022 \cite{boschetti2022space} or the cable cut in one of the optical cables connecting the the SvalSat ground station to mainland Norway.
 Similarly, intrusive acts such as the Chinese high-altitude balloons flying through North American airspace in early 2023 have highlighted the threat of aerial signals intelligence platforms \cite{wip}.
 
 One way to understand the reason for these vulnerabilities is through the paradigm of "security through obscurity", a practice with a long-running history in the commercial satellite industry that relies on hiding the structure and the interfaces of the system from the public \cite{lin2022defending}.
@@ -553,7 +553,7 @@ The services are built around vendor-specific user terminals working as WiFi rou
 \subsubsection{Example system architechtures (OneWeb / Starlink)}
 %%%%%%%%%%%%%%%%%%  APPENDIX: COMPARISON TABLE  %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%  FIGURE: ONEWEB NETWORK ARCHITECTURE HERE  %%%%%%%%%%%%%%%%%%
-The space segment of the OneWeb system comprises a megaconstellation of 648 LEO satellites distributed into 12 polar orbital planes of 49 evenly spaced satellites, as well as a number of in-orbit spares.
+The space segment of the OneWeb system comprises a megaconstellation of 648 LEO satellites distributed into 12 polar orbital planes of 49 evenly spaced satellites, as well as a number of in-orbit spares. 
 Operational satellites fly in an inclined polar orbit with an altitude of 1200 km.
 Each satellite transmits and receives user terminal (UT) traffic via its 16 fixed Ku-band beams, each of which covers a geographic area with dimensions of 1600 km in longitude and 65 km in latitude.
 Gateway traffic is forwarded to the satellite network portals (SNP) via two identical steerable Ka-band spot beams with a significantly more focused circular coverage pattern \cite{henri2020oneweb, worldvu2016loi}.
@@ -777,6 +777,30 @@ where $T$ is the orbital period, $G$ is the gravitational constant, $M$ is the m
 %\subsubsection{Modelling of the satellite constellation}
 %\subsubsection{Channel model}
 
+\subsection{Methodology}
+
+Conceptual analytical approach.
+
+Research method.
+Parametric stude of an analytical model.
+
+Järvinen, P. Tutkimustyön metodeista.
+
+\subsection{Link budgets}
+\subsubsection{Characteristics of satellite terminals}
+Beamwidth, gain, EIRP.
+
+\subsection{Transmission characteristics of the uplink}
+Protocols, packet sizes.
+
+\section{Threat scenarios in relation to requirements}
+T\"ass\"a osassa kuvataan k\"aytetty tutkimusaineisto ja
+tutkimuksen metodologiset valinnat, sek\"a
+kerrotaan tutkimuksen toteutustapa ja k\"aytetyt menetelm\"at.
+
+\clearpage
+
+\section{Results}
 \subsection{Interception range}
 
 %SELITÄ MIKSI VOIDAAN APROKSIMOIDA TOISESSA VIRKKEESSÄ
@@ -801,12 +825,18 @@ Rearranging (\ref{eq-range-1}) for $d_{Eve}$ gives
   d_{Eve} = \frac{h_{Eve}}{\tan(\theta_{Alice})}
 \end{align}
 
+\noindent
+Figure \ref{fig-interception-range} shows $d_{Eve}$ in the range $\theta_{Alice} = [10^\circ, 85^\circ], h_{Eve} = [100,20000]$.
+In the resulting 3D plot, the x-axis is the minimum elevation angle of Alice, y represents the altitude of the eavesdropping platform, and z corresponds to the resulting distance between the terminal and the eavesdropping platform.
+Tangent function has asymptotes at $\theta_{Alice} = \pi / 2 + n\pi$ Within the given limits, the asymptotes are not reached and the resulting surface is smooth and continuous.
+The convex surface exhebits linear growth in relation to altitude $h_{Eve}$ and accelerating tangential growth in relation to $\theta_{Alice}$.
+
 \subsection{Beam tracking potential}
 
 \begin{figure}[h]
   \centering
   \input{figures/fig-orbit-geometry.tikz}
-  \caption{Geometry of circular Earth orbits.}
+  \caption{Geometry of a circular Earth orbit.}
   \label{fig-orbit-geometry}
 \end{figure}
 
@@ -913,54 +943,11 @@ They define the ability of the aircraft to keep a lock on the moving RF beam.
 These are in turn defined by the characteristics of the platform, a topic discussed in more detail in section \ref{sect-aerial-platforms}.
 As demonstrated by the inclination-orbital altitude analysis, aircraft kinematics have very little effect at LEO satellite altitudes ranging from hundreds to couple thousand kilometers. In practice, the great disparity between the velocities makes it possible to abstract away the movement of the aircraft and assume it to be stationary for the sake of analysis.
 
-Assuming a stationary eavesdropper, the listening window in seconds can be computed based on the angular velocity of the satellite and the beamwidth of the satellite terminal. 
+Assuming a stationary eavesdropper, the listening window ${t_{pass}}$ can be computed by dividing the beamwidth of the satellite terminal $\theta_{beam}$ with the angular velocity of the satellite in the ECF coordinate frame $\omega_{ECF}$.
 
-Beamin leikkaava aika.
-Pystyykö seuraamaan.
-Tracking ability vs theoretical beam time
-
-\subsection{Link budgets}
-\subsubsection{Characteristics of satellite terminals}
-Beamwidth, gain, EIRP.
-
-\subsection{Transmission characteristics of the uplink}
-Protocols, packet sizes.
-
-\section{Threat scenarios in relation to requirements}
-T\"ass\"a osassa kuvataan k\"aytetty tutkimusaineisto ja
-tutkimuksen metodologiset valinnat, sek\"a
-kerrotaan tutkimuksen toteutustapa ja k\"aytetyt menetelm\"at.
-
-\clearpage
-
-\section{Results}
-\subsection{Interception range}
-Interception range was investigated with a trigonometric approximation model.
-As discussed regarding the characteristics of the terminals, typical minimum elevation angles range from 20 to 55 degrees in the recent broadband megaconstellations in LEO.
-As the operational altitude of the Eve is known, theoretical maximum interception range can be computed for a range of the minimum elevation angles.
-The measurands form an orthogonal triangle with the minimum elevation as the acute angle opposite to the height of the triangle.
-The operational altitude of Eve is the height of the triangle, while the base is formed by the theoretical interception range of the system.
-Lastly, the hypotenuse is the line-of-sight (LOS) distance between Alice and Eve.
-
-Trigonometric tangent function of the interception range triangle is
-
-\begin{equation} \label{eq-range-1}
-  \tan(\theta_{Alice}) = \frac{h_{Eve}}{d_{Eve}}
+\begin{equation}
+  t_{pass} = \frac{\theta_{beam}}{\omega_{ECF}}
 \end{equation}
-
-\noindent
-where $\theta_{Alice}$ is the minimum elevation angle of the user terminal, $h_{Eve}$ is the operational altitude of the intercepting airborne platform and $d_{Eve}$ is its distance from Alice on the ground, in essence the interception range.
-Rearranging (\ref{eq-range-1}) for $d_{Eve}$ gives
-
-\begin{align} \label{eq-range-2}
-  d_{Eve} = \frac{h_{Eve}}{\tan(\theta_{Alice})}
-\end{align}
-
-\noindent
-Figure \ref{fig-interception-range} shows $d_{Eve}$ in the range $\theta_{Alice} = [10^\circ, 85^\circ], h_{Eve} = [100,20000]$.
-In the resulting 3D plot, the x-axis is the minimum elevation angle of Alice, y represents the altitude of the eavesdropping platform, and z corresponds to the resulting distance between the terminal and the eavesdropping platform.
-Tangent function has asymptotes at $\theta_{Alice} = \pi / 2 + n\pi$ Within the given limits, the asymptotes are not reached and the resulting surface is smooth and continuous.
-The convex surface exhebits linear growth in relation to altitude $h_{Eve}$ and accelerating tangential growth in relation to $\theta_{Alice}$.
 
 \subsection{Listening window}
 
