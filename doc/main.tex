@@ -779,12 +779,13 @@ where $T$ is the orbital period, $G$ is the gravitational constant, $M$ is the m
 
 \subsection{Methodology}
 
-Conceptual analytical approach.
+There are a multitude of potential ways to classify research methods. Järvinen \cite{jarvinen} proposes a taxonomy of six research approaches, a framework expanding on previous work by March and Smith \cite{march}.
+The taxonomy is presented in figure \ref{fig-research-method-taxonomy}.
+Within the taxonomy, this thesis falls under the conceptual-analytical research approach, the scope being technology-oriented in nature.
+In practical terms, the research is grounded in a modelling approach described in an electronic warfare handbook of the Finnish Defence Forces \cite{elso}.
+The developed model also incorporates relevant elements from theory of satellite systems, such as orbital mechanics.
 
-Research method.
 Parametric stude of an analytical model.
-
-Järvinen, P. Tutkimustyön metodeista.
 
 \subsection{Link budgets}
 \subsubsection{Characteristics of satellite terminals}
@@ -802,7 +803,46 @@ kerrotaan tutkimuksen toteutustapa ja k\"aytetyt menetelm\"at.
 
 \section{Results}
 
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 
+\begin{table}[h]
+  \centering
+  \begin{tabular}{cccl}
+  \cline{1-3}
+  \multicolumn{1}{|c|}{\textbf{Sub-model}} &
+    \multicolumn{1}{c|}{\textbf{Dependent variable}} &
+    \multicolumn{1}{c|}{\textbf{Independent variables}} &
+     \\ \cline{1-3}
+  \multicolumn{1}{|c|}{1} &
+    \multicolumn{1}{c|}{interception range (m)} &
+    \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}minimum elevation angle (deg)\\ eavesdropper’s altitude (m)\end{tabular}} &
+     \\ \cline{1-3}
+  \multicolumn{1}{|c|}{2a} &
+    \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}sub-satellite velocity,\\ equatorial (m/s)\end{tabular}} &
+    \multicolumn{1}{c|}{orbital altitude (m)} &
+     \\ \cline{1-3}
+  \multicolumn{1}{|c|}{2b} &
+    \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}sub-satellite velocity,\\ inclined (m/s)\end{tabular}} &
+    \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}orbital altitude (m)\\ inclination (deg)\end{tabular}} &
+     \\ \cline{1-3}
+  \multicolumn{1}{|c|}{3} &
+    \multicolumn{1}{c|}{listening window (s)} &
+    \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}orbital altitude (m)\\ inclination (deg)\\ eavesdropper’s velocity (m/s)\end{tabular}} &
+     \\ \cline{1-3}
+  \multicolumn{1}{|c|}{4} &
+    \multicolumn{1}{c|}{uplink signal power (dB)} &
+    \multicolumn{1}{c|}{} &
+     \\ \cline{1-3}
+  \multicolumn{1}{l}{} &
+    \multicolumn{1}{l}{} &
+    \multicolumn{1}{l}{} &
+    
+  \end{tabular}
+  \caption{Sub-models of the research model.}
+  \label{table-sub-models}
+\end{table}
 
 \subsection{Submodel 1: Interception range}
 
