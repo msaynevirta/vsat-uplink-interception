@@ -1,3 +1,6 @@
+%% Environment initialisation
+addpath("matlab2tikz");
+
 %% Physical constants
 
 G = 6.673e-11; % universal gravitational constant, m3 * kg-1 * s-2
