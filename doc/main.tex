@@ -486,7 +486,7 @@ Moreover, most of the research on satellite system protection has examined downl
 Furthermore, more capital-intensive space or airborne platforms have received relatively little attention, with a greater emphasis being placed on the study of ground-based adversaries.
 Considering this prior history and recent rapid growth, it is important to better understand the security aspects of this rapidly evolving technology. 
 
-Therefore, this thesis seeks to assess whether the presence of airborne eavesdroppers poses a risk to the uplink communications of emerging NGSO VSAT networks.
+This thesis seeks to assess whether the presence of airborne eavesdroppers poses a risk to the uplink communications of emerging NGSO VSAT networks. in the context of public safety ...
 To achieve this goal, numerical analysis is used to develop a threat model focusing on a Walker-type LEO megaconstellation, fixed Very Small Aperture Terminals (VSAT) and airborne eavesdroppers.
 The resilience of LEO broadband systems will be explored using geometric and kinematic analysis, as well as link budgets based on typical hardware configurations.
 The developed analytical model will be evaluated numerically by comparing its results against the requirements set by both public safety and defence user groups.
@@ -772,7 +772,6 @@ where $T$ is the orbital period, $G$ is the gravitational constant, $M$ is the m
 
 \section{Research material and methods}
 
-
 %\subsection{Analysis toolchain}
 %\subsubsection{Modelling of the HAPS}
 %\subsubsection{Modelling of the satellite constellation}
@@ -802,7 +801,10 @@ kerrotaan tutkimuksen toteutustapa ja k\"aytetyt menetelm\"at.
 \clearpage
 
 \section{Results}
-\subsection{Interception range}
+
+
+
+\subsection{Submodel 1: Interception range}
 
 %SELITÄ MIKSI VOIDAAN APROKSIMOIDA TOISESSA VIRKKEESSÄ
 Fundamental limits of interception range can be examined through a trigonometric approximation model.
@@ -826,17 +828,24 @@ Rearranging (\ref{eq-range-1}) for $d_{Eve}$ gives
   d_{Eve} = \frac{h_{Eve}}{\tan(\theta_{Alice})}
 \end{align}
 
+\begin{figure}[h]
+  \centering
+  \input{tikz_figures/fig-interception-range.tikz}
+  \caption{Interception range ($d$) as a function of minimum elevation angle ($e$) and operational altitude of the eavesdropper ($h$).}
+  \label{fig-interception-range}
+\end{figure}
+
 \noindent
 Figure \ref{fig-interception-range} shows $d_{Eve}$ in the range $\theta_{Alice} = [10^\circ, 85^\circ], h_{Eve} = [100,20000]$.
-In the resulting 3D plot, the x-axis is the minimum elevation angle of Alice, y represents the altitude of the eavesdropping platform, and z corresponds to the resulting distance between the terminal and the eavesdropping platform.
+In the resulting 3D plot, the x-axis is the minimum elevation angle of the terminal, y represents the altitude of the eavesdropping platform, and z corresponds to the resulting distance between the terminal and the eavesdropping platform.
 Tangent function has asymptotes at $\theta_{Alice} = \pi / 2 + n\pi$ Within the given limits, the asymptotes are not reached and the resulting surface is smooth and continuous.
 The convex surface exhebits linear growth in relation to altitude $h_{Eve}$ and accelerating tangential growth in relation to $\theta_{Alice}$.
 
-\subsection{Beam tracking potential}
+\subsection{Submodel 2: Beam tracking potential}
 
 \begin{figure}[h]
   \centering
-  \input{figures/fig-orbit-geometry.tikz}
+  \input{tikz_figures/fig-orbit-geometry.tikz}
   \caption{Geometry of a circular Earth orbit.}
   \label{fig-orbit-geometry}
 \end{figure}
@@ -991,6 +1000,35 @@ voi luotettavuuden arviointi olla my\"os siell\"a.
 \clearpage
 
 \section{Conclusion}
+
+In recent years, the satellite communications industry has witnessed a paradigm shift with the rise of large NGSO megaconstellations.
+The proliferation of these constellations, facilitated by reduced space launch costs and COTS technology, has opened new frontiers of connectivity.
+However, this rapid evolution has not been without challenges, particularly in the area of cybersecurity.
+
+The absence of widely accepted cybersecurity standards and the proprietary nature of technical solutions leave open potential vulnerabilities, while the wide-area broadcast nature of satellite transmissions makes them susceptible to eavesdropping and other adversarial actions from a wide geographic footprint. Adversarial groups, including state actors and individual enthusiasts armed with accessible Software-Defined Radios (SDR), have demonstrated the feasibility of intercepting satellite traffic.
+
+To better understand the underlying security aspects of emerging NGSO VSAT networks, this thesis focused on assessing the risks posed by airborne eavesdroppers to the uplink communications from satellite terminals on the ground. Through geometric and kinematic analysis, as well as link budgets based on typical hardware configurations, the resilience of LEO broadband systems was explored.
+
+The unique attributes of the space environment, in which the satellite's space segment resides, give certain advantages to the LEO systems. Orbital motion of the satellites in LEO limits the listening window for communication interception, necessating large-scale collusion between eavesdroppers for effective COMINT. Additionally, the radio horizon  arising from higher minimun elevation angles in VSATs imposes further constraints on eavesdroppers, requiring them to approach relatively close to transmitting terminals for effective uplink interception.
+
+On the other hand, using lower orbits leads to certain disadvantages. While higher orbits like GEO require the eavesdropper to transmit at equivalent EIRP levels compared to the legitimate transmitter, the lower altitude of LEO introduces situations where jamming or hijacking the legitimate signal is possible to achieve even with relatively simple and inexpensive radio hardware, such as COTS SDRs and satellite TV equipment. Despite the relative ease of raw jamming, sophisticated spoofing attacks tend to be more difficult to achieve. Here, contributing factors are the complex and often obscure nature of satellite systems. It is worth noting that commercial broadband systems have been moving towards more standardised solutions in the recent years. 
+
+Public safety and defence users place more stringent requirements on their communication solutions when compared to commericial consumer and entreprise systems. Clear understanding of the control and ownership, as well as robust security measures, be they physical or cyber in nature, are the root prerequisites for the adoption of any new system or solution. Considering the results gained from the examination of the model, the emerging NGSO satellite networks do not have inherent physical flaws that would directly jeopardise the security of these systems. In fact and as discussed, compared to their predecessors, the NGSO systems have some inherent qualities that make them rather robust against a multitude of the potential threat factors.
+
+Future work? Waveform studies?
+
+%- orbital motion in leo -> limits the listening window to minutes -> comint very difficult with individual receivers, requires large scale collusion between receivers and large data transfers
+
+%- radio horizon of a VSAT terminal -> high minumum elevation angle requires the eavesdropper to fly relatively close to the terminal (tens to hundreds of km)
+
+%- wideband nature of the waveform -> higher end receiving equipment for signal capture.
+
+%- jamming. low rf power means that uplink transmissions can be jammed with relatively simple hardware thanks to the geometry of the problem. Spoofing more difficult especially thanks to the obscure nature of these systems.
+
+%Recommendations
+
+% migraatio, leo backup / peitto -> PS vaatimukset
+% MNO consumer vs entreprise vaatimukset?
 
 \clearpage
 %% L\"ahdeluettelo
