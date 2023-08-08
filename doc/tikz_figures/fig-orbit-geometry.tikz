@@ -1,0 +1,59 @@
+\usetikzlibrary{calc,3d,intersections, positioning,shapes}
+
+\begin{tikzpicture}[scale=2]
+  \pgfmathsetmacro{\Re}{1.5}
+  \pgfmathsetmacro{\Ro}{3} 
+  \fill[ball color=white!10, opacity=0.025] (0,0,0) circle ({\Re}); % 3D lighting effect
+  \tdplotsetmaincoords{70}{110}
+  \begin{scope}[tdplot_main_coords, shift={(0,0)}]
+    \coordinate (O) at (0,0,0); % origin
+
+    % ball perimeter, gray
+    \pgfmathsetmacro{\thetavec}{70}
+    \pgfmathsetmacro{\phivec}{20}
+    \tdplotsetrotatedcoords{\phivec}{\thetavec}{0}
+    \tdplotdrawarc[tdplot_rotated_coords,color=gray!30]{(O)}{\Re}{0}{360}{}{}
+
+    % equator
+    \pgfmathsetmacro{\thetavec}{0}
+    \pgfmathsetmacro{\phivec}{0}
+    \tdplotsetrotatedcoords{\phivec}{\thetavec}{0}
+    \tdplotdrawarc[tdplot_rotated_coords,color=black!50]{(O)}{\Re}{-70}{110}{}{}
+    \tdplotdrawarc[tdplot_rotated_coords,color=black!50, dashed]{(O)}{\Re}{110}{290}{}{}
+    %\node[] at (-1,2,1) {\textcolor{blue}{\scriptsize $\alpha=\thetavec \, ,  \, $\beta=\phivec}};
+
+    % equatorial orbit
+    \pgfmathsetmacro{\thetavec}{0}
+    \pgfmathsetmacro{\phivec}{0}
+    \tdplotsetrotatedcoords{\phivec}{\thetavec}{0}
+    \tdplotdrawarc[tdplot_rotated_coords,color=black!60]{(O)}{3}{-136}{176}{}{}
+    \tdplotdrawarc[tdplot_rotated_coords,color=black!60, dashed]{(O)}{3}{110}{290}{}{}
+
+    % inclined orbit
+    \pgfmathsetmacro{\i}{-30}
+    \pgfmathsetmacro{\p}{90}
+    \pgfmathsetmacro{\thetavec}{\i}
+    \pgfmathsetmacro{\phivec}{\p}
+    \tdplotsetrotatedcoords{\phivec}{\thetavec}{0}
+    \tdplotdrawarc[tdplot_rotated_coords,color=red]{(O)}{3}{-214}{88}{}{}
+    \tdplotdrawarc[tdplot_rotated_coords,color=red, dashed]{(O)}{3}{360-214}{88}{}{}
+
+    % inclination
+    \pgfmathsetmacro{\alpha}{12.5}
+    \path ({\Ro * cos(\alpha)},{\Ro * sin(\alpha)},{0}) coordinate (I1);
+    \path[tdplot_rotated_coords] ({\Ro * cos(-(\alpha - \p))},
+      {\Ro * sin(-(\alpha + \p))},{0}) coordinate (I2);
+    \draw[color=black!80] (I1) to[out=390,in=0] node[pos=0.5,right] {$i$} (I2);
+
+    %axis
+    \coordinate (X) at (4.5,0,0) ;
+    \coordinate (Y) at (0,3.75,0) ;
+    \coordinate (Z) at (0,0,2) ;
+
+    \draw[-latex] (O) -- (X) node[anchor=west] {$X$};
+    \draw[-latex] (O) -- (Y) node[anchor=west] {$Y$};
+    \draw[-latex] (O) -- (Z) node[anchor=west] {$Z$};
+
+  \end{scope}
+  
+\end{tikzpicture}
