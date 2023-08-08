@@ -1,5 +1,5 @@
 %% Environment initialisation
-addpath("matlab2tikz");
+addpath("matlab2tikz/src");
 
 %% Physical constants
 
