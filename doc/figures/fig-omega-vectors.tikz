@@ -3,16 +3,10 @@
 \begin{tikzpicture}[scale=2]
   \pgfmathsetmacro{\Re}{1.5}
   \pgfmathsetmacro{\Ro}{3} 
-  \fill[ball color=white!10, opacity=0.025] (0,0,0) circle ({\Re}); % 3D lighting effect
+  %\fill[ball color=white!10, opacity=0.025] (0,0,0) circle ({\Re}); % 3D lighting effect
   \tdplotsetmaincoords{70}{110}
   \begin{scope}[tdplot_main_coords, shift={(0,0)}]
     \coordinate (O) at (0,0,0); % origin
-
-    % ball perimeter, gray
-    \pgfmathsetmacro{\thetavec}{70}
-    \pgfmathsetmacro{\phivec}{20}
-    \tdplotsetrotatedcoords{\phivec}{\thetavec}{0}
-    \tdplotdrawarc[tdplot_rotated_coords,color=gray!30]{(O)}{\Re}{0}{360}{}{}
 
     % equator
     \pgfmathsetmacro{\thetavec}{0}
