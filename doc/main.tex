@@ -190,6 +190,10 @@
 
 \usepackage{bm}
 
+
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+
 %% Change the school field to specify your school if the automatically set name
 %% is wrong
 % \university{aalto-yliopisto}
@@ -457,25 +461,24 @@ Recently, the satellite communications industry has entered into an era of rapid
 Since the early 2010s, the most prominent new trend has been the large megaconstellations of hundreds to thousands of satellites in Low Earth Orbit (LEO).
 These have been enabled by the falling cost of space launches and mass-production of satellite hardware based on Commercial Off-The-Shelf (COTS) technology.
 
-However, current satellite systems lack widely accepted cybersecurity standards \cite{lin2022defending}.
-Wildly varying technical solutions and their proprietary nature has raised a set of potential vulnerabilities.
+Despite their decades-long development history,  current satellite systems still lack widely accepted cybersecurity standards \cite{lin2022defending}.
+Varying technical solutions and their proprietary nature has raised a set of potential vulnerabilities.
 Moreover, the wide-area broadcast nature of satellite transmissions renders them vulnerable to adversarial groups from abroad or even across an entire continent.
 This was demonstrated in \cite{pavur2020tale} where the feasibility of eavesdropping downlink satellite traffic was proven practically using widely available and relatively inexpensive satellite television equipment.
-Within the field of wireless communication, one key driver for this development have been.
-he proliferation of inexpensive signals processing equipment, such as open source and open hardware Software-Defined Radios (SDR).
+Within the field of wireless communication, one key driver for this development have been the proliferation of inexpensive signals processing equipment, such as open source and open hardware Software-Defined Radios (SDR).
 These devices have enabled interaction with satellite systems by not only nation states but also even individual enthusiast-level actors.
 Moreover, the vulnerabilities in satellite systems are not limited to only the air interface of these commercial systems.
 Another third-party vulnerability assessment \cite{santamarta2014wake} uncovered serious design flaws in the implementation of satellite user terminal firmware, such as backdoors, hardcoded credentials, weak encryption algorithms as well as undocumented and insecure protocols.
 
 Recent adversarial actions against satellite systems and their supporting infrastructure have raised questions concerning the vulnerability of these systems to a range of potential attack vectors, including cyberattacks, as well as the physical destruction of individual satellites or their supporting ground infrastructure.
-Recent examples include the cyberattack against the KA-SAT satellite network in February 2022 \cite{boschetti2022space} or the cable cut in one of the optical cables connecting the the SvalSat ground station to mainland Norway.
+Recent examples include the cyberattack against the KA-SAT satellite network in February 2022 \cite{boschetti2022space} or the cable cut in one of the optical cables connecting the the SvalSat ground station to mainland Norway \cite{schia2023subsea}.
 Similarly, intrusive acts such as the Chinese high-altitude balloons flying through North American airspace in early 2023 have highlighted the threat of aerial signals intelligence platforms \cite{wip}.
 
 One way to understand the reason for these vulnerabilities is through the paradigm of "security through obscurity", a practice with a long-running history in the commercial satellite industry that relies on hiding the structure and the interfaces of the system from the public \cite{lin2022defending}.
 The validity of this approach has long been debated within research and industry circles \cite{johansson2008great}, with the recent consensus being that security of a system should never rely exclusively on obscurity \cite{diehl2016law, guo2018defending}.
 
 Aside from commercial markets, governmental organisations such as civilian public safety authorities and defense ministries have expressed great interest in emerging commercial satellite communication solutions.
-In terms of user segments, governmental organisations tend to pay greater attention to the security aspects of the communications solutions they utilise, which has in turn raised questions regarding the conformity of these systems.
+In terms of user segments, governmental organisations tend to pay greater attention to the security and resilience aspects of the communications solutions they utilise, which has in turn raised questions regarding the conformity of these systems.
 
 Protecting these commercial satellite systems against a growing number of increasingly cyber-capable adversaries has become a prerequisite for adopting new satellite systems by governmental agencies.
 Here, robust understanding of the evolving threat landscape is a key starting point for design of effective cybersecurity measures.
@@ -487,7 +490,7 @@ Furthermore, more capital-intensive space or airborne platforms have received re
 Considering this prior history and recent rapid growth, it is important to better understand the security aspects of this rapidly evolving technology. 
 
 This thesis seeks to assess whether the presence of airborne eavesdroppers poses a risk to the uplink communications of emerging NGSO VSAT networks. in the context of public safety ...
-To achieve this goal, numerical analysis is used to develop a threat model focusing on a Walker-type LEO megaconstellation, fixed Very Small Aperture Terminals (VSAT) and airborne eavesdroppers.
+To achieve this goal, quantitative analysis is used by developing a threat model focusing on a Walker-type LEO megaconstellation, fixed Very Small Aperture Terminals (VSAT) and airborne eavesdroppers.
 The resilience of LEO broadband systems will be explored using geometric and kinematic analysis, as well as link budgets based on typical hardware configurations.
 The developed analytical model will be evaluated numerically by comparing its results against the requirements set by both public safety and defence user groups.
 
@@ -782,7 +785,7 @@ where $T$ is the orbital period, $G$ is the gravitational constant, $M$ is the m
 There are a multitude of potential ways to classify research methods. Järvinen \cite{jarvinen} proposes a taxonomy of six research approaches, a framework expanding on previous work by March and Smith \cite{march}.
 The taxonomy is presented in figure \ref{fig-research-method-taxonomy}.
 Within the taxonomy, this thesis falls under the conceptual-analytical research approach, the scope being technology-oriented in nature.
-In practical terms, the research is grounded in a modelling approach described in an electronic warfare handbook of the Finnish Defence Forces \cite{elso}.
+In practical terms, the research is grounded in a modelling approach described in an electronic warfare handbook by the Finnish Defence Forces \cite{kosola2004elektroninen}.
 The developed model also incorporates relevant elements from theory of satellite systems, such as orbital mechanics.
 
 Parametric stude of an analytical model.
