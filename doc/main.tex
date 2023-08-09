@@ -822,7 +822,7 @@ The submodels and their independent and dependent variables are introduced in ta
     \multicolumn{1}{c|}{\textbf{Independent variables}} &
      \\ \cline{1-3}
   \multicolumn{1}{|c|}{1} &
-    \multicolumn{1}{c|}{interception range (m)} &
+    \multicolumn{1}{c|}{maximum interception range (m)} &
     \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}minimum elevation angle (deg)\\ eavesdropper’s altitude (m)\end{tabular}} &
      \\ \cline{1-3}
   \multicolumn{1}{|c|}{2a} &
@@ -850,7 +850,7 @@ The submodels and their independent and dependent variables are introduced in ta
   \label{table-sub-models}
 \end{table}
 
-\subsection{Submodel 1: Interception range}
+\subsection{Submodel 1: Maximum interception range}
 
 %SELITÄ MIKSI VOIDAAN APROKSIMOIDA TOISESSA VIRKKEESSÄ
 Fundamental limits of interception range can be examined through a trigonometric approximation model.
@@ -863,15 +863,15 @@ Lastly, the hypotenuse is the line-of-sight (LOS) distance between Alice and Eve
 Trigonometric tangent function of the interception range triangle is
 
 \begin{equation} \label{eq-range-1}
-  \tan(\theta_{Alice}) = \frac{h_{Eve}}{d_{Eve}}
+  \tan(e_{Alice}) = \frac{h_{Eve}}{d_{Eve}}
 \end{equation}
 
 \noindent
-where $\theta_{Alice}$ is the minimum elevation angle of the user terminal, $h_{Eve}$ is the operational altitude of the intercepting airborne platform and $d_{Eve}$ is its distance from Alice on the ground, in essence the interception range.
+where $e_{Alice}$ is the minimum elevation angle of the user terminal, $h_{Eve}$ is the operational altitude of the intercepting airborne platform and $d_{Eve}$ is its distance from Alice on the ground, in essence the interception range.
 Rearranging (\ref{eq-range-1}) for $d_{Eve}$ gives
 
 \begin{align} \label{eq-range-2}
-  d_{Eve} = \frac{h_{Eve}}{\tan(\theta_{Alice})}
+  d_{Eve} = \frac{h_{Eve}}{\tan(e_{Alice})}
 \end{align}
 
 \begin{figure}[h]
@@ -881,11 +881,15 @@ Rearranging (\ref{eq-range-1}) for $d_{Eve}$ gives
   \label{fig-interception-range}
 \end{figure}
 
-\noindent
-Figure \ref{fig-interception-range} shows $d_{Eve}$ in the range $\theta_{Alice} = [10^\circ, 85^\circ], h_{Eve} = [100,20000]$.
-In the resulting 3D plot, the x-axis is the minimum elevation angle of the terminal, y represents the altitude of the eavesdropping platform, and z corresponds to the resulting distance between the terminal and the eavesdropping platform.
-Tangent function has asymptotes at $\theta_{Alice} = \pi / 2 + n\pi$ Within the given limits, the asymptotes are not reached and the resulting surface is smooth and continuous.
-The convex surface exhebits linear growth in relation to altitude $h_{Eve}$ and accelerating tangential growth in relation to $\theta_{Alice}$.
+%\noindent
+Figure \ref{fig-interception-range} shows the interception range $d_{Eve}$ in the range $e_{Alice} = [10^\circ, 85^\circ], h_{Eve} = [100,20000]$.
+In the resulting 3D plot, the dependent variable or the interception range ($d_{Eve}$) of the airborne eavesdropper is on the vertical axis.
+Independent variables or the minimum elevation angle of the terminal ($e_{Alice}$) and opertional altitude of the airborne eavesdropper ($h_{Eve}$) are on the horizontal axes.
+
+The convex surface exhebits linear growth in relation to altitude $h_{Eve}$ and accelerating tangential growth in relation to $e_{Alice}$.
+Therefore, we can deduce that the minimum elevation angle is in most cases the driving factor of the maximum interception range of a VSAT ground station.
+The influence of $h_{Eve}$ on $d_{Eve}$ is markedly smaller but still significant, especially when considering terminals with small $e_{Alice}$.
+The tangent function has asymptotes at $e_{Alice} = \pi / 2 + n\pi$. Within the given limits, the asymptotes are not reached and the resulting surface is smooth and continuous.
 
 \subsection{Submodel 2: Beam tracking potential}
 
