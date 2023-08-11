@@ -691,9 +691,52 @@ Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approa
 
 \subsection{Critical communications}
 \subsubsection{Narrow-broadband evolution}
+Starting in the mid-2020s, critical communications are entering a major paradigm shift. Thus far, national authorities have relied globally on dedicated, purpose-built narrowband technologies such as TETRA, Tetrapol and P25 in their operational communications. Broadband standardisation initiated by The Critical Communications Association (TCCA) Critical Communications Broadband Group (CCBG) in 2012 and developed in a working group of 3GPP’s Technical Specification Group since 2015 have adapted the commercial 4/5G standards to the strict requirements of critical communications. Roll-out of systems built around these standards is currently ongoing in many countries, for example through migration projects such as VIRVE2 in Finland, RRF in France or ESN in the United Kingdom.
+
+The evolution is not limited to just wireless communication technology. In the public safety context, the shift to the more versatile broadband ecosystem enables transitioning from the current voice-only operating model to a more diverse one with voice, video and data capabilities. These more versatile capabilities necessitate highly reliable access to magnitudes greater bandwidth for them to function. In narrowband networks, building coverage was often the main factor to be considered. On the other hand, ensuring adequate capacity alongside coverage requires additional consideration in broadband networks.
+
+The broadband transition also means a shift from custom technology solutions to more mainstream ones. Critical communications segment places strict requirements on availability, reliability, security, and coverage. For example, the coverage requirement for a national critical communications network can be close to 100 percent of the geographic coverage, while commercial networks are built based on a business case primarily driven by population density. In general, this leads to coverage figures far from 100 percent.
+
 \subsubsection{Requirements}
 
+\textbf{Security}
+
+Public Safety users have stringent data security requirements for their communications due to the sensitive nature of these exchanges. Satellite links bring new considerations in the transit of the data through other nations, as the networks are inherently global in nature. In the commercial operating model the constellations downlink data at sites that are most convenient for their operation, which means that the data will often transit through other sovereign countries before arriving at its final destination. Over-the-air transmission of data presents also questions on the jamming resilience of the satellite links.
+
+This poses challenges during situations where a nation is under an external threat, be it a military conflict or an act of a rogue organisation, as sensitive operational information needs to remain only in the hands of its intended users. In addition to these general architectural considerations, the technical solutions themselves should be verifiable on the national or at least at the EU level for both the hardware and software.
+
+\textbf{Resilience and preparedness}
+
+Preparedness is a key aspect in the operating model of public safety organisations. It covers the actions required for ensuring the smooth execution of tasks central to the overall safety of a nation in large emergency situations and societal disruptions. Preparedness actions include contingency planning, continuity management, advance preparations, training of operatives and readiness exercises. The concept revolves around the goal of anticipating threats rather than having to react to them [12].
+
+In the case of public safety communications, this leads to high requirements for availability even in a state of emergency. Similarly to more traditional terrestrial solutions, the requirements apply also to the emerging satellite links, which will most likely serve as a back-up solution in the case of larger scale failures of other options.
+
+\textbf{Control of the constellation}
+
+Satellite links are likely the best suited to natural disasters and major accidents but open questions remain related to human-made threat situations, like terrorist attacks and military conflicts, where external actors may deliberately interfere with the communications links. This raises questions on the political regimes where these current and future constellations are owned and operated. Nationally controlled satellite communications solutions would be the most optimal but are unfeasible for most of the World’s nations to implement. This is due to the immense capital requirements, especially when considering LEO options, which require at minimum hundreds and often thousands of satellites.
+
+These budgetary requirements lead to a situation where most nations need to rely on satellite services that are provided by operators from foreign countries. As discussed later, many of the emerging new operators are either US or UK based, while the EU has also been considering entering the constellation sector with its own alternative. In the EU member state context the latter is probably the most attractive option, especially from the point of critical communications. Control over the constellation and its ground segment will be as close to the national level as is feasible with the capital intensive satellite systems. US and UK based solutions might be also in this sense allowable but are likely to require significant legislative work when used by governmental public safety users.
+
+\textbf{Usability}
+
+Straightforward usability of the systems is highly critical from the perspective of public safety users based on the interviews with Finnish Public Safety actors. The success rate in emergency situations depends heavily on the timeliness of the response, which means that the communication systems used in field activities need to be available on a standby-basis. Thus, the future satellite link would need to be highly integrated with the existing communications infrastructure for it to be effective, so that it can be used when necessary.
+
+Considering these usability requirements, an ideal user terminal would be a handset with integrated satellite communication capabilities, but this is not feasible with the current satellite terminal sizes. The more feasible alternative in the near-term would be the integration of the terminal to the vehicles used by the authorities in daily activities.
+
+In addition to conveniently sized and well integrated user terminals, satellite services should be agnostic to the applications that are run through the link they provide. Currently used applications include PTT, data and video, while in future the systems should be able to accommodate more complex applications, like the verified positioning services provided by the Galileo Public Regulated Service (PRS). This may though require special arrangements in timing critical applications, as satellite systems have longer end-to-end delay times compared to terrestrial systems.
+
+\textbf{Costs}
+
+Cost considerations are another important point of discussion as they have been a limiting factor for the adoption of the existing satellite services. The new constellations need to achieve significantly lower per user costs for the solutions to gain widespread adoption. The public safety sector is a niche market from the point of view of the constellation operators, which is especially the case for smaller countries like Finland. Volume based pricing models are a possible way of achieving cost advantages but are likely to require the tendering processes to include multiple possible user groups. One straightforward model for providing satellite access to the user organisations could be to include it to the services provided by a national critical communications operator (e.g. Erillisverkot in Finland).
+
+For the solutions to become widely used, their monthly cost should be tens of euros for an individual user terminal. If implemented as a vehicular solution, these kinds of monthly costs would lead to a country wide cost in millions of euros.
+
+\subsubsection{Technical considerations}
+
+Heikkilän taulukko
+
 \begin{table}[]
+  \centering
   \begin{tabular}{@{}lll@{}}
   \toprule
   Communication type            & Requirement category  & Identified requirements \\ \midrule
@@ -713,7 +756,7 @@ Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approa
   \label{table-mcx-requirements}
 \end{table}
 
-
+Yaralin kirja
 
 6.3.1 Network Requirements
 
