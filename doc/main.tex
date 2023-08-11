@@ -690,8 +690,31 @@ Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approa
 \clearpage
 
 \subsection{Critical communications}
-\subsubsection{Technology evolution}
+\subsubsection{Narrow-broadband evolution}
 \subsubsection{Requirements}
+
+\begin{table}[]
+  \begin{tabular}{@{}lll@{}}
+  \toprule
+  Communication type            & Requirement category  & Identified requirements \\ \midrule
+  Generic                       & Availability          & 99\% to 99.999\%        \\
+                                & Start-up time         & 0 to few minutes        \\
+                                & Configuration efforts & Zero-configuration      \\
+  Combined user traffic (avg.)  & Downlink / user       & 50 Mbps                 \\
+                                & Uplink / user         & 25 Mbps                 \\
+  Push to talk                  & Packet delay          & 75 ms                   \\
+  Group video                   & Packet delay          & 100 ms                  \\
+  Virtual reality (4K GC video) & Data rate             & 50 to 200 Mbps          \\
+                                & Latency               & \textless 16 ms         \\
+  Sensor data                   & Sensor amount / cell  & 0 to massive            \\
+  Machine remote control (UAV)  & Latency               & 40 ms to 1 s            \\ \bottomrule
+  \end{tabular}
+  \caption{Essential requirements for tactical bubbles.}
+  \label{table-mcx-requirements}
+\end{table}
+
+
+
 6.3.1 Network Requirements
 
 Current drives to bring about the benefits of commercial broadband networks to mission-critical service providers have developed solutions “over-the-top” of existing public networks.
@@ -814,7 +837,7 @@ The research applies quantitative analysis by building a threat model focusing o
 The threat model is built around a set of four smaller submodels, each examining analytically a relevant dependent variable against a number of independent ones.
 The models are first introduced in a deductive manner tying reality to the underlying theoretical concepts.
 Individual submodels are then parametrically studied in a range of starting conditions mirroring the relevant characteristics of the platforms under evaluation.
-The submodels and their independent and dependent variables are introduced in table \ref{table-sub-models}. Generally speaking, the target system will be explored using geometric and kinematic analysis, as well as link budgets based on typical hardware configurations.
+Descriptions for the submodels are given in table \ref{table-sub-model-descriptions} while their independent and dependent variables are introduced in table \ref{table-sub-model-variables}. Generally speaking, the target system will be explored using geometric and kinematic analysis, as well as link budgets based on typical hardware configurations.
 
 %% Miksi relevantteja tutkittavia asioita?
 
@@ -826,12 +849,29 @@ The submodels and their independent and dependent variables are introduced in ta
 
 % use \addlinespace[0.5em] to add space between the rows
 
-\begin{table}[]
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[h]
+  \centering
+  \begin{tabular}{@{}cl@{}}
+  \toprule
+  \multicolumn{1}{l}{sub-model} & target metric              \\ \midrule
+  1                             & interception range         \\
+  2                             & beam tracking potential    \\
+  3                             & listening window           \\
+  4                             & eavesdropper's link budget \\ \bottomrule
+  \end{tabular}
+  \caption{Descriptions for the sub-models.}
+  \label{table-sub-model-descriptions}
+\end{table}
+
+\begin{table}[h]
+  \centering
   \begin{tabular}{@{}cll@{}}
   \toprule
-  \textbf{Sub-model} &
-    \multicolumn{1}{c}{\textbf{Dependent variable}} &
-    \multicolumn{1}{c}{\textbf{Independent variables}} \\ \midrule
+  Sub-model &
+    Dependent variable &
+    Independent variables \\ \midrule
   1 &
     interception range (m) &
     \begin{tabular}[c]{@{}l@{}}minimum elevation angle (deg)\\ eavesdropper’s altitude (m)\end{tabular} \\ \addlinespace[0.5em]
@@ -848,8 +888,8 @@ The submodels and their independent and dependent variables are introduced in ta
     uplink signal power (dB) &
      \\ \bottomrule
   \end{tabular}
-  \caption{Sub-models of the research model.}
-  \label{table-sub-models}
+  \caption{Independent and dependent variables of the sub-models.}
+  \label{table-sub-model-variables}
 \end{table}
 
 \subsection{Submodel 1: Maximum interception range}
@@ -952,6 +992,13 @@ For circular equatorial orbits, this can be simply achieved by substracting the 
 \noindent
 $\omega_E$ is the angular velocity of the Earth at the equator.
 
+\begin{figure}[h]
+  \centering
+  \input{tikz_figures/fig-subsat-velocity-equatiorial.tikz}
+  \caption{Sub-satellite velocity as a function of orbital altitude (m) in equatiorial orbits.}
+  \label{fig-subsat-velocity-equatiorial}
+\end{figure}
+
 %% 2b alaotsikkoon?
 \subsubsection{Generalisation to inclined orbits}
 
@@ -997,6 +1044,13 @@ Finally, the sub-satellite velocity figure can be solved based on the scalar ang
 \begin{equation}
   v_{air} = \omega_{ECF}\ (h_{air} + R_E)
 \end{equation}
+
+\begin{figure}[h]
+  \centering
+  \input{tikz_figures/fig-subsat-velocity-inclined.tikz}
+  \caption{Sub-satellite velocity (m/s) as a function of orbital altitude (m) and inclination (rad KORJAA ASTEET).} % korjaa asteiksi 
+  \label{fig-subsat-velocity-inclined}
+\end{figure}
 
 \subsection{Listening window}
 
