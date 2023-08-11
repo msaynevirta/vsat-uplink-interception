@@ -456,12 +456,28 @@ SIGINT  & signals intelligence
 
 \section{Introduction}
 
+%Johdanto, jossa kerrot satelliittteknologian ripeästä kehittymisestä (tämä jo onkin)
+%Viranomaistoimijoiden kiinnostus uusiin LEO-palveluihin - NB/BB-migraatio, laajakaistapalvelut, kaupallisten MNO-verkkojen käyttö
+%Viranomaisten korkeat tietoturvavaatimukset - muilta osin LEO-palveluilla on hyvä vastaavuus vaatimuksiin, tietoturva on merkittävä kysymys
+%Käytännön tietoturvaongelmat satelliittiverkoissa (tästä on jo suhteellisen paljon)
+%Research gap: tutkimusta ei ole tehty riittävästi (alueelta, josta työsi on) onko research gap:stä evidenssiä? referenssejä?
+%Työn kontribuutio (tämä on tärkein osuus johdannossa) - tutkimuskysymykset, työn rajauksesta, menetelmistä
+%Sisältö, rakenne
+
+
 %% NGSO vs LEO, termin avaaminen
 Over the past five decades, satellite systems have emerged as indispensable enablers of our modern way of life within an increasingly technology-driven human society.
 Innovation in fields such as Global Navigation Satellite Systems (GNSS) \cite{oconnor2019economic}, Earth Observation (EO) \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and Satellite Communication (satcom) \cite{x} has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in position, navigation, and timing (PNT), as well as intelligence, surveillance, and reconnaissance (ISR).
 Recently, the satellite communications industry has entered into an era of rapid change.
 Since the early 2010s, the most prominent new trend has been the large megaconstellations of hundreds to thousands of satellites in Low Earth Orbit (LEO).
 These have been enabled by the falling cost of space launches and mass-production of satellite hardware based on Commercial Off-The-Shelf (COTS) technology.
+
+Aside from commercial markets, governmental organisations such as civilian public safety authorities and defense ministries have expressed great interest in emerging commercial satellite communication solutions.
+In terms of user segments, governmental organisations tend to pay greater attention to the security and resilience aspects of the communications solutions they utilise, which has in turn raised questions regarding the conformity of these systems.
+
+Protecting these commercial satellite systems against a growing number of increasingly cyber-capable adversaries has become a prerequisite for adopting new satellite systems by governmental agencies.
+Here, robust understanding of the evolving threat landscape is a key starting point for design of effective cybersecurity measures.
+Recently, LEO broadband systems have been increasingly used by commercial and government actors for satellite system security.
 
 Despite their decades-long development history,  current satellite systems still lack widely accepted cybersecurity standards \cite{lin2022defending}.
 Varying technical solutions and their proprietary nature has raised a set of potential vulnerabilities.
@@ -478,13 +494,6 @@ Similarly, intrusive acts such as the Chinese high-altitude balloons flying thro
 
 One way to understand the reason for these vulnerabilities is through the paradigm of "security through obscurity", a practice with a long-running history in the commercial satellite industry that relies on hiding the structure and the interfaces of the system from the public \cite{lin2022defending}.
 The validity of this approach has long been debated within research and industry circles \cite{johansson2008great}, with the recent consensus being that security of a system should never rely exclusively on obscurity \cite{diehl2016law, guo2018defending}.
-
-Aside from commercial markets, governmental organisations such as civilian public safety authorities and defense ministries have expressed great interest in emerging commercial satellite communication solutions.
-In terms of user segments, governmental organisations tend to pay greater attention to the security and resilience aspects of the communications solutions they utilise, which has in turn raised questions regarding the conformity of these systems.
-
-Protecting these commercial satellite systems against a growing number of increasingly cyber-capable adversaries has become a prerequisite for adopting new satellite systems by governmental agencies.
-Here, robust understanding of the evolving threat landscape is a key starting point for design of effective cybersecurity measures.
-Recently, LEO broadband systems have been increasingly used by commercial and government actors for satellite system security.
 
 Although much work has focused on long operational geostationary broadband and non-geostationary narrowband systems, as well as more long term 5\textsuperscript{th} and 6\textsuperscript{th} generation non-terrestrial networks (NTN), little attention has been directed towards the security of emerging LEO broadband systems.
 Moreover, most of the research on satellite system protection has examined downlink communication between the satellite and different earth stations \cite{abdelsalam2023physical}.
