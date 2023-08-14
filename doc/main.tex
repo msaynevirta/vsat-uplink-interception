@@ -746,6 +746,7 @@ Heikkilän taulukko
 
 \begin{table}[]
   \centering
+  \caption{Essential requirements for tactical bubbles.}
   \begin{tabular}{@{}lll@{}}
   \toprule
   Communication type            & Requirement category  & Identified requirements \\ \midrule
@@ -761,7 +762,6 @@ Heikkilän taulukko
   Sensor data                   & Sensor amount / cell  & 0 to massive            \\
   Machine remote control (UAV)  & Latency               & 40 ms to 1 s            \\ \bottomrule
   \end{tabular}
-  \caption{Essential requirements for tactical bubbles.}
   \label{table-mcx-requirements}
 \end{table}
 
@@ -813,9 +813,6 @@ This requires that the sender cannot deny that he/she sent the message.
 6.7.8.5 Authentication
 
     This refers to the requirement that the sender's identity is verifiable by the recipient.
-
-
-
 
 \subsection{Threat model}
 \subsubsection{Passive and active eavesdropping}
@@ -905,6 +902,7 @@ Descriptions for the submodels are given in table \ref{table-sub-model-descripti
 % \usepackage{booktabs}
 \begin{table}[h]
   \centering
+  \caption{Descriptions for the sub-models.}
   \begin{tabular}{@{}cl@{}}
   \toprule
   \multicolumn{1}{l}{sub-model} & target metric              \\ \midrule
@@ -913,7 +911,6 @@ Descriptions for the submodels are given in table \ref{table-sub-model-descripti
   3                             & listening window           \\
   4                             & eavesdropper's link budget \\ \bottomrule
   \end{tabular}
-  \caption{Descriptions for the sub-models.}
   \label{table-sub-model-descriptions}
 \end{table}
 
@@ -922,6 +919,7 @@ This metric helps us evaluate the potential maximal area where a single satellit
 
 \begin{table}[h]
   \centering
+  \caption{Independent and dependent variables of the sub-models.}
   \begin{tabular}{@{}cll@{}}
   \toprule
   Sub-model &
@@ -943,7 +941,6 @@ This metric helps us evaluate the potential maximal area where a single satellit
     uplink signal power (dB) &
      \\ \bottomrule
   \end{tabular}
-  \caption{Independent and dependent variables of the sub-models.}
   \label{table-sub-model-variables}
 \end{table}
 
