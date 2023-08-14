@@ -908,7 +908,7 @@ Descriptions for the submodels are given in table \ref{table-sub-model-descripti
   \begin{tabular}{@{}cl@{}}
   \toprule
   \multicolumn{1}{l}{sub-model} & target metric              \\ \midrule
-  1                             & interception range         \\
+  1                             & maximum interception range \\
   2                             & beam tracking potential    \\
   3                             & listening window           \\
   4                             & eavesdropper's link budget \\ \bottomrule
@@ -916,6 +916,9 @@ Descriptions for the submodels are given in table \ref{table-sub-model-descripti
   \caption{Descriptions for the sub-models.}
   \label{table-sub-model-descriptions}
 \end{table}
+
+Submodel 1 examines the maximum interception range of a fixed satellite terminal.
+This metric helps us evaluate the potential maximal area where a single satellite terminal is vulnerable to airborne eavesdroppers. 
 
 \begin{table}[h]
   \centering
@@ -1050,6 +1053,13 @@ $\omega_E$ is the angular velocity of the Earth at the equator.
   \caption{Sub-satellite velocity as a function of orbital altitude (m) in equatiorial orbits.}
   \label{fig-subsat-velocity-equatiorial}
 \end{figure}
+
+Figure \ref{fig-subsat-velocity-equatiorial} shows the sub-satellite velocity ($v_{r, air}$) of a satellite in equatorial orbit as a function of orbital height $h_{sat} = r_{sat} - R_{E}$, where $R_{E}$ is the radius of the Earth.
+Velocities are examined in orbits ranging from LEO to GEO, which corresponds to the range $h_{sat} = [5 \cdot 10^5, 3.7 \cdot 10^7]$.
+In the resulting graph, the dependent variable or the sub-satellite velocity ($v_{r, air}$) is on the vertical axis, while the independent variable of the orbital height $h_{sat}$ is on the horizontal axis.
+The graph can be observed approaching the rotational velocity of the Earth when $h_{sat}$ approaches the height of GEO 36000 km.
+As the graph is computed in the ECF coordinate frame, we can se sub-satellite velocity approaching zero, which means that the satellite appears fixed in its position in the sky.
+Cubically decreasing nature of $v_{sat}$ leads to radically higher values for LEO with $v_{sat}$ values ranging roughly between 5 and 7\ km/s in orbital altitudes between $h_{sat} = [5 \cdot 10^5, 2 \cdot 10^6]$.
 
 %% 2b alaotsikkoon?
 \subsubsection{Generalisation to inclined orbits}
