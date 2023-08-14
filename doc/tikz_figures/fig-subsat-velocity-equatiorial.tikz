@@ -15,8 +15,12 @@ at={(0.758in,0.481in)},
 scale only axis,
 xmin=0,
 xmax=40000000,
+xlabel style={font=\color{white!15!black}},
+xlabel={h (m)},
 ymin=0,
 ymax=8000,
+ylabel style={font=\color{white!15!black}},
+ylabel={v (m/s)},
 axis background/.style={fill=white}
 ]
 \addplot [color=mycolor1, forget plot]
