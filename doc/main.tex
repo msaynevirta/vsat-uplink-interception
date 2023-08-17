@@ -543,7 +543,7 @@ Two US companies, Lynk and AST SpaceMobile, are also planning on beaming broadba
 The latter services are less demonstrated and will need significant R\&D investment before becoming a viable option, while the prior are already reaching commercial operability in limited geographic regions.
 
 \subsubsection{Key technical characteristics} \label{ch-constellation-characteristics}
-
+%%%%%%%%%%%%%%%%%%  APPENDIX: COMPARISON TABLE  %%%%%%%%%%%%%%%%%%
 The design of a complete satellite system is a complex, multi-objective and multi-modal optimisation problem due to the inherently varying conditions and constraints in the three segments.
 Practically speaking, this requires tackling the overall optimisation problem segment-by-segment while taking into account the requirements of the target application.
 In , the main elements of a LEO satellite system were characterised into distinct space, ground and user segments, which are visualised in figure \ref{fig-constellation-segments} \cite{celikbilek2022survey}.
@@ -565,8 +565,9 @@ SES O3b and Iridium while providing the services also at a price point that is c
 
 The services are built around vendor-specific user terminals working as WiFi routers that relay the communications on dedicated Ka and Ku-band frequencies to the satellite constellation.
 
-\subsubsection{Example system architechtures (OneWeb / Starlink)}
-%%%%%%%%%%%%%%%%%%  APPENDIX: COMPARISON TABLE  %%%%%%%%%%%%%%%%%%
+\subsubsection{OneWeb system architechture}
+% Beam forming etc. painotusta pitää säätää uuden suunnan mukaiseksi
+
 %%%%%%%%%%%%%%%%%%  FIGURE: ONEWEB NETWORK ARCHITECTURE HERE  %%%%%%%%%%%%%%%%%%
 The space segment of the OneWeb system comprises a megaconstellation of 648 LEO satellites distributed into 12 polar orbital planes of 49 evenly spaced satellites, as well as a number of in-orbit spares. 
 Operational satellites fly in an inclined polar orbit with an altitude of 1200 km.
@@ -603,6 +604,28 @@ In the forward direction, each Ku-band user terminal downlink maps onto a predet
 
 OneWeb satellite system makes use of a bent pipe architecture for both its forward and return links.
 In the forward direction, each Ku-band user terminal downlink maps onto a predetermined Ka-band gateway uplink and vice-versa in the return direction \cite{worldvu2016loi, portillo2019technical}.
+
+\subsubsection{Starlink system architechture}
+SpaceX's Starlink constellation is a combination of an inclined Walker Delta and a polar Walker Star configuration.
+The system consists of 4,408 satellites divided into five orbital shells at altitudes ranging between 540 and 570 km.
+Inclination-wise, a large majority of the fleet is situated in 70 to 72 degree orbits covering the higher populated latitudes of the Earth.
+A reduced set of satellites resides in 97.6 degree orbits covering the polar regions.
+Table \ref{table-starlink-orbits} presents the distribution of the satellites to the orbital shells and planes in more detail.
+
+\begin{table}[h]
+  \centering
+  \caption{Orbital shells and planes of the Starlink constellation.}
+  \begin{tabular}{@{}lllll@{}}
+  \toprule
+  Altitude (km) & Inclination (deg) & Planes & \begin{tabular}[c]{@{}l@{}}Satellites\\ per plane\end{tabular} & Total sats \\ \midrule
+  540 & 53.2 & 72 & 22 & 1584 \\
+  550 & 53.0 & 72 & 22 & 1584 \\
+  560 & 97.6 & 6  & 58 & 348  \\
+  560 & 97.6 & 4  & 43 & 172  \\
+  570 & 70.0 & 36 & 20 & 720  \\ \bottomrule
+  \end{tabular}
+  \label{table-starlink-orbits}
+\end{table}
 
 \subsection{Aerial Platforms} \label{sect-aerial-platforms}
 \subsubsection{Technical capabilities}
@@ -946,6 +969,7 @@ This metric helps us evaluate the potential maximal area where a single satellit
 \end{table}
 
 \subsection{Submodel 1: Maximum interception range}
+% Scenario description: häritsijän sijainti, muuttujat -> orientoiva
 
 %SELITÄ MIKSI VOIDAAN APROKSIMOIDA TOISESSA VIRKKEESSÄ
 Fundamental limits of interception range can be examined through a trigonometric approximation model.
@@ -1157,6 +1181,12 @@ Transmission and jamming power levels $S$ and $J$ at the receiver can be calcula
 
 When it comes to jamming, two main scenarios arise. The jammer can either be in the rough area of the main beam or elsewhere, which leads to different gain figures at the receiver's end. This means that the jammer is either transmitting in the receiver's main lobe, side lobe or nulls between these. While the latter can be simply be ruled out due to the high attenuation, the two prior provide a chance for the jammer to interfere with the legitimate transmission. Side lobe level (SLL) of the modern constellations is not known for both the satellites and the terminals. We can though estimate it based on constraints like the ITU radio regulations, which set inherent limits for the maximum allowable power flux density to limit interference. In \cite{hills2023controlling}, the authors estimated maximum allowable sidelobe levels for the first generation Starlink and OneWeb constellations at $-32.9$ and \qty{-24.0}{\decibel} respectively.
 
+Choose acceptable SJR level
+
+Vary EIRP or jammer and SLL of the receiver
+
+Effect of large number of satellites, switching beams. Predictability of frequency pattern -> effect on the jammer?
+
 \section{Discussion}
 \subsubsection{Passive eavesdropping}
 \subsubsection{Active eavesdropping}
@@ -1202,7 +1232,10 @@ On the other hand, using lower orbits leads to certain disadvantages. While high
 
 Public safety and defence users place more stringent requirements on their communication solutions when compared to commericial consumer and entreprise systems. Clear understanding of the control and ownership, as well as robust security measures, be they physical or cyber in nature, are the root prerequisites for the adoption of any new system or solution. Considering the results gained from the examination of the model, the emerging NGSO satellite networks do not have inherent physical flaws that would directly jeopardise the security of these systems. In fact and as discussed, compared to their predecessors, the NGSO systems have some inherent qualities that make them rather robust against a multitude of the potential threat factors.
 
-Future work? Waveform studies?
+Future work?
+
+Waveform studies?
+Ground station network security?
 
 %- orbital motion in leo -> limits the listening window to minutes -> comint very difficult with individual receivers, requires large scale collusion between receivers and large data transfers
 
