@@ -700,8 +700,8 @@ Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approa
 \clearpage
 
 \subsection{Critical communications}
-\subsubsection{Narrow-broadband evolution}
-Starting in the mid-2020s, critical communications are entering a major paradigm shift. Thus far, national authorities have relied globally on dedicated, purpose-built narrowband technologies such as TETRA, Tetrapol and P25 in their operational communications. Broadband standardisation initiated by The Critical Communications Association (TCCA) Critical Communications Broadband Group (CCBG) in 2012 and developed in a working group of 3GPP’s Technical Specification Group since 2015 have adapted the commercial 4/5G standards to the strict requirements of critical communications. Roll-out of systems built around these standards is currently ongoing in many countries, for example through migration projects such as VIRVE2 in Finland, RRF in France or ESN in the United Kingdom.
+\subsubsection{Narrowband-to-broadband evolution}
+Starting in the mid-2020s, critical communications are entering a major paradigm shift. Thus far, national authorities have relied globally on dedicated, purpose-built narrowband technologies such as TETRA, Tetrapol and P25 in their operational communications. Broadband standardisation initiated by The Critical Communications Association (TCCA) Critical Communications Broadband Group (CCBG) in 2012 and developed in a working group of 3GPP’s Technical Specification Group since 2015 have adapted the commercial 4G/5G standards to the strict requirements of critical communications. Roll-out of systems built around these standards is currently ongoing in many countries, for example through migration projects such as VIRVE2 in Finland, RRF in France or ESN in the United Kingdom.
 
 The evolution is not limited to just wireless communication technology. In the public safety context, the shift to the more versatile broadband ecosystem enables transitioning from the current voice-only operating model to a more diverse one with voice, video and data capabilities. These more versatile capabilities necessitate highly reliable access to magnitudes greater bandwidth for them to function. In narrowband networks, building coverage was often the main factor to be considered. On the other hand, ensuring adequate capacity alongside coverage requires additional consideration in broadband networks.
 
@@ -1145,9 +1145,17 @@ Jamming relies on the deliberately weakening of the useful signal in relation to
   \text{SJNR} = \frac{S}{J+N}
 \end{equation*}
 
+Transmission and jamming power levels $S$ and $J$ at the receiver can be calculated from the following equations.
 
+\begin{equation}
+  S = P_t + G_{tr}-L_t-L_{tr}(R_{tr})+G_{rt}-L_r \qquad \text{[dBW]}
+\end{equation}
 
-Side lobe level (SLL) of the modern constellations is not known for both the satellites and the terminals. We can though estimate it based on constraints like the ITU radio regulations, which set inherent limits for the maximum allowable power flux density to limit interference. In \cite{hills2023controlling}, the authors estimated maximum allowable sidelobe levels for the first generation Starlink and OneWeb constellations at $-32.9$ and \qty{-24.0}{\decibel} respectively.
+\begin{equation}
+  J = P_j + G_{jr}-L_j-L_{jr}(R_{jr})+G_{rj}-L_r \qquad \text{[dBW]}
+\end{equation}
+
+When it comes to jamming, two main scenarios arise. The jammer can either be in the rough area of the main beam or elsewhere, which leads to different gain figures at the receiver's end. This means that the jammer is either transmitting in the receiver's main lobe, side lobe or nulls between these. While the latter can be simply be ruled out due to the high attenuation, the two prior provide a chance for the jammer to interfere with the legitimate transmission. Side lobe level (SLL) of the modern constellations is not known for both the satellites and the terminals. We can though estimate it based on constraints like the ITU radio regulations, which set inherent limits for the maximum allowable power flux density to limit interference. In \cite{hills2023controlling}, the authors estimated maximum allowable sidelobe levels for the first generation Starlink and OneWeb constellations at $-32.9$ and \qty{-24.0}{\decibel} respectively.
 
 \section{Discussion}
 \subsubsection{Passive eavesdropping}
