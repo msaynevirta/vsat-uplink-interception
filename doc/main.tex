@@ -186,6 +186,7 @@
 \usepackage{tikz-3dplot}
 \usepackage{hyperref}
 \usepackage{pgfplots}
+\usepackage{siunitx}
 
 \usepackage{booktabs}
 
@@ -864,7 +865,7 @@ The developed model also incorporates relevant elements from theory of satellite
 
 Parametric stude of an analytical model.
 
-\subsection{Link budgets}
+\subsection{Link budget}
 \subsubsection{Characteristics of satellite terminals}
 Beamwidth, gain, EIRP.
 
@@ -909,7 +910,7 @@ Descriptions for the submodels are given in table \ref{table-sub-model-descripti
   1                             & maximum interception range \\
   2                             & beam tracking potential    \\
   3                             & listening window           \\
-  4                             & eavesdropper's link budget \\ \bottomrule
+  4                             & jamming link budget        \\ \bottomrule
   \end{tabular}
   \label{table-sub-model-descriptions}
 \end{table}
@@ -1111,7 +1112,7 @@ Finally, the sub-satellite velocity figure can be solved based on the scalar ang
   \label{fig-subsat-velocity-inclined}
 \end{figure}
 
-\subsection{Listening window}
+\subsection{Sub-model 3: Listening window}
 
 Listening window is the time that an airborne eavesdropper is able to intercept the uplink RF transmission from a user terminal on the ground.
 Analysing this window is somewhat more complex in terms of the model required and potential input parameters that need to be considered.
@@ -1127,16 +1128,26 @@ Assuming a stationary eavesdropper, the listening window ${t_{pass}}$ can be com
   t_{pass} = \frac{\theta_{beam}}{\omega_{ECF}}
 \end{equation}
 
-\subsection{Listening window}
+Evaluation in smaller domain, $T_{orbit} = [5400, 42400]$. Around GEO grows to infinity as the sub-satellite velocity matches the aircraft's velocity as the satellite fixed in the sky.
+\begin{figure}[h]
+  \centering
+  \input{tikz_figures/fig-listening-window.tikz}
+  \caption{Listening window (s) as a function of orbital altitude (m) (korjaa metreiksi) and inclination (rad KORJAA ASTEET).} % korjaa asteiksi 
+  \label{fig-subsat-velocity-inclined}
+\end{figure}
 
-\subsubsection{Equatorial orbits}
 
-\subsubsection{Inclined orbits}
+\subsection{Sub-model 4: Jamming link budget}
+Jamming relies on the deliberately weakening of the useful signal in relation to prevailing noise floor and interference. In situations where the jamming dominates over the natural noise sources, the relationship can be simplified to a signal-to-jamming ratio (SJR). In low signal power noise sources need to be also accounted for leading to the term of signal-to-noise+jamming ratio (SJNR).
+
+\begin{equation*}
+  \text{SJR} = \frac{S}{J} \qquad
+  \text{SJNR} = \frac{S}{J+N}
+\end{equation*}
 
 
-\subsection{Link budgets}
-\subsubsection{Uplink transmission}
-\subsubsection{Airborne jamming}
+
+Side lobe level (SLL) of the modern constellations is not known for both the satellites and the terminals. We can though estimate it based on constraints like the ITU radio regulations, which set inherent limits for the maximum allowable power flux density to limit interference. In \cite{hills2023controlling}, the authors estimated maximum allowable sidelobe levels for the first generation Starlink and OneWeb constellations at $-32.9$ and \qty{-24.0}{\decibel} respectively.
 
 \section{Discussion}
 \subsubsection{Passive eavesdropping}
