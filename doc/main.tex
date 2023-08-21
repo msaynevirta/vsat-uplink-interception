@@ -565,7 +565,7 @@ SES O3b and Iridium while providing the services also at a price point that is c
 
 The services are built around vendor-specific user terminals working as WiFi routers that relay the communications on dedicated Ka and Ku-band frequencies to the satellite constellation.
 
-\subsubsection{OneWeb system architechture}
+\subsubsection{OneWeb system architecture}
 % Beam forming etc. painotusta pitää säätää uuden suunnan mukaiseksi
 
 %%%%%%%%%%%%%%%%%%  FIGURE: ONEWEB NETWORK ARCHITECTURE HERE  %%%%%%%%%%%%%%%%%%
@@ -605,7 +605,7 @@ In the forward direction, each Ku-band user terminal downlink maps onto a predet
 OneWeb satellite system makes use of a bent pipe architecture for both its forward and return links.
 In the forward direction, each Ku-band user terminal downlink maps onto a predetermined Ka-band gateway uplink and vice-versa in the return direction \cite{worldvu2016loi, portillo2019technical}.
 
-\subsubsection{Starlink system architechture}
+\subsubsection{Starlink system architecture}
 
 SpaceX's Starlink constellation is a combination of an inclined Walker Delta and a polar Walker Star configuration. The system consists of 4,408 satellites divided into five orbital shells at altitudes ranging between 540 and 570 km. Inclination-wise, a large majority of the fleet is situated in 70 to 72 degree orbits covering the higher populated latitudes, while a reduced set in 97.6 degree orbits covering the remaining polar regions. Table \ref{table-starlink-orbits} presents the distribution of the satellites to the orbital shells and planes in more detail \cite{spacex2020mod, pachler2021updated}.
 
@@ -614,7 +614,13 @@ SpaceX's Starlink constellation is a combination of an inclined Walker Delta and
   \caption{Orbital shells and planes of the Starlink constellation \cite{spacex2020mod}.}
   \begin{tabular}{@{}lllll@{}}
   \toprule
-  Altitude (km) & Inclination (deg) & Planes & \begin{tabular}[c]{@{}l@{}}Satellites\\ per plane\end{tabular} & Total sats \\ \midrule
+
+  Altitude (km) &
+  Inclination (deg) &
+  Planes &
+  \begin{tabular}[c]{@{}l@{}}Satellites\\ per plane\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Total\\ satellites\end{tabular} \\ \midrule
+
   540 & 53.2 & 72 & 22 & 1584 \\
   550 & 53.0 & 72 & 22 & 1584 \\
   560 & 97.6 & 6  & 58 & 348  \\
@@ -624,9 +630,17 @@ SpaceX's Starlink constellation is a combination of an inclined Walker Delta and
   \label{table-starlink-orbits}
 \end{table}
 
-Starlink satellites communicate with UTs through Ku-band links. From the space segment, traffic is either relayed to other satellites via optical inter-satellite links (ISL) or to gateways on higher frequency Ka-band links. Satellites have four phased array antennas, three of which function as downlink and one as uplink. All four arrays are  // capable of projecting eight // independently shapeable and steerable spot beams, resulting in a 3-to-1 downlink-to-uplink ratio. Figure X presents Starlink and OneWeb frequency plans in relation to each other \cite{spacex2016loa}.
+Starlink satellites communicate with UTs through Ku-band links.
+From the space segment, traffic is either relayed to other satellites via optical inter-satellite links (ISL) or to gateways on higher frequency Ka-band links.
+Satellites have four phased array antennas, three of which function as downlink and one as uplink.
+All four arrays are // capable of projecting eight // independently shapeable and steerable spot beams, resulting in a 3-to-1 downlink-to-uplink ratio.
+Figure X presents Starlink and OneWeb frequency plans in relation to each other \cite{spacex2016loa}.
 
-Beam radiation pattern is dependent mainly on the steering angle of the beam with angles farther from boresight making the beam footprint more elliptical. Starlink 3 dB beam footprints vary between x and x kilometers in their major axis. Minor axis varies less with values ranging between x and x kilometers depending on the beam steering angle. Overall beamwidth is controlled by selectively switching on additional array elements as the steering angle rises. Minimum elevation angle of the SpaceX system is 25 degrees.
+Beam radiation pattern is dependent mainly on the steering angle of the beam with angles farther from boresight making the beam footprint more elliptical.
+Starlink 3 dB beam footprints vary between x and x kilometers in their major axis.
+Minor axis varies less with values ranging between x and x kilometers depending on the beam steering angle.
+Overall beamwidth is controlled by selectively switching on additional array elements as the steering angle rises.
+Minimum elevation angle of the SpaceX system is 25 degrees \cite{spacex2016loa, spacex2020mod}.
 
 Ground segment 1.5 m Ka-band antennas
 
