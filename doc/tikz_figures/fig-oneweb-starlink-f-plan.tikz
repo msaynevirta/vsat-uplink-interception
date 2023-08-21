@@ -1,7 +1,17 @@
+\usetikzlibrary{shapes.geometric,positioning}
+
+\newcommand{\band}[4][]{
+    \node [trapezium, trapezium angle=70, draw, anchor=base west] (#3) at ([xshift=2.5pt]#2.base east) {#4};
+}
+
 \begin{tikzpicture}
+    % anchor node
+    \node [trapezium, trapezium angle=70, draw] (b1) at (0,0) {\tiny UU};
 
-  \draw (0,2) -- (14,2);
+    \band{b1}{b2}{\tiny UU}
+    \band{b2}{b3}{\tiny UU}
+    \band{b3}{b4}{\tiny UU}
 
-  \draw (0,0) -- (14,0);
-
+    % rest of nodes
+    
 \end{tikzpicture}
