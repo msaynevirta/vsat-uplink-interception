@@ -1,0 +1,7 @@
+\begin{tikzpicture}
+
+  \draw (0,2) -- (14,2);
+
+  \draw (0,0) -- (14,0);
+
+\end{tikzpicture}

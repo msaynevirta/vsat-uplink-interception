@@ -466,7 +466,7 @@ SIGINT  & signals intelligence
 %Sisältö, rakenne
 
 
-%% NGSO vs LEO, termin avaaminen
+%% TODO: NGSO vs LEO, termin avaaminen
 Over the past five decades, satellite systems have emerged as indispensable enablers of our modern way of life within an increasingly technology-driven human society.
 Innovation in fields such as Global Navigation Satellite Systems (GNSS) \cite{oconnor2019economic}, Earth Observation (EO) \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and Satellite Communication (satcom) \cite{x} has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in position, navigation, and timing (PNT), as well as intelligence, surveillance, and reconnaissance (ISR).
 Recently, the satellite communications industry has entered into an era of rapid change.
@@ -496,7 +496,7 @@ Similarly, intrusive acts such as the Chinese high-altitude balloons flying thro
 One way to understand the reason for these vulnerabilities is through the paradigm of "security through obscurity", a practice with a long-running history in the commercial satellite industry that relies on hiding the structure and the interfaces of the system from the public \cite{lin2022defending}.
 The validity of this approach has long been debated within research and industry circles \cite{johansson2008great}, with the recent consensus being that security of a system should never rely exclusively on obscurity \cite{diehl2016law, guo2018defending}.
 
-Although much work has focused on long operational geostationary broadband and non-geostationary narrowband systems, as well as more long term 5\textsuperscript{th} and 6\textsuperscript{th} generation non-terrestrial networks (NTN), little attention has been directed towards the security of emerging LEO broadband systems.
+Although much work has focused on long operational geostationary broadband and non-geostationary narrowband systems, as well as more long term 5G and 6G non-terrestrial networks (NTN), little attention has been directed towards the security of emerging LEO broadband systems.
 Moreover, most of the research on satellite system protection has examined downlink communication between the satellite and different earth stations \cite{abdelsalam2023physical}.
 Furthermore, more capital-intensive space or airborne platforms have received relatively little attention, with a greater emphasis being placed on the study of ground-based adversaries.
 Considering this prior history and recent rapid growth, it is important to better understand the security aspects of this rapidly evolving technology. 
@@ -517,7 +517,7 @@ Chapter 6 summarizes this work by discussing the security performance of LEO bro
 
 \section{Background}
 
-\subsection{LEO megaconstellations}
+\subsection{NGSO megaconstellations}
 \subsubsection{History and recent developments}
 During the last five years the satellite communications industry has entered into an era of change.
 The most prominent new trend is the large megaconstellations with hundreds to thousands of satellites in low earth orbit (LEO).
@@ -543,7 +543,7 @@ Two US companies, Lynk and AST SpaceMobile, are also planning on beaming broadba
 The latter services are less demonstrated and will need significant R\&D investment before becoming a viable option, while the prior are already reaching commercial operability in limited geographic regions.
 
 \subsubsection{Key technical characteristics} \label{ch-constellation-characteristics}
-%%%%%%%%%%%%%%%%%%  APPENDIX: COMPARISON TABLE  %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% TODO: APPENDIX: COMPARISON TABLE  %%%%%%%%%%%%%%%%%%
 The design of a complete satellite system is a complex, multi-objective and multi-modal optimisation problem due to the inherently varying conditions and constraints in the three segments.
 Practically speaking, this requires tackling the overall optimisation problem segment-by-segment while taking into account the requirements of the target application.
 In , the main elements of a LEO satellite system were characterised into distinct space, ground and user segments, which are visualised in figure \ref{fig-constellation-segments} \cite{celikbilek2022survey}.
@@ -566,7 +566,7 @@ SES O3b and Iridium while providing the services also at a price point that is c
 The services are built around vendor-specific user terminals working as WiFi routers that relay the communications on dedicated Ka and Ku-band frequencies to the satellite constellation.
 
 \subsubsection{OneWeb system architecture}
-% Beam forming etc. painotusta pitää säätää uuden suunnan mukaiseksi
+% TODO: Beam forming etc. painotusta pitää säätää uuden suunnan mukaiseksi
 
 %%%%%%%%%%%%%%%%%%  FIGURE: ONEWEB NETWORK ARCHITECTURE HERE  %%%%%%%%%%%%%%%%%%
 The space segment of the OneWeb system comprises a megaconstellation of 648 LEO satellites distributed into 12 polar orbital planes of 49 evenly spaced satellites, as well as a number of in-orbit spares. 
@@ -630,6 +630,13 @@ SpaceX's Starlink constellation is a combination of an inclined Walker Delta and
   \label{table-starlink-orbits}
 \end{table}
 
+\begin{figure}[h]
+  \centering
+  \input{tikz_figures/fig-oneweb-starlink-f-plan.tikz}
+  \caption{Frequency plan.}
+  \label{fig-f-plan}
+\end{figure}
+
 Starlink satellites communicate with UTs through Ku-band links.
 From the space segment, traffic is either relayed to other satellites via optical inter-satellite links (ISL) or to gateways on higher frequency Ka-band links.
 Satellites have four phased array antennas, three of which function as downlink and one as uplink.
@@ -663,6 +670,7 @@ As no
 
 Interception of user traffic in satellite networks falls under the discipline COMINT. On  based on methods such as time of 
 
+% TODO
 EOB (WIP / J03-85)
 
 Electromagnetic support (ES) and SIGINT.
@@ -933,13 +941,13 @@ The models are first introduced in a deductive manner tying reality to the under
 Individual submodels are then parametrically studied in a range of starting conditions mirroring the relevant characteristics of the platforms under evaluation.
 Descriptions for the submodels are given in table \ref{table-sub-model-descriptions} while their independent and dependent variables are introduced in table \ref{table-sub-model-variables}. Generally speaking, the target system will be explored using geometric and kinematic analysis, as well as link budgets based on typical hardware configurations.
 
-%% Miksi relevantteja tutkittavia asioita?
+%% TODO: Miksi relevantteja tutkittavia asioita?
 
-%% Miten liittyy public safety caseen?
+%% TODO: Miten liittyy public safety caseen?
 
-%% Mistä ne on tullut? Mikä niitten suhde?
+%% TODO: Mistä ne on tullut? Mikä niitten suhde?
 
-%% Osamallin tarkoitus? Oma taulukko muuttujille?
+%% TODO: Osamallin tarkoitus? Oma taulukko muuttujille?
 
 % use \addlinespace[0.5em] to add space between the rows
 
@@ -990,9 +998,9 @@ This metric helps us evaluate the potential maximal area where a single satellit
 \end{table}
 
 \subsection{Submodel 1: Maximum interception range}
-% Scenario description: häritsijän sijainti, muuttujat -> orientoiva
+% TODO: Scenario description: häritsijän sijainti, muuttujat -> orientoiva
 
-%SELITÄ MIKSI VOIDAAN APROKSIMOIDA TOISESSA VIRKKEESSÄ
+% TODO: SELITÄ MIKSI VOIDAAN APROKSIMOIDA TOISESSA VIRKKEESSÄ
 Fundamental limits of interception range can be examined through a trigonometric approximation model.
 As discussed regarding the characteristics of the terminals, typical minimum elevation angles range from 20 to 55 degrees in the recent broadband megaconstellations in LEO.
 As the operational altitude of the Eve is known, theoretical maximum interception range can be computed for a range of the minimum elevation angles.
@@ -1031,7 +1039,7 @@ Therefore, we can deduce that the minimum elevation angle is in most cases the d
 The influence of $h_{Eve}$ on $d_{Eve}$ is markedly smaller but still significant, especially when considering terminals with small $e_{Alice}$.
 The tangent function has asymptotes at $e_{Alice} = \pi / 2 + n\pi$. Within the given limits, the asymptotes are not reached and the resulting surface is smooth and continuous.
 
-%% Takaisin reaalimaailmaan alamallin osalta
+%% TODO: Takaisin reaalimaailmaan alamallin osalta
 
 \subsection{Submodel 2: Beam tracking potential}
 
@@ -1104,7 +1112,7 @@ The graph can be observed approaching the rotational velocity of the Earth when 
 As the graph is computed in the ECF coordinate frame, we can se sub-satellite velocity approaching zero, which means that the satellite appears fixed in its position in the sky.
 Cubically decreasing nature of $v_{sat}$ leads to radically higher values for LEO with $v_{sat}$ values ranging roughly between 5 and 7\ km/s in orbital altitudes between $h_{sat} = [5 \cdot 10^5, 2 \cdot 10^6]$.
 
-%% 2b alaotsikkoon?
+%% TODO: 2b alaotsikkoon?
 \subsubsection{Generalisation to inclined orbits}
 
 Circular equatorial orbits are a good starting point for listening window analysis but their real world applications are somewhat in limited when considering relationship of orbital altitude to coverage and latency.
@@ -1153,7 +1161,7 @@ Finally, the sub-satellite velocity figure can be solved based on the scalar ang
 \begin{figure}[h]
   \centering
   \input{tikz_figures/fig-subsat-velocity-inclined.tikz}
-  \caption{Sub-satellite velocity (m/s) as a function of orbital altitude (m) and inclination (rad KORJAA ASTEET).} % korjaa asteiksi 
+  \caption{Sub-satellite velocity (m/s) as a function of orbital altitude (m) and inclination (rad KORJAA ASTEET).} % TODO: korjaa asteiksi 
   \label{fig-subsat-velocity-inclined}
 \end{figure}
 
@@ -1177,10 +1185,9 @@ Evaluation in smaller domain, $T_{orbit} = [5400, 42400]$. Around GEO grows to i
 \begin{figure}[h]
   \centering
   \input{tikz_figures/fig-listening-window.tikz}
-  \caption{Listening window (s) as a function of orbital altitude (m) (korjaa metreiksi) and inclination (rad KORJAA ASTEET).} % korjaa asteiksi 
+  \caption{Listening window (s) as a function of orbital altitude (m) (korjaa metreiksi) and inclination (rad KORJAA ASTEET).} % TODO: korjaa asteiksi 
   \label{fig-subsat-velocity-inclined}
 \end{figure}
-
 
 \subsection{Sub-model 4: Jamming link budget}
 Jamming relies on the deliberately weakening of the useful signal in relation to prevailing noise floor and interference. In situations where the jamming dominates over the natural noise sources, the relationship can be simplified to a signal-to-jamming ratio (SJR). In low signal power noise sources need to be also accounted for leading to the term of signal-to-noise+jamming ratio (SJNR).
@@ -1258,7 +1265,7 @@ Future work?
 Waveform studies?
 Ground station network security?
 
-%- orbital motion in leo -> limits the listening window to minutes -> comint very difficult with individual receivers, requires large scale collusion between receivers and large data transfers
+%- TODO: orbital motion in leo -> limits the listening window to minutes -> comint very difficult with individual receivers, requires large scale collusion between receivers and large data transfers
 
 %- radio horizon of a VSAT terminal -> high minumum elevation angle requires the eavesdropper to fly relatively close to the terminal (tens to hundreds of km)
 
