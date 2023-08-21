@@ -606,15 +606,12 @@ OneWeb satellite system makes use of a bent pipe architecture for both its forwa
 In the forward direction, each Ku-band user terminal downlink maps onto a predetermined Ka-band gateway uplink and vice-versa in the return direction \cite{worldvu2016loi, portillo2019technical}.
 
 \subsubsection{Starlink system architechture}
-SpaceX's Starlink constellation is a combination of an inclined Walker Delta and a polar Walker Star configuration.
-The system consists of 4,408 satellites divided into five orbital shells at altitudes ranging between 540 and 570 km.
-Inclination-wise, a large majority of the fleet is situated in 70 to 72 degree orbits covering the higher populated latitudes of the Earth.
-A reduced set of satellites resides in 97.6 degree orbits covering the polar regions.
-Table \ref{table-starlink-orbits} presents the distribution of the satellites to the orbital shells and planes in more detail.
+
+SpaceX's Starlink constellation is a combination of an inclined Walker Delta and a polar Walker Star configuration. The system consists of 4,408 satellites divided into five orbital shells at altitudes ranging between 540 and 570 km. Inclination-wise, a large majority of the fleet is situated in 70 to 72 degree orbits covering the higher populated latitudes, while a reduced set in 97.6 degree orbits covering the remaining polar regions. Table \ref{table-starlink-orbits} presents the distribution of the satellites to the orbital shells and planes in more detail \cite{spacex2020mod, pachler2021updated}.
 
 \begin{table}[h]
   \centering
-  \caption{Orbital shells and planes of the Starlink constellation.}
+  \caption{Orbital shells and planes of the Starlink constellation \cite{spacex2020mod}.}
   \begin{tabular}{@{}lllll@{}}
   \toprule
   Altitude (km) & Inclination (deg) & Planes & \begin{tabular}[c]{@{}l@{}}Satellites\\ per plane\end{tabular} & Total sats \\ \midrule
@@ -626,6 +623,16 @@ Table \ref{table-starlink-orbits} presents the distribution of the satellites to
   \end{tabular}
   \label{table-starlink-orbits}
 \end{table}
+
+Starlink satellites communicate with UTs through Ku-band links. From the space segment, traffic is either relayed to other satellites via optical inter-satellite links (ISL) or to gateways on higher frequency Ka-band links. Satellites have four phased array antennas, three of which function as downlink and one as uplink. All four arrays are  // capable of projecting eight // independently shapeable and steerable spot beams, resulting in a 3-to-1 downlink-to-uplink ratio. Figure X presents Starlink and OneWeb frequency plans in relation to each other \cite{spacex2016loa}.
+
+Beam radiation pattern is dependent mainly on the steering angle of the beam with angles farther from boresight making the beam footprint more elliptical. Starlink 3 dB beam footprints vary between x and x kilometers in their major axis. Minor axis varies less with values ranging between x and x kilometers depending on the beam steering angle. Overall beamwidth is controlled by selectively switching on additional array elements as the steering angle rises. Minimum elevation angle of the SpaceX system is 25 degrees.
+
+Ground segment 1.5 m Ka-band antennas
+
+Starlink dish variants. Common feature ESA technology. Some flat panel while others use steering. Size varies between x and x m.
+
+Starlink's cell pattern is based on Uber's H3 hexagonal cell system. Each spot beam covers roughly 1 size 5 hex cell at nadir. It is worth noting that the beam becomes more elliptical at higher steering angles, thus covering more cells at the same time.
 
 \subsection{Aerial Platforms} \label{sect-aerial-platforms}
 \subsubsection{Technical capabilities}
