@@ -1001,7 +1001,14 @@ This metric helps us evaluate the potential maximal area where a single satellit
 % TODO: Scenario description: häritsijän sijainti, muuttujat -> orientoiva
 
 % TODO: SELITÄ MIKSI VOIDAAN APROKSIMOIDA TOISESSA VIRKKEESSÄ
-Fundamental limits of interception range can be examined through a trigonometric approximation model.
+Some fundamental limits apply to the ability of airborne platforms to eavesdrop ground-based transmitters.
+One of the most siginficant ones is the radio horizon, especially when considering RF sources at high gigahertz ranges, as these frequencies do not experience the ionospheric bouncing (MIKÄ TÄSSÄ ON PAREMPI TERMI) that extend the range of transmissions at (X TAAJUUSALUE) ranges.
+In the most simple cases, radio horizon is dependent only on the altitude of the transmitter and the eavesdropper.
+This relationship can be characterized with the equation \ref{eq-radio-horizon-1} where x is y and z is a.
+
+Radio horizon allows us to examine isotropically transmitting sources, but highly directional VSAT terminals require additional factors to be taken into account.
+Here, one of the most important parameters is the minimum elevation angle of the satellite system in question.
+Fundamental limits of VSAT interception range can be examined through a trigonometric approximation model.
 As discussed regarding the characteristics of the terminals, typical minimum elevation angles range from 20 to 55 degrees in the recent broadband megaconstellations in LEO.
 As the operational altitude of the Eve is known, theoretical maximum interception range can be computed for a range of the minimum elevation angles.
 The measurands form an orthogonal triangle with the minimum elevation as the acute angle opposite to the height of the triangle.
