@@ -1,0 +1,24 @@
+\usetikzlibrary{trees}
+
+\tikzstyle{bag} = [align=center]
+
+\begin{tikzpicture}[level distance=1.5cm,
+    level 1/.style={sibling distance=4cm},
+    level 2/.style={sibling distance=8cm},
+    level 3/.style={sibling distance=4cm}]
+  \node {research}
+    child {node [bag] {approaches \\ studying reality}
+      child {node [bag] {research stressing \\ what is}
+        child {node [bag] {\textbf{conceptual-analytical} \\ \textbf{approaches}}}
+        child {node [bag] {approaches for \\ empirical studies}
+          child [bag] {node {theory-testing \\ approaches}}
+          child [bag] {node {theory-creating \\ approaches}}
+        }
+      }
+      child [bag] {node {research stressing \\ utility of}
+        child [bag] {node {innovation-building \\ approaches}}
+        child [bag] {node {innovation-evaluation \\ approaches}}
+      }
+    }
+    child {node [bag] {mathematical \\ approaches}};
+\end{tikzpicture}
