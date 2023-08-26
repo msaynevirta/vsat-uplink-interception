@@ -1002,11 +1002,29 @@ This metric helps us evaluate the potential maximal area where a single satellit
 
 % TODO: SELITÄ MIKSI VOIDAAN APROKSIMOIDA TOISESSA VIRKKEESSÄ
 Some fundamental limits apply to the ability of airborne platforms to eavesdrop ground-based transmitters.
-One of the most siginficant ones is the radio horizon, especially when considering RF sources at super (3-30 GHz) or extremely high frequency (EHF, 30-300 GHz) ranges where the principal propagation mode is line-of-sight propagation.
-Here, radio horizon is dependent only on the altitude of the transmitter and the eavesdropper, as line-of-sight between the two sites is a prerequisite for establishing a functioning radio link.
-This relationship can be characterized with the equation \ref{eq-radio-horizon-1} where x is y and z is a.
+One of the most siginficant ones is the radio horizon, as principal propagation mode at both super high (SHF, 3-30 GHz) and extremely high frequencies (EHF, 30-300 GHz) is line-of-sight propagation.
+Assuming a perfectly spherical planetary body, the radio horizon of a transmitter can be derived from the Pythagorean theorem.
+Here, the line-of-sight distance $d$ and radius of the body $R$ form the legs of a right triangle, while the transmitter's distance from the centre of the body $(R+h)$ is the hypotenuse.
 
-Radio horizon allows us to examine isotropically transmitting sources, but highly directional VSAT terminals require additional factors to be taken into account.
+\begin{equation*}
+  d^2=(R+h)^{2}-R^2= 2R \cdot h + h^2 \\
+\end{equation*}
+
+In case of the Earth, the height of both surface-bound and airborne transmitters $h$ is rather insignificant compared to the radius of the body $R$. Thus, we can simplify the line-of-sight equation to
+
+\begin{equation} \label{eq-radio-horizon-vac}
+  d \approx \sqrt{2R \cdot h}
+\end{equation}
+
+It is worth noting that equation (\ref{eq-radio-horizon-vac}) applies only in vacuum.
+Vertical pressure variation of an athmosphere refracts passing electromagnetic waves. 
+Athmosphere of a body leads to refraction electromagnetic waves. In practice, the waves deviate from a straight line down towards the surface. This deviation can be accounted for by applying a factor $k$ to equation (\ref{eq-radio-horizon-vac}). In case of the Earth, an effective radius of $4/3$ is usually applied.
+
+\begin{equation} \label{eq-radio-horizon-ath}
+  d \approx \sqrt{2 k \cdot R \cdot h}
+\end{equation}
+
+Radio horizon allows us to examine isotropically radiating antennas, but highly directional VSAT terminals require additional factors to be taken into account.
 Here, one of the most important parameters is the minimum elevation angle of the satellite system in question.
 Fundamental limits of VSAT interception range can be examined through a trigonometric approximation model.
 As discussed regarding the characteristics of the terminals, typical minimum elevation angles range from 20 to 55 degrees in the recent broadband megaconstellations in LEO.
