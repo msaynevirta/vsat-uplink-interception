@@ -968,7 +968,7 @@ Descriptions for the submodels are given in table \ref{table-sub-model-descripti
 \end{table}
 
 Submodel 1 examines the maximum interception range of a fixed satellite terminal.
-This metric helps us evaluate the potential maximal area where a single satellite terminal is vulnerable to airborne eavesdroppers. 
+This metric helps us to evaluate the potential maximal area where a single satellite terminal is vulnerable to airborne eavesdroppers.
 
 \begin{table}[h]
   \centering
@@ -1002,9 +1002,9 @@ This metric helps us evaluate the potential maximal area where a single satellit
 
 % TODO: SELITÄ MIKSI VOIDAAN APROKSIMOIDA TOISESSA VIRKKEESSÄ
 Some fundamental limits apply to the ability of airborne platforms to eavesdrop ground-based transmitters.
-One of the most siginficant ones is the radio horizon, as principal propagation mode at both super high (SHF, 3-30 GHz) and extremely high frequencies (EHF, 30-300 GHz) is line-of-sight propagation.
+One of the most siginficant factors is the radio horizon, as principal propagation mode at both super high (SHF, 3-30 GHz) and extremely high frequencies (EHF, 30-300 GHz) is line-of-sight propagation.
 Assuming a perfectly spherical planetary body, the radio horizon of a transmitter can be derived from the Pythagorean theorem.
-Here, the line-of-sight distance $d$ and radius of the body $R$ form the legs of a right triangle, while the transmitter's distance from the centre of the body $(R+h)$ is the hypotenuse.
+Here, the line-of-sight distance $d$ and radius of the body $R$ form the legs of a right triangle, while the transmitter's distance from the centre of the body $(R+h)$ is the hypotenuse \cite{seybold2005introduction}.
 
 \begin{equation*}
   d^2=(R+h)^{2}-R^2= 2R \cdot h + h^2 \\
@@ -1018,20 +1018,22 @@ In case of the Earth, the height of both surface-bound and airborne transmitters
 
 It is worth noting that equation (\ref{eq-radio-horizon-vac}) applies only in vacuum.
 Vertical pressure variation of an athmosphere refracts passing electromagnetic waves. 
-Athmosphere of a body leads to refraction electromagnetic waves. In practice, the waves deviate from a straight line down towards the surface. This deviation can be accounted for by applying a factor $k$ to equation (\ref{eq-radio-horizon-vac}). In case of the Earth, an effective radius of $4/3$ is usually applied.
+Athmosphere of a body leads to refraction electromagnetic waves. In practice, the waves deviate from a straight line down towards the surface. This deviation can be accounted for by applying a factor $k$ to equation (\ref{eq-radio-horizon-vac}). In case of the Earth, an effective radius of $4/3$ is usually applied \cite{seybold2005introduction}.
 
 \begin{equation} \label{eq-radio-horizon-ath}
   d \approx \sqrt{2 k \cdot R \cdot h}
 \end{equation}
 
-Radio horizon allows us to examine isotropically radiating antennas, but highly directional VSAT terminals require additional factors to be taken into account.
+Radio horizon allows us to examine situations where either isotropic or pointed deliberately in the direction of the horizon.
+This is not always the case with highly directional VSAT terminals and we need to take additional factors into account.
 Here, one of the most important parameters is the minimum elevation angle of the satellite system in question.
-Fundamental limits of VSAT interception range can be examined through a trigonometric approximation model.
+Similar to radio horizon, maximum VSAT interception range can be examined through a trigonometric approximation model.
+
 As discussed regarding the characteristics of the terminals, typical minimum elevation angles range from 20 to 55 degrees in the recent broadband megaconstellations in LEO.
-As the operational altitude of the Eve is known, theoretical maximum interception range can be computed for a range of the minimum elevation angles.
+As the operational altitude of the eavesdropper is known, theoretical maximum interception range can be computed for a range of the minimum elevation angles.
 The measurands form an orthogonal triangle with the minimum elevation as the acute angle opposite to the height of the triangle.
-The operational altitude of Eve is the height of the triangle, while the base is formed by the theoretical interception range of the system.
-Lastly, the hypotenuse is the line-of-sight (LOS) distance between Alice and Eve.
+The operational altitude of the eavesdropper is the height of the triangle, while the base is formed by the theoretical interception range of the system.
+Lastly, the hypotenuse is the line-of-sight (LOS) distance between the VSAT site and the airborne eavesdropper.
 
 Trigonometric tangent function of the interception range triangle is
 
