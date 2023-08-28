@@ -867,37 +867,6 @@ This requires that the sender cannot deny that he/she sent the message.
 
     This refers to the requirement that the sender's identity is verifiable by the recipient.
 
-\subsection{Threat model}
-\subsubsection{Passive and active eavesdropping}
-Space uplink
-Ground downlink
-
-The eavesdropper can act both passively and actively.
-In the prior case 
-
-Regarding these two vectors, the research community has been thus far more focused on securing downlink communications from satellites to user terminals and gateways.
-Here, eavesdroppers have been assumed to be ground based, as space or airborne RF monitoring equipment has been seen as relatively limited in its performance compared to the terrestrial counterparts.
-
-\subsubsection{Jamming}
-
-\subsubsection{Active eavesdropping}
-
-\subsubsection{Signal geolocation}
-
-\subsection{Link budgets}
-\subsection{Channel models}
-
-\subsection{Orbital mechanics}
-\subsubsection{Kepler's laws}
-
-Kepler III
-\begin{equation} \label{eq-kepler-3}
-  T^2 = (\frac{4\pi^2}{GM})r^3
-\end{equation}
-
-where $T$ is the orbital period, $G$ is the gravitational constant, $M$ is the mass of the orbited body and $r$ is the radius of the orbit %measured from the centre of mass of the orbited body.
-\subsection{Coordinate systems}
-
 \clearpage
 
 \section{Research material and methods}
@@ -1024,15 +993,14 @@ In case of the Earth, the height of both surface-bound and airborne transmitters
 \end{equation}
 
 It is worth noting that equation (\ref{eq-radio-horizon-vac}) applies only in vacuum.
-Vertical pressure variation of an athmosphere refracts passing electromagnetic waves. 
-Athmosphere of a body leads to refraction electromagnetic waves. In practice, the waves deviate from a straight line down towards the surface. This deviation can be accounted for by applying a factor $k$ to equation (\ref{eq-radio-horizon-vac}). In case of the Earth, an effective radius of $4/3$ is usually applied \cite{seybold2005introduction}.
+Vertical pressure variation of an athmosphere refracts passing electromagnetic waves. In practice, the waves deviate from a straight line down towards the surface. This deviation can be accounted for by applying a factor $k$ to equation (\ref{eq-radio-horizon-vac}). In case of the Earth, an effective radius of $4/3$ is usually applied \cite{seybold2005introduction}.
 
 \begin{equation} \label{eq-radio-horizon-ath}
   d \approx \sqrt{2 k \cdot R \cdot h}
 \end{equation}
 
-Radio horizon allows us to examine situations where either isotropic or pointed deliberately in the direction of the horizon.
-This is not always the case with highly directional VSAT terminals and we need to take additional factors into account.
+Radio horizon allows us to examine situations where the transmitting antenna is either isotropic or pointed deliberately in the direction of the horizon.
+This is not always the case with highly directional VSAT terminals, thus requiring additional factors being taken into account.
 Here, one of the most important parameters is the minimum elevation angle of the satellite system in question.
 Similar to radio horizon, maximum VSAT interception range can be examined through a trigonometric approximation model.
 
@@ -1093,6 +1061,12 @@ If this velocity exceeds the cruise speed of the eavesdropper, the airborne plat
 Communication satellites reside often in circular orbits, which are a special case when evaluating Kepler's laws of orbital motion.
 Here, the velocity of the sub-satellite point can be computed by solving Kepler's third law for the orbital velocity at a set altitude.
 In equatorial orbits, Earth's rotation can be directly substracted from the angular velocity of the satellite, as both share roughly the same rotational axis.
+
+\begin{equation} \label{eq-kepler-3}
+  T^2 = (\frac{4\pi^2}{GM})r^3
+\end{equation}
+
+where $T$ is the orbital period, $G$ is the gravitational constant, $M$ is the mass of the orbited body and $r$ is the radius of the orbit %measured from the centre of mass of the orbited body.
 
 In essence, the aircraft can be modeled as a low-flying athmospheric satellite.
 This allows for the same equations to be used in modeling its kinematic characteristics.
