@@ -755,18 +755,16 @@ Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approa
 \subsubsection{Narrowband-to-broadband evolution}
 Starting in the mid-2020s, critical communications are entering a major paradigm shift. Thus far, national authorities have relied globally on dedicated, purpose-built narrowband technologies such as TETRA, Tetrapol and P25 in their operational communications. Broadband standardisation initiated by The Critical Communications Association (TCCA) Critical Communications Broadband Group (CCBG) in 2012 and developed in a working group of 3GPP’s Technical Specification Group since 2015 have adapted the commercial 4G/5G standards to the strict requirements of critical communications. Roll-out of systems built around these standards is currently ongoing in many countries, for example through migration projects such as VIRVE2 in Finland, RRF in France or ESN in the United Kingdom.
 
-The evolution is not limited to just wireless communication technology. In the public safety context, the shift to the more versatile broadband ecosystem enables transitioning from the current voice-only operating model to a more diverse one with voice, video and data capabilities. The higher versatility necessitates reliable access to magnitudes greater bandwidth for them to function. In narrowband networks, building coverage was often the main factor to be considered. On the other hand, ensuring adequate capacity alongside coverage requires additional consideration in broadband networks.
+The evolution is not limited to just wireless communication technology. In the public safety context, the shift to the more versatile broadband ecosystem enables transitioning from the current voice-only operating model to a more diverse one with voice, video and data capabilities. The higher versatility necessitates reliable access to magnitudes greater bandwidth for them to function. In narrowband networks, building coverage was often the main factor to be considered. On the other hand, ensuring adequate capacity alongside coverage requires additional consideration in broadband networks \cite{saynevirta2021satellite}.
 
-The broadband transition also means a shift from custom technology solutions to more mainstream ones. Critical communications segment places strict requirements on availability, reliability, security, and coverage. For example, the coverage requirement for a national critical communications network can be close to 100 percent of the geographic coverage, while commercial networks are built based on a business case primarily driven by population density. In general, this leads to coverage figures far from 100 percent.
+The broadband transition also means a shift from custom technology solutions to more mainstream ones. Critical communications segment places strict requirements on availability, reliability, security, and coverage. For example, the coverage requirement for a national critical communications network can be close to 100 percent of the geographic coverage, while commercial networks are built based on a business case primarily driven by population density. In general, this leads to coverage figures far from 100 percent \cite{saynevirta2021satellite}.
 
 \subsection{Use cases}
+Critical communications service operators see satellite systems as a complementary coverage and capacity solution. In practice, satellite connectivity does not replace the traditional terrestrial networks but complements them in traditionally difficult-to-serve geographic locations, such as sparcely populated rural areas or maritime settings which have been typically rather poorly served due to the limited commercial potential these regions offer. If deployed to their envisioned state, broadband satellite systems may work as a cost-efficient way to serve these regions thanks to their truly global coverage pattern \cite{saynevirta2021satellite}.
 
+Implementation-wise, satellite networks are in the short-to-medium term envisioned to integrate into the terrestrial networks through portable tactical bubbles, where the satellite link serves as a backhaul solution for a local (?100 meters to kilometers?) wireless connectivity bubble. In practice, current equipment form factor and cost supports best a vehicular deployment model. For example the French RRF envisions satellite networks as one backhaul option for its vehicular relay (\textit{relais végiculaire}), an emergency vehicle with a tactical bubble for local coverage and capacity. On the other hand, integration point for satellite systems in the Finnish VIRVE2 has been envisioned as command vehicles of fire, rescue and police forces \cite{RRF_VIITE,saynevirta2021satellite}.
 
-Coverage / capacity
-
-Concept of a tactical bubble
-
-Implementation-wise, current equipment form factor and cost supports best a vehicular deployment model. For example the French RRF deploys satellite networks in its vehicular relay (fr. TERMI TÄHÄN), an emergency vehicle with a tactical bubble for local coverage and capacity. On the other hand, integration point for satellite systems in the Finnish VIRVE2 has been envisioned as command vehicles of fire, rescue and police forces \cite{saynevirta2021satellite}. 
+Long-term, evolution towards direct-to-smartphone type solutions is a potential development path. 3GPP has been working towards integrating satellite connectivity as one of the options in the 5G Non-terrestial networks (NTN), a development item also present on the longer-reaching 6G roadmaps \cite{6G_ROADMAP, 3GPP_NTN_PAPERS}. It is though worth noting, that these solutions remain rather low in terms of their technological maturity. In-orbit demonstrations of the technology have been very limited in number and work has focused more on the theoretical standardisation work %TODO: \cite{AST_TESTIT, LYNK_TESTIT, SPACEX_TESTIT, PAPEREITA}
 
 \subsubsection{Requirements}
 
@@ -930,6 +928,7 @@ The threat model is built around a set of four smaller submodels, each examining
 The models are first introduced in a deductive manner tying reality to the underlying theoretical concepts.
 Individual submodels are then parametrically studied in a range of starting conditions mirroring the relevant characteristics of the platforms under evaluation.
 Descriptions for the submodels are given in table \ref{table-sub-model-descriptions} while their independent and dependent variables are introduced in table \ref{table-sub-model-variables}. Generally speaking, the target system will be explored using geometric and kinematic analysis, as well as link budgets based on typical hardware configurations.
+We will asses the problem following a first principles method. % tarkastelu tapahtuu fundamentaaleista dimensioista lähtien, ensimmäisen ja neljänen alamallin pureutuessa avaruudelliseen ulottuvuuteen ongelmiien ja toisen ja kolmannen tarkastellessa aika-ulottuvuuden ilmiöitä.
 
 %% TODO: Miksi relevantteja tutkittavia asioita?
 
@@ -990,8 +989,8 @@ This metric helps us to evaluate the potential maximal area where a single satel
 \subsection{Submodel 1: Maximum interception range}
 % TODO: Scenario description: häritsijän sijainti, muuttujat -> orientoiva
 In order to eavesdrop a target transmitter, an eavesdropper need to be able to intercept sufficiently strong uplink signal. 
-Thus, being firmly out of range of an earth station, in other words inside a white zone, is the most fundamental limit to an eavesdropper's ability to eavesdrop. 
-Two situations arise where eavesdropping is either simply impossible or a very tough uphill battle:
+Being firmly out of range of an earth station, in other words inside a white zone, is the most fundamental limit to an eavesdropper's ability to eavesdrop. 
+This can be thought as  arise where eavesdropping is either simply impossible or a very tough uphill battle:
 
 \begin{enumerate}
   \item The VSAT earth station falls behind the radio horizon of the eavesdropper.
@@ -1076,7 +1075,13 @@ The tangent function has asymptotes at $e_{Alice} = \pi / 2 + n\pi$. Within the 
   \label{fig-orbit-geometry}
 \end{figure}
 
-On the other hand, the beam movement is primarily driven by the motion of the receiving satellite in orbit, which is in turn governed by Kepler's laws of orbital motion.
+In addition to being aligned along the line-of-sight of the VSAT's main lobe, the eavesdropper needs to be able to intercept sufficiently long transmission to be able to %ilmaista lähettäjän olemus. 
+This time dimension brings another point to consider when evaluating the risk of eavesdropping.
+Different durations of interception have varying implications for the legitimate transmitter.
+As an practical example, // millisecond-level? // signal capture might be enough for DF applications, while COMINT would require the eavesdropper to intercept the data stream from minutes to days type of durations.
+
+Maximum duration of signal interception is set by the ability of the airborne platform to track the main lobe of the earth station.
+The beam movement is primarily driven by the motion of the receiving satellite in orbit, which is in turn governed by Kepler's laws of orbital motion.
 Tracking capability of the aircraft can be evaluated by analysing the velocity of the sub-satellite point at the eavesdropper's operational altitude (point x on figure \ref{fig-orbit-geometry}).
 If this velocity exceeds the cruise speed of the eavesdropper, the airborne platform is not able to continuously follow the uplink RF beam, which limits the time window into individual satellite passes.
 
