@@ -759,12 +759,23 @@ The evolution is not limited to just wireless communication technology. In the p
 
 The broadband transition also means a shift from custom technology solutions to more mainstream ones. Critical communications segment places strict requirements on availability, reliability, security, and coverage. For example, the coverage requirement for a national critical communications network can be close to 100 percent of the geographic coverage, while commercial networks are built based on a business case primarily driven by population density. In general, this leads to coverage figures far from 100 percent \cite{saynevirta2021satellite}.
 
-\subsection{Use cases}
-Critical communications service operators see satellite systems as a complementary coverage and capacity solution. In practice, satellite connectivity does not replace the traditional terrestrial networks but complements them in traditionally difficult-to-serve geographic locations, such as sparcely populated rural areas or maritime settings which have been typically rather poorly served due to the limited commercial potential these regions offer. If deployed to their envisioned state, broadband satellite systems may work as a cost-efficient way to serve these regions thanks to their truly global coverage pattern \cite{saynevirta2021satellite}.
+\subsubsection{Use cases and scenarios}
+Critical communications service operators see satellite systems as a complementary coverage and capacity solution.
+Three main use cases for satellite broadband services in critical communications can be characterised through how long lasting and planned the underlying situations are.
+The coverage and capacity needs can be either permanent, planned temporary or unplanned temporary in nature.
 
-Implementation-wise, satellite networks are in the short-to-medium term envisioned to integrate into the terrestrial networks through portable tactical bubbles, where the satellite link serves as a backhaul solution for a local (?100 meters to kilometers?) wireless connectivity bubble. In practice, current equipment form factor and cost supports best a vehicular deployment model. For example the French RRF envisions satellite networks as one backhaul option for its vehicular relay (\textit{relais végiculaire}), an emergency vehicle with a tactical bubble for local coverage and capacity. On the other hand, integration point for satellite systems in the Finnish VIRVE2 has been envisioned as command vehicles of fire, rescue and police forces \cite{RRF_VIITE,saynevirta2021satellite}.
+Prevalent geographic conditions are the defining factor of the satellite connectivity use cases.
+Permanent applications tend to be the most obivious, encompassing the traditionally difficult-to-serve regions.
+For example, sparcely populated rural areas and maritime settings have been typically rather poorly served by mobile network operators due to their limited commercial potential.
+On the other hand, the temporary use cases tend to be more varied in terms of the potential types of locations. While coverage augmentation is typically still needed only in underserved locations, capacity needs may arise in areas with normally sufficient terrestrial coverage.
+For example, large events are a typical example of temporary use cases that can be planned for in advance. These include mass events like sports and concerts and political events like state visits and summits.
+Unplanned events can be both man-made or acts of nature and can range from localised to widespread in affected area. For example, natural disasters, like earthquakes, floods, or forest fires, can lead to widespread infrastructure damage, while man-made disasters like airplane crashes or multiple vehicle collisions are usually more limited in terms of the affected area.
 
-Long-term, evolution towards direct-to-smartphone type solutions is a potential development path. 3GPP has been working towards integrating satellite connectivity as one of the options in the 5G Non-terrestial networks (NTN), a development item also present on the longer-reaching 6G roadmaps \cite{6G_ROADMAP, 3GPP_NTN_PAPERS}. It is though worth noting, that these solutions remain rather low in terms of their technological maturity. In-orbit demonstrations of the technology have been very limited in number and work has focused more on the theoretical standardisation work %TODO: \cite{AST_TESTIT, LYNK_TESTIT, SPACEX_TESTIT, PAPEREITA}
+If deployed to their envisioned state, broadband satellite systems may work as a cost-efficient way to serve these regions thanks to their truly global coverage pattern, while the lower user density in these regions is still within the load carrying capacity of these networks.
+
+Temporal domain: forest fire lasts longer than car pileup. Political summits or sports events can last weeks to months.
+
+In practice, satellite connectivity does not replace the traditional terrestrial networks but complements them in 
 
 \subsubsection{Requirements}
 
@@ -801,6 +812,12 @@ Cost considerations are another important point of discussion as they have been 
 For the solutions to become widely used, their monthly cost should be tens of euros for an individual user terminal. If implemented as a vehicular solution, these kinds of monthly costs would lead to a country wide cost in millions of euros.
 
 \subsubsection{Technical considerations}
+
+Implementation-wise, permanent use cases are maybe the most straight forward, as they are can be implemented as a simple FSS backhaul link of an individual base station site. Direct satellite connectivity is also something that may be feasible in these regions long-term, but as was discussed in chapter \ref{ch-constellation-characteristics}, its technological maturity remains relatively low. 
+
+Implementation-wise, satellite networks are in the short-to-medium term envisioned to integrate into the terrestrial networks through portable tactical bubbles, where the satellite link serves as a backhaul solution for a local (?100 meters to kilometers?) wireless connectivity bubble. In practice, current equipment form factor and cost supports best a vehicular deployment model. For example the French RRF envisions satellite networks as one backhaul option for its vehicular relay (\textit{relais véhiculaire}), an emergency vehicle with a tactical bubble for local coverage and capacity. On the other hand, integration point for satellite systems in the Finnish VIRVE2 has been envisioned as command vehicles of fire, rescue and police forces \cite{RRF_VIITE,saynevirta2021satellite}.
+
+Long-term, evolution towards direct-to-smartphone type solutions is a potential development path. 3GPP has been working towards integrating satellite connectivity as one of the options in the 5G Non-terrestial networks (NTN), a development item also present on the longer-reaching 6G roadmaps \cite{6G_ROADMAP, 3GPP_NTN_PAPERS}. It is though worth noting, that these solutions remain rather low in terms of their technological maturity. In-orbit demonstrations of the technology have been very limited in number and work has focused more on the theoretical standardisation work %TODO: \cite{AST_TESTIT, LYNK_TESTIT, SPACEX_TESTIT, PAPEREITA}
 
 Heikkilän taulukko
 
@@ -997,11 +1014,12 @@ This can be thought as  arise where eavesdropping is either simply impossible or
   \item The eavesdropper falls outside the main lobe of the VSAT earth station.
 \end{enumerate}
 
-As discussed in chapter \ref{ch-constellation-data}, broadband VSAT systems operate typically either in the Ku or Ka bands (x and y GHz), with the former being the more commonly used in user links between the orbiting satellite and user terminal and vice-versa.
+As discussed in chapter \ref{ch-constellation-data}, broadband VSAT systems operate typically either in the Ku or Ka bands (12--18 and 26.5--40 GHz), with the former being the more commonly used in user links between the orbiting satellite and user terminal and vice-versa.
 In terms frequencies, both bands fall under super high (SHF, 3-30 GHz) to extremely high frequencies (EHF, 30-300 GHz), where the principal propagation mode is line-of-sight propagation.
 In this mode, the radio horizon of a transmitter can be derived from the Pythagorean theorem, assuming a perfectly spherical planetary body.
 
-Going into the geometry of the problem, line-of-sight distance $d$ and radius of the body $R$ form the legs of a right triangle, while the transmitter's distance from the centre of the body $(R+h)$ is the hypotenuse \cite{seybold2005introduction}. The relationship between the quantities is visualised in figure \ref{fig-interception-range-vacuum}.
+Going into the geometry of the problem, line-of-sight distance $d$ and radius of the body $R$ form the legs of a right triangle, while the transmitter's distance from the centre of the body $(R+h)$ is the hypotenuse \cite{seybold2005introduction}.
+The relationship between the quantities is visualised in figure \ref{fig-interception-range-vacuum}.
 
 % TODO: SELITÄ MIKSI VOIDAAN APROKSIMOIDA TOISESSA VIRKKEESSÄ
 
