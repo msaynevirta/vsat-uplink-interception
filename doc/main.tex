@@ -189,6 +189,8 @@
 \usepackage{siunitx}
 
 \usepackage{booktabs}
+\usepackage{pdflscape}
+\usepackage[pass]{geometry}
 
 \usepackage{bm}
 
@@ -660,8 +662,9 @@ Starlink's cell pattern is based on Uber's H3 hexagonal cell system. Each spot b
 
 \subsubsection{Types and characteristics}
 
-Following regulatory classes is one way to assess platform characteristics, especially when it comes to the lighter end of systems. For example, regulatory bodies, such as EASA within the EU, draw a maximum take-off mass (MTOM) limit for higher risk drone activities at 25 kg in their risk-based approach introduced in 2020. EASA splits UAS into three distinct operational categories, which are open, specific and certified. The risk model considers MTOM of the UAS, whether its payload is hazardous and whether it is flown in visual line-of-sight of the operator and at what altitude \cite{alamouri2021exploratory}.
 % TODO: Vertailutaulukko (ehkä liitteeseen?)
+
+Following regulatory classes is one way to assess platform characteristics, especially when it comes to the lighter end of systems. For example, regulatory bodies, such as EASA within the EU, draw a maximum take-off mass (MTOM) limit for higher risk drone activities at 25 kg in their risk-based approach introduced in 2020. EASA splits UAS into three distinct operational categories, which are open, specific and certified. The risk model considers MTOM of the UAS, whether its payload is hazardous and whether it is flown in visual line-of-sight of the operator and at what altitude \cite{alamouri2021exploratory}.
 
 \subsection{Signals intelligence}
 Signals intelligence (SIGINT) is intelligence gathering through the exploitation of communication systems and noncommunications emitters.
@@ -1355,9 +1358,95 @@ Security of commercial satellite systems is a rather young field of study and mu
 
 \thesisappendix
 
+%\newgeometry{margin={1.5in,0in}}
+
+%\thispagestyle{empty}
+\begin{landscape}
 \section{Appendix: Comparison of broadband satellite systems\label{appendix-constellation-comparison}}
 
-TAULUKKO TÄHÄN
+\begin{table}[h]
+  \centering
+  \makebox[0pt][c]{
+  \begin{tabular}{@{}lllllllll@{}}
+  \toprule
+  \multicolumn{1}{c}{Operator} &
+    \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Frequency\\ band\end{tabular}} &
+    \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Number of\\ satellites,\\ ph. 1\\ (launced /\\ planned)\end{tabular}} &
+    \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Number of\\ satellites,\\ ph. 2\\ (launced /\\ planned)\end{tabular}} &
+    \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Orbital altitude\\ (km)\end{tabular}} &
+    \multicolumn{1}{c}{Mass of a satellite (kg)} &
+    \multicolumn{1}{c}{UT datarate} &
+    \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Satellite\\ throughput\end{tabular}} &
+    \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Country\\ of\\ origin\end{tabular}} \\ \midrule
+  \begin{tabular}[c]{@{}l@{}}Amazon\\ Kuiper\end{tabular} &
+    Ka &
+    0 / 548 &
+    0 / 3236 &
+    590-630 &
+     &
+    400 Mbps in tests &
+     &
+    US \\
+  OneWeb &
+    Ku, Ka &
+    648 / 648 &
+    0 / 6372 &
+    1200 &
+    150 &
+     &
+    10 Gbps &
+    UK \\ \addlinespace[0.5em]
+  \begin{tabular}[c]{@{}l@{}}SpaceX\\ Starlink\end{tabular} &
+    \begin{tabular}[c]{@{}l@{}}Ku, Ka\\ V, E, S\end{tabular} &
+    x / 4408 &
+    0 / 7518 &
+    \begin{tabular}[c]{@{}l@{}}$\sim$550 (ph. 1),\\ $\sim$350 (ph. 2)\end{tabular} &
+    270-TODO &
+    150 / 15 Mbps &
+     &
+    US \\ \addlinespace[0.5em]
+  \begin{tabular}[c]{@{}l@{}}Telesat\\ Lightspeed\end{tabular} &
+    Ka &
+    0 / 298 &
+    0 / 1671 &
+    1015, 1325 &
+    700 &
+    \begin{tabular}[c]{@{}l@{}}7.5 Gbps UT,\\ 20 Gbps "hotspot"\end{tabular} &
+     &
+    Canada \\ \addlinespace[0.5em]
+  \begin{tabular}[c]{@{}l@{}}AST\\ SpaceMobile\end{tabular} &
+    S, V &
+    0 / 20 &
+    0 / 223 &
+    700 &
+    1500 &
+    35 / 3 Mbps &
+     &
+    US \\ \addlinespace[0.5em]
+  Lynk &
+    S &
+    0 / 5000 &
+     &
+    500 &
+    85 &
+     &
+     &
+    US \\ \addlinespace[0.5em]
+  \begin{tabular}[c]{@{}l@{}}Iridium\\ NEXT\end{tabular} &
+    L &
+    75 / 66 &
+     &
+    780 &
+    680 &
+     &
+     &
+    US \\ \bottomrule
+  \end{tabular}
+  }
+\end{table}
+
+\end{landscape}
+
 
 \clearpage
 \section{Appendix: Matlab code\label{appendix-matlab-code}}
