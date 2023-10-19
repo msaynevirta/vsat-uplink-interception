@@ -1,0 +1,2 @@
+No GP data found for NORAD Catalog Number 48969 for the time
+period requested. Object decayed prior to start of request.
