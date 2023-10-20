@@ -1,7 +1,7 @@
 %% OneWeb visualisation
 
-startTime=datetime("17-Oct-2023 9:00:00");
-endTime=datetime("17-Oct-2023 9:02:25");
+startTime=datetime("28-Feb-2023 20:30:00");
+endTime=datetime("28-Feb-2023 21:32:25");
 sampleTime=60;
 
 sc = satelliteScenario(startTime, endTime, sampleTime);
@@ -23,13 +23,14 @@ set(serverWormerveer, MarkerColor="Green");
 set(popLondon, ShowLabel=false);
 set(popLondon, MarkerColor="Yellow");
 
-ow = satellite(sc, "src/oneweb.tle", Name="OW");
+ow = satellite(sc, "data/processed/oneweb_2023-03-01.tle");
 
-set(ow(1:636), ShowLabel=false);
-set(ow(1:636), MarkerSize=3);
-set(ow(1:636).Orbit, LineWidth=1);
+set(ow(1:length(ow)), ShowLabel=false);
+set(ow(1:length(ow)), MarkerSize=3);
+%set(ow(1:length(ow)).Orbit, LineWidth=1);
+%set(ow(1:length(ow)).Orbit, LineColor="none");
 
-viewer3D = satelliteScenarioViewer(sc, Basemap="bluegreen");
+viewer3D = satelliteScenarioViewer(sc, Basemap="bluegreen", ShowDetails=false);
 
 %% Camera position
 campos(viewer3D, 40, 18);
