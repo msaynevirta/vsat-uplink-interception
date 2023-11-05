@@ -12,7 +12,9 @@
         axis lines = middle,
         xlabel = {endurance (h)},
         ylabel = {altitude (km)},
-        xmin=0, xmax=40,
+        x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+        y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},
+        xmin=0, xmax=39,
         ymin=0, ymax=75]
         
         % HALE
