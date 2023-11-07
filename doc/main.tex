@@ -683,12 +683,60 @@ Department of Homeland Security in terms of operational altitude and endurance.
 \end{figure}
 
 In \cite{watts2012unmanned}, the authors looked at classifying variety of unmanned aerial systems (UAS) platforms and sensor payloads based on their capabilities and applicability for meeting the demands of users in the scientific research sector.
-The authors adopted a UAS classification framework that draws heavily from earlier military categorizations used by the security establishment in the United States. The framework divides UAS platforms into seven categories based upon characteristics such as size, flight endurance, and capabilities.
+The authors adopted a UAS classification framework that draws heavily from earlier military categorizations used by the security establishment in the United States.
+The framework divides UAS platforms into seven categories based upon characteristics such as size, flight endurance, and capabilities.
 The categories are in ascending order by mass and performance micro air vehicles (MAV), vertical takeoff or landing craft (VTOL), low altitude short endurance UAS (LASE), close proximity LASE UAS (LASE Close), as well as low, medium and high altitude long endurance UAS (LALE, MALE and HALE).
+Figure \ref{fig-3d-dhs-uas-classification} presents the prior categories in terms of MTOM and operational altitude with LASE and LASE Close combined into a single category.
 
-U.S. Department of Defence (DoD) has used a joint classification scheme for UAS since early 2010s. As described in \cite{jp3-30}, the classification encompasses all platforms that the different branches had in use at the time. The scheme categorises UAS into five groups based on the MTOM, operational altitude and speed of the platform. Figure \ref{fig-3d-dhs-uas-classification} presents the five DoD UAS groups in terms of MTOM and operational altitude with example systems as additional data points.
+\begin{table}[tb]
+  \centering
+  \caption{UAS classification groups of the U.S. DoD.}
+  \begin{tabular}{@{}lllll@{}}
+  \toprule
+  \begin{tabular}[c]{@{}l@{}}UAS\\ category\end{tabular} &
+    \begin{tabular}[c]{@{}l@{}}Maximum\\ Gross Takeoff\\ Weight (kg)\end{tabular} &
+    \begin{tabular}[c]{@{}l@{}}Normal\\ Operating\\ Altitude (m)\end{tabular} &
+    \begin{tabular}[c]{@{}l@{}}Speed\\ (IAS, km/h)\end{tabular} &
+    \begin{tabular}[c]{@{}l@{}}Representative\\ UAS\end{tabular} \\ \midrule
+  Group 1 &
+    0 -- 9 kg &
+    \textless 370 AGL &
+    190 &
+    \begin{tabular}[c]{@{}l@{}}WASP III,\\ TACMAV RQ-14A/B\\ Buster,\\ Nighthawk,\\ RQ-11B,\\ FPASS,\\ RQ-16A,\\ Pointer,\\ Aqua/Terra Puma\end{tabular} \\ \addlinespace[0.5em]
+  Group 2 &
+    9 -- 25 kg &
+    \textless 1000 AGL &
+    \textless 460 &
+    \begin{tabular}[c]{@{}l@{}}ScanEagle,\\ Silver Fox,\\ Aerosonde\end{tabular} \\ \addlinespace[0.5em]
+  Group 3 &
+    \textless 600 kg &
+    \textless 5500 MSL &
+    \textless 460 &
+    \begin{tabular}[c]{@{}l@{}}RQ-7B Shadow,\\ RQ-15 Neptune,\\ XPV-1 Tern,\\ XPV-2 Mako\end{tabular} \\ \addlinespace[0.5em]
+  Group 4 &
+    \textgreater 600 kg &
+    \textless 5500 MSL &
+    Any airspeed &
+    \begin{tabular}[c]{@{}l@{}}MQ-5B Hunter,\\ MQ-8B Fire Scout,\\ MQ-1C Grey Eagle,\\ MQ-1A/B/C Predator\end{tabular} \\ \addlinespace[0.5em]
+  Group 5 &
+    \textgreater 600 kg &
+    \textgreater 5500 MSL &
+    Any airspeed &
+    \begin{tabular}[c]{@{}l@{}}MQ-9 Reaper,\\ RQ-4 Global Hawk,\\ RQ-4N Triton\end{tabular} \\ \bottomrule
+  \end{tabular}
+  \label{table-dod-uas-groups}
+\end{table}
 
-In \cite{hassanalian2017classifications}, the authors propose a more fine grained classification. While the classification is very detailed in terms of different structural sub-types, the basic approach is still similar to previous classification models following a mass-and-size-based approach. On the highest level, their classification breaks UAS into six categories: normal and small UAVs, and micro-, nano- and pico air vehicles (MAV, NAV and PAV). The mass-and-size top-level classification is complemented by a more fine grained structural configuration based classification. Figure \ref{fig-hassanalian-uas-classification} presents the UAV classification in more detail.
+It is worth noting, that the U.S. Department of Defence (DoD) switched to a joint classification scheme for UAS in early 2010s.
+As described in \cite{jp3-30}, the classification encompasses all platforms that the different branches had in use when the scheme was introduced.
+The DoD scheme categorises UAS into five groups based on the MTOM, operational altitude and speed of the platform.
+Table \ref{table-dod-uas-groups} presents the DoD UAS groups as they are defined in \cite{jp3-30}.
+The imperial units of the original classification have been converted to metric and rounded for the sake of readability.
+
+In \cite{hassanalian2017classifications}, the authors propose a more fine grained classification. 
+While the classification is very detailed in terms of different structural sub-types, the basic approach is still similar to previous classification models following a mass-and-size-based approach.
+On the highest level, their classification breaks UAS into six categories: normal and small UAVs, and micro-, nano- and pico air vehicles (MAV, NAV and PAV).
+The mass-and-size top-level classification is complemented by a more fine grained structural configuration based classification. Figure \ref{fig-hassanalian-uas-classification} presents the UAV classification in more detail.
 
 \begin{figure}[h]
   \centering
