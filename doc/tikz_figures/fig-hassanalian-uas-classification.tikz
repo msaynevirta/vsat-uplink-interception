@@ -1,0 +1,94 @@
+\usetikzlibrary{trees,positioning,shapes,shadows,arrows.meta}
+
+\tikzset{
+  basic/.style  = {draw, minimum height=5mm, text width=20mm, font=\scriptsize, rectangle},
+  root/.style   = {basic, text width=20mm, rounded corners=2pt, thin, align=center, fill=white},
+  level-2/.style = {basic, text width=10mm, rounded corners=2pt, thin,align=center, fill=white},
+  level-3/.style = {basic, text width=20mm, thick, align=center, fill=white}
+}
+
+\begin{tikzpicture}[
+  level 1/.style={sibling distance=27mm, level distance=10mm},
+%   {edge from parent fork down},
+  edge from parent/.style={solid,black,thick,sloped,draw}, 
+  edge from parent path={(\tikzparentnode.south) -- (\tikzchildnode.north)},
+  >=latex, node distance=6mm, edge from parent fork down]
+
+% root of the the initial tree, level 1
+\node[root] {Classes of UAS}
+% The first level, as children of the initial tree
+  child {node[level-2] (c1) {UAV}}
+  child {node[level-2] (c2) {$\mathrm{\mu}$UAV}}
+  child {node[level-2] (c3) {MAV}}
+  child {node[level-2] (c4) {NAV}}
+  child {node[level-2] (c5) {PAV}}
+  child {node[level-2] (c6) {SD}};
+
+% The second level, relatively positioned nodes
+\begin{scope}[every node/.style={level-3}]
+\node [below of = c1, xshift=8mm] (c11) {HTOL};
+\node [below of = c11] (c12) {VTOL};
+\node [below of = c12] (c13) {Tilt-rotor};
+\node [below of = c13] (c14) {Tilt-wing};
+\node [below of = c14] (c15) {Tilt-body};
+\node [below of = c15] (c16) {Ducted fan};
+\node [below of = c16] (c17) {Helicopter};
+\node [below of = c17] (c18) {Heli-wing};
+\node [below of = c18] (c19) {Unconventional};
+
+\node [below of = c2, xshift=8mm] (c21) {HTOL};
+\node [below of = c21] (c22) {VTOL};
+\node [below of = c22] (c23) {Tilt-rotor};
+\node [below of = c23] (c24) {Tilt-wing};
+\node [below of = c24] (c25) {Tilt-body};
+\node [below of = c25] (c26) {Ducted fan};
+\node [below of = c26] (c27) {Helicopter};
+\node [below of = c27] (c28) {Cyclocopter};
+\node [below of = c28] (c29) {Flapping wing};
+\node [below of = c29] (c210) {Ornicopter};
+\node [below of = c210] (c211) {Unconventional};
+
+\node [below of = c3, xshift=8mm] (c31) {Fixed-wing};
+\node [below of = c31] (c32) {VTOL};
+\node [below of = c32] (c33) {Tilt-rotor};
+\node [below of = c33] (c34) {Ducted fan};
+\node [below of = c34] (c35) {Helicopter};
+\node [below of = c35] (c36) {Flapping wing};
+\node [below of = c36] (c37) {Ornicopter};
+\node [below of = c37] (c38) {Unconventional};
+\node [below of = c38] (c39) {Bio MAV};
+\node [below of = c39] (c310) {Rotary wing};
+\node [below of = c310, yshift=-0.5pt ,xshift=14.2pt, text width=30mm] (c311) {Fixed / flapping wing};
+
+\node [below of = c4, xshift=8mm] (c41) {Fixed-wing};
+\node [below of = c41] (c42) {Flapping wing};
+\node [below of = c42] (c43) {Helicopter};
+\node [below of = c43] (c44) {Monocopter};
+\node [below of = c44] (c45) {Quadcopter};
+\node [below of = c45] (c46) {Hexacopter};
+\node [below of = c46] (c47) {Bio NAV};
+\node [below of = c47] (c48) {Unconventional};
+
+
+\node [below of = c5, xshift=8mm] (c51) {Flapping wing};
+\node [below of = c51] (c52) {Monocopter};
+\node [below of = c52] (c53) {Quadcopter};
+\node [below of = c53] (c54) {Bio PAV};
+\end{scope}
+
+% lines from each level 1 node to every one of its "children"
+\foreach \value in {1,...,9}
+  \draw (c1.205) |- (c1\value.west);
+
+\foreach \value in {1,...,11}
+  \draw (c2.205) |- (c2\value.west);
+
+\foreach \value in {1,...,11}
+  \draw (c3.205) |- (c3\value.west);
+  
+\foreach \value in {1,...,8}
+  \draw (c4.205) |- (c4\value.west);
+
+\foreach \value in {1,...,4}
+  \draw (c5.205) |- (c5\value.west);
+\end{tikzpicture}
