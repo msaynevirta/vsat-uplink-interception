@@ -567,7 +567,7 @@ SES O3b and Iridium while providing the services also at a price point that is c
 
 The services are built around vendor-specific user terminals working as WiFi routers that relay the communications on dedicated Ka and Ku-band frequencies to the satellite constellation.
 
-\subsubsection{OneWeb system architecture}
+\subsubsection{OneWeb system architecture} \label{ch-oneweb}
 % TODO: Beam forming etc. painotusta pitää säätää uuden suunnan mukaiseksi
 
 %%%%%%%%%%%%%%%%%%  FIGURE: ONEWEB NETWORK ARCHITECTURE HERE  %%%%%%%%%%%%%%%%%%
@@ -604,14 +604,21 @@ This has multiple consequences for \cite{corson2019admission}
 In satellite systems, the link from gateway to UT via satellite is referred to as the forward link while the direction from UT to gateway is referred to as the return link.
 It is worth noting that both up- and downlink communications happen simultaneously in both forward and return links.
 For example in the return direction, a UT uplinks to and the gateway downlinks from the satellite \cite{kymeta2019link}.
-
-OneWeb satellite system makes use of a bent pipe architecture for both its forward and return links.
-In the forward direction, each Ku-band user terminal downlink maps onto a predetermined Ka-band gateway uplink and vice-versa in the return direction .
-Despite the similarities, balance in terms of capacity between the forward and return links is not necessarily symmetrical.
+Despite their similarities, capacity of a forward and a return link is not necessarily symmetrical.
 In OneWeb's case, forward link is roughly five times the capacity of the return link \cite{worldvu2016loi, portillo2019technical}.
 
-OneWeb satellite system makes use of a bent pipe architecture for both its forward and return links.
-In the forward direction, each Ku-band user terminal downlink maps onto a predetermined Ka-band gateway uplink and vice-versa in the return direction \cite{worldvu2016loi, portillo2019technical}.
+OneWeb satellite system makes use of a bent pipe architecture for both its forward and return links. In the forward direction, each Ku-band user terminal downlink maps onto a predetermined Ka-band gateway uplink and vice-versa in the return direction. \cite{worldvu2016loi, portillo2019technical}
+
+Different transmission schemes are employed depending on the link direction. In the forward direction, transmissions utilise time-division multiplexing on a single 250 MHz wideband carrier. Each user terminal receives the carrier and demodulates it, extracting relevant payload information based on the headers. \cite{worldvu2016loi}
+
+a modified LTE waveform capable
+of adaptive modulation and coding \cite{allen2022terrestrial}
+
+In the return direction, transmissions utilise a single-carrier time and frequency division multiple access (SC-TDMA/FDMA) scheme. Return direction user terminal to satellite links transmit data in time bursts on a relatively narrow carrier that varies between 1.25 MHz and 20 MHz in bandwidth. Multiple user terminals are able to access a single uplink carrier based on time slots allocated by the network control centre. Terminals are also able to access multiple uplink carriers based on the FDMA channel arrangement of the satellite in question. \cite{worldvu2016loi}
+
+Generally speaking, Ka-band gateway-to-satellite links are asymmetric in nature. In terms of their channel configuration, the links employ 16 up and downlink channels, bandwidth of individual channels being 155 MHz in the uplink and 250 MHz in the downlink direction. The links alternate between right and left-hand polarised (RHCP / LHCP) signals. \cite{portillo2019technical}
+
+Similar to the gateway links, the Ku-band satellite-to-user terminal links are asymmetric in nature, but at the same time they are more limited in terms of the available bandwidth. The four uplink channels occupy 125 MHz of bandwidth while there are eight 250 MHz downlink channels. Unlike the gateway links, the polarisation scheme of the signals is fixed based on the link direction, where uplink utilises RHCP and downlink LHCP. \cite{portillo2019technical}
 
 \subsubsection{Starlink system architecture}
 
@@ -1361,7 +1368,7 @@ Transmission and jamming power levels $S$ and $J$ at the receiver can be calcula
 
 In some cases, jammer may even be at an advantage based on their geographical location through a shorter signal path and smaller free space path loss, as demonstrated in \cite{pavur2022defcon}.
 Minimum CNR requirements for modulation and coding schemes (modcod) determine the ability of the jammer to interfere with the legitimate transmission.
-For example, OneWeb uses adaptive modcod scheme, QPSK, 8PSK, 16-QAM. Higher end requires significantly greater CNR at the receiver, while the lower end can still function even with very low CNR, if significant forward error correction (FEC) is utilised. \cite{allen2022terrestrial,etsi2012en302307}
+As discussed in chapter \ref{ch-oneweb}, OneWeb uses adaptive modcod scheme comprised of QPSK, 8PSK and 16-QAM modulation techniques. Higher end requires significantly greater CNR at the receiver, while the lower end can still function even with very low CNR, if significant forward error correction (FEC) is utilised. \cite{allen2022terrestrial,etsi2012en302307}
 
 Jamming of the uplink signal can be done from both aircraft and earth-bound platforms.
 
