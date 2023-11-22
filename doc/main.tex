@@ -255,7 +255,7 @@
 
 %% The date for the bachelor's thesis is the day it is presented
 %%
-\date{25.9.2023}
+\date{31.12.2023}
 %%
 
 %% Thesis supervisor
@@ -279,7 +279,7 @@
 %% \uselogo{aaltoRed|aaltoBlue|aaltoYellow|aaltoGray|aaltoGrayScale}{?|!|''}
 %% The logo language is set to be the same as the thesis language.
 %%
-\uselogo{aaltoBlue}{!}
+\uselogo{aaltoBlack}{!}
 %%
 
 %% The English abstract:
@@ -376,7 +376,7 @@ text must be identical to the text on the abstract page.
 %% you can use the text metadata abstract directly as follows:
 %%
 %\begin{abstractpage}[english]
-%	\abstracttext{}
+%	\abstracttext{} 
 %\end{abstractpage}
 
 %% Force a new page so that the possible Finnish or Swedish abstract does not
@@ -393,7 +393,7 @@ text must be identical to the text on the abstract page.
 \advisor{DI Tapio Savunen}
 \degreeprogram{Elektroniikka ja sähkötekniikka}
 %\department{Elektroniikan ja nanotekniikan laitos}
-\major{Elektroniset ja digitaaliset järjestelmät (TARKISTA)}
+\major{Elektroniset ja digitaaliset järjestelmät}
 %% The keywords need not be separated by \spc now.
 \keywords{Vastus, resistanssi, lämpötila}
 %% Abstract text
@@ -1368,33 +1368,38 @@ Vary EIRP or jammer and SLL of the receiver
 
 Effect of large number of satellites, switching beams. Predictability of frequency pattern -> effect on the jammer?
 
-\begin{table}[]
+End-to-end performance of a communications link can be analysed through a link budget that is a theoretical calculation where gains and losses of a RF system summed with each other in order to compute suitable figures of merit that can be in turn used to characterise the theoretical
+Table \ref{table-ul-jamming-link-budget} presents an uplink link budget for the Kymeta Hawk u8 UT interfacing with the OneWeb LEO megaconstellation. Parameters of the UT are taken from \cite{kymeta2018ses} and the RF capabilities of the space segment of the OneWeb generation 1 constellation are based on the ones outlined in \cite{allen2022terrestrial} and \cite{worldvu2016loi}.
+
+\begin{table}[h]
+  \centering
   \caption{Uplink jamming link budget for Kymeta Hawk u8 flat panel terminal interfacing with the OneWeb LEO constellation.}
-  \begin{tabular}{@{}lll@{}}
-  \toprule
-  \textbf{Variable}                   & \textbf{Value}   & \textbf{Notes} \\ \midrule
-                                      &                  &                \\
-  \textbf{Constants}                  &                  &                \\
-  Athmospheric loss {[}dB{]}          & 0.35             &                \\
-  Bolzmann’s constant {[}dBW/K/Hz{]}  & -228.599         &                \\
-  Speed of light {[}m/s{]}            & 299792458        &                \\
-                                      &                  &                \\
-  \textbf{Satellite parameters}       & \textbf{}        &                \\
-  Transponder bandwidth, RX {[}MHz{]} & 120              &                \\
-  Path distance {[}km{]}              & 1200             &                \\
-  G/T at satellite’s RX {[}dB/K{]}    & 11.4             &                \\
-  Target C/N {[}dB{]}                 & -2.4             & QPSK, 1/4 FEC  \\
-                                      &                  &                \\
-  \textbf{User terminal parameters}   &                  &                \\
-  Frequency {[}MHz{]}                 & 14000            &                \\
-  EIRP {[}dBW{]}                      & 46.5             &                \\
-  Channel bandwidth {[}MHz{]}         & 20               &                \\
-                                      &                  &                \\
-  \textbf{Computed values}            &                  &                \\
-  Path loss {[}dB{]}                  & 176.953968856401 &                \\
-  Channel bandwidth {[}dBHz{]}        & 73.0102999566398 &                \\
-  Received power @ sat {[}dB{]}       & -192.41426881304 &                \\
-  Required jamming power @ sat {[}dB{]} & -190.01426881304 & J \textgreater{}\textgreater N \\ \bottomrule
+  \begin{tabular}{@{}lrl@{}}
+    \toprule
+    Parameter                             & Value     & Notes         \\ \midrule
+                                          &           &               \\
+    Constants                             &           &               \\ \midrule
+    Athmospheric loss {[}dB{]}            & 0.35      &               \\
+    Bolzmann’s constant {[}dBW/K/Hz{]}    & -228.60   &               \\
+    Speed of light {[}m/s{]}              & 3.00E+08  &               \\
+                                          &           &               \\
+    Satellite parameters                  &           &               \\ \midrule
+    Transponder bandwidth, RX {[}MHz{]}   & 120.00    &               \\
+    Path distance {[}km{]}                & 1,200.00  &               \\
+    G/T at satellite’s RX {[}dB/K{]}      & 11.40     &               \\
+    Target SNR {[}dB{]}                   & 1.00      & QPSK, 1/2 FEC \\
+                                          &           &               \\
+    User terminal parameters              &           &               \\ \midrule
+    Frequency {[}MHz{]}                   & 14,000.00 &               \\
+    Broadside EIRP {[}dBW{]}              & 46.50     &               \\
+    Channel bandwidth {[}MHz{]}           & 20.00     &               \\
+                                          &           &               \\
+    Computed values                       &           &               \\ \midrule
+    Free space path loss {[}dB{]}         & 176.95    &               \\
+    Channel bandwidth {[}dBHz{]}          & 73.01     &               \\
+    Received power @ sat {[}dB{]}         & -192.41   &               \\
+    Required jamming power @ sat {[}dB{]} & -193.41   & $J \gg N$     \\ \bottomrule
+    \label{table-ul-jamming-link-budget}
   \end{tabular}
 \end{table}
 
