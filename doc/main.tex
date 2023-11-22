@@ -559,7 +559,7 @@ Metrics for evaluation range from the achieved sky coverage and system throughpu
 
 When considering optimisation, the user segment is the most case-specific of the three.
 End user applications range from communication to sensing and navigation with their optimisation criteria often contradicting each other.
-Here, \cite{celikbilek2022survey} raises a good example with bandwidth and carrier frequency, where higher numbers are generally desired for example in high-throughput communication applications the opposite are better suited for achieving suitable link budgets for example when navigation satellite systems for challenging urban terrain or indoor use.
+Here, \cite{celikbilek2022survey} raises a good example with bandwidth and carrier frequency, where higher numbers are generally desired for example in high-throughput communication applications while the opposite applies to achieving suitable link budgets for example in navigation satellite systems or when users are situated in challenging urban terrain or indoors.
 
 The LEO altitude leads to significantly lower latency and the large number of satellites allows for relatively high overall data throughput when compared with the earlier satellite systems but still significantly lower when compared to terrestrial systems.
 While NGSO constellations are nothing new, the emerging operators are promising to offer magnitudes better broadband service when compared to the earlier services offered by e.g.
@@ -601,8 +601,14 @@ This means that UT handovers happen mostly due to the orbital movement of the sa
 In addition to their moving nature, satellite cells are significantly larger in their coverage area when compared to their terrestrial counterparts.
 This has multiple consequences for \cite{corson2019admission}
 
+In satellite systems, the link from gateway to UT via satellite is referred to as the forward link while the direction from UT to gateway is referred to as the return link.
+It is worth noting that both up- and downlink communications happen simultaneously in both forward and return links.
+For example in the return direction, a UT uplinks to and the gateway downlinks from the satellite \cite{kymeta2019link}.
+
 OneWeb satellite system makes use of a bent pipe architecture for both its forward and return links.
-In the forward direction, each Ku-band user terminal downlink maps onto a predetermined Ka-band gateway uplink and vice-versa in the return direction \cite{worldvu2016loi, portillo2019technical}.
+In the forward direction, each Ku-band user terminal downlink maps onto a predetermined Ka-band gateway uplink and vice-versa in the return direction .
+Despite the similarities, balance in terms of capacity between the forward and return links is not necessarily symmetrical.
+In OneWeb's case, forward link is roughly five times the capacity of the return link \cite{worldvu2016loi, portillo2019technical}.
 
 OneWeb satellite system makes use of a bent pipe architecture for both its forward and return links.
 In the forward direction, each Ku-band user terminal downlink maps onto a predetermined Ka-band gateway uplink and vice-versa in the return direction \cite{worldvu2016loi, portillo2019technical}.
@@ -1369,7 +1375,9 @@ Vary EIRP or jammer and SLL of the receiver
 Effect of large number of satellites, switching beams. Predictability of frequency pattern -> effect on the jammer?
 
 End-to-end performance of a communications link can be analysed through a link budget that is a theoretical calculation where gains and losses of a RF system summed with each other in order to compute suitable figures of merit that can be in turn used to characterise the theoretical
-Table \ref{table-ul-jamming-link-budget} presents an uplink link budget for the Kymeta Hawk u8 UT interfacing with the OneWeb LEO megaconstellation. Parameters of the UT are taken from \cite{kymeta2018ses} and the RF capabilities of the space segment of the OneWeb generation 1 constellation are based on the ones outlined in \cite{allen2022terrestrial} and \cite{worldvu2016loi}.
+Table \ref{table-ul-jamming-link-budget} presents an uplink link budget for the Kymeta Hawk u8 UT interfacing with the OneWeb LEO megaconstellation.
+Parameters of the UT are taken from \cite{kymeta2022hawk} and \cite{kymeta2020mod}, while parameters for the space segment of the OneWeb constellation are based on the values in \cite{worldvu2016loi} and \cite{allen2022terrestrial} for the first generation constellation.
+For the advantage of the legitimate user, the modcod scheme is assumed to be the less demanding QPSK with $1/2$ FEC.
 
 \begin{table}[h]
   \centering
@@ -1402,6 +1410,9 @@ Table \ref{table-ul-jamming-link-budget} presents an uplink link budget for the 
     \label{table-ul-jamming-link-budget}
   \end{tabular}
 \end{table}
+
+The computations show that the jammer needs to achieve \SI{1}{\deci\bel} smaller signal power at the satellite than the legitimate transmitter, meaning still a certain degree of advantage to the jammer at even the baseline scenario.
+
 
 \section{Discussion}
 \subsubsection{Eavesdropping}
