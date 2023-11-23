@@ -409,8 +409,7 @@ text must be identical to the text on the abstract page.
 %% This section is optional. Remove it if you do not want a preface.
 \mysection{Preface}
 %\mysection{Esipuhe}
-I want to thank Professor Pirjo Professori and my instructor Dr Alan Advisor for 
-their good and poor guidance.\\
+I want to thank Professor Pirjo Professori and my instructor Dr Alan Advisor for their good and poor guidance.\\
 
 \vspace{5cm}
 Espoo, 31.7.2023
@@ -1344,7 +1343,7 @@ Jamming relies on the deliberately weakening of the useful signal in relation to
   \text{SJNR} = \frac{S}{J+N}
 \end{equation*}
 
-Transmission and jamming power levels $S$ and $J$ at the receiver can be calculated from the following equations.
+Transmission and jamming power levels $S$ and $J$ in decibel-watts (dBW) at the receiver can be calculated from the following equations.
 
 \begin{equation} \label{eq-signal-power-full}
   S = P_t + G_{tr}-L_t-L_{tr}(R_{tr})+G_{rt}-L_r \qquad \text{[dBW]}
@@ -1368,16 +1367,16 @@ Table \ref{table-ul-jamming-link-budget} presents an uplink link budget for the 
 Parameters of the UT are taken from \cite{kymeta2022hawk} and \cite{kymeta2020mod}, while parameters for the space segment of the OneWeb constellation are based on the values in \cite{worldvu2016loi} and \cite{allen2022terrestrial} for the first generation constellation.
 For the advantage of the legitimate user, the modcod scheme is assumed to be the less demanding QPSK with $1/2$ FEC.
 
-Free space path loss (FSPL) was computed from equation \ref{eq-fspl} based on the approximate orbital altitude satellites $d$ in meters and UL frequency $f$ in hertz.
+Free space path loss (FSPL) in decibels was computed from equation \ref{eq-fspl} based on the approximate orbital altitude satellites $d$ in meters and UL frequency $f$ in hertz.
 
 \begin{equation} \label{eq-fspl}
-  \mathrm{FSPL} = 20\log(d)+20\log(f)-20\log(4\pi / c)
+  \mathrm{FSPL} = 20\log(d)+20\log(f)-20\log(4\pi / c) \qquad \text{[dB]}
 \end{equation}
 
 Equation \ref{eq-signal-power-full} was then simplified by summing the transmitter and jammer-related variables into the figure of effective isotropic radiated power (EIRP) with the satellite's receiver side boiled down to the figure of gain-to-noise-temperature (G/T). On the propagation side, both the legitimate transmitter and the jammer were assumed to be earth-bound. This allows the propagation losses to be estimated with the figures of FSPL and athmospheric loss. For the latter, a figure of \SI{0.35}{\deci\bel} from \cite{kymeta2019link} was applied. SNR was also normalised over \SI{1}{\hertz} of bandwidth.
 
 \begin{equation} \label{eq-signal-power-simplified}
-  S_{rx} = \mathrm{EIRP} - \mathrm{FSPL} - L_{ath} + \mathrm{G/T}_{sat}
+  S_{rx} = \mathrm{EIRP} - \mathrm{FSPL} - L_{ath} + \mathrm{G/T}_{sat} \qquad \text{[dBW]}
 \end{equation}
 
 \begin{table}[h]
@@ -1511,88 +1510,93 @@ Security of commercial satellite systems is a rather young field of study and mu
 
 %\thispagestyle{empty}
 \begin{landscape}
-\section{Appendix: Comparison of broadband satellite systems\label{appendix-constellation-comparison}}
+  \thispagestyle{empty}
 
-\begin{table}[h]
-  \centering
-  \makebox[0pt][c]{
-  \begin{tabular}{@{}lllllllll@{}}
-  \toprule
-  \multicolumn{1}{c}{Operator} &
-    \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Frequency\\ band\end{tabular}} &
-    \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Number of\\ satellites,\\ ph. 1\\ (launced /\\ planned)\end{tabular}} &
-    \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Number of\\ satellites,\\ ph. 2\\ (launced /\\ planned)\end{tabular}} &
-    \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Orbital altitude\\ (km)\end{tabular}} &
-    \multicolumn{1}{c}{Mass of a satellite (kg)} &
-    \multicolumn{1}{c}{UT datarate} &
-    \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Satellite\\ throughput\end{tabular}} &
-    \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Country\\ of\\ origin\end{tabular}} \\ \midrule
-  \begin{tabular}[c]{@{}l@{}}Amazon\\ Kuiper\end{tabular} &
-    Ka &
-    0 / 548 &
-    0 / 3236 &
-    590-630 &
-     &
-    400 Mbps in tests &
-     &
-    US \\
-  OneWeb &
-    Ku, Ka &
-    648 / 648 &
-    0 / 6372 &
-    1200 &
-    150 &
-     &
-    10 Gbps &
-    UK \\ \addlinespace[0.5em]
-  \begin{tabular}[c]{@{}l@{}}SpaceX\\ Starlink\end{tabular} &
-    \begin{tabular}[c]{@{}l@{}}Ku, Ka\\ V, E, S\end{tabular} &
-    x / 4408 &
-    0 / 7518 &
-    \begin{tabular}[c]{@{}l@{}}$\sim$550 (ph. 1),\\ $\sim$350 (ph. 2)\end{tabular} &
-    270-TODO &
-    150 / 15 Mbps &
-     &
-    US \\ \addlinespace[0.5em]
-  \begin{tabular}[c]{@{}l@{}}Telesat\\ Lightspeed\end{tabular} &
-    Ka &
-    0 / 298 &
-    0 / 1671 &
-    1015, 1325 &
-    700 &
-    \begin{tabular}[c]{@{}l@{}}7.5 Gbps UT,\\ 20 Gbps "hotspot"\end{tabular} &
-     &
-    Canada \\ \addlinespace[0.5em]
-  \begin{tabular}[c]{@{}l@{}}AST\\ SpaceMobile\end{tabular} &
-    S, V &
-    0 / 20 &
-    0 / 223 &
-    700 &
-    1500 &
-    35 / 3 Mbps &
-     &
-    US \\ \addlinespace[0.5em]
-  Lynk &
-    S &
-    0 / 5000 &
-     &
-    500 &
-    85 &
-     &
-     &
-    US \\ \addlinespace[0.5em]
-  \begin{tabular}[c]{@{}l@{}}Iridium\\ NEXT\end{tabular} &
-    L &
-    75 / 66 &
-     &
-    780 &
-    680 &
-     &
-     &
-    US \\ \bottomrule
-  \end{tabular}
-  }
-\end{table}
+  \section{Appendix: Comparison of broadband satellite systems\label{appendix-constellation-comparison}}
+
+  \begin{table}[h]
+    \centering
+    \makebox[0pt][c]{
+    \begin{tabular}{@{}lllllllll@{}}
+    \toprule
+    \multicolumn{1}{c}{Operator} &
+      \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Frequency\\ band\end{tabular}} &
+      \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Number of\\ satellites,\\ ph. 1\\ (launced /\\ planned)\end{tabular}} &
+      \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Number of\\ satellites,\\ ph. 2\\ (launced /\\ planned)\end{tabular}} &
+      \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Orbital altitude\\ (km)\end{tabular}} &
+      \multicolumn{1}{c}{Mass of a satellite (kg)} &
+      \multicolumn{1}{c}{UT datarate} &
+      \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Satellite\\ throughput\end{tabular}} &
+      \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Country\\ of\\ origin\end{tabular}} \\ \midrule
+    \begin{tabular}[c]{@{}l@{}}Amazon\\ Kuiper\end{tabular} &
+      Ka &
+      0 / 548 &
+      0 / 3236 &
+      590-630 &
+      &
+      400 Mbps in tests &
+      &
+      US \\
+    OneWeb &
+      Ku, Ka &
+      648 / 648 &
+      0 / 6372 &
+      1200 &
+      150 &
+      &
+      10 Gbps &
+      UK \\ \addlinespace[0.5em]
+    \begin{tabular}[c]{@{}l@{}}SpaceX\\ Starlink\end{tabular} &
+      \begin{tabular}[c]{@{}l@{}}Ku, Ka\\ V, E, S\end{tabular} &
+      x / 4408 &
+      0 / 7518 &
+      \begin{tabular}[c]{@{}l@{}}$\sim$550 (ph. 1),\\ $\sim$350 (ph. 2)\end{tabular} &
+      270-TODO &
+      150 / 15 Mbps &
+      &
+      US \\ \addlinespace[0.5em]
+    \begin{tabular}[c]{@{}l@{}}Telesat\\ Lightspeed\end{tabular} &
+      Ka &
+      0 / 298 &
+      0 / 1671 &
+      1015, 1325 &
+      700 &
+      \begin{tabular}[c]{@{}l@{}}7.5 Gbps UT,\\ 20 Gbps "hotspot"\end{tabular} &
+      &
+      Canada \\ \addlinespace[0.5em]
+    \begin{tabular}[c]{@{}l@{}}AST\\ SpaceMobile\end{tabular} &
+      S, V &
+      0 / 20 &
+      0 / 223 &
+      700 &
+      1500 &
+      35 / 3 Mbps &
+      &
+      US \\ \addlinespace[0.5em]
+    Lynk &
+      S &
+      0 / 5000 &
+      &
+      500 &
+      85 &
+      &
+      &
+      US \\ \addlinespace[0.5em]
+    \begin{tabular}[c]{@{}l@{}}Iridium\\ NEXT\end{tabular} &
+      L &
+      75 / 66 &
+      &
+      780 &
+      680 &
+      &
+      &
+      US \\ \bottomrule
+    \end{tabular}
+    }
+  \end{table}
+
+  \vfill
+\raisebox{-10pt}{\makebox[\linewidth]{\thepage}}
 
 \end{landscape}
 
