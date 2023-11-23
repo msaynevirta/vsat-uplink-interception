@@ -1423,9 +1423,17 @@ Most of the devices are highly classified military technology, exacerbating the 
 \section{Discussion}
 \subsubsection{Eavesdropping}
 % Ylen artikkeli venäjän radalla olevista GEO-kuuntelusta, vrt. ikkunan pituuteen ja liiketekijöihin.
+For example, Russia has been flying a Luch-2 military satellite in proximity of western geostationary communications satellites. Figure \ref{fig-luch-2-path} presents the evolution of Luch-2's longitude with relevant satellites listed along longer periods of station keeping.
+
+Similar to Luch-2 less sophisticated airborne adversaries may eavesdrop on geostationary satellites. Loitering inside a beam makes it possible to listen to a localised area of roughly x squarekilometers, while loitering at 10 kilometers in altitude. Geometry of the problem is visualised in \ref{fig-geo-airborne-eavesdropping}.
+
 \subsubsection{Jamming}
 
 One limitation of the link budget approach is that only part of the RF environment can be modelled with reasonable level of baseline assumptions. For example, jamming systems tend to vary greatly from handheld devices all the way from high power vehicle or aircraft mounted ones. Most of the devices are also highly classified military technology data availability being the key issue.
+
+The computed link budget proves that that the jammer and legitimate user tend to be on rather equal footing with each other when it comes to basic service availability. The situation is though different, if we consider the requirements for higher QoS. Achieving higher throughputs necessiates the use of more complex modcod schemes that in turn require greater SNR or in our case SJR at the receiver's end. Here, the advantage can range from single to tens of decibels depending on the modulation utilised.
+
+Similarly, the relative postion between the legitimate transmitter, satellite and jammer may present interesting opportunities to the jammer, where the link budget tips strongly in the interfering party's favour. On the other hand, the large number of LEO satellites in the megaconstellations leads to major redundancy in the choice of satellite. If a UT is configured wisely, it may be able to avoid jamming, especially if the latter is localised in nature, by just transmitting in the direction of the clear sky.
 
 \subsubsection{Radiolocation}
 
