@@ -1346,7 +1346,7 @@ Jamming relies on the deliberately weakening of the useful signal in relation to
 
 Transmission and jamming power levels $S$ and $J$ at the receiver can be calculated from the following equations.
 
-\begin{equation}
+\begin{equation} \label{eq-signal-power-full}
   S = P_t + G_{tr}-L_t-L_{tr}(R_{tr})+G_{rt}-L_r \qquad \text{[dBW]}
 \end{equation}
 
@@ -1363,16 +1363,22 @@ Jamming of the uplink signal can be done from both aircraft and earth-bound plat
 % Downlink
 % When it comes to jamming, two main scenarios arise. The jammer can either be in the rough area of the main beam or elsewhere, which leads to different gain figures at the receiver's end. This means that the jammer is either transmitting in the receiver's main lobe, side lobe or nulls between these. While the latter can be simply be ruled out due to the high attenuation, the two prior provide a chance for the jammer to interfere with the legitimate transmission. Side lobe level (SLL) of the modern constellations is not known for both the satellites and the terminals. We can though estimate it based on constraints like the ITU radio regulations, which set inherent limits for the maximum allowable power flux density to limit interference. In \cite{hills2023controlling}, the authors estimated maximum allowable sidelobe levels for the first generation Starlink and OneWeb constellations at $-32.9$ and \qty{-24.0}{\decibel} respectively.
 
-Choose acceptable SJR level
-
-Vary EIRP or jammer and SLL of the receiver
-
-Effect of large number of satellites, switching beams. Predictability of frequency pattern -> effect on the jammer?
-
 End-to-end performance of a communications link can be analysed through a link budget that is a theoretical calculation where gains and losses of a RF system summed with each other in order to compute suitable figures of merit that can be in turn used to characterise the theoretical
 Table \ref{table-ul-jamming-link-budget} presents an uplink link budget for the Kymeta Hawk u8 UT interfacing with the OneWeb LEO megaconstellation.
 Parameters of the UT are taken from \cite{kymeta2022hawk} and \cite{kymeta2020mod}, while parameters for the space segment of the OneWeb constellation are based on the values in \cite{worldvu2016loi} and \cite{allen2022terrestrial} for the first generation constellation.
 For the advantage of the legitimate user, the modcod scheme is assumed to be the less demanding QPSK with $1/2$ FEC.
+
+Free space path loss (FSPL) was computed from equation \ref{eq-fspl} based on the approximate orbital altitude satellites $d$ in meters and UL frequency $f$ in hertz.
+
+\begin{equation} \label{eq-fspl}
+  \mathrm{FSPL} = 20\log(d)+20\log(f)-20\log(4\pi / c)
+\end{equation}
+
+Equation \ref{eq-signal-power-full} was then simplified by summing the transmitter and jammer-related variables into the figure of effective isotropic radiated power (EIRP) with the satellite's receiver side boiled down to the figure of gain-to-noise-temperature (G/T). On the propagation side, both the legitimate transmitter and the jammer were assumed to be earth-bound. This allows the propagation losses to be estimated with the figures of FSPL and athmospheric loss. For the latter, a figure of \SI{0.35}{\deci\bel} from \cite{kymeta2019link} was applied. SNR was also normalised over \SI{1}{\hertz} of bandwidth.
+
+\begin{equation} \label{eq-signal-power-simplified}
+  S_{rx} = \mathrm{EIRP} - \mathrm{FSPL} - L_{ath} + \mathrm{G/T}_{sat}
+\end{equation}
 
 \begin{table}[h]
   \centering
@@ -1381,23 +1387,23 @@ For the advantage of the legitimate user, the modcod scheme is assumed to be the
     \toprule
     Parameter                             & Value     & Notes         \\ \midrule
                                           &           &               \\
-    Constants                             &           &               \\ \midrule
+    Constants                             &           &               \\ 
     Athmospheric loss {[}dB{]}            & 0.35      &               \\
     Bolzmann’s constant {[}dBW/K/Hz{]}    & -228.60   &               \\
     Speed of light {[}m/s{]}              & 3.00E+08  &               \\
                                           &           &               \\
-    Satellite parameters                  &           &               \\ \midrule
+    Satellite parameters                  &           &               \\ 
     Transponder bandwidth, RX {[}MHz{]}   & 120.00    &               \\
     Path distance {[}km{]}                & 1,200.00  &               \\
     G/T at satellite’s RX {[}dB/K{]}      & 11.40     &               \\
     Target SNR {[}dB{]}                   & 1.00      & QPSK, 1/2 FEC \\
                                           &           &               \\
-    User terminal parameters              &           &               \\ \midrule
+    User terminal parameters              &           &               \\ 
     Frequency {[}MHz{]}                   & 14,000.00 &               \\
     Broadside EIRP {[}dBW{]}              & 46.50     &               \\
     Channel bandwidth {[}MHz{]}           & 20.00     &               \\
                                           &           &               \\
-    Computed values                       &           &               \\ \midrule
+    Computed values                       &           &               \\
     Free space path loss {[}dB{]}         & 176.95    &               \\
     Channel bandwidth {[}dBHz{]}          & 73.01     &               \\
     Received power @ sat {[}dB{]}         & -192.41   &               \\
@@ -1407,14 +1413,22 @@ For the advantage of the legitimate user, the modcod scheme is assumed to be the
 \end{table}
 
 The computations show that the jammer needs to achieve \SI{1}{\deci\bel} smaller signal power at the satellite than the legitimate transmitter, meaning still a certain degree of advantage to the jammer at even the baseline scenario.
+Applying any of the more demanding modcod schemes, such as aforementioned 8PSK or 16-QAM, would push the SJR further to the jammer's benefit.
 
+Jammer's capabilities are another point to consider.
+In principle, link budgets allow to examine the whole end-to-end RF chain.
+Despite this, analysis in table \ref{table-ul-jamming-link-budget} was ended at the receiver of the satellite due to limited information available in the jammer's end.
+The spectrum of jamming devices varies from handheld ones all the way from high power vehicle or aircraft mounted systems.
+Most of the devices are highly classified military technology, exacerbating the issue of data scarcity even further.
 
 \section{Discussion}
 \subsubsection{Eavesdropping}
 % Ylen artikkeli venäjän radalla olevista GEO-kuuntelusta, vrt. ikkunan pituuteen ja liiketekijöihin.
 \subsubsection{Jamming}
-\subsubsection{Radiolocation}
 
+One limitation of the link budget approach is that only part of the RF environment can be modelled with reasonable level of baseline assumptions. For example, jamming systems tend to vary greatly from handheld devices all the way from high power vehicle or aircraft mounted ones. Most of the devices are also highly classified military technology data availability being the key issue.
+
+\subsubsection{Radiolocation}
 
 T\"ass\"a osassa esitet\"a\"an tulokset ja vastataan tutkielman alussa
 esitettyihin tutkimuskysymyksiin.
