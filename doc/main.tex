@@ -1090,7 +1090,8 @@ This metric helps us to evaluate the potential maximal area where a single satel
     listening window (s) &
     \begin{tabular}[c]{@{}l@{}}orbital altitude (m)\\ inclination (deg)\\ eavesdropper’s velocity (m/s)\end{tabular} \\ \addlinespace[0.5em]
   4 &
-    uplink signal power (dB) &
+    required jamming power (dBW) &
+    target SJNR at RX (dB)
      \\ \bottomrule
   \end{tabular}
   \label{table-sub-model-variables}
@@ -1401,7 +1402,7 @@ Equation \ref{eq-signal-power-full} was then simplified by summing the transmitt
     Transponder bandwidth, RX {[}MHz{]}   & 120.00    &               \\
     Path distance {[}km{]}                & 1,200.00  &               \\
     G/T at satellite’s RX {[}dB/K{]}      & 11.40     &               \\
-    Target SNR {[}dB{]}                   & 1.00      & QPSK, 1/2 FEC \\
+    Target SJNR {[}dB{]}                  & 1.00      & QPSK, 1/2 FEC \\
                                           &           &               \\
     User terminal parameters              &           &               \\ 
     Frequency {[}MHz{]}                   & 14,000.00 &               \\
