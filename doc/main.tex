@@ -669,7 +669,7 @@ Starlink dish variants. Common feature ESA technology. Some flat panel while oth
 
 Starlink's cell pattern is based on Uber's H3 hexagonal cell system. Each spot beam covers roughly 1 size 5 hex cell at nadir. It is worth noting that the beam becomes more elliptical at higher steering angles, thus covering more cells at the same time.
 
-\subsection{Aerial platforms} \label{sect-aerial-platforms}
+\subsection{Aerial platforms} \label{ch-aerial-platforms}
 
 \subsubsection{Classification schemes}
 
@@ -947,25 +947,7 @@ Heikkilän taulukko
   \label{table-mcx-requirements}
 \end{table}
 
-Yaralin kirja
-
-6.3.1 Network Requirements
-
-Current drives to bring about the benefits of commercial broadband networks to mission-critical service providers have developed solutions “over-the-top” of existing public networks.
-Doing so is, however, not sustainable in the long-term since the public safety networks desire a level of sophistication that ensures they get priority in the systems (Tata and Kadoch 2014, p.
-3).
-The networks should be managed in the same way that TETRA, TETRAPOL, and P25 works, giving priority bandwidths to public safety networks while ensuring that the communication is encrypted end to end.
-Even in extreme weather conditions, the dedicated broadband services for the mission-critical services must ensure:
-
-    Survival over multiple failures
-    Priority for mission‐critical data
-    Offer the desired coverage and capacity
-    Maintain data integrity and ensure end‐to‐end encryption
-    Be interoperable with other networks to offer solutions when needed
-    Provide the desired support for devices and applications.
-
-
-
+% Yarali. Tästä voisi vääntää CIA-kolmion
 
 In this section, we address the important security features of the TETRA network.
 Here the scope of coverage spans the authentication, encryption mechanisms, and the key management of TETRA.
@@ -1068,6 +1050,11 @@ We will asses the problem following a first principles method. % tarkastelu tapa
 
 Submodel 1 examines the maximum interception range of a fixed satellite terminal.
 This metric helps us to evaluate the potential maximal area where a single satellite terminal is vulnerable to airborne eavesdroppers.
+Airborne platforms may listen to transmissions from great distances, for example flying in an airspace of another country.
+
+Submodels 2 and 3 examine an aircraft's ability to track an UT's RF beam. VSATs have typically a relatively narrow beam pattern of a few degrees of half power beamwidth. Relative motion between the beam and an intercepting aircraft is a major consideration when it comes to evaluating the vulnerability of different satellite systems. As discussed in chapter \ref{ch-aerial-platforms}, cruising speeds of aircraft are typically in the subsonic range. For example, at the operational altitude of an jetliner, this equates to roughly \SI[per-mode=repeated-symbol]{900}{\kilo\meter\per\hour} or \SI[per-mode=repeated-symbol]{250}{\meter\per\second}. On the other hand, relative velocity of an satellite beam can vary wildy depending on the orbital altitude due to the varying angular velocity. In this sense, LEO satellites are hardest to intercept due to their high angular velocity. On the other hand, legacy GEO systems may allow for an conveniently flying eavesdropper to gain endless access to the UT's data stream, as the satellites are inherently in a fixed position in the sky. % pitäisikö tätä siirtää discussioniin?
+
+Submodel 4 examines the . In the uplink scenario, a jammer competes with the legitimate transmitter in received RF signal power.
 
 \begin{table}[h]
   \centering
@@ -1339,7 +1326,7 @@ Evaluation in smaller domain, $T_{orbit} = [5400, 42400]$. Around GEO grows to i
 \end{figure}
 
 \subsection{Sub-model 4: Jamming link budget}
-Jamming relies on the deliberately weakening of the useful signal in relation to prevailing noise floor and interference. In situations where the jamming dominates over the natural noise sources, the relationship can be simplified to a signal-to-jamming ratio (SJR). In low signal power scenarios, noise sources need to be also accounted for leading to the term of signal-to-noise+jamming ratio (SJNR). \cite{kosola2013digitaalinen}
+Jamming relies on the deliberately weakening of the useful signal in relation to prevailing noise floor and interference. In situations where the jamming dominates over the natural noise sources, the relationship can be simplified to a signal-to-jamming ratio (SJR). In low jamming power scenarios, noise sources need to be also accounted for leading to the term of signal-to-noise+jamming ratio (SJNR) \cite{kosola2013digitaalinen}. % TODO: kankea jälkimmäinen lause
 
 \begin{equation*}
   \text{SJR} = \frac{S}{J} \qquad
