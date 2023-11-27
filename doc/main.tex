@@ -1039,11 +1039,12 @@ We will asses the problem following a first principles method. % tarkastelu tapa
   \caption{Descriptions for the sub-models.}
   \begin{tabular}{@{}cl@{}}
   \toprule
-  \multicolumn{1}{l}{sub-model} & target metric              \\ \midrule
-  1                             & maximum interception range \\
-  2                             & beam tracking potential    \\
-  3                             & listening window           \\
-  4                             & jamming link budget        \\ \bottomrule
+  \multicolumn{1}{l}{sub-model} & target metric                              \\ \midrule
+  1                             & maximum interception range                 \\
+  2a                            & beam tracking potential, equatorial orbits \\
+  2b                            & beam tracking potential, inclined orbits   \\
+  3                             & listening window                           \\
+  4                             & jamming link budget                        \\ \bottomrule
   \end{tabular}
   \label{table-sub-model-descriptions}
 \end{table}
@@ -1069,10 +1070,10 @@ In the scenario, the jammer competes with the legitimate transmitter in RF signa
   1 &
     interception range (m) &
     \begin{tabular}[c]{@{}l@{}}minimum elevation angle (deg)\\ eavesdropper’s altitude (m)\end{tabular} \\ \addlinespace[0.5em]
-  2 &
+  2a &
     \begin{tabular}[c]{@{}l@{}}velocity of the sub-satellite point,\\ equatorial (m/s)\end{tabular} &
     orbital altitude (m) \\ \addlinespace[0.5em]
-  2 &
+  2b &
     \begin{tabular}[c]{@{}l@{}}velocity of the sub-satellite point,\\ inclined (m/s)\end{tabular} &
     \begin{tabular}[c]{@{}l@{}}orbital altitude (m)\\ inclination (deg)\end{tabular} \\ \addlinespace[0.5em]
   3 &
@@ -1167,7 +1168,7 @@ The tangent function has asymptotes at $e_{Alice} = \pi / 2 + n\pi$. Within the 
 
 %% TODO: Takaisin reaalimaailmaan alamallin osalta
 
-\subsection{Submodel 2: Beam tracking potential}
+\subsection{Submodel 2a: Beam tracking potential in equatorial orbits}
 
 \begin{figure}[h]
   \centering
@@ -1179,14 +1180,12 @@ The tangent function has asymptotes at $e_{Alice} = \pi / 2 + n\pi$. Within the 
 In addition to being aligned along the line-of-sight of the VSAT's main lobe, the eavesdropper needs to be able to intercept sufficiently long transmission to be able to %ilmaista lähettäjän olemus. 
 This time dimension brings another point to consider when evaluating the risk of eavesdropping.
 Different durations of interception have varying implications for the legitimate transmitter.
-As an practical example, // millisecond-level? // signal capture might be enough for DF applications, while COMINT would require the eavesdropper to intercept the data stream from minutes to days type of durations.
+As an practical example, millisecond-level signal capture may be enough for DF applications, while in COMINT monitoring the signal for longer periods ranging all the way from seconds to days would be useful for gathering enough data. % TODO: parempi ilmaus tähän
 
 Maximum duration of signal interception is set by the ability of the airborne platform to track the main lobe of the earth station.
 The beam movement is primarily driven by the motion of the receiving satellite in orbit, which is in turn governed by Kepler's laws of orbital motion.
 Tracking capability of the aircraft can be evaluated by analysing the velocity of the sub-satellite point at the eavesdropper's operational altitude (point x on figure \ref{fig-orbit-geometry}).
 If this velocity exceeds the cruise speed of the eavesdropper, the airborne platform is not able to continuously follow the uplink RF beam, which limits the time window into individual satellite passes.
-
-\subsubsection{Equatorial orbits}
 
 Communication satellites reside often in circular orbits, which are a special case when evaluating Kepler's laws of orbital motion.
 Here, the velocity of the sub-satellite point can be computed by solving Kepler's third law for the orbital velocity at a set altitude.
@@ -1250,8 +1249,7 @@ The graph can be observed approaching the rotational velocity of the Earth when 
 As the graph is computed in the ECF coordinate frame, we can se sub-satellite velocity approaching zero, which means that the satellite appears fixed in its position in the sky.
 Cubically decreasing nature of $v_{sat}$ leads to radically higher values for LEO with $v_{sat}$ values ranging roughly between 5 and 7\ km/s in orbital altitudes between $h_{sat} = [5 \cdot 10^5, 2 \cdot 10^6]$.
 
-%% TODO: 2b alaotsikkoon?
-\subsubsection{Generalisation to inclined orbits}
+\subsection{Submodel 2b: Beam tracking potential in inclined orbits}
 
 Circular equatorial orbits are a good starting point for listening window analysis but their real world applications are somewhat in limited when considering relationship of orbital altitude to coverage and latency.
 As discussed in section \ref{sect-orbits} and visualised in table \ref{table-megaconstellation-characteristics}, modern satellite megaconstellations aim to achieve worldwide coverage by placing a number of satellites into inclined circular Earth orbits.
