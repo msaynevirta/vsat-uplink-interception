@@ -1019,21 +1019,17 @@ The research applies quantitative analysis by building a threat model focusing o
 The threat model is built around a set of four smaller submodels, each examining analytically a relevant dependent variable against a number of independent ones.
 The models are first introduced in a deductive manner tying reality to the underlying theoretical concepts.
 Individual submodels are then parametrically studied in a range of starting conditions mirroring the relevant characteristics of the platforms under evaluation.
-Descriptions for the submodels are given in table \ref{table-sub-model-descriptions} while their independent and dependent variables are introduced in table \ref{table-sub-model-variables}. Generally speaking, the target system will be explored using geometric and kinematic analysis, as well as link budgets based on typical hardware configurations.
-We will asses the problem following a first principles method. % tarkastelu tapahtuu fundamentaaleista dimensioista lähtien, ensimmäisen ja neljänen alamallin pureutuessa avaruudelliseen ulottuvuuteen ongelmiien ja toisen ja kolmannen tarkastellessa aika-ulottuvuuden ilmiöitä.
+Descriptions for the submodels are given in table \ref{table-sub-model-descriptions} while their independent and dependent variables of the parametric study are introduced in table \ref{table-sub-model-variables}.
 
-%% TODO: Miksi relevantteja tutkittavia asioita?
+The models explore the target system from first principles using geometric and kinematic analysis, as well as link budgets based on an example hardware configuration.
+First principles thinking is a powerful problem-solving approach that involves breaking down a problem or a concept into its elemental parts.
+In this sense, each submodel helps us understand potential strengths and vulnerability of different satcom systems through an elemental understanding of the underlying physical phenomena. %% TODO: Miksi relevantteja tutkittavia asioita?
 
-%% TODO: Miten liittyy public safety caseen?
+Critical communications users place high expectations on the communications solutions that they utilise.
+Satcom solutions have seen previously somewhat limited especially in the public safety sector, while at the same time commercial systems have turned out to be not the most robust when it comes to to fundamental concepts of security, such as confidentiality, integrity and availability.
+With the recent drive to integrate satcom into both commercial and critical use cases, it is paramount to understand the underlying factors of the systems.
+Physics-driven analysis helps us to evaluate the limits of a systems in a way that allows for sufficient risk mitigations to be engineered. %% TODO: Miten liittyy public safety caseen?
 
-%% TODO: Mistä ne on tullut? Mikä niitten suhde?
-
-%% TODO: Osamallin tarkoitus? Oma taulukko muuttujille?
-
-% use \addlinespace[0.5em] to add space between the rows
-
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
 \begin{table}[h]
   \centering
   \caption{Descriptions for the sub-models.}
@@ -1252,13 +1248,13 @@ Cubically decreasing nature of $v_{sat}$ leads to radically higher values for LE
 \subsection{Submodel 2b: Beam tracking potential in inclined orbits}
 
 Circular equatorial orbits are a good starting point for listening window analysis but their real world applications are somewhat in limited when considering relationship of orbital altitude to coverage and latency.
-As discussed in section \ref{sect-orbits} and visualised in table \ref{table-megaconstellation-characteristics}, modern satellite megaconstellations aim to achieve worldwide coverage by placing a number of satellites into inclined circular Earth orbits.
+As discussed in chapter \ref{ch-constellation-characteristics}, modern satellite megaconstellations, such as the systems in appendix \ref{appendix-constellation-comparison}, aim to achieve worldwide coverage by placing a number of satellites into inclined circular Earth orbits.
 Common configurations include the Walker Star and Delta constellation configurations, the advantages and disadvantages of which are discussed in more detail in the aforementioned chapter.
 
 The same analysis methods remain valid for inclined orbits but some additional factors need to be considered.
 Equatorial orbits have only a single velocity component parallel to the xy-plane in both ECI and ECF coordinate frames.
 On the other hand, any inclination induces additional velocity component perpendicular to this original equatorial component.
-This velocity component is visualised by $v_z$ in figure \ref{fig-inclined-v-components}.
+This velocity component is visualised by $v_z$ in figure \ref{fig-inclined-v-components}. % TODO: Kuvaaja puuttuu
 
 Transitioning from the simple scalar representation into a vector space makes analyzing inclined orbital motion less cumbersome.
 Here, angular velocity is a very useful abstraction, as it allows to sum different rotational speed components together.
