@@ -1083,7 +1083,7 @@ In the scenario, the jammer competes with the legitimate transmitter in RF signa
   \label{table-sub-model-variables}
 \end{table}
 
-\subsection{Submodel 1: Maximum interception range}
+\subsection{Submodel 1: Maximum interception range} \label{ch-results-submodel-1-range}
 % TODO: Scenario description: häritsijän sijainti, muuttujat -> orientoiva
 In order to eavesdrop a target transmitter, an eavesdropper need to be able to intercept sufficiently strong uplink signal. 
 Being firmly out of range of an earth station, in other words inside a white zone, is the most fundamental limit to an eavesdropper's ability to eavesdrop. 
@@ -1164,7 +1164,7 @@ The tangent function has asymptotes at $e_{Alice} = \pi / 2 + n\pi$. Within the 
 
 %% TODO: Takaisin reaalimaailmaan alamallin osalta
 
-\subsection{Submodel 2a: Beam tracking potential in equatorial orbits}
+\subsection{Submodel 2a: Beam tracking potential in equatorial orbits} \label{ch-results-submodel-2a-tracking-equatorial}
 
 \begin{figure}[h]
   \centering
@@ -1245,7 +1245,7 @@ The graph can be observed approaching the rotational velocity of the Earth when 
 As the graph is computed in the ECF coordinate frame, we can se sub-satellite velocity approaching zero, which means that the satellite appears fixed in its position in the sky.
 Cubically decreasing nature of $v_{sat}$ leads to radically higher values for LEO with $v_{sat}$ values ranging roughly between 5 and 7\ km/s in orbital altitudes between $h_{sat} = [5 \cdot 10^5, 2 \cdot 10^6]$.
 
-\subsection{Submodel 2b: Beam tracking potential in inclined orbits}
+\subsection{Submodel 2b: Beam tracking potential in inclined orbits} \label{ch-results-submodel-2b-tracking-inclined}
 
 Circular equatorial orbits are a good starting point for listening window analysis but their real world applications are somewhat in limited when considering relationship of orbital altitude to coverage and latency.
 As discussed in chapter \ref{ch-constellation-characteristics}, modern satellite megaconstellations, such as the systems in appendix \ref{appendix-constellation-comparison}, aim to achieve worldwide coverage by placing a number of satellites into inclined circular Earth orbits.
@@ -1297,7 +1297,7 @@ Finally, the sub-satellite velocity figure can be solved based on the scalar ang
   \label{fig-subsat-velocity-inclined}
 \end{figure}
 
-\subsection{Sub-model 3: Listening window}
+\subsection{Sub-model 3: Listening window} \label{ch-results-submodel-3-window}
 
 Listening window is the time that an airborne eavesdropper is able to intercept the uplink RF transmission from a user terminal on the ground.
 Analysing this window is somewhat more complex in terms of the model required and potential input parameters that need to be considered.
@@ -1321,7 +1321,7 @@ Evaluation in smaller domain, $T_{orbit} = [5400, 42400]$. Around GEO grows to i
   \label{fig-listening-window}
 \end{figure}
 
-\subsection{Sub-model 4: Jamming link budget}
+\subsection{Sub-model 4: Jamming link budget} \label{ch-results-submodel-4-link-budget}
 Jamming relies on the deliberately weakening of the useful signal in relation to prevailing noise floor and interference. In situations where the jamming dominates over the natural noise sources, the relationship can be simplified to a signal-to-jamming ratio (SJR). In low jamming power scenarios, noise sources need to be also accounted for leading to the term of signal-to-noise+jamming ratio (SJNR) \cite{kosola2013digitaalinen}. % TODO: kankea jälkimmäinen lause
 
 \begin{equation*}
@@ -1412,17 +1412,29 @@ Most of the devices are highly classified military technology, exacerbating the 
 
 \section{Discussion}
 \subsubsection{Eavesdropping}
-% Ylen artikkeli venäjän radalla olevista GEO-kuuntelusta, vrt. ikkunan pituuteen ja liiketekijöihin.
-Range
 
-Tracking potential
+%- TODO: orbital motion in leo -> limits the listening window to minutes -> comint very difficult with individual receivers, requires large scale collusion between receivers and large data transfers
 
-As discussed in chapter \ref{ch-aerial-platforms}, cruising speeds of aircraft are typically in the subsonic range. For example, at the operational altitude of an jetliner, this equates to roughly \SI[per-mode=repeated-symbol]{900}{\kilo\meter\per\hour} or \SI[per-mode=repeated-symbol]{250}{\meter\per\second}. On the other hand, relative velocity of an satellite beam can vary wildy depending on the orbital altitude due to the varying angular velocity. In this sense, LEO satellites are hardest to intercept due to their high angular velocity. On the other hand, legacy GEO systems may allow for an conveniently flying eavesdropper to gain endless access to the UT's data stream, as the satellites are inherently in a fixed position in the sky. % pitäisikö tätä siirtää discussioniin?
-For example, Russia has been flying a Luch-2 military satellite in proximity of western geostationary communications satellites. Figure \ref{fig-luch-2-path} presents the evolution of Luch-2's longitude with relevant satellites listed along longer periods of station keeping.
+%- radio horizon of a VSAT terminal -> high minumum elevation angle requires the eavesdropper to fly relatively close to the terminal (tens to hundreds of km)
 
-Listening window
+%- wideband nature of the waveform -> higher end receiving equipment for signal capture.
 
-Similar to Luch-2 less sophisticated airborne adversaries may eavesdrop on geostationary satellites. Loitering inside a beam makes it possible to listen to a localised area of roughly x squarekilometers, while loitering at 10 kilometers in altitude. Geometry of the problem is visualised in \ref{fig-geo-airborne-eavesdropping}.
+
+As discussed in chapter \ref{ch-aerial-platforms}, cruising speeds of aircraft are typically in the subsonic range.
+For example, at the operational altitude of an jetliner, this equates to roughly \SI[per-mode=repeated-symbol]{900}{\kilo\meter\per\hour} or \SI[per-mode=repeated-symbol]{250}{\meter\per\second}.
+On the other hand, relative velocity of an satellite beam can vary wildy depending on the orbital altitude due to the varying angular velocity.
+Tracking potential of an airborne adversary was analysed in chapter \ref{ch-results-submodel-2b-tracking-inclined} by computing the velocity of the passing beam at a range of typical aircraft altitudes.
+The computed values ranging from stationary at GEO altitudes to thousands of m/s for LEO satellites making the beam between an Earth-bound UT and a LEO satellite the hardest to track for an adversary due to the high angular velocity of the beam, and in turn resulting linear velocity at the full range of potential athmospheric cruising altitudes.
+
+Legacy GEO systems may allow for an conveniently flying eavesdropper to intecept the UT's data stream endlessly, as the satellites remain in an inherently fixed position in the sky.
+In \cite{bingen2023space}, the authors reckon that this vulnerability of GEO satellites is likely already exploited by space-borne inspection satellites, like the Luch-1 and Luch-2 of the Russian Aerospace Forces.
+These SIGINT satellites were launched in 2014 and 2022 and have been operating in proximity of western geostationary communications satellites over the years.
+
+Similar to these sophisticated SIGINT satellites, an aerial platform may be able to eavesdrop geostationary satellites by loitering inside a beam for continued periods of time. We can use estimate the threat area of an individual aircraft based on its cruising altitude and UT's minimum elevation angle. Maximum range of an eavesdropper to listen to varies from hundreds of meters to over 100 kilometers depending on the aerial platform's capabilities and minimum elevation angle in the chosen satellite system. This means that the threat of an airborne adversary is generally quite localised, especially if the adversary is unable to operate in the airspace over of the target system's jurisdiction. More stealthier platforms like balloons may though be able to evade tracking and with sufficien collusion extend the coverage inside the target country's borders. % TODO: jeesus mitä paskaa vika virke :D
+
+Tracking potential ties also into the other concept analysed in chapter \ref{ch-results-submodel-3-window}, the listening window.
+
+%- wideband nature of the waveform -> higher end receiving equipment for signal capture.
 
 \subsubsection{Jamming}
 
