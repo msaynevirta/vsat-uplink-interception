@@ -1411,7 +1411,12 @@ The spectrum of jamming devices varies from handheld ones all the way from high 
 Most of the devices are highly classified military technology, exacerbating the issue of data scarcity even further.
 
 \section{Discussion}
-\subsubsection{Eavesdropping}
+
+Critical communication users demand robust solutions, particularly in terms of confidentiality, integrity, and availability. The historical limitations of satcom solutions, especially in the public safety sector, alongside the challenges faced by commercial systems, underscore the necessity for a nuanced understanding of these systems. With the increasing integration of satcom into both commercial and critical applications, the imperative to comprehend the underlying factors of these systems becomes paramount.
+
+The primary focus involved applying quantitative analysis through the development of a robust threat model, targeting a Walker-type LEO megaconstellation, fixed Very Small Aperture Terminals (VSAT), and the influence of airborne eavesdroppers. The research framework comprised four smaller submodels, each explored through a parametric study, with a specific dependent variable and a set of independent ones.
+The foundation of the models rested on a first principles approach, employing geometric and kinematic analyses, as well as link budgets based on a representative hardware configuration.
+By deconstructing the target system into fundamental components, each submodel highlighted the potential strengths and vulnerabilities of satcom systems in relation to various threats.
 
 %- TODO: orbital motion in leo -> limits the listening window to minutes -> comint very difficult with individual receivers, requires large scale collusion between receivers and large data transfers
 
@@ -1435,8 +1440,6 @@ Similar to these sophisticated SIGINT satellites, an aerial platform may be able
 Tracking potential ties also into the other concept analysed in chapter \ref{ch-results-submodel-3-window}, the listening window.
 
 %- wideband nature of the waveform -> higher end receiving equipment for signal capture.
-
-\subsubsection{Jamming}
 
 One limitation of the link budget approach is that only part of the RF environment can be modelled with reasonable level of baseline assumptions. For example, jamming systems tend to vary greatly from handheld devices all the way from high power vehicle or aircraft mounted ones. Most of the devices are also highly classified military technology data availability being the key issue.
 
