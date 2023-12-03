@@ -764,7 +764,31 @@ Third-level categories of rotary wing and Bio NAV / MAV types have been omitted 
 
 % Expanding the classification to the full range of platforms
 
-\subsection{Signals intelligence}
+\subsection{Communications security}
+\subsubsection{Theory of secure communications channels}
+Fundamentally, secure communications rely on two core objectives being fulfilled.
+The intended receiver should be able to recover the original message without errors, while nobody else should be able to acquire any of the contained information.
+As is customary in cryptography, the transmitter is often referred to as Alice, the receiver as Bob and the eavesdropper as Eve.
+\cite{bloch2011physical}
+
+This core principle of secure communications was formalised by Shannon \cite{shannon1949communication} in his 1949 paper through the notion of perfect secrecy achieved through a one-time pad.
+Shannon's secrecy system assumes that both the intended recipient and the eavesdropper acquire the encoded codeword without any degradation, i.e.
+the communication channel is error-free.
+This theoretical assumption applies very rarely to real world systems, where some noise is almost always present.
+\cite{bloch2011physical}
+
+Wyner \cite{wyner1975thewiretap} expanded on Shannon's original system by exploring the role of noise in the context of secure communications through the channel model called \textit{degraded wiretap channel} (DWTC).
+The model assumes a situation where the sender (Alice) attempts to communicate with the legitimate recipient (Bob) over a noisy channel.
+Simultaneously an eavesdropper (Eve) observes a degraded version of the signal received by the legitimate recipient.
+\cite{barros2006secrecy}
+
+Wyner's wiretap channel introduced many mathematical tools for modelling information-theoretic security without the added complexity of fully general channel models.
+One of these important concepts is the secrecy capacity of the channel, which describes the greatest amount of information that can be confidentially communicated between the legitimate transmitter and receiver from the information-theoretic secrecy perspective.
+\cite{bloch2011physical}
+
+Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approach that they termed the \textit{broadcast model with confidential messages}.
+
+\subsubsection{ELINT, COMINT and SIGINT}
 Signals intelligence (SIGINT) is intelligence gathering through the exploitation of communication systems and noncommunications emitters.
 Based on the nature of the target system, the discipline of SIGINT can be further subdivided into the sub-disciplines of communications intelligence (COMINT) and electronic intelligence (ELINT) \cite{national2015bulk} [JP 1-02, JP 2-0 (2013), JP 3-85].
 
@@ -775,6 +799,7 @@ As no
 
 Interception of user traffic in satellite networks falls under the discipline COMINT. On  based on methods such as time of 
 
+\subsubsection{Electronic attack, protection and support}
 % TODO
 EOB (WIP / J03-85)
 
@@ -813,6 +838,8 @@ under appropriate intelligence authorities in response to specified intelligence
 requirements.
 
 \subsubsection{Signal detection}
+%TODO: Digitaistelukentästä jotain? Siuppaus, ilmaisu etc. ketju? Linkkibudjetti lähtökohtana, spread spectrum?
+
 \subsubsection{Direction finding and radiopositioning}
 Geolocating fixed VSAT terminals implemented as phased arrays, different direction finding techniques can be assessed for their suitability based on several factors.
 Some of the modern techniques include:
@@ -830,29 +857,6 @@ Beamforming: Since phased array VSATs employ beamforming, the listeners directio
 
 Additionally, multiple techinques can be combined into a hybrid approach if the complexity and capabilities of the direction finding array permit.
 For example, combining AoA and beamforming techniques can enhance the accuracy and robustness of geolocation estimates, especially if the phased array terminals exhibit unique radiation patterns or have challenging sidelobe characteristics.
-
-\subsubsection{Eavesdropping and traffic analysis}
-Fundamentally, secure communications rely on two core objectives being fulfilled.
-The intended receiver should be able to recover the original message without errors, while nobody else should be able to acquire any of the contained information.
-As is customary in cryptography, the transmitter is often referred to as Alice, the receiver as Bob and the eavesdropper as Eve.
-\cite{bloch2011physical}
-
-This core principle of secure communications was formalised by Shannon \cite{shannon1949communication} in his 1949 paper through the notion of perfect secrecy achieved through a one-time pad.
-Shannon's secrecy system assumes that both the intended recipient and the eavesdropper acquire the encoded codeword without any degradation, i.e.
-the communication channel is error-free.
-This theoretical assumption applies very rarely to real world systems, where some noise is almost always present.
-\cite{bloch2011physical}
-
-Wyner \cite{wyner1975thewiretap} expanded on Shannon's original system by exploring the role of noise in the context of secure communications through the channel model called \textit{degraded wiretap channel} (DWTC).
-The model assumes a situation where the sender (Alice) attempts to communicate with the legitimate recipient (Bob) over a noisy channel.
-Simultaneously an eavesdropper (Eve) observes a degraded version of the signal received by the legitimate recipient.
-\cite{barros2006secrecy}
-
-Wyner's wiretap channel introduced many mathematical tools for modelling information-theoretic security without the added complexity of fully general channel models.
-One of these important concepts is the secrecy capacity of the channel, which describes the greatest amount of information that can be confidentially communicated between the legitimate transmitter and receiver from the information-theoretic secrecy perspective.
-\cite{bloch2011physical}
-
-Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approach that they termed the \textit{broadcast model with confidential messages}.
 
 \clearpage
 
