@@ -771,9 +771,8 @@ The intended receiver should be able to recover the original message without err
 As is customary in cryptography, the transmitter is often referred to as Alice, the receiver as Bob and the eavesdropper as Eve.
 \cite{bloch2011physical}
 
-This core principle of secure communications was formalised by Shannon \cite{shannon1949communication} in his 1949 paper through the notion of perfect secrecy achieved through a one-time pad.
-Shannon's secrecy system assumes that both the intended recipient and the eavesdropper acquire the encoded codeword without any degradation, i.e.
-the communication channel is error-free.
+This core principle of secure communications was formalised by Shannon \cite{shannon1949communication} in his seminal 1949 paper through the notion of perfect secrecy achieved through a one-time pad.
+Shannon's secrecy system assumes that both the intended recipient and the eavesdropper acquire the encoded codeword without any degradation, i.e. the communication channel is error-free.
 This theoretical assumption applies very rarely to real world systems, where some noise is almost always present.
 \cite{bloch2011physical}
 
@@ -788,7 +787,18 @@ One of these important concepts is the secrecy capacity of the channel, which de
 
 Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approach that they termed the \textit{broadcast model with confidential messages}.
 
-\subsubsection{ELINT, COMINT and SIGINT}
+\subsubsection{Signals intelligence: ELINT, COMINT and FISINT}
+U.S. Department of Defense (DoD) terminology serves as the foundational framework for discussions on diverse facets within the realm of signals intelligence.
+Essential principles of doctrine, guiding the coordinated and integrated deployment of U.S. military forces toward shared objectives, are detailed in Joint Publications (JPs).
+These publications establish doctrinal frameworks, ensuring standardized procedures for planning, executing, and evaluating military operations, playing an integral role in facilitating a common understanding and synchronized efforts across various branches of the U.S. military.
+
+Within this landscape, intelligence practices find comprehensive coverage in the JP 2-0 Intelligence Series.
+JP 2-0 \cite{jp2-0}, titled \textit{Joint Intelligence} and serving as the keystone document of the series, provides the doctrinal foundation and fundamental principles guiding joint and national intelligence products, services, and assessments in support of joint operations.
+In JP 2-0, the domain of signals intelligence (SIGINT) is categorized into three distinct subdomains. Communications Intelligence (COMINT) involves gathering intelligence from intercepted foreign communications via radio, wire, or electromagnetic means, extending to encoded imagery.
+Electronic Intelligence (ELINT) focuses on non-communications emitters like radar, with operational electronic intelligence emphasizing operationally relevant information and technical electronic intelligence delving into technical aspects of the target systems.
+Lastly, Foreign Instrumentation Signals Intelligence (FISINT) analyzes data from foreign equipment and control systems, offering insights into telemetry, electronic interrogators, and command systems, providing a comprehensive understanding of foreign technological capabilities.
+FISINT is sometimes grouped together into ELINT when its definition is taken in the broader non-communications sense.
+
 Signals intelligence (SIGINT) is intelligence gathering through the exploitation of communication systems and noncommunications emitters.
 Based on the nature of the target system, the discipline of SIGINT can be further subdivided into the sub-disciplines of communications intelligence (COMINT) and electronic intelligence (ELINT) \cite{national2015bulk} [JP 1-02, JP 2-0 (2013), JP 3-85].
 
@@ -799,7 +809,7 @@ As no
 
 Interception of user traffic in satellite networks falls under the discipline COMINT. On  based on methods such as time of 
 
-\subsubsection{Electronic attack, protection and support}
+\subsubsection{Electronic warfare: attack, protection and support}
 % TODO
 EOB (WIP / J03-85)
 
@@ -836,6 +846,8 @@ operationally defined period of time.
 The second is as SIGINT, retained and processed
 under appropriate intelligence authorities in response to specified intelligence
 requirements.
+
+\subsubsection{TRANSEC and limiting factors}
 
 \subsubsection{Signal detection}
 %TODO: Digitaistelukentästä jotain? Siuppaus, ilmaisu etc. ketju? Linkkibudjetti lähtökohtana, spread spectrum?
