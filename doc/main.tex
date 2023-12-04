@@ -179,24 +179,23 @@
 
 %% Math fonts, symbols, and formatting; these are usually needed
 \usepackage{amsfonts,amssymb,amsbsy,amsmath}
-
 \usepackage{enumerate}
-\usepackage{tikz}
-\usepackage{xcolor}
-\usepackage{tikz-3dplot}
 \usepackage{hyperref}
-\usepackage{pgfplots}
 \usepackage{siunitx}
-
 \usepackage{booktabs}
 \usepackage{pdflscape}
 \usepackage[pass]{geometry}
-
 \usepackage{bm}
 
 
 \usepackage{url}
 \def\UrlBreaks{\do\/\do-}
+
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{tikz-3dplot}
+\usepackage{pgfplots}
+\usetikzlibrary{positioning}
 
 %% Change the school field to specify your school if the automatically set name
 %% is wrong
@@ -689,7 +688,7 @@ Department of Homeland Security in terms of operational altitude and endurance.
 
 \begin{figure}[h]
   \centering
-  \input{tikz_figures/fig-electronic-warfare.tikz}
+  \input{tikz_figures/fig-3d-dhs-uas-classification.tikz}
   \caption{UAS classification in terms of operational altitude $h$ (kilometers) and endurance $t$ (hours) \cite{watts2012unmanned}.}
   \label{fig-3d-dhs-uas-classification}
 \end{figure}
