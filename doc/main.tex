@@ -646,7 +646,7 @@ SpaceX's Starlink constellation is a combination of an inclined Walker Delta and
 
 \begin{figure}[h]
   \centering
-  \input{tikz_figures/fig-oneweb-starlink-f-plan.tikz}
+  \input{tikz_figures/fig-electronic-warfare.tikz}
   \caption{Frequency plan.}
   \label{fig-f-plan}
 \end{figure}
@@ -689,7 +689,7 @@ Department of Homeland Security in terms of operational altitude and endurance.
 
 \begin{figure}[h]
   \centering
-  \input{tikz_figures/fig-3d-dhs-uas-classification.tikz}
+  \input{tikz_figures/fig-electronic-warfare.tikz}
   \caption{UAS classification in terms of operational altitude $h$ (kilometers) and endurance $t$ (hours) \cite{watts2012unmanned}.}
   \label{fig-3d-dhs-uas-classification}
 \end{figure}
@@ -789,15 +789,15 @@ Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approa
 
 \subsubsection{Signals intelligence: ELINT, COMINT and FISINT}
 U.S. Department of Defense (DoD) terminology serves as the foundational framework for discussions on diverse facets within the realm of signals intelligence.
-Essential principles of doctrine, guiding the coordinated and integrated deployment of U.S. military forces toward shared objectives, are detailed in Joint Publications (JPs).
-These publications establish doctrinal frameworks, ensuring standardized procedures for planning, executing, and evaluating military operations, playing an integral role in facilitating a common understanding and synchronized efforts across various branches of the U.S. military.
+Essential principles of doctrine, guiding the coordinated and integrated application of U.S. military force, are detailed in Joint Publications (JPs) published by the U.S. Joint Chiefs of Staff.
+These publications establish foundational doctrinal framework, ensuring standardized procedures for planning, executing, and evaluating military operations, playing an integral role in facilitating a common understanding and synchronized efforts across various branches of the U.S. military.
 
-Within this landscape, intelligence practices find comprehensive coverage in the JP 2-0 Intelligence Series.
+Within this landscape, intelligence practices are covered in the JP 2-0 Intelligence Series.
 JP 2-0 \cite{jp2-0}, titled \textit{Joint Intelligence} and serving as the keystone document of the series, provides the doctrinal foundation and fundamental principles guiding joint and national intelligence products, services, and assessments in support of joint operations.
 In JP 2-0, the domain of signals intelligence (SIGINT) is categorized into three distinct subdomains. Communications Intelligence (COMINT) involves gathering intelligence from intercepted foreign communications via radio, wire, or electromagnetic means, extending to encoded imagery.
 Electronic Intelligence (ELINT) focuses on non-communications emitters like radar, with operational electronic intelligence emphasizing operationally relevant information and technical electronic intelligence delving into technical aspects of the target systems.
 Lastly, Foreign Instrumentation Signals Intelligence (FISINT) analyzes data from foreign equipment and control systems, offering insights into telemetry, electronic interrogators, and command systems, providing a comprehensive understanding of foreign technological capabilities.
-FISINT is sometimes grouped together into ELINT when its definition is taken in the broader non-communications sense.
+In other SIGINT methodologies \cite{kosola2013digitaalinen}, FISINT is often grouped together into ELINT when its definition is taken in the broader non-communications sense.
 
 Signals intelligence (SIGINT) is intelligence gathering through the exploitation of communication systems and noncommunications emitters.
 Based on the nature of the target system, the discipline of SIGINT can be further subdivided into the sub-disciplines of communications intelligence (COMINT) and electronic intelligence (ELINT) \cite{national2015bulk} [JP 1-02, JP 2-0 (2013), JP 3-85].
@@ -810,44 +810,27 @@ As no
 Interception of user traffic in satellite networks falls under the discipline COMINT. On  based on methods such as time of 
 
 \subsubsection{Electronic warfare: attack, protection and support}
-% TODO
-EOB (WIP / J03-85)
 
-Electromagnetic support (ES) and SIGINT.
-ES is closely related to, but separate from, SIGINT.
-The distinction between an asset performing an ES mission or an intelligence mission is
-determined by who tasks or controls the collection assets, what they are tasked to provide,
-and for what purpose they are tasked.
-The distinction between ES and SIGINT is
-delineated by purpose, scope, and context.
-Operational commanders task ES assets to
-search for, intercept, identify, and locate or localize sources of intentional or unintentional
-radiated EM energy.
-In contrast, the Director, National Security Agency (NSA)/Chief,
-Central Security Service, or an operational commander delegated SIGINT operational
-tasking authority, task SIGINT assets.
-The purpose of ES is immediate threat recognition,
-support to planning, and conduct of future operations and other tactical actions such as
-threat avoidance, targeting, and homing.
-ES is intended to respond to an immediate
-operational requirement.
-ES and SIGINT operations often share the same or similar assets
-and resources and may be tasked to simultaneously collect information that meets both
-requirements.
-That is not to say that data collected for intelligence cannot meet immediate
-operational requirements.
-Information collected for ES purposes is normally also
-processed by the appropriate parts of the intelligence community (IC) for further
-exploitation after the operational commander’s ES requirements are met.
-As such, it can
-be said that information collected from the EMS has “two lives.” The first is as ES,
-unprocessed information used by operational forces to develop and maintain SA for an
-operationally defined period of time.
-The second is as SIGINT, retained and processed
-under appropriate intelligence authorities in response to specified intelligence
-requirements.
+\begin{figure}[h]
+  \centering
+  \input{tikz_figures/fig-electronic-warfare.tikz}
+  \caption{Electronic warfare taxonomy based on \cite{kosola2013digitaalinen}.}
+  \label{fig-electronic-warfare}
+\end{figure}
 
-\subsubsection{TRANSEC and limiting factors}
+EW involves military actions leveraging Electromagnetic (EM) and Directed Energy (DE) to either control the Electromagnetic Spectrum (EMS) or to launch attacks against the enemy. This multifaceted domain comprises three distinct divisions: Electronic Attack (EA), Electromagnetic Support (ES), and Electromagnetic Protection (EP).
+
+ES involves actions to search for, intercept, identify, and locate or localize sources of intentional and unintentional radiated electromagnetic energy. It serves immediate threat recognition, aids in targeting, contributes to planning, and supports the conduct of future operations on a tactical level. Despite the similarities, ES is a separate discipline from SIGINT. The distinction between the two is delineated by purpose, scope, and context. While ES is focused on immediate operational needs, it shares commonalities with SIGINT, with both potentially using the same assets to simultaneously collect information meeting operational and intelligence requirements.
+To quote JP3-85 \cite{jp3-85}, "it can be said that information collected from the EMS has “two lives.” The first is as ES, unprocessed information used by operational forces to develop and maintain SA for an operationally defined period of time. The second is as SIGINT, retained and processed under appropriate intelligence authorities in response to specified intelligence requirements." % TODO: Example methods include eavesdropping, direction finding and z.
+
+Electronic Attack (EA) constitutes another key facet of EW, deploying electromagnetic energy, directed energy, or antiradiation weapons to attack enemy personnel, facilities, or equipment. The intent is to degrade, neutralize, or destroy the combat capability of the adversary. This division, also known as EA, is considered a form of fires within the military context, illustrating its role in directly influencing and diminishing enemy combat effectiveness.
+
+The third division, Electromagnetic Protection (EP), encompasses actions taken to shield personnel, facilities, and equipment from the detrimental effects of friendly or enemy use of the electromagnetic spectrum. EP is essential for maintaining the integrity and functionality of friendly combat capability in the face of electromagnetic threats.
+
+On the practical side, ES is often intelligence gathering and dissemination while EA is direct actions like jamming. EP not concerned with affecting a target system or gaining information, but rather protecting systems from external elec threats.
+
+\subsubsection{TRANSEC and physical layer constraints}
+%TODO: Transec 
 
 \subsubsection{Signal detection}
 %TODO: Digitaistelukentästä jotain? Siuppaus, ilmaisu etc. ketju? Linkkibudjetti lähtökohtana, spread spectrum?
