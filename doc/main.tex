@@ -524,24 +524,23 @@ During the last five years the satellite communications industry has entered int
 The most prominent new trend is the large megaconstellations with hundreds to thousands of satellites in low earth orbit (LEO).
 These systems have been enabled by the falling costs in space launches and the mass-production of satellite hardware based on COTS technology \cite{portillo2019technical}.
 
-While unlikely to widely replace terrestrial solutions, satellite systems have the potential to serve as a complimentary coverage and capacity solution for both commercial and public safety users.
-These systems could play a part in the ongoing broadband transition of the existing critical communications networks.
-Public safety users have more stringent requirements for their communication services when compared to the best effort service provided to normal commercial users.
+GEO satellites provided most of satellite internet capacity in throughput-terms until 2020 when the emerging NGSO megaconstellations started gaining significant share in the satellite internet market.
+Combined, SpaceX Starlink, EutelSat OneWeb, Amazon Kuiper, Telesat Lightspeed and SES O3b mPOWER have are estimated to bring roughly USD 70 billion of capital investment into the space during the deployment of their generation 1 and 2 constellations.
+Everything has not though been smooth sailing. Megaconstellations are a very capex heavy industry and broader economic pressures have lead to significant delays for the companies operating in the space.
+For example, OneWeb went through a bankruptcy restructuring following the Covid-19 pandemic, while SES's O3b mPOWER faced significant delays from the same cause.
+Similarly, Canadian Telesat and its Lightspeed constellation have been hit with supply chain and financing related challenges, delaying the project and leading to descoping of some of the originally planned satellite fleet.
+In addition to the more aforementioned more mature players currently or soon deploying their constellation, multiple actors from around the world have expressed interest in similar projects.
+These include everything from smaller startups like Lynk and AST SpaceMobile, developing direct-to-smartphone satellite connecitivity, to large national and multinational projects like the EU’s IRIS2 program and the Chinese Guo Wang megaconstellations \cite{euroconsult-ngso-tracker-2023-q3}.
 
-So far the furthest strides in the new telecom constellations have been made by four companies: SpaceX with its Starlink, OneWeb, Telesat and Amazon with its Project Kuiper.
-SpaceX and Amazon are U.S.
-companies and Telesat is Canadian, while OneWeb is controlled by its investors from India, the U.K., France and Japan.
-In addition to them, multiple other actors from around the world have expressed interest in similar projects.
-These include for example the EU’s Secure Connectivity Initiative and the Chinese Guo Wang constellation.
+In terms of maturity, SpaceX, OneWeb and SES O3b mPOWER are the farthest into the deployment with full global connecitivity available as of December 2023. Amazon Kuiper and Telesat are still being developed, with service start expected for 2026 and 2027 respectively \cite{euroconsult-ngso-tracker-2023-q3}.
+Technologically, all five constellations are characterised by their employment of dedicated and vendor-specific technologies in their implementation with all five currently operating or planning to operate on dedicated Ku and Ka-band frequencies.
+Additionally, their user equipment is vendor-specific in nature, be they more traditional parabolic or modern flat-panel phased array technology-based very small aperture terminals (VSAT).
+On the other hand, startups like Lynk and AST SpaceMobile are planning to deliver broadband service from orbit directly to unmodified 3GPP standardised 5G handsets. As discussed in \cite{iris2-industryday-2023-03}, upport for the implementation of 5G NTN standards defined by the 3GPP to the maximum extent possible but following a gradual implementation approach is also a key requirement in the EU's IRIS\textsuperscript{2} programme. All in all, 3GPP NTN services are still less technologically mature and have been demonstrated in practice to a very limited extent. Thus, services based on the standard are likely still to require significant R\&D expenditure before becoming a viable option. Standardised services have the greatest potential in mid to long-term timescales, while proprietary solutions are likely to dominate in the interim.
 
-All four projects furthest in development have significant funding behind their concepts and have secured the necessary regulatory approvals for the initial deployments of their systems.
-As of May 2023, OneWeb has finished its first generation constellation of 648 satellites while SpaceX was still rolling out its much larger first generation constellation of 4408 satellites.
-Technologically, these constellations are characterised by their employment of dedicated and vendor-specific technologies in their implementation.
-For example, all four previously mentioned constellations are currently operating or planning to operate on dedicated Ku and Ka-band frequencies.
-Also, their user equipment is vendor-specific in nature, be they more traditional parabolic or modern flat-panel phased array technology-based very small aperture terminals (VSAT).
-
-Two US companies, Lynk and AST SpaceMobile, are also planning on beaming broadband service from orbit directly to smartphone sized handsets on 5G frequencies.
-The latter services are less demonstrated and will need significant R\&D investment before becoming a viable option, while the prior are already reaching commercial operability in limited geographic regions.
+Appendix \ref{appendix-constellation-comparison} has a table with a non-exhaustive sample of recent LEO megaconstellation projects and their key design parameters.
+One interesting takeaway from the metrics is the sum of the theoretical throughputs of the systems with the figure landing into a range of hundreds of terabits-per-second (Tbps).
+As a reference, global internet bandwidth was estimated at 1.2 petabytes-per-second globally in 2023, an order of magnitude difference when compared to the first generation NGSO systems \cite{telegeography-ip-networks-2023}.
+Thus, satellite internet services are unlikely to complete replace terrestrial solutions but will act likely as a complimentary coverage and capacity solution for both commercial and government user segments.
 
 \subsubsection{Key technical characteristics} \label{ch-constellation-characteristics}
 %%%%%%%%%%%%%%%%%% TODO: APPENDIX: COMPARISON TABLE  %%%%%%%%%%%%%%%%%%
@@ -688,7 +687,7 @@ Department of Homeland Security in terms of operational altitude and endurance.
 \begin{figure}[h]
   \centering
   \input{tikz_figures/fig-3d-dhs-uas-classification.tikz}
-  \caption{UAS classification in terms of operational altitude $h$ (kilometers) and endurance $t$ (hours) \cite{watts2012unmanned}.}
+  \caption{UAS classification in terms of operational altitude (kilometers) and endurance (hours) \cite{watts2012unmanned}.}
   \label{fig-3d-dhs-uas-classification}
 \end{figure}
 
@@ -760,13 +759,16 @@ In the broader context of flight operations, which typically encompass takeoff, 
 Civil aircraft spend a substantial duration in this phase, characterized by straight-line flight with constant velocity and altitude, minimizing climbing and descending maneuvers.
 Manned aircraft performance is fundamentally characterized by a set of equations, addressing key parameters essential for evaluating cruising flight.
 These equations, including steady-state trim equations, the relationship between drag and thrust with speed, the correlation between speed and angle of attack, and the maximum lift-to-drag ratio, form the foundation for assessing an aircraft's behavior during the cruise phase.
-Given the dominance of cruising flight over the entire flight envelope, this phase is pivotal for comprehensive understanding of an aircraft's performance. The equations outlined in this section enable the derivation of various relationships critical for evaluating cruising flight performance \cite{sadraey2017ch5}.
+Given the dominance of cruising flight over the entire flight envelope, this phase is pivotal for comprehensive understanding of an aircraft's performance.
+The equations outlined in this section enable the derivation of various relationships critical for evaluating cruising flight performance \cite{sadraey2017ch5}.
 
-Comprehensive analysis through derivation of equations is although typically unnecessary if the only goal is to gain broader understanding performance-wise of different classes of aircraft. Similar to the aforementioned classification frameworks for UAS, Manned aircraft can be categorized through a variety frameworks of a number of parameters. In \cite{filippone2000data}, the authors propose a very comprehensive synthetic and comparative approach to evaluate both aircraft and rotorcraft. Parameters examined included detailed geometric characteristics for both aircraft and rotorcraft, with former comprising of metrics such as wing span, area, aspect-ratio, sweep angle, dihedral/anhedral angle, thickness and taper ratios, and the latter ones like type of rotor, diameter, number of blades, solidity, rpm, tip Mach numbers. In addition, the authors looked at the aerodynamic characteristics of the platforms under evaluation through the drag coefficients at zero lift and cruise, as well as maximum absolute glide ratio. The performance of different platforms was evaluated through metrics such as wing and disk loading, Mach number, service ceiling, rate of climb, g-limits, MTOM, payload mass and thrust-to-weight ratio.
+Luckily, thorough analysis through derivation of equations is typically unnecessary if the only goal is to gain broader understanding performance-wise of different classes of aircraft.
+Similar to the aforementioned classification frameworks for UAS, manned aircraft can be categorized through a number of parameters.
+In \cite{filippone2000data}, the authors propose a very comprehensive synthetic and comparative approach to evaluate both aircraft and rotorcraft. Parameters examined included detailed geometric characteristics for both aircraft and rotorcraft, with former comprising of metrics such as wing span, area, aspect-ratio, sweep angle, dihedral/anhedral angle, thickness and taper ratios, and the latter ones like type of rotor, diameter, number of blades, solidity, rpm, tip Mach numbers.
+In addition, the authors looked at the aerodynamic characteristics of the platforms under evaluation through the drag coefficients at zero lift and cruise, as well as maximum absolute glide ratio.
+The performance of different platforms was evaluated through metrics such as wing and disk loading, Mach number, service ceiling, rate of climb, g-limits, MTOM, payload mass and thrust-to-weight ratio.
 
 % TODO: Conclusion from the different classification schemes. Pääpaino on käytännössä massa- ja kokopohjaisessa arvioinnissa, mikä soveltuva lähestymistapa tietyin rajauksin tässäkin työssä.
-
-% TODO: Vertailutaulukko (ehkä liitteeseen?)
 
 % Expanding the classification to the full range of platforms
 
@@ -891,13 +893,9 @@ All in all, satellite connectivity does not replace the traditional terrestrial 
 
 \subsubsection{Requirements}
 
-\textbf{Security}
-
 Public Safety users have stringent data security requirements for their communications due to the sensitive nature of these exchanges. Satellite links bring new considerations in the transit of the data through other nations, as the networks are inherently global in nature. In the commercial operating model the constellations downlink data at sites that are most convenient for their operation, which means that the data will often transit through other sovereign countries before arriving at its final destination. Over-the-air transmission of data presents also questions on the jamming resilience of the satellite links.
 
 This poses challenges during situations where a nation is under an external threat, be it a military conflict or an act of a rogue organisation, as sensitive operational information needs to remain only in the hands of its intended users. In addition to these general architectural considerations, the technical solutions themselves should be verifiable on the national or at least at the EU level for both the hardware and software.
-
-\textbf{Resilience and preparedness}
 
 Preparedness is a key aspect in the operating model of public safety organisations. It covers the actions required for ensuring the smooth execution of tasks central to the overall safety of a nation in large emergency situations and societal disruptions. Preparedness actions include contingency planning, continuity management, advance preparations, training of operatives and readiness exercises. The concept revolves around the goal of anticipating threats rather than having to react to them [12].
 
@@ -1535,6 +1533,7 @@ Security of commercial satellite systems is a rather young field of study and mu
 
   \section{Appendix: Comparison of broadband satellite systems\label{appendix-constellation-comparison}}
 
+  % TODO: Redesign
   \begin{table}[h]
     \centering
     \makebox[0pt][c]{
@@ -1545,9 +1544,9 @@ Security of commercial satellite systems is a rather young field of study and mu
       \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Number of\\ satellites,\\ ph. 1\\ (launced /\\ planned)\end{tabular}} &
       \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Number of\\ satellites,\\ ph. 2\\ (launced /\\ planned)\end{tabular}} &
       \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Orbital altitude\\ (km)\end{tabular}} &
-      \multicolumn{1}{c}{Mass of a satellite (kg)} &
+      \multicolumn{1}{c}{Latency (ms)} &
       \multicolumn{1}{c}{UT datarate} &
-      \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Satellite\\ throughput\end{tabular}} &
+      \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}System\\ throughput\\ (Tbps)\end{tabular}} &
       \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Country\\ of\\ origin\end{tabular}} \\ \midrule
     \begin{tabular}[c]{@{}l@{}}Amazon\\ Kuiper\end{tabular} &
       Ka &
@@ -1563,7 +1562,7 @@ Security of commercial satellite systems is a rather young field of study and mu
       648 / 648 &
       0 / 6372 &
       1200 &
-      150 &
+      < 50 ms &
       &
       10 Gbps &
       UK \\ \addlinespace[0.5em]
@@ -1574,7 +1573,7 @@ Security of commercial satellite systems is a rather young field of study and mu
       \begin{tabular}[c]{@{}l@{}}$\sim$550 (ph. 1),\\ $\sim$350 (ph. 2)\end{tabular} &
       270-TODO &
       150 / 15 Mbps &
-      &
+      \begin{tabular}[c]{@{}l@{}}$\sim$88 (ph. 1),\\ $\sim$350 (ph. 2)\end{tabular} &
       US \\ \addlinespace[0.5em]
     \begin{tabular}[c]{@{}l@{}}Telesat\\ Lightspeed\end{tabular} &
       Ka &
