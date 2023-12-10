@@ -894,21 +894,15 @@ Preparedness is a key aspect in the operating model of public safety organisatio
 
 In the case of public safety communications, this leads to high requirements for availability even in a state of emergency. Similarly to more traditional terrestrial solutions, the requirements apply also to the emerging satellite links, which will most likely serve as a back-up solution in the case of larger scale failures of other options.
 
-\textbf{Control of the constellation}
-
 Satellite links are likely the best suited to natural disasters and major accidents but open questions remain related to human-made threat situations, like terrorist attacks and military conflicts, where external actors may deliberately interfere with the communications links. This raises questions on the political regimes where these current and future constellations are owned and operated. Nationally controlled satellite communications solutions would be the most optimal but are unfeasible for most of the World’s nations to implement. This is due to the immense capital requirements, especially when considering LEO options, which require at minimum hundreds and often thousands of satellites.
 
 These budgetary requirements lead to a situation where most nations need to rely on satellite services that are provided by operators from foreign countries. As discussed later, many of the emerging new operators are either US or UK based, while the EU has also been considering entering the constellation sector with its own alternative. In the EU member state context the latter is probably the most attractive option, especially from the point of critical communications. Control over the constellation and its ground segment will be as close to the national level as is feasible with the capital intensive satellite systems. US and UK based solutions might be also in this sense allowable but are likely to require significant legislative work when used by governmental public safety users.
-
-\textbf{Usability}
 
 Straightforward usability of the systems is highly critical from the perspective of public safety users based on the interviews with Finnish Public Safety actors. The success rate in emergency situations depends heavily on the timeliness of the response, which means that the communication systems used in field activities need to be available on a standby-basis. Thus, the future satellite link would need to be highly integrated with the existing communications infrastructure for it to be effective, so that it can be used when necessary.
 
 Considering these usability requirements, an ideal user terminal would be a handset with integrated satellite communication capabilities, but this is not feasible with the current satellite terminal sizes. The more feasible alternative in the near-term would be the integration of the terminal to the vehicles used by the authorities in daily activities.
 
 In addition to conveniently sized and well integrated user terminals, satellite services should be agnostic to the applications that are run through the link they provide. Currently used applications include PTT, data and video, while in future the systems should be able to accommodate more complex applications, like the verified positioning services provided by the Galileo Public Regulated Service (PRS). This may though require special arrangements in timing critical applications, as satellite systems have longer end-to-end delay times compared to terrestrial systems.
-
-\textbf{Costs}
 
 Cost considerations are another important point of discussion as they have been a limiting factor for the adoption of the existing satellite services. The new constellations need to achieve significantly lower per user costs for the solutions to gain widespread adoption. The public safety sector is a niche market from the point of view of the constellation operators, which is especially the case for smaller countries like Finland. Volume based pricing models are a possible way of achieving cost advantages but are likely to require the tendering processes to include multiple possible user groups. One straightforward model for providing satellite access to the user organisations could be to include it to the services provided by a national critical communications operator (e.g. Erillisverkot in Finland).
 
@@ -1021,12 +1015,12 @@ Descriptions for the submodels are given in table \ref{table-sub-model-descripti
 
 The models explore the target system from first principles using geometric and kinematic analysis, as well as link budgets based on an example hardware configuration.
 First principles thinking is a powerful problem-solving approach that involves breaking down a problem or a concept into its elemental parts.
-In this sense, each submodel helps us understand potential strengths and vulnerability of different satcom systems through an elemental understanding of the underlying physical phenomena. %% TODO: Miksi relevantteja tutkittavia asioita?
+In this sense, each submodel helps us understand potential strengths and vulnerability of different satcom systems through an elemental understanding of the underlying physical phenomena. %% TODO: Miksi relevantteja tutkittavia asioita? DONE?
 
 Critical communications users place high expectations on the communications solutions that they utilise.
 Satcom solutions have seen previously somewhat limited especially in the public safety sector, while at the same time commercial systems have turned out to be not the most robust when it comes to to fundamental concepts of security, such as confidentiality, integrity and availability.
 With the recent drive to integrate satcom into both commercial and critical use cases, it is paramount to understand the underlying factors of the systems.
-Physics-driven analysis helps us to evaluate the limits of a systems in a way that allows for sufficient risk mitigations to be engineered. %% TODO: Miten liittyy public safety caseen?
+Physics-driven analysis helps us to evaluate the limits of a systems in a way that allows for sufficient risk mitigations to be engineered. %% TODO: Miten liittyy public safety caseen? DONE?
 
 \begin{table}[h]
   \centering
@@ -1092,7 +1086,7 @@ This can be thought as  arise where eavesdropping is either simply impossible or
   \item The eavesdropper falls outside the main lobe of the VSAT earth station.
 \end{enumerate}
 
-As discussed in chapter \ref{ch-constellation-data}, broadband VSAT systems operate typically either in the Ku or Ka bands (12--18 and 26.5--40 GHz), with the former being the more commonly used in user links between the orbiting satellite and user terminal and vice-versa.
+As presented in appendix \ref{appendix-constellation-comparison}, broadband VSAT systems both existing and under development tend to operate in the Ku and Ka bands (12--18 and 26.5--40 GHz respectively), with the former being the more commonly used in user links between the orbiting satellite and user terminal and vice-versa, although some systems, such as Amazon's Project Kuiper deviate from this "rule". % TODO: Parempi termi
 In terms frequencies, both bands fall under super high (SHF, 3-30 GHz) to extremely high frequencies (EHF, 30-300 GHz), where the principal propagation mode is line-of-sight propagation.
 In this mode, the radio horizon of a transmitter can be derived from the Pythagorean theorem, assuming a perfectly spherical planetary body.
 
@@ -1302,7 +1296,7 @@ Analysing this window is somewhat more complex in terms of the model required an
 On a high level, the window is primarily influenced by the relative motion between the uplink RF beam of the terminal and the kinematic characteristics of the airborne eavesdropper.
 The latter include qualities such as cruise speed, operational altitude, manoeuvrability and controllability.
 They define the ability of the aircraft to keep a lock on the moving RF beam.
-These are in turn defined by the characteristics of the platform, a topic discussed in more detail in section \ref{sect-aerial-platforms}.
+These are in turn defined by the characteristics of the platform, a topic discussed in more detail in section \ref{ch-aerial-platforms}.
 As demonstrated by the inclination-orbital altitude analysis, aircraft kinematics have very little effect at LEO satellite altitudes ranging from hundreds to couple thousand kilometers. In practice, the great disparity between the velocities makes it possible to abstract away the movement of the aircraft and assume it to be stationary for the sake of analysis.
 
 Assuming a stationary eavesdropper, the listening window ${t_{pass}}$ can be computed by dividing the beamwidth of the satellite terminal $\theta_{beam}$ with the angular velocity of the satellite in the ECF coordinate frame $\omega_{ECF}$.
@@ -1341,17 +1335,17 @@ In some cases, jammer may even be at an advantage based on their geographical lo
 Minimum CNR requirements for modulation and coding schemes (modcod) determine the ability of the jammer to interfere with the legitimate transmission.
 As discussed in chapter \ref{ch-oneweb}, OneWeb uses adaptive modcod scheme comprised of QPSK, 8PSK and 16-QAM modulation techniques. Higher end requires significantly greater CNR at the receiver, while the lower end can still function even with very low CNR, if significant forward error correction (FEC) is utilised. \cite{allen2022terrestrial,etsi2012en302307}
 
-Jamming of the uplink signal can be done from both aircraft and earth-bound platforms.
-
 % Downlink
 % When it comes to jamming, two main scenarios arise. The jammer can either be in the rough area of the main beam or elsewhere, which leads to different gain figures at the receiver's end. This means that the jammer is either transmitting in the receiver's main lobe, side lobe or nulls between these. While the latter can be simply be ruled out due to the high attenuation, the two prior provide a chance for the jammer to interfere with the legitimate transmission. Side lobe level (SLL) of the modern constellations is not known for both the satellites and the terminals. We can though estimate it based on constraints like the ITU radio regulations, which set inherent limits for the maximum allowable power flux density to limit interference. In \cite{hills2023controlling}, the authors estimated maximum allowable sidelobe levels for the first generation Starlink and OneWeb constellations at $-32.9$ and \qty{-24.0}{\decibel} respectively.
 
-End-to-end performance of a communications link can be analysed through a link budget that is a theoretical calculation where gains and losses of a RF system summed with each other in order to compute suitable figures of merit that can be in turn used to characterise the theoretical
+Jamming of the uplink signal can be done from both aircraft and earth-bound platforms.
+Scenario-wise, the altitude of the interfering system does not make a major difference, if ground-level obstruction caused by structures and natural land formations is ignored.
+This simpified scenario allows E2E performance of a communications link can be analysed through a link budget, a theoretical calculation where gains and losses of a RF system are summed in order to compute a figures of merit, such as x, y and z.%TODO: Listaa tähän jatkoksi 
 Table \ref{table-ul-jamming-link-budget} presents an uplink link budget for the Kymeta Hawk u8 UT interfacing with the OneWeb LEO megaconstellation.
 Parameters of the UT are taken from \cite{kymeta2022hawk} and \cite{kymeta2020mod}, while parameters for the space segment of the OneWeb constellation are based on the values in \cite{worldvu2016loi} and \cite{allen2022terrestrial} for the first generation constellation.
 For the advantage of the legitimate user, the modcod scheme is assumed to be the less demanding QPSK with $1/2$ FEC.
 
-%Eka virke on vähän tuubaa
+%TODO: Eka virke on vähän tuubaa
 Satellite communication links are inherently long range in nature. When accounting for the losses in the RF path, this realisation allows for certain simplifications to be made without major losses in accuracy. RF path between the satellite and UT experiences losses primarily due to free space path loss (FSPL), a loss driven by the dispersion of RF energy into the medium it propagates through. FSPL in decibels can be computed from equation \ref{eq-fspl} based on the approximate orbital altitude satellites $d$ in meters and UL frequency $f$ in hertz.
 
 \begin{equation} \label{eq-fspl}
