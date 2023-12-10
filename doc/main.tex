@@ -467,6 +467,7 @@ SIGINT  & signals intelligence
 
 
 %% TODO: NGSO vs LEO, termin avaaminen
+% TODO: Euroconsult katsausta? Skaalaa ja broadband rapsaa?
 Over the past five decades, satellite systems have emerged as indispensable enablers of our modern way of life within an increasingly technology-driven human society.
 Innovation in fields such as Global Navigation Satellite Systems (GNSS) \cite{oconnor2019economic}, Earth Observation (EO) \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and Satellite Communication (satcom) \cite{x} has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in position, navigation, and timing (PNT), as well as intelligence, surveillance, and reconnaissance (ISR).
 Recently, the satellite communications industry has entered into an era of rapid change.
@@ -668,9 +669,7 @@ Starlink dish variants. Common feature ESA technology. Some flat panel while oth
 
 Starlink's cell pattern is based on Uber's H3 hexagonal cell system. Each spot beam covers roughly 1 size 5 hex cell at nadir. It is worth noting that the beam becomes more elliptical at higher steering angles, thus covering more cells at the same time.
 
-\subsection{Aerial platforms} \label{ch-aerial-platforms}
-
-\subsubsection{Classification schemes}
+\subsection{Classification of aerial platforms} \label{ch-aerial-platforms}
 
 Aerial platforms come in many shapes and sizes with widely varying capabilities.
 Based on these, the systems can be categorised in a number of ways depending on the end goal of the classification effort.
@@ -701,7 +700,7 @@ Figure \ref{fig-3d-dhs-uas-classification} presents the prior categories in term
 
 \begin{table}[tb]
   \centering
-  \caption{UAS classification groups of the U.S. DoD.}
+  \caption{UAS classification groups of the U.S. DoD \cite{jp3-30}.}
   \begin{tabular}{@{}lllll@{}}
   \toprule
   \begin{tabular}[c]{@{}l@{}}UAS\\ category\end{tabular} &
@@ -756,6 +755,14 @@ Third-level categories of rotary wing and Bio NAV / MAV types have been omitted 
   \caption{A classification scheme per \cite{hassanalian2017classifications}.}
   \label{fig-hassanalian-uas-classification}
 \end{figure}
+
+In the broader context of flight operations, which typically encompass takeoff, climb, cruise, turn, descent, and landing, cruising flight assumes significant importance.
+Civil aircraft spend a substantial duration in this phase, characterized by straight-line flight with constant velocity and altitude, minimizing climbing and descending maneuvers.
+Manned aircraft performance is fundamentally characterized by a set of equations, addressing key parameters essential for evaluating cruising flight.
+These equations, including steady-state trim equations, the relationship between drag and thrust with speed, the correlation between speed and angle of attack, and the maximum lift-to-drag ratio, form the foundation for assessing an aircraft's behavior during the cruise phase.
+Given the dominance of cruising flight over the entire flight envelope, this phase is pivotal for comprehensive understanding of an aircraft's performance. The equations outlined in this section enable the derivation of various relationships critical for evaluating cruising flight performance \cite{sadraey2017ch5}.
+
+Comprehensive analysis through derivation of equations is although typically unnecessary if the only goal is to gain broader understanding performance-wise of different classes of aircraft. Similar to the aforementioned classification frameworks for UAS, Manned aircraft can be categorized through a variety frameworks of a number of parameters. In \cite{filippone2000data}, the authors propose a very comprehensive synthetic and comparative approach to evaluate both aircraft and rotorcraft. Parameters examined included detailed geometric characteristics for both aircraft and rotorcraft, with former comprising of metrics such as wing span, area, aspect-ratio, sweep angle, dihedral/anhedral angle, thickness and taper ratios, and the latter ones like type of rotor, diameter, number of blades, solidity, rpm, tip Mach numbers. In addition, the authors looked at the aerodynamic characteristics of the platforms under evaluation through the drag coefficients at zero lift and cruise, as well as maximum absolute glide ratio. The performance of different platforms was evaluated through metrics such as wing and disk loading, Mach number, service ceiling, rate of climb, g-limits, MTOM, payload mass and thrust-to-weight ratio.
 
 % TODO: Conclusion from the different classification schemes. Pääpaino on käytännössä massa- ja kokopohjaisessa arvioinnissa, mikä soveltuva lähestymistapa tietyin rajauksin tässäkin työssä.
 
