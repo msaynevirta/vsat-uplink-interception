@@ -772,8 +772,10 @@ The performance of different platforms was evaluated through metrics such as win
   \centering
   \includegraphics[width=70mm]{figures/U-2_Pilot_over_Central_Continental_United_States_(7644960)_(cropped).jpg}
   \caption{Chinese surveillance balloon over the Central United States as photographed from a U.S. Air Force U-2 on February 3. High altitude balloons have potential for aerial signals intelligence due to their low radar cross section and the wide area of coverage arising from their stratospheric cruising altitude \cite{tomme2005paradigm}.}
-  \label{fig-hassanalian-uas-classification}
+  \label{fig-chinese-balloon}
 \end{figure}
+
+High altitude balloons are also an interesting platform type when considering their applicability for signals intelligence. These systems are mainly interesting due to their low radar cross section and the wide area of coverage enabled by their relatively high stratospheric cruising altitude \cite{tomme2005paradigm}. Figure \ref{fig-chinese-balloon} shows the Chinese surveillance balloon flting over the Continental United States as photographed from a U.S. Air Force U-2 during an widely reported incident in early 2023.
 
 The goal of the experimental portion of this thesis is to evaluate vulnerability of VSATs to airborne adversaries. Key factors for the evaluation are the ones that define an aircraft's performance: cruising speed and altitude, as well as payload mass, endurance and maneuverability. The latter is especially interesting, as it can greatly vary between platform types. For example, lighter than air crafts, such as high altitude balloons have relatively limited maneuverability, as they rely on athmospheric air currents to carry them around.
 
@@ -782,8 +784,7 @@ The goal of the experimental portion of this thesis is to evaluate vulnerability
 Fundamentally, secure communications rely on two core objectives being fulfilled.
 The intended receiver should be able to recover the original message without errors, while nobody else should be able to acquire any of the contained information.
 As is customary in cryptography, the transmitter is often referred to as Alice, the receiver as Bob and the eavesdropper as Eve.
-\cite{bloch2011physical}
-
+\cite{bloch2011physical} 
 This core principle of secure communications was formalised by Shannon \cite{shannon1949communication} in his seminal 1949 paper through the notion of perfect secrecy achieved through a one-time pad.
 Shannon's secrecy system assumes that both the intended recipient and the eavesdropper acquire the encoded codeword without any degradation, i.e. the communication channel is error-free.
 This theoretical assumption applies very rarely to real world systems, where some noise is almost always present.
@@ -793,7 +794,6 @@ Wyner \cite{wyner1975thewiretap} expanded on Shannon's original system by explor
 The model assumes a situation where the sender (Alice) attempts to communicate with the legitimate recipient (Bob) over a noisy channel.
 Simultaneously an eavesdropper (Eve) observes a degraded version of the signal received by the legitimate recipient.
 \cite{barros2006secrecy}
-
 Wyner's wiretap channel introduced many mathematical tools for modelling information-theoretic security without the added complexity of fully general channel models.
 One of these important concepts is the secrecy capacity of the channel, which describes the greatest amount of information that can be confidentially communicated between the legitimate transmitter and receiver from the information-theoretic secrecy perspective.
 \cite{bloch2011physical}
