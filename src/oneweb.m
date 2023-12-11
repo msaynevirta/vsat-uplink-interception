@@ -1,7 +1,13 @@
 %% OneWeb visualisation
 
-startTime=datetime("28-Feb-2023 20:30:00");
-endTime=datetime("28-Feb-2023 21:32:25");
+%startTime=datetime("28-Feb-2023 20:30:00");
+%endTime=datetime("28-Feb-2023 21:32:25");
+
+startTime=datetime("11-Dec-2023 11:00:00"); % oneweb 2023-12-11
+endTime=datetime("11-Dec-2023 11:30:00"); % oneweb 2023-12-11
+
+%startTime=datetime("11-Dec-2023 11:00:00"); % starlink 2023-12-11
+%endTime=datetime("11-Dec-2023 11:30:00"); % starlink 2023-12-11
 sampleTime=60;
 
 sc = satelliteScenario(startTime, endTime, sampleTime);
@@ -23,12 +29,15 @@ set(serverWormerveer, MarkerColor="Green");
 set(popLondon, ShowLabel=false);
 set(popLondon, MarkerColor="Yellow");
 
-ow = satellite(sc, "data/processed/oneweb_2023-03-01.tle");
+constellation = satellite(sc, "data/processed/oneweb_2023-03-01.tle");
 
-set(ow(1:length(ow)), ShowLabel=false);
-set(ow(1:length(ow)), MarkerSize=3);
-%set(ow(1:length(ow)).Orbit, LineWidth=1);
-%set(ow(1:length(ow)).Orbit, LineColor="none");
+%constellation = satellite(sc, "oneweb.tle");
+%constellation = satellite(sc, "starlink.tle");
+
+set(constellation(1:length(constellation)), ShowLabel=false);
+set(constellation(1:length(constellation)), MarkerSize=3);
+set(constellation(1:length(constellation)).Orbit, LineWidth=1);
+%set(constellation(1:length(constellation)).Orbit, LineColor="none");
 
 viewer3D = satelliteScenarioViewer(sc, Basemap="bluegreen", ShowDetails=false);
 

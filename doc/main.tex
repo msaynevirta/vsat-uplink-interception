@@ -490,7 +490,7 @@ Another third-party vulnerability assessment \cite{santamarta2014wake} uncovered
 
 Recent adversarial actions against satellite systems and their supporting infrastructure have raised questions concerning the vulnerability of these systems to a range of potential attack vectors, including cyberattacks, as well as the physical destruction of individual satellites or their supporting ground infrastructure.
 Recent examples include the cyberattack against the KA-SAT satellite network in February 2022 \cite{boschetti2022space} or the cable cut in one of the optical cables connecting the the SvalSat ground station to mainland Norway \cite{schia2023subsea}.
-Similarly, intrusive acts such as the Chinese high-altitude balloons flying through North American airspace in early 2023 have highlighted the threat of aerial signals intelligence platforms \cite{wip}.
+Similarly, intrusive acts such as the Chinese high-altitude balloons flying through North American airspace in early 2023 have highlighted the threat of aerial signals intelligence platforms \cite{ap-news-2023-02-balloon-signals}.
 
 One way to understand the reason for these vulnerabilities is through the paradigm of "security through obscurity", a practice with a long-running history in the commercial satellite industry that relies on hiding the structure and the interfaces of the system from the public \cite{lin2022defending}.
 The validity of this approach has long been debated within research and industry circles \cite{johansson2008great}, with the recent consensus being that security of a system should never rely exclusively on obscurity \cite{diehl2016law, guo2018defending}.
@@ -500,7 +500,7 @@ Moreover, most of the research on satellite system protection has examined downl
 Furthermore, more capital-intensive space or airborne platforms have received relatively little attention, with a greater emphasis being placed on the study of ground-based adversaries.
 Considering this prior history and recent rapid growth, it is important to better understand the security aspects of this rapidly evolving technology. 
 
-This thesis seeks to assess whether the presence of airborne eavesdroppers poses a risk to the uplink communications of emerging NGSO VSAT networks. in the context of public safety ...
+This thesis seeks to assess whether the presence of airborne eavesdroppers poses a risk to the uplink communications of emerging NGSO VSAT networks. % TODO: in the context of public safety ...
 To achieve this goal, quantitative analysis is used by developing a threat model focusing on a Walker-type LEO megaconstellation, fixed Very Small Aperture Terminals (VSAT) and airborne eavesdroppers.
 The resilience of LEO broadband systems will be explored using geometric and kinematic analysis, as well as link budgets based on typical hardware configurations.
 The developed analytical model will be evaluated numerically by comparing its results against the requirements set by both public safety and defence user groups.
@@ -566,7 +566,13 @@ The services are built around vendor-specific user terminals working as WiFi rou
 \subsubsection{OneWeb system architecture} \label{ch-oneweb}
 % TODO: Beam forming etc. painotusta pitää säätää uuden suunnan mukaiseksi
 
-%%%%%%%%%%%%%%%%%%  FIGURE: ONEWEB NETWORK ARCHITECTURE HERE  %%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=100mm]{figures/oneweb-tle-2023-12-11.png}
+  \caption{Simulation of the OneWeb system based on Celestrack TLE data from 11 December 2023.}
+  \label{fig-oneweb-tle-2023-12-11}
+\end{figure}
+
 The space segment of the OneWeb system comprises a megaconstellation of 648 LEO satellites distributed into 12 polar orbital planes of 49 evenly spaced satellites, as well as a number of in-orbit spares. 
 Operational satellites fly in an inclined polar orbit with an altitude of 1200 km.
 Each satellite transmits and receives user terminal (UT) traffic via its 16 fixed Ku-band beams, each of which covers a geographic area with dimensions of 1600 km in longitude and 65 km in latitude.
@@ -589,6 +595,7 @@ This can be achieved either with traditional steerable dish or more modern phase
 With the prior, two apertures may need to be employed for uninterrupted connectivity, as retrace speed of a single aperture is the inherent limiting factor for hand-over time between satellites.
 On the other hand, phased array antennas require only a single aperture as their electronic switching can be considered almost instantaneous \cite{worldvu2016loi}.
 
+%%%%%%%%%%%%%%%%%  FIGURE: ONEWEB NETWORK ARCHITECTURE HERE  %%%%%%%%%%%%%%%%%%
 Continuing with the distinguishing qualities of the OneWeb system, maybe the most significant is the nature of its air interface coverage pattern, also known as the cell layout.
 In the OneWeb satellite RAN, the cells are inherently varying and mobile, while on the contrary they are practically geographically static and pre-defined in a terrestrial network of fixed eNBs.
 Consequently, the movement of the UTs (for example equipment mounted on an aircraft or a high-speed train) is relatively slow when compared to the relative velocities of the satellites in orbit.
@@ -617,6 +624,13 @@ Generally speaking, Ka-band gateway-to-satellite links are asymmetric in nature.
 Similar to the gateway links, the Ku-band satellite-to-user terminal links are asymmetric in nature, but at the same time they are more limited in terms of the available bandwidth. The four uplink channels occupy 125 MHz of bandwidth while there are eight 250 MHz downlink channels. Unlike the gateway links, the polarisation scheme of the signals is fixed based on the link direction, where uplink utilises RHCP and downlink LHCP. \cite{portillo2019technical}
 
 \subsubsection{Starlink system architecture}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=100mm]{figures/starlink-tle-2023-12-11.png}
+  \caption{Simulation of the Starlink constellation based on Celestrack TLE data from 11 December 2023.}
+  \label{fig-starlink-tle-2023-12-11}
+\end{figure}
 
 SpaceX's Starlink constellation is a combination of an inclined Walker Delta and a polar Walker Star configuration. The system consists of 4,408 satellites divided into five orbital shells at altitudes ranging between 540 and 570 km. Inclination-wise, a large majority of the fleet is situated in 70 to 72 degree orbits covering the higher populated latitudes, while a reduced set in 97.6 degree orbits covering the remaining polar regions. Table \ref{table-starlink-orbits} presents the distribution of the satellites to the orbital shells and planes in more detail \cite{spacex2020mod, pachler2021updated}.
 
@@ -749,7 +763,7 @@ Third-level categories of rotary wing and Bio NAV / MAV types have been omitted 
 \begin{figure}[h]
   \centering
   \input{tikz_figures/fig-hassanalian-uas-classification.tikz}
-  \caption{A classification scheme per \cite{hassanalian2017classifications}.}
+  \caption{An UAS classification scheme derived from \cite{hassanalian2017classifications}.}
   \label{fig-hassanalian-uas-classification}
 \end{figure}
 
@@ -930,9 +944,7 @@ Implementation-wise, satellite networks are in the short-to-medium term envision
 
 Long-term, evolution towards direct-to-smartphone type solutions is a potential development path. 3GPP has been working towards integrating satellite connectivity as one of the options in the 5G Non-terrestial networks (NTN), a development item also present on the longer-reaching 6G roadmaps \cite{6G_ROADMAP, 3GPP_NTN_PAPERS}. It is though worth noting, that these solutions remain rather low in terms of their technological maturity. In-orbit demonstrations of the technology have been very limited in number and work has focused more on the theoretical standardisation work %TODO: \cite{AST_TESTIT, LYNK_TESTIT, SPACEX_TESTIT, PAPEREITA}
 
-Heikkilän taulukko
-
-\begin{table}[]
+\begin{table}[h]
   \centering
   \caption{Essential requirements for tactical bubbles \cite{heikkila2021field}.}
   \begin{tabular}{@{}lll@{}}
@@ -1008,6 +1020,8 @@ In practical terms, the modelling approach in this thesis is grounded on theoret
 % TODO: Data sources satellite systems: FCC filings for space segment and user terminals, UT product data sheets, 
 
 % TODO: Datalähteet: ilma-alusket, uas, manned, balloon
+
+\clearpage
 
 \section{Results}
 
@@ -1407,6 +1421,8 @@ In principle, link budgets allow to examine the whole end-to-end RF chain.
 Despite this, analysis in table \ref{table-ul-jamming-link-budget} was ended at the receiver of the satellite due to limited information available in the jammer's end.
 The spectrum of jamming devices varies from handheld ones all the way from high power vehicle or aircraft mounted systems.
 Most of the devices are highly classified military technology, exacerbating the issue of data scarcity even further.
+
+\clearpage
 
 \section{Discussion}
 
