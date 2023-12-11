@@ -849,7 +849,7 @@ Interception of user traffic in satellite networks falls under the discipline CO
   \label{fig-electronic-warfare}
 \end{figure}
 
-EW involves military actions leveraging Electromagnetic (EM) and Directed Energy (DE) to either control the Electromagnetic Spectrum (EMS) or to launch attacks against the enemy. This multifaceted domain comprises three distinct divisions: Electronic Attack (EA), Electromagnetic Support (ES), and Electromagnetic Protection (EP).
+EW involves military actions leveraging Electromagnetic (EM) and Directed Energy (DE) to either control the Electromagnetic Spectrum (EMS) or to launch attacks against the enemy. This multifaceted domain comprises three distinct divisions: Electronic Attack (EA), Electromagnetic Support (ES), and Electromagnetic Protection (EP) \cite{jp3-85,kosola2013digitaalinen}.
 
 ES involves actions to search for, intercept, identify, and locate or localize sources of intentional and unintentional radiated electromagnetic energy. It serves immediate threat recognition, aids in targeting, contributes to planning, and supports the conduct of future operations on a tactical level. Despite the similarities, ES is a separate discipline from SIGINT. The distinction between the two is delineated by purpose, scope, and context. While ES is focused on immediate operational needs, it shares commonalities with SIGINT, with both potentially using the same assets to simultaneously collect information meeting operational and intelligence requirements.
 To quote JP3-85 \cite{jp3-85}, "it can be said that information collected from the EMS has “two lives.” The first is as ES, unprocessed information used by operational forces to develop and maintain SA for an operationally defined period of time. The second is as SIGINT, retained and processed under appropriate intelligence authorities in response to specified intelligence requirements." % TODO: Example methods include eavesdropping, direction finding and z.
@@ -858,7 +858,7 @@ Electronic Attack (EA) constitutes another key facet of EW, deploying electromag
 
 The third division, Electromagnetic Protection (EP), encompasses actions taken to shield personnel, facilities, and equipment from the detrimental effects of friendly or enemy use of the electromagnetic spectrum. EP is essential for maintaining the integrity and functionality of friendly combat capability in the face of electromagnetic threats.
 
-On the practical side, ES is often intelligence gathering and dissemination while EA is direct actions like jamming. EP not concerned with affecting a target system or gaining information, but rather protecting systems from external elec threats.
+On the practical side, ES is often intelligence gathering and dissemination while EA is direct actions like jamming. EP not concerned with affecting a target system or gaining information, but rather protecting systems from external elec threats. % TODO: Finish this
 
 \subsubsection{TRANSEC and physical layer constraints}
 %TODO: Transec 
@@ -1031,7 +1031,7 @@ The research applies quantitative analysis by building a threat model focusing o
 The threat model is built around a set of four smaller submodels, each examining analytically a relevant dependent variable against a number of independent ones.
 The models are first introduced in a deductive manner tying reality to the underlying theoretical concepts.
 Individual submodels are then parametrically studied in a range of starting conditions mirroring the relevant characteristics of the platforms under evaluation.
-Descriptions for the submodels are given in table \ref{table-sub-model-descriptions} while their independent and dependent variables of the parametric study are introduced in table \ref{table-sub-model-variables}.
+Descriptions for the submodels are given in table \ref{table-submodel-descriptions} while their independent and dependent variables of the parametric study are introduced in table \ref{table-submodel-variables}.
 
 The models explore the target system from first principles using geometric and kinematic analysis, as well as link budgets based on an example hardware configuration.
 First principles thinking is a powerful problem-solving approach that involves breaking down a problem or a concept into its elemental parts.
@@ -1044,17 +1044,17 @@ Physics-driven analysis helps us to evaluate the limits of a systems in a way th
 
 \begin{table}[h]
   \centering
-  \caption{Descriptions for the sub-models.}
+  \caption{Descriptions for the submodels.}
   \begin{tabular}{@{}cl@{}}
   \toprule
-  \multicolumn{1}{l}{sub-model} & target metric                              \\ \midrule
+  \multicolumn{1}{l}{submodel} & target metric                              \\ \midrule
   1                             & maximum interception range                 \\
   2a                            & beam tracking potential, equatorial orbits \\
   2b                            & beam tracking potential, inclined orbits   \\
   3                             & listening window                           \\
   4                             & jamming link budget                        \\ \bottomrule
   \end{tabular}
-  \label{table-sub-model-descriptions}
+  \label{table-submodel-descriptions}
 \end{table}
 
 Submodel 1 examines the maximum interception range of a fixed satellite terminal.
@@ -1069,10 +1069,10 @@ In the scenario, the jammer competes with the legitimate transmitter in RF signa
 
 \begin{table}[h]
   \centering
-  \caption{Independent and dependent variables of the sub-models.}
+  \caption{Independent and dependent variables of the submodels.}
   \begin{tabular}{@{}cll@{}}
   \toprule
-  Sub-model &
+  submodel &
     Dependent variable &
     Independent variables \\ \midrule
   1 &
@@ -1092,7 +1092,7 @@ In the scenario, the jammer competes with the legitimate transmitter in RF signa
     target SJNR at RX (dB)
      \\ \bottomrule
   \end{tabular}
-  \label{table-sub-model-variables}
+  \label{table-submodel-variables}
 \end{table}
 
 \subsection{Submodel 1: Maximum interception range} \label{ch-results-submodel-1-range}
@@ -1309,7 +1309,7 @@ Finally, the sub-satellite velocity figure can be solved based on the scalar ang
   \label{fig-subsat-velocity-inclined}
 \end{figure}
 
-\subsection{Sub-model 3: Listening window} \label{ch-results-submodel-3-window}
+\subsection{Submodel 3: Listening window} \label{ch-results-submodel-3-window}
 
 Listening window is the time that an airborne eavesdropper is able to intercept the uplink RF transmission from a user terminal on the ground.
 Analysing this window is somewhat more complex in terms of the model required and potential input parameters that need to be considered.
@@ -1333,7 +1333,7 @@ Evaluation in smaller domain, $T_{orbit} = [5400, 42400]$. Around GEO grows to i
   \label{fig-listening-window}
 \end{figure}
 
-\subsection{Sub-model 4: Jamming link budget} \label{ch-results-submodel-4-link-budget}
+\subsection{Submodel 4: Jamming link budget} \label{ch-results-submodel-4-link-budget}
 Jamming relies on the deliberately weakening of the useful signal in relation to prevailing noise floor and interference. In situations where the jamming dominates over the natural noise sources, the relationship can be simplified to a signal-to-jamming ratio (SJR). In low jamming power scenarios, noise sources need to be also accounted for leading to the term of signal-to-noise+jamming ratio (SJNR) \cite{kosola2013digitaalinen}. % TODO: kankea jälkimmäinen lause
 
 \begin{equation*}
