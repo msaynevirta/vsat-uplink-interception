@@ -1365,8 +1365,7 @@ Table \ref{table-ul-jamming-link-budget} presents an uplink link budget for the 
 Parameters of the UT are taken from \cite{kymeta2022hawk} and \cite{kymeta2020mod}, while parameters for the space segment of the OneWeb constellation are based on the values in \cite{worldvu2016loi} and \cite{allen2022terrestrial} for the first generation constellation.
 For the advantage of the legitimate user, the modcod scheme is assumed to be the less demanding QPSK with $1/2$ FEC.
 
-%TODO: Eka virke on vähän tuubaa
-Satellite communication links are inherently long range in nature. When accounting for the losses in the RF path, this realisation allows for certain simplifications to be made without major losses in accuracy. RF path between the satellite and UT experiences losses primarily due to free space path loss (FSPL), a loss driven by the dispersion of RF energy into the medium it propagates through. FSPL in decibels can be computed from equation \ref{eq-fspl} based on the approximate orbital altitude satellites $d$ in meters and UL frequency $f$ in hertz.
+Propagation paths in satellite links inherently cover long distances ranging from hundreds to thousands of kilometers depending on the orbit of a satellite. When accounting for the losses in the RF path, this realisation allows for certain simplifications to be made without major losses in accuracy. RF path between the satellite and UT experiences losses primarily due to free space path loss (FSPL), a loss driven by the dispersion of RF energy into the medium it propagates through. FSPL in decibels can be computed from equation \ref{eq-fspl} based on the approximate orbital altitude satellites $d$ in meters and UL frequency $f$ in hertz.
 
 \begin{equation} \label{eq-fspl}
   \mathrm{FSPL} = 20\log(d)+20\log(f)-20\log(4\pi / c) \qquad \text{[dB]}
