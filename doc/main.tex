@@ -195,7 +195,7 @@
 \usepackage{xcolor}
 \usepackage{tikz-3dplot}
 \usepackage{pgfplots}
-\usetikzlibrary{positioning}
+\usetikzlibrary{calc,positioning}
 
 %% Change the school field to specify your school if the automatically set name
 %% is wrong
@@ -1015,7 +1015,7 @@ Within the taxonomy, this thesis falls under the conceptual-analytical research 
 
 In practical terms, the modelling approach in this thesis is grounded on theoretical background of RF systems and more specifically concepts related to electronic warfare and signals intelligence. Threat model builds upon theory discussed in \cite{kosola2013digitaalinen} and \cite{wiley2006elint}. Target systems are explored through a parametric study of an analyitical model comprised of multiple submodels that incorporate relevant parameters for aerial signals intelligence platforms and both space and ground segments of a satellite communications system.
 
-\subsection{Data sources}
+%\subsection{Data sources}
 
 % TODO: Data sources satellite systems: FCC filings for space segment and user terminals, UT product data sheets, 
 
@@ -1109,8 +1109,17 @@ This can be thought as  arise where eavesdropping is either simply impossible or
 As presented in appendix \ref{appendix-constellation-comparison}, broadband VSAT systems both existing and under development tend to operate in the Ku and Ka bands (12--18 and 26.5--40 GHz respectively), with the former being the more commonly used in user links between the orbiting satellite and user terminal and vice-versa, although some systems, such as Amazon's Project Kuiper deviate from this "rule". % TODO: Parempi termi
 In terms frequencies, both bands fall under super high (SHF, 3-30 GHz) to extremely high frequencies (EHF, 30-300 GHz), where the principal propagation mode is line-of-sight propagation.
 In this mode, the radio horizon of a transmitter can be derived from the Pythagorean theorem, assuming a perfectly spherical planetary body.
+Based on these constraints the scenario of the submodel considers a ground-bound VSAT whose uplink transmissions an airborne eavesdropper tries to intercept.
+The range from which the eavesdropper has a line-of-sight to the VSAT can be computed from a set of geometric equations, which we will go through next. 
 
-Going into the geometry of the problem, line-of-sight distance $d$ and radius of the body $R$ form the legs of a right triangle, while the transmitter's distance from the centre of the body $(R+h)$ is the hypotenuse \cite{seybold2005introduction}.
+\begin{figure}[h]
+  \centering
+  \input{tikz_figures/fig-interception-range-vacuum.tikz}
+  \caption{Geometry of ideal LOS propagation over a circular body \cite{seybold2005introduction}.}
+  \label{fig-interception-range-vacuum}
+\end{figure}
+
+Starting point for computing the interception range of a terminal is the basic geometry of the problem. Here, line-of-sight distance $d$ between the VSAT and the airborne eavesdropper  forms one leg of a right triangle with the radius of the body $R$ being the other one. This leaves the hypotenuse, which is in this case the transmitter's distance from the centre of the body $(R+h)$ \cite{seybold2005introduction}.
 The relationship between the quantities is visualised in figure \ref{fig-interception-range-vacuum}.
 
 % TODO: SELITÄ MIKSI VOIDAAN APROKSIMOIDA TOISESSA VIRKKEESSÄ

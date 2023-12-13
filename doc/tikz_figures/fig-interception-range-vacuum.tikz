@@ -1,0 +1,35 @@
+\tikzset{
+    rotate around with nodes/.style args={#1:#2}{
+        rotate around={#1:#2},
+        set node rotation={#1},
+    },
+    rotate with/.style={rotate=\qrrNodeRotation},
+    set node rotation/.store in=\qrrNodeRotation,
+}
+
+\begin{tikzpicture}
+    % constants
+    \def\R{4}
+    \def\h{0.3}
+    \def\theta{35}
+
+    % origin
+    \coordinate (origin) at (0,0);
+    \node[circle,fill,inner sep=1.2pt] (origin){};
+
+    % curved surface of the body
+    \draw[line width=1.2pt] ([shift={(20:\R)}]0,0) arc(20:160:\R);
+
+    \draw
+        (origin) -- (0,\R) node [midway,fill=white] {$R$};
+    \draw[rotate around with nodes={{180-\theta}:(0,0)}]
+        (origin) -- (\R,0) node [midway,fill=white] {$R$};
+    \draw[rotate around with nodes={{180-\theta}:(0,0)}]
+        (\R,0) -- ({\R / cos(90-\theta)},0) node [midway,fill=white] {$h$};
+    \draw[dashed, rotate around with nodes={\theta:(0,0)},dash phase=-1pt]
+        (origin) -- ({\R / cos(90-\theta)},0);
+    
+    % hypotenuses
+    \draw[dashed,dash phase=-3pt] (0,\R) -- ({tan(90-\theta)*\R},\R);
+    \draw (0,\R) -- (-{tan(90-\theta)*\R},\R) node [midway,fill=white] {$d$};
+\end{tikzpicture}
