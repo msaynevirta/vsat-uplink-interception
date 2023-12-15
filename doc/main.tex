@@ -541,7 +541,6 @@ As a reference, global internet bandwidth was estimated at 1.2 petabytes-per-sec
 Thus, satellite internet services are unlikely to complete replace terrestrial solutions but will act likely as a complimentary coverage and capacity solution for both commercial and government user segments.
 
 \subsubsection{Key technical characteristics} \label{ch-constellation-characteristics}
-%%%%%%%%%%%%%%%%%% TODO: APPENDIX: COMPARISON TABLE  %%%%%%%%%%%%%%%%%%
 The design of a complete satellite system is a complex, multi-objective and multi-modal optimisation problem due to the inherently varying conditions and constraints in the three segments.
 Practically speaking, this requires tackling the overall optimisation problem segment-by-segment while taking into account the requirements of the target application.
 In , the main elements of a LEO satellite system were characterised into distinct space, ground and user segments, which are visualised in figure \ref{fig-constellation-segments} \cite{celikbilek2022survey}.
@@ -810,11 +809,12 @@ Wyner's wiretap channel introduced many mathematical tools for modelling informa
 One of these important concepts is the secrecy capacity of the channel, which describes the greatest amount of information that can be confidentially communicated between the legitimate transmitter and receiver from the information-theoretic secrecy perspective.
 \cite{bloch2011physical}
 
-Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approach that they termed the \textit{broadcast model with confidential messages}.
+Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approach that they termed the \textit{broadcast model with confidential messages}, offering a broader perspective on secure communications.
 
 These seminal works form the foundation for physical layer security research.
-
-Experimental portion of the thesis will examine security of 
+Experimental portion of the thesis will examine security of communications channels in the context of NGSO VSAT networks, bridging the theoretical underpinnings with real-world considerations.
+As we delve into the experimental portion of the thesis, we aim to apply and extend these foundational ideas to the specific challenges of NGSO VSAT networks.
+By examining the security of communications channels in a practical, applied setting, we seek to elucidate the real-world implications of these seminal theories and contribute to the evolving field of physical layer security in satellite communication systems.
 
 % TODO: Sidosteisuutta muuhun tekstiin, physical security, cia triad.
 
@@ -1047,7 +1047,7 @@ Physics-driven analysis helps us to evaluate the limits of a systems in a way th
   \caption{Descriptions for the submodels.}
   \begin{tabular}{@{}cl@{}}
   \toprule
-  \multicolumn{1}{l}{submodel} & target metric                              \\ \midrule
+  \multicolumn{1}{l}{submodel}  & target metric                              \\ \midrule
   1                             & maximum interception range                 \\
   2a                            & beam tracking potential, equatorial orbits \\
   2b                            & beam tracking potential, inclined orbits   \\
