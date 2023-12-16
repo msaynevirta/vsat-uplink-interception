@@ -794,22 +794,18 @@ The goal of the experimental portion of this thesis is to evaluate vulnerability
 \subsubsection{Theory of secure communications channels}
 Fundamentally, secure communications rely on two core objectives being fulfilled.
 The intended receiver should be able to recover the original message without errors, while nobody else should be able to acquire any of the contained information.
-As is customary in cryptography, the transmitter is often referred to as Alice, the receiver as Bob and the eavesdropper as Eve.
-\cite{bloch2011physical} 
+As is customary in cryptography, the transmitter is often referred to as Alice, the receiver as Bob and the eavesdropper as Eve \cite{bloch2011physical}.
 This core principle of secure communications was formalised by Shannon \cite{shannon1949communication} in his seminal 1949 paper through the notion of perfect secrecy achieved through a one-time pad.
 Shannon's secrecy system assumes that both the intended recipient and the eavesdropper acquire the encoded codeword without any degradation, i.e. the communication channel is error-free.
-This theoretical assumption applies very rarely to real world systems, where some noise is almost always present.
-\cite{bloch2011physical}
+This theoretical assumption applies very rarely to real world systems, where some noise is almost always present \cite{bloch2011physical}.
 
 Wyner \cite{wyner1975thewiretap} expanded on Shannon's original system by exploring the role of noise in the context of secure communications through the channel model called \textit{degraded wiretap channel} (DWTC).
 The model assumes a situation where the sender (Alice) attempts to communicate with the legitimate recipient (Bob) over a noisy channel.
-Simultaneously an eavesdropper (Eve) observes a degraded version of the signal received by the legitimate recipient.
-\cite{barros2006secrecy}
+Simultaneously an eavesdropper (Eve) observes a degraded version of the signal received by the legitimate recipient \cite{barros2006secrecy}.
 Wyner's wiretap channel introduced many mathematical tools for modelling information-theoretic security without the added complexity of fully general channel models.
-One of these important concepts is the secrecy capacity of the channel, which describes the greatest amount of information that can be confidentially communicated between the legitimate transmitter and receiver from the information-theoretic secrecy perspective.
-\cite{bloch2011physical}
+One of these important concepts is the secrecy capacity of the channel, which describes the greatest amount of information that can be confidentially communicated between the legitimate transmitter and receiver from the information-theoretic secrecy perspective \cite{bloch2011physical}.
 
-Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approach that they termed the \textit{broadcast model with confidential messages}, offering a broader perspective on secure communications.
+Wyner's DWTC model is not entirely satisfactory as it assumes the eavesdropper to be at a disadvantage to the legitimate user. To address this issue, Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approach that they termed the \textit{broadcast channel with confidential messages}. The model involves two receivers and a sender transmitting two messages at the same time. The first message, a common one, which is intended for both receivers, is meant for both receivers, while the second, an individual secret message, is only for the intended receiver, treating the other receiver as an eavesdropper. If the second message is only transitted, the channel is called a \textit{wiretap channel} (WTC) \cite{bloch2011physical}.
 
 These seminal works form the foundation for physical layer security research.
 Experimental portion of the thesis will examine security of communications channels in the context of NGSO VSAT networks, bridging the theoretical underpinnings with real-world considerations.
