@@ -390,7 +390,7 @@ text must be identical to the text on the abstract page.
 \thesistitle{Uplink-liikenteen suojaus vihollisen ilma-aluksia vastaan ei-geostationaarisessa satelliittiviestinnässä}
 \supervisor{Apul. prof.\ Jaan Praks}
 \advisor{DI Tapio Savunen}
-\degreeprogram{Elektroniikka ja sähkötekniikka}
+\degreeprogram{Automaatio- ja sähkötekniikan maisteriohjelma}
 %\department{Elektroniikan ja nanotekniikan laitos}
 \major{Elektroniset ja digitaaliset järjestelmät}
 %% The keywords need not be separated by \spc now.
@@ -786,7 +786,8 @@ The performance of different platforms was evaluated through metrics such as win
   \label{fig-chinese-balloon}
 \end{figure}
 
-High altitude balloons are also an interesting platform type when considering their applicability for signals intelligence. These systems are mainly interesting due to their low radar cross section and the wide area of coverage enabled by their relatively high stratospheric cruising altitude \cite{tomme2005paradigm}. Figure \ref{fig-chinese-balloon} shows the Chinese surveillance balloon flting over the Continental United States as photographed from a U.S. Air Force U-2 during an widely reported incident in early 2023.
+High altitude balloons are also an interesting platform type when considering their applicability for signals intelligence. These systems are mainly interesting due to their low radar cross section and the wide area of coverage enabled by their relatively high stratospheric cruising altitude \cite{tomme2005paradigm}.
+Figure \ref{fig-chinese-balloon} shows the Chinese surveillance balloon flting over the Continental United States as photographed from a U.S. Air Force U-2 during an widely reported incident in early 2023.
 
 The goal of the experimental portion of this thesis is to evaluate vulnerability of VSATs to airborne adversaries. Key factors for the evaluation are the ones that define an aircraft's performance: cruising speed and altitude, as well as payload mass, endurance and maneuverability. The latter is especially interesting, as it can greatly vary between platform types. For example, lighter than air crafts, such as high altitude balloons have relatively limited maneuverability, as they rely on athmospheric air currents to carry them around.
 
@@ -805,7 +806,10 @@ Simultaneously an eavesdropper (Eve) observes a degraded version of the signal r
 Wyner's wiretap channel introduced many mathematical tools for modelling information-theoretic security without the added complexity of fully general channel models.
 One of these important concepts is the secrecy capacity of the channel, which describes the greatest amount of information that can be confidentially communicated between the legitimate transmitter and receiver from the information-theoretic secrecy perspective \cite{bloch2011physical}.
 
-Wyner's DWTC model is not entirely satisfactory as it assumes the eavesdropper to be at a disadvantage to the legitimate user. To address this issue, Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approach that they termed the \textit{broadcast channel with confidential messages}. The model involves two receivers and a sender transmitting two messages at the same time. The first message, a common one, which is intended for both receivers, is meant for both receivers, while the second, an individual secret message, is only for the intended receiver, treating the other receiver as an eavesdropper. If the second message is only transitted, the channel is called a \textit{wiretap channel} (WTC) \cite{bloch2011physical}.
+Wyner's DWTC model is not entirely satisfactory as it assumes the eavesdropper to be at a disadvantage to the legitimate user. To address this issue, Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approach that they termed the \textit{broadcast channel with confidential messages}.
+The model involves two receivers and a sender transmitting two messages at the same time.
+The first message, a common one, which is intended for both receivers, is meant for both receivers, while the second, an individual secret message, is only for the intended receiver, treating the other receiver as an eavesdropper.
+If the second message is only transitted, the channel is called a \textit{wiretap channel} \cite{bloch2011physical}.
 
 These seminal works form the foundation for physical layer security research.
 Experimental portion of the thesis will examine security of communications channels in the context of NGSO VSAT networks, bridging the theoretical underpinnings with real-world considerations.
@@ -1017,10 +1021,6 @@ In practical terms, the modelling approach in this thesis is grounded on theoret
 
 % TODO: Datalähteet: ilma-alusket, uas, manned, balloon
 
-\clearpage
-
-\section{Results}
-
 \subsection{Threat model}
 The core goal of this thesis is to assess whether the presence of airborne eavesdroppers poses a risk to the uplink communications of emerging NGSO VSAT networks.
 The research applies quantitative analysis by building a threat model focusing on a Walker-type LEO megaconstellation, fixed Very Small Aperture Terminals (VSAT) and airborne eavesdroppers.
@@ -1091,9 +1091,13 @@ In the scenario, the jammer competes with the legitimate transmitter in RF signa
   \label{table-submodel-variables}
 \end{table}
 
+\clearpage
+
+\section{Results}
+
 \subsection{Submodel 1: Maximum interception range} \label{ch-results-submodel-1-range}
 % TODO: Scenario description: häritsijän sijainti, muuttujat -> orientoiva
-In order to eavesdrop a target transmitter, an eavesdropper need to be able to intercept sufficiently strong uplink signal. 
+To successfully eavesdrop on a target transmitter, an eavesdropper must intercept a sufficiently strong uplink signal. 
 Being firmly out of range of an earth station, in other words inside a white zone, is the most fundamental limit to an eavesdropper's ability to eavesdrop. 
 This can be thought as  arise where eavesdropping is either simply impossible or a very tough uphill battle:
 
@@ -1102,10 +1106,11 @@ This can be thought as  arise where eavesdropping is either simply impossible or
   \item The eavesdropper falls outside the main lobe of the VSAT earth station.
 \end{enumerate}
 
-As presented in appendix \ref{appendix-constellation-comparison}, broadband VSAT systems both existing and under development tend to operate in the Ku and Ka bands (12--18 and 26.5--40 GHz respectively), with the former being the more commonly used in user links between the orbiting satellite and user terminal and vice-versa, although some systems, such as Amazon's Project Kuiper deviate from this "rule". % TODO: Parempi termi
+As presented in appendix \ref{appendix-constellation-comparison}, both existing and under development broadband VSAT systems tend to operate in the Ku and Ka bands (12--18 and 26.5--40 GHz respectively), with the former being the more commonly used in user links between the orbiting satellite and user terminal and vice-versa, although some systems, such as Amazon's Project Kuiper deviate from this "rule". % TODO: Parempi termi
 In terms frequencies, both bands fall under super high (SHF, 3-30 GHz) to extremely high frequencies (EHF, 30-300 GHz), where the principal propagation mode is line-of-sight propagation.
 In this mode, the radio horizon of a transmitter can be derived from the Pythagorean theorem, assuming a perfectly spherical planetary body.
-Based on these constraints the scenario of the submodel considers a ground-bound VSAT whose uplink transmissions an airborne eavesdropper tries to intercept.
+Interception range is the dependent variable in the model, while the eavesdropper's altitude and minimum elevation angle of the VSAT are the independent ones.
+The scenario of the submodel accounts for a ground-bound VSAT whose uplink transmissions an airborne eavesdropper tries to intercept.
 The range from which the eavesdropper has a line-of-sight to the VSAT can be computed from a set of geometric equations, which we will go through next. 
 
 \begin{figure}[h]
@@ -1142,12 +1147,12 @@ This is not always the case with highly directional VSAT terminals, thus requiri
 Here, one of the most important parameters is the minimum elevation angle of the satellite system in question.
 Similar to radio horizon, maximum VSAT interception range can be examined through a trigonometric approximation model.
 
-As discussed regarding the characteristics of the terminals, typical minimum elevation angles range from 20 to 55 degrees in the recent broadband megaconstellations in LEO.
-As the operational altitude of the eavesdropper is known, theoretical maximum interception range can be computed for a range of the minimum elevation angles.
-The measurands form an orthogonal triangle with the minimum elevation as the acute angle opposite to the height of the triangle.
+% TODO: tää täytyy miettiä uudelleen. Ei päde 0 deg, mutta approximaatio kuitenkin riittävä kaarevuuden jäädessä pieneksi matallilla lentokorkeuksilla? Ehkä koko juttu vaan roskiin?
+
+If the satellite system had a minimum elevation angle of 0 degrees, the triangle would be a half of a isoceles one.
+Half of this triangle is an orthogonal triangle with the minimum elevation as the acute angle opposite to the height of the triangle.
 The operational altitude of the eavesdropper is the height of the triangle, while the base is formed by the theoretical interception range of the system.
 Lastly, the hypotenuse is the line-of-sight (LOS) distance between the VSAT site and the airborne eavesdropper.
-
 Trigonometric tangent function of the interception range triangle is
 
 \begin{equation} \label{eq-range-1}
@@ -1160,6 +1165,18 @@ Rearranging (\ref{eq-range-1}) for $d_{Eve}$ gives
 
 \begin{align} \label{eq-range-2}
   d_{Eve} = \frac{h_{Eve}}{\tan(e_{Alice})}
+\end{align}
+
+As discussed regarding the characteristics of LEO constellations, typical minimum elevation angles range from 20 to 55 degrees in .
+A more accurate inteception range estimate can be computed based on the rule of cosines, where the model also accounts for the curvature of the body. 
+
+As the operational altitude of the eavesdropper is known, theoretical maximum interception range can be computed for a range of the minimum elevation angles.
+The measurands form an obtuse triangle with the sum of minimum elevation angle and a straight edge as the acute angle opposite to side with length distance of the aircraft from the body's center. % TODO: sekava ilmaus
+The other two sides adjacent to the known angle are the radius of the body and the line-of-sight (LOS) distance between the VSAT site and the airborne eavesdropper.
+Figure \ref{fig-cosine-rule-interception} displays an example geometry for the latter scenario.
+
+\begin{align} \label{eq-range-3}
+  d = \frac{1}{2} (\sqrt{4 h (h + 2 r) + 4 r^2 \cos^2(e)} + 2 r \cos(e))
 \end{align}
 
 \begin{figure}[h]
@@ -1179,6 +1196,7 @@ Therefore, we can deduce that the minimum elevation angle is in most cases the d
 The influence of $h_{Eve}$ on $d_{Eve}$ is markedly smaller but still significant, especially when considering terminals with small $e_{Alice}$.
 The tangent function has asymptotes at $e_{Alice} = \pi / 2 + n\pi$. Within the given limits, the asymptotes are not reached and the resulting surface is smooth and continuous.
 
+% TODO: Aproksimaatioiden virheen vertailu?
 %% TODO: Takaisin reaalimaailmaan alamallin osalta
 
 \subsection{Submodel 2a: Beam tracking potential in equatorial orbits} \label{ch-results-submodel-2a-tracking-equatorial}
