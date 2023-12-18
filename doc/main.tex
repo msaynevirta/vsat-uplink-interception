@@ -1163,9 +1163,9 @@ Trigonometric tangent function of the interception range triangle is
 where $e_{Alice}$ is the minimum elevation angle of the user terminal, $h_{Eve}$ is the operational altitude of the intercepting airborne platform and $d_{Eve}$ is its distance from Alice on the ground, in essence the interception range.
 Rearranging (\ref{eq-range-1}) for $d_{Eve}$ gives
 
-\begin{align} \label{eq-range-2}
+\begin{equation} \label{eq-range-2}
   d_{Eve} = \frac{h_{Eve}}{\tan(e_{Alice})}
-\end{align}
+\end{equation}
 
 As discussed regarding the characteristics of LEO constellations, typical minimum elevation angles range from 20 to 55 degrees in .
 A more accurate inteception range estimate can be computed based on the rule of cosines, where the model also accounts for the curvature of the body. 
@@ -1175,9 +1175,15 @@ The measurands form an obtuse triangle with the sum of minimum elevation angle a
 The other two sides adjacent to the known angle are the radius of the body and the line-of-sight (LOS) distance between the VSAT site and the airborne eavesdropper.
 Figure \ref{fig-cosine-rule-interception} displays an example geometry for the latter scenario.
 
-\begin{align} \label{eq-range-3}
+\begin{equation} \label{eq-range-3}
+  h + r = \sqrt{d^2 + r^2 - 2 d r \cos(e)}
+\end{equation}
+
+Additionally, in the case of the Earth, curving of RF propagation in the athmosphere can be accounted for by using the $4/3$ multiplier for the radius. Combining these factors and solving for intercept range $d$ gives the following equation:
+
+\begin{equation} \label{eq-range-3}
   d = \frac{1}{2} (\sqrt{4 h (h + 2 r) + 4 r^2 \cos^2(e)} + 2 r \cos(e))
-\end{align}
+\end{equation}
 
 \begin{figure}[h]
   \centering
