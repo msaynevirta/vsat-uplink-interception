@@ -1,0 +1,42 @@
+\tikzset{
+    rotate around with nodes/.style args={#1:#2}{
+        rotate around={#1:#2},
+        set node rotation={#1},
+    },
+    rotate with/.style={rotate=\qrrNodeRotation},
+    set node rotation/.store in=\qrrNodeRotation,
+}
+
+\begin{tikzpicture}
+    % constantss
+    \def\R{4}
+    \def\h{4}
+    \def\rootangle{35}
+    \def\d{(\R^2+(\h+\R)^2-2*\R*(\h+\R)*cos(\rootangle))^(1/2)}
+    \def\angleg{asin((\h+\R)/ (\d) * sin(\rootangle))}
+
+    % origin
+    \coordinate (origin) at (0,0);
+    \node[circle,fill,inner sep=1.2pt] (origin){};
+
+    % vsat
+    \coordinate (vsat) at (0,\R);
+
+    % curved surface of the body
+    \draw[line width=1.2pt] ([shift={(20:\R)}]0,0) arc(20:160:\R);
+
+    \draw
+        (origin) -- (vsat) node [midway,fill=white] {$\frac{4}{3}R$} node[circle,fill,inner sep=1.8pt,label=above left:VSAT] {};
+    \draw[rotate around with nodes={{90-\rootangle}:(0,0)}]
+        (origin) -- (\R,0) node [midway,fill=white] {$\frac{4}{3}R$};
+    \draw[rotate around with nodes={{90-\rootangle}:(0,0)}]
+        (\R,0) -- ({\R+\h},0) node [midway,fill=white] {$h$};
+    
+    % hypotenuses
+    \draw[dashed,dash phase=-3pt] (vsat) -- (5,\R) node (tangent) {};
+    \draw[rotate around with nodes={{90-\angleg}:(vsat)}] (vsat) -- ({\d},\R) node [midway,fill=white] (eve) {$d$} node[circle,fill,inner sep=1.8pt,label=Eve] {};
+
+    % elevation angle
+    \pic ["$\alpha$", draw, <->,
+      angle radius=11mm, angle eccentricity=1.2] {angle = tangent--vsat--eve};
+\end{tikzpicture}
