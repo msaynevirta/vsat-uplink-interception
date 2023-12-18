@@ -37,6 +37,8 @@
     \draw[rotate around with nodes={{90-\angleg}:(vsat)}] (vsat) -- ({\d},\R) node [midway,fill=white] (eve) {$d$} node[circle,fill,inner sep=1.8pt,label=Eve] {};
 
     % elevation angle
-    \pic ["$\alpha$", draw, <->,
-      angle radius=11mm, angle eccentricity=1.2] {angle = tangent--vsat--eve};
+    \pic ["{$e$}", draw,
+      angle radius=12mm, angle eccentricity=1.2] {angle = tangent--vsat--eve};
+
+    \pic [draw,angle radius=4mm] {right angle = tangent--vsat--origin};
 \end{tikzpicture}
