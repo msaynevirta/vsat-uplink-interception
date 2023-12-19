@@ -445,7 +445,7 @@ ELINT   & electronic intelligence \\
 EO      & earth observation \\
 ES      & electromagnetic support \\
 FSS     & fixed satellite service \\
-GNSS    & global navigation satllite system \\
+GNSS    & global navigation satellite system \\
 ISR     & intelligence, surveillance, and reconnaissance \\
 MSS     & mobile satellite service \\
 NTN     & non-terrestrial network \\
@@ -464,13 +464,11 @@ SIGINT  & signals intelligence
 %Työn kontribuutio (tämä on tärkein osuus johdannossa) - tutkimuskysymykset, työn rajauksesta, menetelmistä
 %Sisältö, rakenne
 
-
-%% TODO: NGSO vs LEO, termin avaaminen
 Over the past five decades, satellite systems have emerged as indispensable enablers of our modern way of life within an increasingly technology-driven human society.
 Innovation in fields such as Global Navigation Satellite Systems (GNSS) \cite{oconnor2019economic}, Earth Observation (EO) \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and Satellite Communication (satcom) \cite{euroconsult-space-economy-2023} has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in position, navigation, and timing (PNT), as well as intelligence, surveillance, and reconnaissance (ISR).
 Recently, the satellite communications industry has entered into an era of rapid change.
 Since the early 2010s, the most prominent new trend has been the large megaconstellations of hundreds to thousands of satellites in Low Earth Orbit (LEO).
-These have been enabled by the falling cost of space launches and mass-production of satellite hardware based on Commercial Off-The-Shelf (COTS) technology.
+The raise of large constellations in non-geostationary orbits (NGSO) has been enabled by the falling cost of space launches and mass-production of satellite hardware based on Commercial Off-The-Shelf (COTS) technology \cite{euroconsult-space-economy-2023}.
 
 Aside from commercial markets, governmental organisations such as civilian public safety authorities and defense ministries have expressed great interest in emerging commercial satellite communication solutions.
 In terms of user segments, governmental organisations tend to pay greater attention to the security and resilience aspects of the communications solutions they utilise, which has in turn raised questions regarding the conformity of these systems.
@@ -496,21 +494,22 @@ One way to understand the reason for these vulnerabilities is through the paradi
 The validity of this approach has long been debated within research and industry circles \cite{johansson2008great}, with the recent consensus being that security of a system should never rely exclusively on obscurity \cite{diehl2016law, guo2018defending}.
 
 Although much work has focused on long operational geostationary broadband and non-geostationary narrowband systems, as well as more long term 5G and 6G non-terrestrial networks (NTN), little attention has been directed towards the security of emerging LEO broadband systems.
+Operators of the emerging systems tout their architecture-level resilience in their marketing, but academic literature on the topic is still rather scarse.
 Moreover, most of the research on satellite system protection has examined downlink communication between the satellite and different earth stations \cite{abdelsalam2023physical}.
 Furthermore, more capital-intensive space or airborne platforms have received relatively little attention, with a greater emphasis being placed on the study of ground-based adversaries.
 Considering this prior history and recent rapid growth, it is important to better understand the security aspects of this rapidly evolving technology. 
 
-% TODO: Tutkimuskysymyksen tarkempi kuvaus, menetelmät
 This thesis seeks to assess whether the presence of airborne eavesdroppers poses a risk to the uplink communications of emerging NGSO VSAT networks. % TODO: in the context of public safety ...
-To achieve this goal, quantitative analysis is used by developing a threat model focusing on a Walker-type LEO megaconstellation, fixed Very Small Aperture Terminals (VSAT) and airborne eavesdroppers.
-The resilience of LEO broadband systems will be explored using geometric and kinematic analysis, as well as link budgets based on typical hardware configurations.
-The developed analytical model will be evaluated numerically by comparing its results against the requirements set by both public safety and defence user groups.
+To achieve this goal, a conceptual-analytical research approach is applied through a threat model focusing on a Walker-type LEO megaconstellation, fixed Very Small Aperture Terminals (VSAT) and airborne eavesdroppers.
+The resilience of NGSO broadband systems is explored via a parametric study of threat model consisting of four discrete submodels. Dependent variable of each submodel are chosen in a manner that helps build understanding of the fundamental constraints of NGSO satcom systems from the perspective of VSAT uplink communication with orbiting satellites.
+In this context, adversarial actions, such as deliberate eavesdropping and interference like jamming, are considered. In order to build a quantitative picture of the prevalent threat landscape, we need to look into geometric and kinematic factors, as well as radio frequency (RF) link budgets. 
+The conceptual-analytical model will be evaluated numerically against a set of known real-world system parameters and the results will be discussed in relation to the requirements set out by both public safety and defence user groups.
 
 The thesis is structured as follows.
 Chapter 2 describes the key characteristics of LEO megaconstellations, the different aerial platforms used for eavesdropping, and signals intelligence.
-Chapter 3 develops a threat model comprising passive and active eavesdropping, jamming, as well as signal geolocation.
-Chapter 4 examines the scenarios of the model in relation to the requirements set by relevant critical communications user groups.
-Chapter 5 discusses the results and compares these against the end-user requirements.
+Chapter 3 develops a threat model comprising signal aquesition and detection for applications like RF geolocation or eavesdropping, as well as deliberate interference through RF jamming.
+Chapter 4 goes over the features of the analytical submodels and presents the quantitative results from their numerical analysis.
+Chapter 5 discusses these findings and and compares them against the end-user requirements set out in chapter 2.
 Chapter 6 summarizes this work by discussing the security performance of LEO broadband systems and suggesting directions for future work.
 
 \clearpage
@@ -1001,7 +1000,7 @@ This requires that the sender cannot deny that he/she sent the message.
 
 \section{Research material and methods}
 
-\subsection{Research question and methodology}
+\subsection{Research questions and methodology}
 
 % TODO: Mitä halutaan tutkia? Miten liittyy menetelmiin?
 \begin{figure}[h]
@@ -1226,7 +1225,7 @@ Based on these interception range estimations, we can say that eavesdropping a V
   \label{fig-orbit-geometry}
 \end{figure}
 
-In addition to being aligned along the line-of-sight of the VSAT's main lobe, the eavesdropper needs to be able to intercept sufficiently long transmission to be able to %ilmaista lähettäjän olemus. 
+In addition to being aligned along the line-of-sight of the VSAT's main lobe, the eavesdropper needs to be able to intercept sufficiently long transmission to be able to intercept and detect a legitimate VSAT transmission. 
 This time dimension brings another point to consider when evaluating the risk of eavesdropping.
 Different durations of interception have varying implications for the legitimate transmitter.
 As an practical example, millisecond-level signal capture may be enough for DF applications, while in COMINT monitoring the signal for longer periods ranging all the way from seconds to days would be useful for gathering enough data. % TODO: parempi ilmaus tähän
@@ -1244,7 +1243,7 @@ In equatorial orbits, Earth's rotation can be directly substracted from the angu
   T^2 = (\frac{4\pi^2}{GM})r^3
 \end{equation}
 
-where $T$ is the orbital period, $G$ is the gravitational constant, $M$ is the mass of the orbited body and $r$ is the radius of the orbit %measured from the centre of mass of the orbited body.
+where $T$ is the orbital period, $G$ is the gravitational constant, $M$ is the mass of the orbited body and $r$ is the radius of the orbit measured from the centre of mass of the orbited body.
 
 In essence, the aircraft can be modeled as a low-flying athmospheric satellite.
 This allows for the same equations to be used in modeling its kinematic characteristics.
@@ -1294,9 +1293,10 @@ $\omega_E$ is the angular velocity of the Earth at the equator.
 Figure \ref{fig-subsat-velocity-equatiorial} shows the sub-satellite velocity ($v_{r, air}$) of a satellite in equatorial orbit as a function of orbital height $h_{sat} = r_{sat} - R_{E}$, where $R_{E}$ is the radius of the Earth.
 Velocities are examined in orbits ranging from LEO to GEO, which corresponds to the range $h_{sat} = [5 \cdot 10^5, 3.7 \cdot 10^7]$.
 In the resulting graph, the dependent variable or the sub-satellite velocity ($v_{r, air}$) is on the vertical axis, while the independent variable of the orbital height $h_{sat}$ is on the horizontal axis.
-The graph can be observed approaching the rotational velocity of the Earth when $h_{sat}$ approaches the height of GEO 36000 km.
+The graph can be observed approaching the rotational velocity of the Earth when $h_{sat}$ approaches the height of GEO at \SI{35786}{\kilo\meter}.
 As the graph is computed in the ECF coordinate frame, we can se sub-satellite velocity approaching zero, which means that the satellite appears fixed in its position in the sky.
 Cubically decreasing nature of $v_{sat}$ leads to radically higher values for LEO with $v_{sat}$ values ranging roughly between 5 and 7\ km/s in orbital altitudes between $h_{sat} = [5 \cdot 10^5, 2 \cdot 10^6]$.
+At these velocities, it is simply impossible for an athmospheric vehicle keep tracking a narrow VSAT uplink beam. Fast reconnaissance aircraft, such as the Lockheed SR-71 Blackbird are able to fly at a fraction of these sub-satellite velocities at the maximum velocity of \SI{1}{\kilo\meter\per\second}. For reference, high velocity artillery cannons have muzzle velocities in a similar range.
 
 \subsection{Submodel 2b: Beam tracking potential in inclined orbits} \label{ch-results-submodel-2b-tracking-inclined}
 
@@ -1349,6 +1349,11 @@ Finally, the sub-satellite velocity figure can be solved based on the scalar ang
   \caption{Sub-satellite velocity (m/s) as a function of orbital altitude (m) and inclination (degrees).}
   \label{fig-subsat-velocity-inclined}
 \end{figure}
+Figure \ref{fig-subsat-velocity-inclined} shows the sub-satellite velocity of a satellite in an inclined orbit as a function of orbital height and inclination.
+The resulting sub-satellite velocities in meters-per-second were computed as a function of inclinations in the range $i = [0,90]$ and orbital heights $h = [500*10^3, 37*10^6]$.
+The results show that inclination has a minor influence while the orbital height is the dominant factor determining the sub-satellite velocity.
+Thus, inclined orbits do not improve the adversary's chances at intercepting and tracking a VSAT uplink transmission.
+With velocity ranges in the single digit kilometer-per-second range, even the fastest man-made athmospheric vehicles and projectiles fall sort of the sub-satellite velocities of the beam at typical aircraft cruising altitudes.
 
 \subsection{Submodel 3: Listening window} \label{ch-results-submodel-3-window}
 
