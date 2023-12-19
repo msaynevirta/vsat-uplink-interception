@@ -866,7 +866,7 @@ On the practical side, ES is often intelligence gathering and dissemination whil
 %\subsubsection{Signal detection}
 %TODO: Digitaistelukentästä jotain? Siuppaus, ilmaisu etc. ketju? Linkkibudjetti lähtökohtana, spread spectrum?
 
-\subsubsection{Direction finding and radiopositioning}
+\subsubsection{Direction finding and radiopositioning} \label{ch-df-radiopositioning}
 Geolocating fixed VSAT terminals implemented as phased arrays, different direction finding techniques can be assessed for their suitability based on several factors.
 Some of the modern techniques include:
 
@@ -964,37 +964,6 @@ Long-term, evolution towards direct-to-smartphone type solutions is a potential 
   \end{tabular}
   \label{table-mcx-requirements}
 \end{table}
-
-% Yarali. Tästä voisi vääntää CIA-kolmion
-
-In this section, we address the important security features of the TETRA network.
-Here the scope of coverage spans the authentication, encryption mechanisms, and the key management of TETRA.
-It dictates that a secure communication network needs to provide (Stavroulakis, 2007):
-
-    Confidentiality
-    Integrity
-    Reliability
-    Non‐repudiation
-    Authentication.
-
-6.7.8.1 Confidentiality
-
-    Only authorized personnel or people should have access to the information being passed along.
-
-6.7.8.2 Integrity
-
-    This refers to the requirement that states that only authorized users need to be able to make any modifications to the information in exchange.
-
-6.7.8.3 Reliability
-
-    This refers to the requirement that the resources and the services are not denied and are available to the authorized users to accomplish various tasks.
-
-6.7.8.4 Non‐repudiation
-
-This requires that the sender cannot deny that he/she sent the message.
-6.7.8.5 Authentication
-
-    This refers to the requirement that the sender's identity is verifiable by the recipient.
 
 \clearpage
 
@@ -1307,7 +1276,7 @@ Common configurations include the Walker Star and Delta constellation configurat
 The same analysis methods remain valid for inclined orbits but some additional factors need to be considered.
 Equatorial orbits have only a single velocity component parallel to the xy-plane in both ECI and ECF coordinate frames.
 On the other hand, any inclination induces additional velocity component perpendicular to this original equatorial component.
-This velocity component is visualised by $v_z$ in figure \ref{fig-inclined-v-components}. % TODO: Kuvaaja puuttuu
+%This velocity component is visualised by $v_z$ in figure \ref{fig-inclined-v-components}. % TODO: Kuvaaja puuttuu
 
 Transitioning from the simple scalar representation into a vector space makes analyzing inclined orbital motion less cumbersome.
 Here, angular velocity is a very useful abstraction, as it allows to sum different rotational speed components together.
@@ -1356,9 +1325,12 @@ Thus, inclined orbits do not improve the adversary's chances at intercepting and
 With velocity ranges in the single digit kilometer-per-second range, even the fastest man-made athmospheric vehicles and projectiles fall sort of the sub-satellite velocities of the beam at typical aircraft cruising altitudes.
 
 \subsection{Submodel 3: Listening window} \label{ch-results-submodel-3-window}
+Tracking potential is one way to evaluate risk of an airborne adversary trying to intercept and collect useful RF data from uplink VSAT transmissions.
+Theoretical length of a capture window, or the listening window of an eavesdropper is a useful metric in evaluating the potential attack types.
+As mentioned in submodel 2a, different durations of interception have varying implications for the legitimate transmitter.
+Relatively short RF samples may still able an adversary geolocate a transmitter based on methods discussed in chapter \ref{ch-df-radiopositioning}, while useful insights for proper COMINT would require longer-term interception of a VSAT's uplink signal over periods ranging from seconds to days.
 
-Listening window is the time that an airborne eavesdropper is able to intercept the uplink RF transmission from a user terminal on the ground.
-Analysing this window is somewhat more complex in terms of the model required and potential input parameters that need to be considered.
+Quantitative analysis of the listening window of an eavesdropper is somewhat more complex in terms of the model required and potential input parameters that need to be considered.
 On a high level, the window is primarily influenced by the relative motion between the uplink RF beam of the terminal and the kinematic characteristics of the airborne eavesdropper.
 The latter include qualities such as cruise speed, operational altitude, manoeuvrability and controllability.
 They define the ability of the aircraft to keep a lock on the moving RF beam.
@@ -1371,13 +1343,15 @@ Assuming a stationary eavesdropper, the listening window ${t_{pass}}$ can be com
   t_{pass} = \frac{\theta_{beam}}{\omega_{ECF}}
 \end{equation}
 
-Evaluation in smaller domain, $T_{orbit} = [5400, 42400]$. Around GEO grows to infinity as the sub-satellite velocity matches the aircraft's velocity as the satellite fixed in the sky.
 \begin{figure}[h]
   \centering
   \input{tikz_figures/fig-listening-window.tikz}
   \caption{Listening window (s) as a function of orbital altitude (m) and inclination (deg).}
   \label{fig-listening-window}
 \end{figure}
+
+Figure \ref{fig-listening-window} shows numerical results for listening windows computed for a narrower range of orbital periods $T_{orbit} = [5400, 42400]$ seconds.
+As we can see from 3D plot, the window starts to grow as the period approaches that of a GEO. In theory, the period goes to infinity for satellites in GEO as the sub-satellite velocity matches the rotation of the earth, making it possible for an aircraft to theoretically indefinitly loiter inside a VSAT beam communicating with the same GEO satellite.
 
 \subsection{Submodel 4: Jamming link budget} \label{ch-results-submodel-4-link-budget}
 Jamming relies on the deliberately weakening of the useful signal in relation to prevailing noise floor and interference. In situations where the jamming dominates over the natural noise sources, the relationship can be simplified to a signal-to-jamming ratio (SJR). In low jamming power scenarios, noise sources need to be also accounted for leading to the term of signal-to-noise+jamming ratio (SJNR) \cite{kosola2013digitaalinen}. % TODO: kankea jälkimmäinen lause
