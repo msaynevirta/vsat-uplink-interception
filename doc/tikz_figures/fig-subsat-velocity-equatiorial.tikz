@@ -21,7 +21,9 @@ ymin=0,
 ymax=8000,
 ylabel style={font=\color{white!15!black}},
 ylabel={v (m/s)},
-axis background/.style={fill=white}
+axis background/.style={fill=white},
+xmajorgrids,
+ymajorgrids
 ]
 \addplot [color=mycolor1, forget plot]
   table[row sep=crcr]{%
