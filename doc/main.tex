@@ -500,6 +500,7 @@ Moreover, most of the research on satellite system protection has examined downl
 Furthermore, more capital-intensive space or airborne platforms have received relatively little attention, with a greater emphasis being placed on the study of ground-based adversaries.
 Considering this prior history and recent rapid growth, it is important to better understand the security aspects of this rapidly evolving technology. 
 
+% TODO: Tutkimuskysymyksen tarkempi kuvaus, menetelmät
 This thesis seeks to assess whether the presence of airborne eavesdroppers poses a risk to the uplink communications of emerging NGSO VSAT networks. % TODO: in the context of public safety ...
 To achieve this goal, quantitative analysis is used by developing a threat model focusing on a Walker-type LEO megaconstellation, fixed Very Small Aperture Terminals (VSAT) and airborne eavesdroppers.
 The resilience of LEO broadband systems will be explored using geometric and kinematic analysis, as well as link budgets based on typical hardware configurations.
@@ -1000,8 +1001,9 @@ This requires that the sender cannot deny that he/she sent the message.
 
 \section{Research material and methods}
 
-\subsection{Methodology}
+\subsection{Research question and methodology}
 
+% TODO: Mitä halutaan tutkia? Miten liittyy menetelmiin?
 \begin{figure}[h]
   \centering
   \input{tikz_figures/fig-research-taxonomy.tikz}
@@ -1022,6 +1024,8 @@ In practical terms, the modelling approach in this thesis is grounded on theoret
 % TODO: Datalähteet: ilma-alusket, uas, manned, balloon
 
 \subsection{Threat model}
+% TODO: Miksi tätä kannattaa tutkia näillä muuttujilla? Miten rajaavat ongelmaa? Tutkimuskysymys
+
 The core goal of this thesis is to assess whether the presence of airborne eavesdroppers poses a risk to the uplink communications of emerging NGSO VSAT networks.
 The research applies quantitative analysis by building a threat model focusing on a Walker-type LEO megaconstellation, fixed Very Small Aperture Terminals (VSAT) and airborne eavesdroppers.
 The threat model is built around a set of four smaller submodels, each examining analytically a relevant dependent variable against a number of independent ones.
@@ -1096,7 +1100,7 @@ In the scenario, the jammer competes with the legitimate transmitter in RF signa
 \section{Results}
 
 \subsection{Submodel 1: Maximum interception range} \label{ch-results-submodel-1-range}
-% TODO: Scenario description: häritsijän sijainti, muuttujat -> orientoiva
+% TODO: Scenario description: häritsijän sijainti, muuttujat. Orientoi lukija miksi tätä kautta ?
 To successfully eavesdrop on a target transmitter, an eavesdropper must intercept a sufficiently strong uplink signal. 
 Being firmly out of range of an earth station, in other words inside a white zone, is the most fundamental limit to an eavesdropper's ability to eavesdrop. 
 This can be thought as  arise where eavesdropping is either simply impossible or a very tough uphill battle:
@@ -1106,28 +1110,23 @@ This can be thought as  arise where eavesdropping is either simply impossible or
   \item The eavesdropper falls outside the main lobe of the VSAT earth station.
 \end{enumerate}
 
-As presented in appendix \ref{appendix-constellation-comparison}, both existing and under development broadband VSAT systems tend to operate in the Ku and Ka bands (12--18 and 26.5--40 GHz respectively), with the former being the more commonly used in user links between the orbiting satellite and user terminal and vice-versa, although some systems, such as Amazon's Project Kuiper deviate from this "rule". % TODO: Parempi termi
-In terms frequencies, both bands fall under super high (SHF, 3-30 GHz) to extremely high frequencies (EHF, 30-300 GHz), where the principal propagation mode is line-of-sight propagation.
-In this mode, the radio horizon of a transmitter can be derived from the Pythagorean theorem, assuming a perfectly spherical planetary body.
-Interception range is the dependent variable in the model, while the eavesdropper's altitude and minimum elevation angle of the VSAT are the independent ones.
-The scenario of the submodel accounts for a ground-bound VSAT whose uplink transmissions an airborne eavesdropper tries to intercept.
-The range from which the eavesdropper has a line-of-sight to the VSAT can be computed from a set of geometric equations, which we will go through next. 
+As presented in appendix \ref{appendix-constellation-comparison}, both existing and under development broadband VSAT systems tend to operate in the Ku and Ka bands (12--18 and 26.5--40 GHz respectively), with the former being the more commonly used in user links between the orbiting satellite and user terminal and vice-versa, although some systems, such as Amazon's Project Kuiper deviate from this general rule.
+In terms frequencies, both bands fall under super high (SHF, 3-30 GHz) to extremely high frequencies (EHF, 30-300 GHz), where the principal propagation mode is line-of-sight (LOS) propagation.
+In LOS propagation, the radio horizon of a transmitter can be derived from the trigonometric law of cosines, if the planetary body can be assumed to be spherical in shape. If the minimum elevation angle of the satellite system is assumed to be zero, the geometry of the problem simplifies into a right triangle, whose hypotenuse and legs are described by the Pythagorean theorem.
 
 \begin{figure}[h]
   \centering
   \input{tikz_figures/fig-interception-range-vacuum.tikz}
-  \caption{Geometry of ideal LOS propagation over a circular body \cite{seybold2005introduction}.}
+  \caption{Geometry of ideal LOS propagation over a circular body \cite{seybold2005introduction} when the minimum elevation angle $e$ is assumed to be zero.}
   \label{fig-interception-range-vacuum}
 \end{figure}
 
-Starting point for computing the interception range of a terminal is the basic geometry of the problem. Here, line-of-sight distance $d$ between the VSAT and the airborne eavesdropper  forms one leg of a right triangle with the radius of the body $R$ being the other one. This leaves the hypotenuse, which is in this case the transmitter's distance from the centre of the body $(R+h)$ \cite{seybold2005introduction}.
-The relationship between the quantities is visualised in figure \ref{fig-interception-range-vacuum}.
+In the simplified right triangle scenario, line-of-sight distance $d$ between the VSAT and the airborne eavesdropper forms one leg of a right triangle with the radius of the body $R$ being the other one. This leaves the hypotenuse, which is in this case the transmitter's distance from the centre of the body $(R+h)$ \cite{seybold2005introduction}.
+The relationship between the quantities is visualised in figure \ref{fig-interception-range-vacuum}. Equation \ref{eq-radio-horizon-pythagoreas} shows the mathematical relationship of these quantities in the for of the Pythagorean theorem.
 
-% TODO: SELITÄ MIKSI VOIDAAN APROKSIMOIDA TOISESSA VIRKKEESSÄ
-
-\begin{equation*}
+\begin{equation} \label{eq-radio-horizon-pythagoreas}
   d^2=(R+h)^{2}-R^2= 2R \cdot h + h^2 \\
-\end{equation*}
+\end{equation}
 
 In case of the Earth, the height of both surface-bound and airborne transmitters $h$ is rather insignificant compared to the radius of the body $R$. Thus, we can simplify the line-of-sight equation to
 
@@ -1146,34 +1145,21 @@ Radio horizon allows us to examine situations where the transmitting antenna is 
 This is not always the case with highly directional VSAT terminals, thus requiring additional factors being taken into account.
 Here, one of the most important parameters is the minimum elevation angle of the satellite system in question.
 Similar to radio horizon, maximum VSAT interception range can be examined through a trigonometric approximation model.
+As discussed regarding the characteristics of LEO constellations, typical minimum elevation angles range from 20 to 55 degrees in modern LEO megaconstellations, as shown in appendix \ref{appendix-constellation-comparison}.
+In this case, a more accurate inteception range estimate can be computed based on the rule of cosines, where the model also accounts for the curvature of the body.
 
-% TODO: tää täytyy miettiä uudelleen. Ei päde 0 deg, mutta approximaatio kuitenkin riittävä kaarevuuden jäädessä pieneksi matallilla lentokorkeuksilla? Ehkä koko juttu vaan roskiin?
+\begin{figure}[h]
+  \centering
+  \input{tikz_figures/fig-cosine-rule-interception.tikz}
+  \caption{Rule of cosines.}
+  \label{fig-cosine-rule-interception}
+\end{figure}
 
-If the satellite system had a minimum elevation angle of 0 degrees, the triangle would be a half of a isoceles one.
-Half of this triangle is an orthogonal triangle with the minimum elevation as the acute angle opposite to the height of the triangle.
-The operational altitude of the eavesdropper is the height of the triangle, while the base is formed by the theoretical interception range of the system.
-Lastly, the hypotenuse is the line-of-sight (LOS) distance between the VSAT site and the airborne eavesdropper.
-Trigonometric tangent function of the interception range triangle is
-
-\begin{equation} \label{eq-range-1}
-  \tan(e_{Alice}) = \frac{h_{Eve}}{d_{Eve}}
-\end{equation}
-
-\noindent
-where $e_{Alice}$ is the minimum elevation angle of the user terminal, $h_{Eve}$ is the operational altitude of the intercepting airborne platform and $d_{Eve}$ is its distance from Alice on the ground, in essence the interception range.
-Rearranging (\ref{eq-range-1}) for $d_{Eve}$ gives
-
-\begin{equation} \label{eq-range-2}
-  d_{Eve} = \frac{h_{Eve}}{\tan(e_{Alice})}
-\end{equation}
-
-As discussed regarding the characteristics of LEO constellations, typical minimum elevation angles range from 20 to 55 degrees in .
-A more accurate inteception range estimate can be computed based on the rule of cosines, where the model also accounts for the curvature of the body. %TODO: Second degree polynomial
-
-As the operational altitude of the eavesdropper is known, theoretical maximum interception range can be computed for a range of the minimum elevation angles.
-The measurands form an obtuse triangle with the sum of minimum elevation angle and a straight edge as the acute angle opposite to side with length distance of the aircraft from the body's center. % TODO: sekava ilmaus
+If the operational altitude of the eavesdropper is known, theoretical maximum interception range can be computed for a range of the minimum elevation angles by using the law of cosines.
+Rearranging for interception range $d$ results in a complete quadratic equation, from which $d$ can be solved by discarding the negative roots.
+in practice, the measurands form an obtuse triangle with the sum of minimum elevation angle and a straight edge as the acute angle opposite to side with length distance of the aircraft from the body's center. % TODO: sekava ilmaus
 The other two sides adjacent to the known angle are the radius of the body and the line-of-sight (LOS) distance between the VSAT site and the airborne eavesdropper.
-Figure \ref{fig-cosine-rule-interception} displays an example geometry for the latter scenario.
+Figure \ref{fig-cosine-rule-interception} visualises an example geometry this scenario.
 
 \begin{equation} \label{eq-range-3}
   h + r = \sqrt{d^2 + r^2 - 2 d r \cos(e)}
@@ -1187,37 +1173,49 @@ Additionally, in the case of the Earth, curving of RF propagation in the athmosp
 
 \begin{figure}[h]
   \centering
-  \input{tikz_figures/fig-cosine-rule-interception.tikz}
-  \caption{Rule of cosines.}
-  \label{fig-cosine-rule-interception}
-\end{figure}
-
-\begin{figure}[h]
-  \centering
   \input{tikz_figures/fig-interception-range-2d.tikz}
   \caption{Interception range ($d$) as a function of minimum elevation angle ($e$) and operational altitude of the eavesdropper ($h$).}
   \label{fig-interception-range-2d}
 \end{figure}
-
-\begin{figure}[h]
-  \centering
-  \input{tikz_figures/fig-interception-range.tikz}
-  \caption{Interception range ($d$) as a function of minimum elevation angle ($e$) and operational altitude of the eavesdropper ($h$).}
-  \label{fig-interception-range}
-\end{figure}
-
-%\noindent
-Figure \ref{fig-interception-range} shows the interception range $d_{Eve}$ in the range $e_{Alice} = [10^\circ, 85^\circ], h_{Eve} = [100,20000]$.
-In the resulting 3D plot, the dependent variable or the interception range ($d_{Eve}$) of the airborne eavesdropper is on the vertical axis.
-Independent variables or the minimum elevation angle of the terminal ($e_{Alice}$) and opertional altitude of the airborne eavesdropper ($h_{Eve}$) are on the horizontal axes.
 
 The convex surface exhebits linear growth in relation to altitude $h_{Eve}$ and accelerating tangential growth in relation to $e_{Alice}$.
 Therefore, we can deduce that the minimum elevation angle is in most cases the driving factor of the maximum interception range of a VSAT ground station.
 The influence of $h_{Eve}$ on $d_{Eve}$ is markedly smaller but still significant, especially when considering terminals with small $e_{Alice}$.
 The tangent function has asymptotes at $e_{Alice} = \pi / 2 + n\pi$. Within the given limits, the asymptotes are not reached and the resulting surface is smooth and continuous.
 
-% TODO: Aproksimaatioiden virheen vertailu?
-%% TODO: Takaisin reaalimaailmaan alamallin osalta
+Figure \ref{fig-interception-range-3d} shows the interception range $d_{Eve}$ over a range of minimum elevation angles $e_{Alice} = [0^\circ, 90^\circ]$ and number of operational altitudes ranging from $h_{Eve} = [0,20000]$ kilometers. % TODO: Korjaa rajojen kirjoitusasua
+In the resulting plot,
+Independent variables $e_{Alice}$ is on the horizontal axis, while  the dependent variable $d_{Eve}$ is on the vertical axis and has been calculated for a number of $h_{Eve}$ values.
+
+\begin{figure}[h]
+  \centering
+  \input{tikz_figures/fig-interception-range.tikz}
+  \caption{Interception range ($d$) as a function of minimum elevation angle ($e$) and operational altitude of the eavesdropper ($h$).}
+  \label{fig-interception-range-3d}
+\end{figure}
+
+Figure \ref{fig-interception-range-3d} shows a three-dimensional representation of the same interception range $d_{Eve}$ function over the range $e_{Alice} = [10^\circ, 85^\circ], h_{Eve} = [100,20000]$.
+In the resulting plot, the dependent variable or the interception range ($d_{Eve}$) of the airborne eavesdropper is on the vertical axis.
+Independent variables or the minimum elevation angle of the terminal ($e_{Alice}$) and opertional altitude of the airborne eavesdropper ($h_{Eve}$) are on the horizontal axes.
+
+Although not applied in the analytical work in the thesis, the problem may be still simplified further if the curvature of the body can be ignored, a typical situation when it comes to LOS propagation at short ranges of tens of kilometers.
+In this further simplified scenario, the trigonometric tangent function of the interception range triangle can be written as
+
+\begin{equation} \label{eq-range-1}
+  \tan(e_{Alice}) = \frac{h_{Eve}}{d_{Eve}}
+\end{equation}
+
+\noindent
+where $e_{Alice}$ is the minimum elevation angle of the user terminal, $h_{Eve}$ is the operational altitude of the intercepting airborne platform and $d_{Eve}$ is its distance from Alice on the ground, in essence the interception range.
+Rearranging (\ref{eq-range-1}) for $d_{Eve}$ gives
+
+\begin{equation} \label{eq-range-2}
+  d_{Eve} = \frac{h_{Eve}}{\tan(e_{Alice})}
+\end{equation}
+
+Although not exact in its results, this simplification may be used to gain quick insight into the threat of an eavesdropper operating at close ranges.
+
+Based on these interception range estimations, we can say that eavesdropping a VSAT interfacing with a rather difficult endeavour, as postulated in the hypothesis of the submodel. LOS-only propagation at SHF ranges means that it is simply impossible to intercept the signal when the eavesdropper is out of range or obstructed in relation to the legitimate transmitter. Thus in practice eavesdropping even a small number of VSATs in a limited geographical area of tens of square kilometers would require a significant number of colluding eavesdroppers due to these inherent interception range constraints, making the feat rather impractical for even better resourced adversaries.
 
 \subsection{Submodel 2a: Beam tracking potential in equatorial orbits} \label{ch-results-submodel-2a-tracking-equatorial}
 
@@ -1474,9 +1472,9 @@ The primary focus involved applying quantitative analysis through the developmen
 The foundation of the models rested on a first principles approach, employing geometric and kinematic analyses, as well as link budgets based on a representative hardware configuration.
 By deconstructing the target system into fundamental components, each submodel highlighted the potential strengths and vulnerabilities of satcom systems in relation to various threats.
 
-%- TODO: orbital motion in leo -> limits the listening window to minutes -> comint very difficult with individual receivers, requires large scale collusion between receivers and large data transfers
+%- TODO: orbital motion in leo -> limits the listening window to minutes -> comint very difficult with individual receivers, requires large scale !!collusion!! between receivers and large data transfers. Major resources required due to the number of spacecraft in a constellation + data transmission and processing capacity for interception, (sieppaus ja ilmaisu) demodulation. Multiple RF feeds would need to be stitched into a single coherent one. 
 
-%- radio horizon of a VSAT terminal -> high minumum elevation angle requires the eavesdropper to fly relatively close to the terminal (tens to hundreds of km)
+%- radio horizon of a VSAT terminal -> high minumum elevation angle requires the eavesdropper to fly relatively close to the terminal (tens to hundreds of km). Otherwise simply impossible to listen due to the nature of SHF RF propagation mode being LOS only (no bouncing). 
 
 %- wideband nature of the waveform -> higher end receiving equipment for signal capture.
 
@@ -1505,6 +1503,8 @@ Similarly, the relative postion between the legitimate transmitter, satellite an
 
 % wideband jamming, spread spectrum for example hopping 16 beams oneweb. limited geographic area of effect. number of modern systems designed for satellite jamming is rather limited, e.g. russian vehicle shit (how many manufactured?) 
 
+% the approach is limited by its analytical nature. First principles thinking gives us the opportunity to explore foundational limiting factors of the problem set, making it possible to evaluate the threat through conrete quantitative factors. It is inherenlty a theoretical exercise. Next step would be to explore practical system implementations and potential shortcuts for overcoming certain physical limitations?
+
 T\"ass\"a osassa esitet\"a\"an tulokset ja vastataan tutkielman alussa
 esitettyihin tutkimuskysymyksiin.
 Tieteellisen kirjoitelman
@@ -1527,7 +1527,7 @@ voi luotettavuuden arviointi olla my\"os siell\"a.
 
 \clearpage
 
-\section{Conclusion}
+\section{Conclusion and future work}
 
 In recent years, the satellite communications industry has witnessed a paradigm shift with the rise of large NGSO megaconstellations.
 The proliferation of these constellations, facilitated by reduced space launch costs and COTS technology, has opened new frontiers of connectivity.
@@ -1563,7 +1563,9 @@ Security of commercial satellite systems is a rather young field of study and mu
 
 %- jamming. low rf power means that uplink transmissions can be jammed with relatively simple hardware thanks to the geometry of the problem. Spoofing more difficult especially thanks to the obscure nature of these systems.
 
-%Recommendations
+% Future work: channel-level simulation of airborne eavesdropper. Practical real-world measurements from different NGSO systems and their VSAT user equipment using easily available equipment, such as COTS SDR devices and TV equipment. TRANSEC waveform robustness.
+
+%TODO: Recommendations
 
 % migraatio, leo backup / peitto -> PS vaatimukset
 % MNO consumer vs entreprise vaatimukset?
