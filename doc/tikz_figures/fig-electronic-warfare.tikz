@@ -5,6 +5,6 @@
                    outer sep=0pt},                          % <---
       ]
   %Nodes
-  \node[square]   (maintopic) {2};
-  \node[square, right=of maintopic] (mynode) {123};
+  \node[square]   (maintopic) {(Placeholder)};
+  \node[square, right=of maintopic] (mynode) {test};
 \end{tikzpicture}
