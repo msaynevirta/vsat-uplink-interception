@@ -16,7 +16,9 @@ Omega_E_vector = [0;0;Omega_E]; % angular velocity vector for Earth's rotation i
 % Effect of observation altitude to the range of a eavesdropping sensor in relation 
 % to different elevation angles of the terminal.
 
-d = @(h,ele)(h ./ (tand(ele)) / 1000); % maximum range in kilometers
+%d = @(h,ele)(h ./ (tand(ele)) / 1000); % maximum range in kilometers
+
+d = @(h,ele)(1/2 .* (sqrt(4 .* h .* (h + 2 * R) + 4 .* R.^2 .* cosd(90+ele).^2) + 2 .* R .* cosd(90+ele)) / 1000);
 %% 
 % Let's plot d for elevation range of 10 deg to 90 deg and observation altitude 
 % in range of 100 meters to 20 km.
@@ -24,6 +26,7 @@ d = @(h,ele)(h ./ (tand(ele)) / 1000); % maximum range in kilometers
 ele = 10:2.5:85; % elevation angle in degrees
 h = 0:750:20000; % aircraft altitude in meters
 
+%ax1 = subplot(1,1,1);
 [H, E] = meshgrid(h, ele);
 
 s = surf(E, H, d(H, E));
@@ -37,8 +40,25 @@ ax.ZAxis.Exponent = 0;
 xlabel('e (deg)');
 ylabel('h (m)');
 zlabel('d (km)');
+
 matlab2tikz('doc/tikz_figures/fig-interception-range.tikz');
-contourf(H,E,d(H,E));
+%%
+ele = 10:2.5:90; % elevation angle in degrees
+h = 0:4000:20000; % aircraft altitude in meters
+
+[H, E] = meshgrid(h, ele);
+
+plot(E,d(H,E));
+ax2 = gca;
+legend('0 km','4 km','8 km','12 km','16 km','20 km');
+ax2.XLim = [10,90];
+ax2.YLim = [-4,120];
+ax2.YAxis.Exponent = 0;
+xlabel('e (deg)');
+ylabel('d (km)');
+grid on;
+
+matlab2tikz('doc/tikz_figures/fig-interception-range-2d.tikz');
 %% 
 % Orbital radius in relation to velocity of the sub-satellite point (in km/s), 
 % ECI coordinate frame.
@@ -54,6 +74,8 @@ r_orbit = 500e3:500e3:37e6;
 p_v_air = plot(r_orbit, v_air(10000,r_orbit));
 xlabel('h (m)');
 ylabel('v (m/s)');
+
+grid on;
 
 matlab2tikz('doc/tikz_figures/fig-subsat-velocity-equatiorial.tikz');
 %% 
