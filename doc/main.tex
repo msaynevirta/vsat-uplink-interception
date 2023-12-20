@@ -287,22 +287,16 @@
 %% Thesis keywords:
 %% Note! The keywords are separated using the \spc macro
 %%
-\keywords{For keywords choose\spc concepts that are\spc central to your\spc thesis}
+\keywords{physical layer security\spc satellite security\spc critical communications}
 %%
 
 %% The abstract text. This text is included in the metadata of the pdf file as well
 %% as the abstract page.
 %%
 \thesisabstract{
-Your abstract in English. Keep the abstract short. The abstract explains your 
-research topic, the methods you have used, and the results you obtained. In the 
-PDF/A format of this thesis, in addition to the abstract page, the abstract text is 
-written into the pdf file's metadata. Write here the text that goes into the 
-metadata. The metadata cannot contain special characters, linebreak or paragraph 
-break characters, so these must not be used here. If your abstract does not contain 
-special characters and it does not require paragraphs, you may take advantage of 
-the abstracttext macro (see the comment below). Otherwise, the metadata abstract 
-text must be identical to the text on the abstract page.
+In recent years, the satellite communications industry has witnessed a paradigm shift with the rise of large Non-Geostationary Satellite Orbit (NGSO) megaconstellations. This shift, fueled by reduced space launch costs and the widespread use of Commercial Off-The-Shelf (COTS) technology, has ushered in a new era of global connectivity. In the future, commercial satcom systems are likely to play a crucial role as a complementary solution for terrestrial mission-critical networks, addressing distinct set of use cases varying in their nature, duration, and forecastability. In practice, the potential applications range from serving traditionally underserved rural and maritime regions to providing vital connectivity during planned events and responding swiftly to unplanned incidents such as natural disasters.
+The rapid proliferation of commercial satellite solutions has not been without its challenges, particularly in the realm of cybersecurity. The absence of widely accepted cybersecurity standards, coupled with the proprietary nature of satellite solutions, leaves open potential vulnerabilities. For example, the ubiquitous broadcast nature of satellite transmissions further exposes them to eavesdropping and adversarial actions across wide geographic footprints. Adversarial groups, spanning state actors to individual enthusiasts armed with accessible Software-Defined Radios (SDR), have demonstrated the feasibility of interception deliberate interference with commercial satellite systems.
+This thesis investigated the threat posed by airborne adversaries to Very Small Aperture Terminals (VSAT) interfacing with satcom megaconstellations in Low Earth Orbit (LEO). A comprehensive research framework comprising four submodels was developed with the models examining VSAT interception ranges, airborne eavesdropper tracking potential, temporal considerations for capturing RF data, and the active threat of jamming. Findings showed the physical resilience of NGSO VSAT systems against signal interception and intentional jamming, with the distributed infrastructure of NGSO systems offering many inherent advantages. Satellite networks have great potential to enable new capabilities in traditionally tough-to-serve use cases in the fields of public safety and defence. Proper care in their integration needs to be taken as robust cybersecurity measures are a key starting point in these markets.
 }
 
 %% Copyright text. Copyright of a work is with the creator/author of the work
@@ -357,18 +351,11 @@ text must be identical to the text on the abstract page.
 %% above.
 %%
 \begin{abstractpage}[english]
-  Your abstract in English. Keep the abstract short. The abstract explains your
-  research topic, the methods you have used, and the results you obtained.  
-  
-  The abstract text of this thesis is written on the readable abstract page as
-  well as into the pdf file's metadata via the $\backslash$thesisabstract macro
-  (see above). Write here the text that goes onto the readable abstract page.
-  You can have special characters, linebreaks, and paragraphs here. Otherwise,
-  this abstract text must be identical to the metadata abstract text.
-  
-  If your abstract does not contain special characters and it does not require
-  paragraphs, you may take advantage of the abstracttext macro (see the comment
-  below).
+  In recent years, the satellite communications industry has witnessed a paradigm shift with the rise of large Non-Geostationary Satellite Orbit (NGSO) megaconstellations. This shift, fueled by reduced space launch costs and the widespread use of Commercial Off-The-Shelf (COTS) technology, has ushered in a new era of global connectivity. In the future, commercial satcom systems are likely to play a crucial role as a complementary solution for terrestrial mission-critical networks, addressing distinct set of use cases varying in their nature, duration, and forecastability. In practice, the potential applications range from serving traditionally underserved rural and maritime regions to providing vital connectivity during planned events and responding swiftly to unplanned incidents such as natural disasters.
+
+  The rapid proliferation of commercial satellite solutions has not been without its challenges, particularly in the realm of cybersecurity. The absence of widely accepted cybersecurity standards, coupled with the proprietary nature of satellite solutions, leaves open potential vulnerabilities. For example, the ubiquitous broadcast nature of satellite transmissions further exposes them to eavesdropping and adversarial actions across wide geographic footprints. Adversarial groups, spanning state actors to individual enthusiasts armed with accessible Software-Defined Radios (SDR), have demonstrated the feasibility of interception deliberate interference with commercial satellite systems.
+
+  This thesis investigated the threat posed by airborne adversaries to Very Small Aperture Terminals (VSAT) interfacing with satcom megaconstellations in Low Earth Orbit (LEO). A comprehensive research framework comprising four submodels was developed with the models examining VSAT interception ranges, airborne eavesdropper tracking potential, temporal considerations for capturing RF data, and the active threat of jamming. Findings showed the physical resilience of NGSO VSAT systems against signal interception and intentional jamming, with the distributed infrastructure of NGSO systems offering many inherent advantages. Satellite networks have great potential to enable new capabilities in traditionally tough-to-serve use cases in the fields of public safety and defence. Proper care in their integration needs to be taken as robust cybersecurity measures are a key starting point in these markets.
 \end{abstractpage}
 
 %% The text in the \thesisabstract macro is stored in the macro \abstractext, so
@@ -858,7 +845,7 @@ Electronic Attack (EA) constitutes another key facet of EW, deploying electromag
 
 The third division, Electromagnetic Protection (EP), encompasses actions taken to shield personnel, facilities, and equipment from the detrimental effects of friendly or enemy use of the electromagnetic spectrum. EP is essential for maintaining the integrity and functionality of friendly combat capability in the face of electromagnetic threats.
 
-On the practical side, ES is often intelligence gathering and dissemination while EA is direct actions like jamming. EP not concerned with affecting a target system or gaining information, but rather protecting systems from external elec threats. % TODO: Finish this
+%TODO: On the practical side, ES is often intelligence gathering and dissemination while EA is direct actions like jamming. EP not concerned with affecting a target system or gaining information, but rather protecting systems from external elec threats. % TODO: Finish this
 
 %\subsubsection{TRANSEC and physical layer constraints}
 %TODO: Transec 
@@ -866,23 +853,23 @@ On the practical side, ES is often intelligence gathering and dissemination whil
 %\subsubsection{Signal detection}
 %TODO: Digitaistelukentästä jotain? Siuppaus, ilmaisu etc. ketju? Linkkibudjetti lähtökohtana, spread spectrum?
 
-\subsubsection{Direction finding and radiopositioning} \label{ch-df-radiopositioning}
-Geolocating fixed VSAT terminals implemented as phased arrays, different direction finding techniques can be assessed for their suitability based on several factors.
-Some of the modern techniques include:
+%\subsubsection{Direction finding and radiopositioning} \label{ch-df-radiopositioning}
+%Geolocating fixed VSAT terminals implemented as phased arrays, different direction finding techniques can be assessed for their suitability based on several factors.
+%Some of the modern techniques include:
 
-Angle of Arrival (AoA): AoA techniques can be suitable for geolocating VSAT terminals.
-By measuring the angles from which the signals arrive at the aircraft's direction finding array, the azimuth and elevation of the terminals can be estimated.
-AoA techniques like beamforming, MUSIC, or ESPRIT can be effective in estimating the angles of arrival, especially if the phased array terminals have discernible sidelobes or beam characteristics.
+%Angle of Arrival (AoA): AoA techniques can be suitable for geolocating VSAT terminals.
+%By measuring the angles from which the signals arrive at the aircraft's direction finding array, the azimuth and elevation of the terminals can be estimated.
+%AoA techniques like beamforming, MUSIC, or ESPRIT can be effective in estimating the angles of arrival, especially if the phased array terminals have discernible sidelobes or beam characteristics.
 
-Time Difference of Arrival (TDOA): TDOA relies on measuring the time delays between signals received at multiple spatially separated sensors.
+%Time Difference of Arrival (TDOA): TDOA relies on measuring the time delays between signals received at multiple spatially separated sensors.
 
-Frequency Difference of Arrival (FDOA): FDOA relies on measuring the frequency differences of signals arriving at different sensors or antennas.
-FDOA techniques may provide useful information if the signals have specific frequency characteristics or modulation patterns that can be exploited.
+%Frequency Difference of Arrival (FDOA): FDOA relies on measuring the frequency differences of signals arriving at different sensors or antennas.
+% FDOA techniques may provide useful information if the signals have specific frequency characteristics or modulation patterns that can be exploited.
 
-Beamforming: Since phased array VSATs employ beamforming, the listeners direction finding array can analyze the received signals' phase and amplitude information to estimate the direction of arrival.
+% Beamforming: Since phased array VSATs employ beamforming, the listeners direction finding array can analyze the received signals' phase and amplitude information to estimate the direction of arrival.
 
-Additionally, multiple techinques can be combined into a hybrid approach if the complexity and capabilities of the direction finding array permit.
-For example, combining AoA and beamforming techniques can enhance the accuracy and robustness of geolocation estimates, especially if the phased array terminals exhibit unique radiation patterns or have challenging sidelobe characteristics.
+% Additionally, multiple techinques can be combined into a hybrid approach if the complexity and capabilities of the direction finding array permit.
+% For example, combining AoA and beamforming techniques can enhance the accuracy and robustness of geolocation estimates, especially if the phased array terminals exhibit unique radiation patterns or have challenging sidelobe characteristics.
 
 \clearpage
 
@@ -969,7 +956,7 @@ Long-term, evolution towards direct-to-smartphone type solutions is a potential 
 
 \section{Research material and methods}
 
-\subsection{Research questions and methodology}
+\subsection{Methodology} %Research questions and methodology
 
 % TODO: Mitä halutaan tutkia? Miten liittyy menetelmiin?
 \begin{figure}[h]
@@ -1483,8 +1470,8 @@ FHSS makes transmissions highly resistant to narrowband interference and jamming
 In practice, effective capture of FHSS sigal requires either expensive RF equipment with wideband intercept capabilities or intricate knowledge of the target system and transimission codes utilised by it.
 
 FHSS-like techniques are already employed to some extent in commercial satellite systems, although they tend to not as robust in comparison to existing governmental counterparts.
-For example, the OneWeb system discussed in \ref{ch-oneweb} employs a beam-hopping strategy for to achieve a more efficient frequency reuse factor.
-Although this is primarily a measure for improving spectrum efficiency, it brings with it also some FHSS-like qualities.
+For example, OneWeb system discussed in \ref{ch-oneweb} employs a beam-hopping strategy with the satellite transmitting at 16 individual beams that the VSAT switches between roughly every 11 seconds.
+Although this is primarily a measure for improving spectrum efficiency, it brings with it also some FHSS-like physical security qualities.
 
 % TODO: the approach is limited by its analytical nature. First principles thinking gives us the opportunity to explore foundational limiting factors of the problem set, making it possible to evaluate the threat through conrete quantitative factors. It is inherenlty a theoretical exercise. Next step would be to explore practical system implementations and potential shortcuts for overcoming certain physical limitations?
 
@@ -1493,14 +1480,24 @@ Although this is primarily a measure for improving spectrum efficiency, it bring
 \section{Conclusion and future work}
 
 In recent years, the satellite communications industry has witnessed a paradigm shift with the rise of large NGSO megaconstellations.
-The proliferation of these constellations, facilitated by reduced space launch costs and COTS technology, has opened new frontiers of connectivity.
-However, this rapid evolution has not been without challenges, particularly in the area of cybersecurity.
+The proliferation of these constellations, facilitated by reduced space launch costs and wide-scale application of COTS technology, has opened new frontiers of connectivity.
+In the future, commercial satcom systems are likely to play a crucial role as a complementary solution for terrestrial mission-critical networks, addressing distinct a multitude of use cases varying in their nature, duration, and forecastability.
 
-The absence of widely accepted cybersecurity standards and the proprietary nature of technical solutions leave open potential vulnerabilities, while the wide-area broadcast nature of satellite transmissions makes them susceptible to eavesdropping and other adversarial actions from a wide geographic footprint.
+Critical communications use cases can be roughly divided into permanent, planned temporary and unplanned temporary, with the first primarily catering to regions traditionally challenging to serve, such as sparsely populated rural areas and maritime settings, where terrestrial coverage is limited. Temporary use cases, whether planned or unplanned, cover a diverse range of locations. Planned events, including large gatherings and political summits, demand coverage augmentation and increased capacity. On the other hand, unplanned events, both natural disasters like earthquakes and man-made incidents like airplane crashes, necessitate immediate response, showcasing the versatility of satellite connectivity. The forecastability and duration of these events vary, influencing the choice of technological solutions. Satellite systems, with their global coverage and ability to serve low-density regions, emerge as a cost-efficient complement to traditional terrestrial networks, ensuring connectivity in remote and challenging environments.
+
+However, the rapid roll-out of commercial satellite solutions has not been without challenges, particularly in the area of cybersecurity.
+The absence of widely accepted cybersecurity standards and the proprietary nature of technical solutions leave open potential vulnerabilities, while the wide-area broadcast nature of satellite transmissions makes them inherently susceptible to eavesdropping and other adversarial actions from a wide geographic footprint.
 Adversarial groups, including state actors and individual enthusiasts armed with accessible Software-Defined Radios (SDR), have demonstrated the feasibility of intercepting satellite traffic.
 
-To better understand the underlying security aspects of emerging NGSO VSAT networks, this thesis focused on assessing the risks posed by airborne eavesdroppers to the uplink communications from satellite terminals on the ground.
-Through geometric and kinematic analysis, as well as link budgets based on typical hardware configurations, the resilience of LEO broadband systems was explored.
+Security of commercial satellite systems is a rather young field of study and much work remains for future researchers.
+Regarding commercial broadband networks, approaches such as practical waveform studies through open-source black-box reverse engineering could be an interesting approach to study the threat of less resourced adversaries.
+Here, COTS SDR devices and satellite TV equipment have already been verified to be somewhat feasible technology platform that even a less-resourced attacker could exploit.
+Similarly, the physical and network security of the gateways is another interesting topic with less attention in the research literature.
+Finally, the conceptual-analytical framework applied in this thesis could be further expanded by building a channel-level simulation for the airborne eavesdropping scenario.
+
+To understand the threat posed by airborne adversaries to a VSAT interfacing with a LEO megaconstellation, a research framework consisting of four distinct submodels was developed in this thesis. A quantitative conceptual analytical research approach was followed, employing a first principles approach, each submodel relying on geometric and kinematic analyses as well as and link budgets was subjected to a parametric study derived for a representative hardware configuration.
+
+Submodel 1 submodel scrutinized the interception range of VSAT from aircraft, emphasizing constraints imposed by the Earth's curvature and atmospheric conditions. Submodels 2a and 2b explored the tracking potential of airborne eavesdroppers in equatorial and inclined orbits, revealing the matching challenge of matching high sub-satellite velocities. Submodel 3 shifted focus to temporal considerations, assessing the risk of capturing RF data from VSAT uplink transmissions over varying durations. Finally, Submodel 4 investigated the active threat of jamming, demonstrating the impact of modulation and coding schemes and RF path considerations on disrupting legitimate transmissions.
 
 The unique attributes of the space environment, in which the satellite's space segment resides, give certain advantages to the LEO systems.
 Orbital motion of the satellites in LEO limits the listening window for communication interception, necessating large-scale collusion between eavesdroppers for effective COMINT.
@@ -1508,26 +1505,14 @@ Additionally, the radio horizon  arising from higher minimun elevation angles in
 
 On the other hand, using lower orbits leads to certain disadvantages.
 While higher orbits like GEO require the eavesdropper to transmit at equivalent EIRP levels compared to the legitimate transmitter, the lower altitude of LEO introduces situations where jamming or hijacking the legitimate signal is possible to achieve even with relatively simple and inexpensive radio hardware, such as COTS SDRs and satellite TV equipment.
-Despite the relative ease of raw jamming, sophisticated spoofing attacks tend to be more difficult to achieve. Here, contributing factors are the complex and often obscure nature of satellite systems.
-It is worth noting that commercial broadband systems have been moving towards more standardised solutions in the recent years. 
 
-Public safety and defence users place more stringent requirements on their communication solutions when compared to commericial consumer and entreprise systems.
-Clear understanding of the control and ownership, as well as robust security measures, be they physical or cyber in nature, are the root prerequisites for the adoption of any new system or solution.
-Considering the results gained from the examination of the model, the emerging NGSO satellite networks do not have inherent physical flaws that would directly jeopardise the security of these systems.
-In fact and as discussed, compared to their predecessors, the NGSO systems have some inherent qualities that make them rather robust against a multitude of the potential threat factors.
-
-Security of commercial satellite systems is a rather young field of study and much work remains for future researchers. Concerning the commercial broadband networks, approaches such as practical waveform studies through open-source black-box reverse engineering is one interesting approach.
-Robustness of physical and network security of the gateways is another interesting topic with less attention in the research literature.
-
-%- TODO: orbital motion in leo -> limits the listening window to minutes -> comint very difficult with individual receivers, requires large scale collusion between receivers and large data transfers
-
-%- radio horizon of a VSAT terminal -> high minumum elevation angle requires the eavesdropper to fly relatively close to the terminal (tens to hundreds of km)
-
-%- wideband nature of the waveform -> higher end receiving equipment for signal capture.
-
-%- jamming. low rf power means that uplink transmissions can be jammed with relatively simple hardware thanks to the geometry of the problem. Spoofing more difficult especially thanks to the obscure nature of these systems.
-
-% Future work: channel-level simulation of airborne eavesdropper. Practical real-world measurements from different NGSO systems and their VSAT user equipment using easily available equipment, such as COTS SDR devices and TV equipment. TRANSEC waveform robustness.
+Findings of the thesis highlighted the inherent physical resilience of NGSO VSAT systems against both long and short-term signal interception as well as intentional and unintentional jamming.
+In this sense, the emerging commercial NGSO satcom systems do not have inherent physical flaws that would directly jeopardise the security of these systems.
+The results show that the architechture of these systems makes it tough to eavesdrop or disrupt their operation on a system-wide scale, although more localised adversarial actions may still be feasible to some extent.
+In fact, compared to their predecessors, the distributed infrastructure of the NGSO systems, especially when it comes to the space segment, bring certain advantages that make the systems rather robust against a multitude of potential threat factors.
+All in all, satellite networks have great potential to enable previously unforeseen commercial connectivity capabilities in traditionally tough-to-serve use cases even in the demanding field of public safety and defence.
+Robust cybersecurity measures are a key starting point in these markets.
+Thus, proper care needs to be taken when implementing solutions involving these technologies, especially when they are placed into systems with previously limited satcom integration.
 
 %TODO: Recommendations
 
