@@ -452,13 +452,13 @@ SIGINT  & signals intelligence
 %Sisältö, rakenne
 
 Over the past five decades, satellite systems have emerged as indispensable enablers of our modern way of life within an increasingly technology-driven human society.
-Innovation in fields such as Global Navigation Satellite Systems (GNSS) \cite{oconnor2019economic}, Earth Observation (EO) \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and Satellite Communication (satcom) \cite{euroconsult-space-economy-2023} has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in position, navigation, and timing (PNT), as well as intelligence, surveillance, and reconnaissance (ISR).
+Innovation in fields such as Global Navigation Satellite Systems (GNSS) \cite{oconnor2019economic}, Earth Observation (EO) \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and Satellite Communication (satcom) \cite{euroconsult-space-economy-2023} has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in positioning, navigation, and timing (PNT), as well as intelligence, surveillance, and reconnaissance (ISR).
 Recently, the satellite communications industry has entered an era of rapid change.
-Since the early 2010s, the most prominent new trend has been the large megaconstellations of hundreds to thousands of satellites in Low Earth Orbit (LEO).
+Since the early 2010s, the most prominent new trend has been emergence of megaconstellations with hundreds to thousands of satellites in Low Earth Orbit (LEO).
 The raise of large constellations in non-geostationary orbits (NGSO) has been enabled by the falling cost of space launches and mass-production of satellite hardware based on Commercial Off-The-Shelf (COTS) technology \cite{euroconsult-space-economy-2023}.
 
 Aside from commercial markets, governmental organisations such as civilian public safety authorities and defence ministries have expressed great interest in emerging commercial satellite communication solutions.
-In terms of user segments, governmental organisations tend to pay greater attention to the security and resilience aspects of the communications solutions they utilise, which has in turn raised questions regarding the conformity of these systems.
+In terms of user segments, governmental organisations tend to pay greater attention to the security and resilience aspects of the communications solutions they utilise, which has in turn raised questions regarding the conformity of these systems to the strict requirements of these user segments.
 
 Protecting these commercial satellite systems against a growing number of increasingly cyber-capable adversaries has become a prerequisite for adopting new satellite systems by governmental agencies.
 Here, robust understanding of the evolving threat landscape is a key starting point for design of effective cybersecurity measures.
@@ -480,11 +480,11 @@ Similarly, intrusive acts such as the Chinese high-altitude balloons flying thro
 One way to understand the reason for these vulnerabilities is through the paradigm of "security through obscurity", a practice with a long-running history in the commercial satellite industry that relies on hiding the structure and the interfaces of the system from the public \cite{lin2022defending}.
 The validity of this approach has long been debated within research and industry circles \cite{johansson2008great}, with the recent consensus being that security of a system should never rely exclusively on obscurity \cite{diehl2016law, guo2018defending}.
 
-Although much work has focused on long operational geostationary broadband non-geostationary narrowband systems, as well as more long term 5G and 6G non-terrestrial networks (NTN), little attention has been directed towards the security of emerging LEO broadband systems.
+Although much work has focused on long-standing geostationary broadband non-geostationary narrowband systems, as well as longer-term evolution of 5G and 6G non-terrestrial networks (NTN), little attention has been directed towards the security of emerging LEO broadband systems.
 Operators of the emerging systems tout their architecture-level resilience in their marketing, but academic literature on the topic is still rather scarce.
 Moreover, most of the research on satellite system protection has examined downlink communication between the satellite and different earth stations \cite{abdelsalam2023physical}.
 Furthermore, more capital-intensive space or airborne platforms have received relatively little attention, with a greater emphasis being placed on the study of ground-based adversaries.
-Considering this prior history and recent rapid growth, it is important to better understand the security aspects of this rapidly evolving technology. 
+Considering this prior history and recent rapid growth, it is important to address the gaps in understanding of the security aspects of this rapidly evolving technology. 
 
 This thesis seeks to assess whether the presence of airborne eavesdroppers poses a risk to the uplink communications of emerging NGSO VSAT networks. % TODO: in the context of public safety ...
 To achieve this goal, a conceptual-analytical research approach is applied through a threat model focusing on a Walker-type LEO megaconstellation, fixed Very Small Aperture Terminals (VSAT) and airborne eavesdroppers.
@@ -494,7 +494,7 @@ In this context, adversarial actions, such as deliberate eavesdropping and inter
 To build a quantitative picture of the prevalent threat landscape, we need to look into geometric and kinematic factors, as well as radio frequency (RF) link budgets. 
 The conceptual-analytical model will be evaluated numerically against a set of known real-world system parameters and the results will be discussed in relation to the requirements set out by both public safety and defence user groups.
 
-The thesis is structured as follows.
+The thesis is structured as follows:
 Chapter 2 describes the key characteristics of LEO megaconstellations, the different aerial platforms used for eavesdropping, and signals intelligence.
 Chapter 3 develops a threat model comprising signal acquisition and detection for applications like RF geolocation or eavesdropping, as well as deliberate interference through RF jamming.
 Chapter 4 goes over the features of the analytical submodels and presents the quantitative results from their numerical analysis.
@@ -852,7 +852,7 @@ Interception of user traffic in satellite networks falls under the discipline CO
 
 EW involves military actions leveraging Electromagnetic (EM) and Directed Energy (DE) to either control the Electromagnetic Spectrum (EMS) or to launch attacks against the enemy. This multifaceted domain comprises three distinct divisions: Electronic Attack (EA), Electromagnetic Support (ES), and Electromagnetic Protection (EP) \cite{jp3-85,kosola2013digitaalinen}.
 
-ES involves actions to search for, intercept, identify, and locate or localize sources of intentional and unintentional radiated electromagnetic energy. It serves immediate threat recognition, aids in targeting, contributes to planning, and supports the conduct of future operations on a tactical level. Despite the similarities, ES is a separate discipline from SIGINT. The distinction between the two is delineated by purpose, scope, and context. While ES is focused on immediate operational needs, it shares commonalities with SIGINT, with both potentially using the same assets to simultaneously collect information meeting operational and intelligence requirements.
+ES involves actions to search for, intercept, identify, and locate or localize sources of intentional and unintentional radiated electromagnetic energy. It serves immediate threat recognition, aids in targeting, contributes to planning, and supports the conduct of future operations on a tactical level. Notwithstanding the similarities, ES is a separate discipline from SIGINT. The distinction between the two is delineated by purpose, scope, and context. While ES is focused on immediate operational needs, it shares commonalities with SIGINT, with both potentially using the same assets to simultaneously collect information meeting operational and intelligence requirements.
 To quote JP3-85 \cite{jp3-85}, "it can be said that information collected from the EMS has “two lives.”
 The first is as ES, unprocessed information used by operational forces to develop and maintain SA for an operationally defined period.
 The second is as SIGINT, retained and processed under appropriate intelligence authorities in response to specified intelligence requirements." % TODO: Example methods include eavesdropping, direction finding and z.
@@ -1044,6 +1044,7 @@ Physics-driven analysis helps us to evaluate the limits of a systems in a way th
   \label{table-submodel-descriptions}
 \end{table}
 
+% TODO: eikö oleellista ole se, että kuuntelija kuulee yhtä aikaa maaterminaalon ja satelliitin? Toisaalta jammingiin riittää noista vain toinen? Voisit vääntää tämän logiikan johonkin rautalangasta. 
 Submodel 1 examines the maximum interception range of a fixed satellite terminal.
 This metric helps us to evaluate the potential maximal area where a single satellite terminal is vulnerable to airborne eavesdroppers.
 Airborne platforms may listen to transmissions from great distances, for example flying in an airspace of another country.
@@ -1094,11 +1095,11 @@ This can be thought as  arise where eavesdropping is either simply impossible or
 
 \begin{enumerate}
   \item The VSAT earth station falls behind the radio horizon of the eavesdropper.
-  \item The eavesdropper falls outside the main lobe of the VSAT earth station.
+  \item The eavesdropper falls outside the main lobe of the VSAT earth station. % mikä on main lobe?
 \end{enumerate}
 
 As presented in appendix \ref{appendix-constellation-comparison}, both existing and under development broadband VSAT systems tend to operate in the Ku and Ka bands (12--18 and 26.5--40 GHz respectively), with the former being the more commonly used in user links between the orbiting satellite and user terminal and vice-versa, although some systems, such as Amazon's Project Kuiper deviate from this general rule.
-In terms frequencies, both bands fall under super high (SHF, 3-30 GHz) to extremely high frequencies (EHF, 30-300 GHz), where the principal propagation mode is line-of-sight (LOS) propagation.
+In terms of frequencies, both bands fall under super high (SHF, 3-30 GHz) to extremely high frequencies (EHF, 30-300 GHz), where the principal propagation mode is line-of-sight (LOS) propagation.
 In LOS propagation, the radio horizon of a transmitter can be derived from the trigonometric law of cosines, if the planetary body can be assumed to be spherical in shape. If the minimum elevation angle of the satellite system is assumed to be zero, the geometry of the problem simplifies into a right triangle, whose hypotenuse and legs are described by the Pythagorean theorem.
 
 \begin{figure}[h]
@@ -1202,7 +1203,7 @@ Rearranging (\ref{eq-range-1}) for $d_{Eve}$ gives
 
 Although not exact in its results, this simplification may be used to gain quick insight into the threat of an eavesdropper operating at close ranges.
 
-Based on these interception range estimations, we can say that eavesdropping a VSAT interfacing with a rather difficult endeavour, as postulated in the hypothesis of the submodel.
+Based on the interception range estimations, we can say that eavesdropping a VSAT interfacing with a NGSO satcom constellation is a rather difficult endeavour, as was postulated in the hypothesis of the submodel.
 LOS-only propagation at SHF ranges means that it is simply impossible to intercept the signal when the eavesdropper is out of range or obstructed in relation to the legitimate transmitter.
 Thus, in practice eavesdropping even a small number of VSATs in a limited geographical area of tens of square kilometres would require a significant number of colluding eavesdroppers due to these inherent interception range constraints, making the feat rather impractical for even better resourced adversaries.
 
@@ -1284,7 +1285,7 @@ Figure \ref{fig-subsat-velocity-equatiorial} shows the sub-satellite velocity ($
 Velocities are examined in orbits ranging from LEO to GEO, which corresponds to the range $h_{sat} = [5 \cdot 10^5, 3.7 \cdot 10^7]$.
 In the resulting graph, the dependent variable or the sub-satellite velocity ($v_{r, air}$) is on the vertical axis, while the independent variable of the orbital height $h_{sat}$ is on the horizontal axis.
 The graph can be observed approaching the rotational velocity of the Earth when $h_{sat}$ approaches the height of GEO at \SI{35786}{\kilo\meter}.
-As the graph is computed in the ECF coordinate frame, we can se sub-satellite velocity approaching zero, which means that the satellite appears fixed in its position in the sky.
+As the graph is computed in the ECF coordinate frame, sub-satellite velocity approaches zero at GEO altitudes, meaning that the satellite appears fixed in its position in the sky.
 Cubically decreasing nature of $v_{sat}$ leads to radically higher values for LEO with $v_{sat}$ values ranging roughly between 5 and 7\ km/s in orbital altitudes between $h_{sat} = [5 \cdot 10^5, 2 \cdot 10^6]$.
 At these velocities, it is simply impossible for an atmospheric vehicle keep tracking a narrow VSAT uplink beam.
 Fast reconnaissance aircraft, such as the Lockheed SR-71 Blackbird are able to fly at a fraction of these sub-satellite velocities at the maximum velocity of \SI{1}{\kilo\meter\per\second}.
@@ -1342,7 +1343,7 @@ Finally, the sub-satellite velocity figure can be solved based on the scalar ang
   \label{fig-subsat-velocity-inclined}
 \end{figure}
 Figure \ref{fig-subsat-velocity-inclined} shows the sub-satellite velocity of a satellite in an inclined orbit as a function of orbital height and inclination.
-The resulting sub-satellite velocities in meters-per-second were computed as a function of inclinations in the range $i = [0,90]$ and orbital heights $h = [500*10^3, 37*10^6]$.
+The resulting sub-satellite velocities in meters-per-second were computed as a function of inclinations in the range $i = [0,90]$ and orbital heights $h = [500 \cdot 10^3, 37 \cdot 10^6]$.
 The results show that inclination has a minor influence while the orbital height is the dominant factor determining the sub-satellite velocity.
 Thus, inclined orbits do not improve the adversary's chances at intercepting and tracking a VSAT uplink transmission.
 With velocity ranges in the single digit kilometre-per-second range, even the fastest man-made atmospheric vehicles and projectiles fall sort of the sub-satellite velocities of the beam at typical aircraft cruising altitudes.
@@ -1351,9 +1352,9 @@ With velocity ranges in the single digit kilometre-per-second range, even the fa
 Tracking potential is one way to evaluate risk of an airborne adversary trying to intercept and collect useful RF data from uplink VSAT transmissions.
 Theoretical length of a capture window, or the listening window of an eavesdropper is a useful metric in evaluating the potential attack types.
 As mentioned in submodel 2a, different durations of interception have varying implications for the legitimate transmitter.
-Relatively short RF samples may still able an adversary geolocate a transmitter based on methods discussed in chapter \ref{ch-df-radiopositioning}, while useful insights for proper COMINT would require longer-term interception of a VSAT's uplink signal over periods ranging from seconds to days. % TODO, puuttuu luku
+Relatively short RF samples may still enable an adversary to geolocate a transmitter based on methods discussed in chapter \ref{ch-df-radiopositioning}, while useful insights for proper COMINT would require longer-term interception of a VSAT's uplink signal over periods ranging from seconds to days. % TODO, puuttuu luku
 
-Quantitative analysis of the listening window of an eavesdropper is somewhat more complex in terms of the model required and potential input parameters that need to be considered.
+Quantitative analysis of the listening window of an eavesdropper is somewhat more complex in terms of input parameters that need to be considered.
 On a high level, the window is primarily influenced by the relative motion between the uplink RF beam of the terminal and the kinematic characteristics of the airborne eavesdropper.
 The latter include qualities such as cruise speed, operational altitude, manoeuvrability and controllability.
 They define the ability of the aircraft to keep a lock on the moving RF beam.
@@ -1401,12 +1402,12 @@ As discussed in chapter \ref{ch-oneweb}, OneWeb uses adaptive modcod scheme comp
 
 Jamming of the uplink signal can be done from both aircraft and earth-bound platforms.
 Scenario-wise, the altitude of the interfering system does not make a major difference, if ground-level obstruction caused by structures and natural land formations is ignored.
-This simplified scenario allows end-to-end performance of a communications link can be analysed through a link budget, a theoretical calculation where gains and losses of a RF system are summed in order to compute a figures of merit, such as x, y and z.%TODO: Listaa tähän jatkoksi 
+This simplified scenario allows end-to-end performance of a communications link to be analysed through a link budget, a theoretical calculation where gains and losses of a RF system are summed in order to compute the figures of merit, such as x, y and z.%TODO: Listaa tähän jatkoksi 
 Table \ref{table-ul-jamming-link-budget} presents an uplink link budget for the Kymeta Hawk u8 UT interfacing with the OneWeb LEO megaconstellation.
 Parameters of the UT are taken from \cite{kymeta2022hawk} and \cite{kymeta2020mod}, while parameters for the space segment of the OneWeb constellation are based on the values in \cite{worldvu2016loi} and \cite{allen2022terrestrial} for the first generation constellation.
 For the advantage of the legitimate user, the modcod scheme is assumed to be the less demanding QPSK with $1/2$ FEC.
 
-Propagation paths in satellite links inherently cover long distances ranging from hundreds to thousands of kilometres depending on the orbit of a satellite.
+Propagation paths in satellite links inherently cover long distances ranging from hundreds to thousands of kilometres depending on the orbit of the satellite.
 RF path between the satellite and UT experiences losses primarily due to free space path loss (FSPL), a loss driven by the dispersion of RF energy into the medium it propagates through.
 FSPL in decibels can be computed from equation \ref{eq-fspl} based on the approximate orbital altitude satellites $d$ in meters and UL frequency $f$ in hertz.
 
@@ -1416,7 +1417,7 @@ FSPL in decibels can be computed from equation \ref{eq-fspl} based on the approx
 
 % kankeaa kieltä
 In addition to FSPL, RF path may see varying losses from the atmospheric phenomena, such as rain or clouds or the atmosphere itself.
-It is worth noting, that the latter three tend to less significant when considering Ku and Ka-band propagation over signal paths ranging from hundreds to thousands of kilometres in space.
+It is worth noting that the latter three tend to less significant when considering Ku and Ka-band propagation over signal paths ranging from hundreds to thousands of kilometres in space.
 This is due to FSPL growing to the square, while the other losses remain constant to a certain degree and tend to be magnitudes smaller.
 
 Jammer's relative position to the receiver's beam pattern is another point to consider. In practice, the jammer can either be in the rough area of the main beam or elsewhere, which leads to different gain figures at the receiver's end. This means that the jammer is either transmitting in the receiver's main lobe, side lobe or nulls between these. While the latter can be simply be ruled out due to the high attenuation, the two prior provide a chance for the jammer to interfere with the legitimate transmission. Side lobe level (SLL) of the modern constellations is not known for both the satellites and the terminals. Some estimation can be made based on constraints like the ITU radio regulations, which set inherent limits for the maximum allowable power flux density to limit interference. In \cite{hills2023controlling}, the authors estimated maximum allowable sidelobe levels for the first generation Starlink and OneWeb constellations at $-32.9$ and \qty{-24.0}{\decibel} respectively. 
@@ -1484,7 +1485,7 @@ By deconstructing the target system into fundamental components, each submodel h
 
 Going a little deeper into the model structure and results, submodule 1 evaluated the interception range of a VSAT from an aircraft. The submodel looked into the concept of radio horizon, building a trigonometric model by applying the rule of cosines.
 A model accounting for the curvature of the Earth as well as simplified atmospheric refraction was used to estimate the maximum interception range of the uplink transmissions of a VSAT ground station. The findings highlighted the constraints imposed by the Earth's curvature and atmospheric conditions on intercepting satellite signals, making it simply impossible for a high-altitude aircraft to intercept the legitimate signal from distances beyond little over 100 kilometres due to the LOS-only RF propagation of a SHF signal.
-This means that the threat of an airborne adversary is generally quite localised, especially if the adversary is unable to operate in the airspace over of the target system's jurisdiction. More stealthier platforms like balloons may though be able to evade tracking and with sufficient collusion extend the coverage inside the target country's borders. On the other hand, collusion requires individual adversaries to exchange information that needs to be processed in order to form a coherent picture. Practically speaking, the non-trivial investment into both communications infrastructure and computational processing capabilities is likely to limit the more sophisticated collusion strategies only to the best-resourced adversaries. % TODO: jeesus mitä paskaa vika virke :D
+This means that the threat of an airborne adversary is generally quite localised, especially if the adversary is unable to operate in the airspace over of the target system's jurisdiction. More stealthier platforms like balloons may be able to evade detection and tracking and can thus fly even in a target country's airspace. If these stealthy systems can then collude with each other, these adversarial systems may be able to collect sufficiently long signal samples from even LEO systems with more distributed space segments. On the other hand, effective collusion requires individual adversaries to exchange information that needs to be then post-processed in order to extract the desired intelligence. Practically speaking, the non-trivial investment into both communications infrastructure and computational processing capabilities is likely to limit the more sophisticated collusion strategies only to the best-resourced adversaries.
 
 Capabilities of the aircraft were further explored in submodels 2a and 2b through the concept of beam tracking potential with the first model focusing on equatorial and the latter on generalised inclined orbits. The submodel outlined the capability of an airborne eavesdropper to track the main lobe of a communication satellite by comparing the cruising velocities of typical man-made platforms to the sub-satellite velocity of a VSAT beam intersecting the aircraft's flight path at these altitudes.
 As discussed in chapter \ref{ch-aerial-platforms}, cruising speeds of aircraft are typically in the subsonic range.
