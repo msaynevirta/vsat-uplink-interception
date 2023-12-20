@@ -1451,14 +1451,8 @@ The primary focus involved applying quantitative analysis through the developmen
 The foundation of the four submodels rested on a first principles approach, employing geometric and kinematic analyses, as well as link budgets based on a representative hardware configuration.
 By deconstructing the target system into fundamental components, each submodel highlighted the potential strengths and vulnerabilities of satcom systems in relation to various threats.
 
-%- TODO: orbital motion in leo -> limits the listening window to minutes -> comint very difficult with individual receivers, requires large scale !!collusion!! between receivers and large data transfers. Major resources required due to the number of spacecraft in a constellation + data transmission and processing capacity for interception, (sieppaus ja ilmaisu) demodulation. Multiple RF feeds would need to be stitched into a single coherent one. 
-
-%- radio horizon of a VSAT terminal -> high minumum elevation angle requires the eavesdropper to fly relatively close to the terminal (tens to hundreds of km). Otherwise simply impossible to listen due to the nature of SHF RF propagation mode being LOS only (no bouncing). 
-
-%- wideband nature of the waveform -> higher end receiving equipment for signal capture.
-
 Going a little deeper into the model structure and results, submodule 1 evaluated the interception range of a VSAT from an aircraft. The submodel looked into the concept of radio horizon, building a trigonometric model by applying the rule of cosines. A model accounting for the curvature of the Earth as well as simplified atmospheric refraction was used to estimate the maximum interception range of the uplink transmissions of a VSAT ground station. The findings highlighted the constraints imposed by the Earth's curvature and atmospheric conditions on intercepting satellite signals, making it simply impossible for a high-altitude aircraft to intercept the legitimate signal from distances beyond little over 100 kilometers due to the LOS-only RF propagation of a SHF signal.
-This means that the threat of an airborne adversary is generally quite localised, especially if the adversary is unable to operate in the airspace over of the target system's jurisdiction. More stealthier platforms like balloons may though be able to evade tracking and with sufficien collusion extend the coverage inside the target country's borders. % TODO: jeesus mitä paskaa vika virke :D
+This means that the threat of an airborne adversary is generally quite localised, especially if the adversary is unable to operate in the airspace over of the target system's jurisdiction. More stealthier platforms like balloons may though be able to evade tracking and with sufficient collusion extend the coverage inside the target country's borders. On the other hand, collusion requires individual adversaries to exchange information that needs to be processed in order to form a coherent picture. Practically speaking, the non-trivial investment into both communications infrastructure and computational processing capabilities is likely to limit the more sophisticated collusion strategies only to the best-resourced adversaries. % TODO: jeesus mitä paskaa vika virke :D
 
 Capabilities of the aircraft were further explored in submodels 2a and 2b through the concept of beam tracking potential with the first model focusing on equatorial and the latter on generalised inclined orbits. The submodel outlined the capability of an airborne eavesdropper to track the main lobe of a communication satellite by comparing the cruising velocities of typical man-made platforms to the sub-satellite velocity of a VSAT beam intersecting the aircraft's flight path at these altitudes.
 As discussed in chapter \ref{ch-aerial-platforms}, cruising speeds of aircraft are typically in the subsonic range.
@@ -1476,35 +1470,23 @@ Finally, submodel 4 looked into active measures an adversary might take against 
 
 One limitation of the link budget approach is that only part of the RF environment can be modelled with reasonable level of baseline assumptions. For example, jamming systems tend to vary greatly from handheld devices all the way from high power vehicle or aircraft mounted ones. Most of the devices are also highly classified military technology data availability being the key issue.
 
-Interestingly, the computed link budget proves that that the jammer and legitimate user tend to be on rather equal footing with each other when it comes to basic service availability. The situation is though different, if we consider the requirements for higher QoS. Achieving higher throughputs necessiates the use of more complex modcod schemes that in turn require greater SNR or in our case SJR at the receiver's end. Here, the advantage can range from single to tens of decibels depending on the modulation utilised.
-Thus, jamming might be the most feasible vector for an adversary to affect LEO satellite communications thanks to geometry of the problem where the jammer might experince much smaller path loss thanks to a shorter RF path in comparison to the legitimate transmitter.
-Still, the large number of LEO satellites in the megaconstellations leads to major redundancy in the choice of satellite. If a UT is configured wisely, it may be able to avoid jamming, especially if the latter is localised in nature, by just transmitting in the direction of the clear sky.
+Interestingly, the computed link budget proves that that the jammer and legitimate user tend to be on rather equal footing with each other when it comes to basic service availability. The situation is though different, if we consider the requirements for higher QoS.
+Achieving higher throughputs necessiates the use of more complex modcod schemes that in turn require greater SNR, or in our case SJR, at the receiver's end. Here, the advantage can range from single to tens of decibels depending on the modulation utilised.
+Thus, jamming might be the most feasible vector for an adversary to affect LEO satellite communications thanks to geometry of the problem.
+In some situations, the jammer experinces less path loss thanks to a shorter RF path in comparison to the legitimate transmitter.
+Still, the large number of LEO satellites in the megaconstellations leads to major redundancy in the choice of satellite.
+If a UT is configured wisely, it may be able to avoid jamming, especially if the latter is localised in nature, by just transmitting in the direction of the clear sky.
 
-%- wideband nature of the waveform -> higher-end receiving equipment capable of wideband signal capture. specific systems limited in arsenals, although heavier aerial platforms tend to be more capable.
+On the other hand, impact of jamming may be reduced by spread spectrum transmission techniques where the source signal is spread over a wider band in the frequency domain.
+One potential approach is frequency hopping spread spectrum (FHSS) where the carrier frequency is switched rapidly between a set of frequencies based on a code known by both the legitimate transmitter and receiver.
+FHSS makes transmissions highly resistant to narrowband interference and jamming while also complicating their interception as the adversary may be at an informational disadvantage when it comes to the transmission codes.
+In practice, effective capture of FHSS sigal requires either expensive RF equipment with wideband intercept capabilities or intricate knowledge of the target system and transimission codes utilised by it.
 
-% wideband jamming, spread spectrum for example hopping 16 beams oneweb. limited geographic area of effect. number of modern systems designed for satellite jamming is rather limited, e.g. russian vehicle shit (how many manufactured?) 
+FHSS-like techniques are already employed to some extent in commercial satellite systems, although they tend to not as robust in comparison to existing governmental counterparts.
+For example, the OneWeb system discussed in \ref{ch-oneweb} employs a beam-hopping strategy for to achieve a more efficient frequency reuse factor.
+Although this is primarily a measure for improving spectrum efficiency, it brings with it also some FHSS-like qualities.
 
-% the approach is limited by its analytical nature. First principles thinking gives us the opportunity to explore foundational limiting factors of the problem set, making it possible to evaluate the threat through conrete quantitative factors. It is inherenlty a theoretical exercise. Next step would be to explore practical system implementations and potential shortcuts for overcoming certain physical limitations?
-
-T\"ass\"a osassa esitet\"a\"an tulokset ja vastataan tutkielman alussa
-esitettyihin tutkimuskysymyksiin.
-Tieteellisen kirjoitelman
-arvo mitataan t\"ass\"a osassa esitettyjen tulosten perusteella.
-
-%% Huomaa seuraavassa kappaleessa lainausmerkkien ulkopuolella piste, 
-%% koska piste ei lopeta lainattua tekstinp\"atk\"a\"a.
-%% Jos lainattu tekstinp\"atk\"a loppuu v\"alimerkkiin, tulee v\"alimerkki
-%% lainausmerkkien sis\"alle: 
-%% "Et tu, Brute?" sanoi Caesar kuollessaan.
-Tutkimustuloksien merkityst\"a on aina syyt\"a arvioida ja tarkastella
-kriittisesti.  Joskus tarkastelu voi olla t\"ass\"a osassa, mutta se
-voidaan my\"os j\"att\"a\"a viimeiseen osaan, jolloin viimeisen osan nimeksi
-tulee >>Tarkastelu>>. Tutkimustulosten merkityst\"a voi arvioida my\"os
->>Johtop\"a\"at\"okset>>-otsikon alla viimeisess\"a osassa.
-
-T\"ass\"a osassa on syyt\"a my\"os arvioida tutkimustulosten luotettavuutta.
-Jos tutkimustulosten merkityst\"a arvioidaan >>Tarkastelu>>-osassa,
-voi luotettavuuden arviointi olla my\"os siell\"a.
+% TODO: the approach is limited by its analytical nature. First principles thinking gives us the opportunity to explore foundational limiting factors of the problem set, making it possible to evaluate the threat through conrete quantitative factors. It is inherenlty a theoretical exercise. Next step would be to explore practical system implementations and potential shortcuts for overcoming certain physical limitations?
 
 \clearpage
 
@@ -1534,7 +1516,8 @@ Clear understanding of the control and ownership, as well as robust security mea
 Considering the results gained from the examination of the model, the emerging NGSO satellite networks do not have inherent physical flaws that would directly jeopardise the security of these systems.
 In fact and as discussed, compared to their predecessors, the NGSO systems have some inherent qualities that make them rather robust against a multitude of the potential threat factors.
 
-Security of commercial satellite systems is a rather young field of study and much work remains for future researchers. Concerning the commercial broadband networks, approaches such as practical waveform studies through open-source black-box reverse engineering is one interesting approach. Robustness of physical and network security of the gateways is another interesting topic with less attention in the research literature.
+Security of commercial satellite systems is a rather young field of study and much work remains for future researchers. Concerning the commercial broadband networks, approaches such as practical waveform studies through open-source black-box reverse engineering is one interesting approach.
+Robustness of physical and network security of the gateways is another interesting topic with less attention in the research literature.
 
 %- TODO: orbital motion in leo -> limits the listening window to minutes -> comint very difficult with individual receivers, requires large scale collusion between receivers and large data transfers
 
