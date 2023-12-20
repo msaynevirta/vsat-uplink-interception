@@ -465,7 +465,7 @@ Here, robust understanding of the evolving threat landscape is a key starting po
 Recently, LEO broadband systems have been increasingly used by commercial and government actors for satellite system security.
 
 Despite their decades-long development history, current satellite systems still lack widely accepted cybersecurity standards \cite{lin2022defending}.
-Varying technical solutions and their proprietary nature has raised a set of potential vulnerabilities.
+Varying technical solutions and their proprietary nature have raised a set of potential vulnerabilities.
 Moreover, the wide-area broadcast nature of satellite transmissions renders them vulnerable to adversarial groups from abroad or even across an entire continent.
 This was demonstrated in \cite{pavur2020tale} where the feasibility of eavesdropping downlink satellite traffic was proven practically using widely available and relatively inexpensive satellite television equipment.
 Within the field of wireless communication, one key driver for this development have been the proliferation of inexpensive signals processing equipment, such as open source and open hardware Software-Defined Radios (SDR).
@@ -508,7 +508,7 @@ Chapter 6 summarizes this work by discussing the security performance of LEO bro
 \subsection{NGSO megaconstellations}
 \subsubsection{History and recent developments}
 During the last five years the satellite communications industry has entered an era of change.
-The most prominent new trend is the large megaconstellations with hundreds to thousands of satellites in low earth orbit (LEO).
+The most prominent new trend has ben the emergence of megaconstellations with hundreds to thousands of satellites in low earth orbit (LEO).
 These systems have been enabled by the falling costs in space launches and the mass-production of satellite hardware based on COTS technology \cite{portillo2019technical}.
 
 GEO satellites provided most of satellite internet capacity in throughput-terms until 2020 when the emerging NGSO megaconstellations started gaining significant share in the satellite internet market.
@@ -538,24 +538,24 @@ Thus, satellite internet services are unlikely to complete replace terrestrial s
 \subsubsection{Key technical characteristics} \label{ch-constellation-characteristics}
 The design of a complete satellite system is a complex, multi-objective and multi-modal optimisation problem due to the inherently varying conditions and constraints in the three segments.
 Practically speaking, this requires tackling the overall optimisation problem segment-by-segment while considering the requirements of the target application.
-In , the main elements of a LEO satellite system were characterised into distinct space, ground and user segments, which are visualised in figure \ref{fig-constellation-segments} \cite{celikbilek2022survey}. % TODO: Kuvaaja puuttuu
+In \cite{celikbilek2022survey}, the main elements of a LEO satellite system were characterised into distinct space, ground and user segments, which are visualised in figure \ref{fig-constellation-segments}. % TODO: Kuvaaja puuttuu
 
 Space segment comprises the satellite constellation flying in orbit.
 Constellation optimization is typically the primary design problem in LEO-based satellite networks as the parameters, such as orbital altitude, density of satellites, the number and inclination of orbital planes and the phasing between them, affect directly the feasibility of user applications.%and tend to drive the majority of implementation costs.
 
+% TODO: Describe Walker constellations
 Ground segment optimisation tends to be more straightforward.
 Ground station (GS) planning involves placing a number of stations in appropriate locations around the globe.
-Metrics for evaluation range from the achieved sky coverage and system throughput and link capacity to the overall deployment and maintenance costs of the GS network \cite{celikbilek2022survey}.
+Key performance indicators (KPIs) include the achieved sky coverage, system throughput, link capacity as well as the overall deployment and maintenance costs of the GS network \cite{celikbilek2022survey}.
 
 When considering optimisation, the user segment is the most case-specific of the three.
 End user applications range from communication to sensing and navigation with their optimisation criteria often contradicting each other.
 Here, \cite{celikbilek2022survey} raises a good example with bandwidth and carrier frequency, where higher numbers are generally desired for example in high-throughput communication applications while the opposite applies to achieving suitable link budgets for example in navigation satellite systems or when users are situated in challenging urban terrain or indoors.
 
 The LEO altitude leads to significantly lower latency and the large number of satellites allows for relatively high overall data throughput when compared with the earlier satellite systems but still significantly lower when compared to terrestrial systems.
-While NGSO constellations are nothing new, the emerging operators are promising to offer magnitudes better broadband service when compared to the earlier services offered by e.g.
-SES O3b and Iridium while providing the services also at a price point that is competitive with other forms of connectivity [x].
+While NGSO constellations are nothing new, the emerging operators are promising to offer significantly better broadband service when compared to the earlier services offered by e.g. SES O3b and Iridium while providing the services also at a price point that is competitive with other forms of connectivity [x]. % TODO: viite
 
-The services are built around vendor-specific user terminals working as WiFi routers that relay the communications on dedicated Ka and Ku-band frequencies to the satellite constellation.
+The services are built around vendor-specific user terminals working as WiFi routers that relay the communications on dedicated Ka and Ku-band frequencies to the satellite constellation. % TODO: Irtovirke, viite?
 
 \subsubsection{OneWeb system architecture} \label{ch-oneweb}
 % TODO: Beam forming etc. painotusta pitää säätää uuden suunnan mukaiseksi
@@ -608,8 +608,7 @@ OneWeb satellite system makes use of a bent pipe architecture for both its forwa
 
 Different transmission schemes are employed depending on the link direction. In the forward direction, transmissions utilise time-division multiplexing on a single 250 MHz wideband carrier. Each user terminal receives the carrier and demodulates it, extracting relevant payload information based on the headers. \cite{worldvu2016loi}
 
-a modified LTE waveform capable
-of adaptive modulation and coding \cite{allen2022terrestrial}
+a modified LTE waveform capable of adaptive modulation and coding \cite{allen2022terrestrial} % TODO: katkennut virke
 
 In the return direction, transmissions utilise a single-carrier time and frequency division multiple access (SC-TDMA/FDMA) scheme. Return direction user terminal to satellite links transmit data in time bursts on a relatively narrow carrier that varies between 1.25 MHz and 20 MHz in bandwidth. Multiple user terminals are able to access a single uplink carrier based on time slots allocated by the network control centre. Terminals are also able to access multiple uplink carriers based on the FDMA channel arrangement of the satellite in question. \cite{worldvu2016loi}
 
@@ -788,7 +787,7 @@ The performance of different platforms was evaluated through metrics such as win
 High altitude balloons are also an interesting platform type when considering their applicability for signals intelligence. These systems are mainly interesting due to their low radar cross section and the wide area of coverage enabled by their relatively high stratospheric cruising altitude \cite{tomme2005paradigm}.
 Figure \ref{fig-chinese-balloon} shows the Chinese surveillance balloon flying over the Continental United States as photographed from a U.S. Air Force U-2 during an widely reported incident in early 2023.
 
-The goal of the experimental portion of this thesis is to evaluate vulnerability of VSATs to airborne adversaries.
+The goal of the analytical portion of this thesis is to evaluate vulnerability of VSATs to airborne adversaries.
 Key factors for the evaluation are the ones that define an aircraft's performance: cruising speed and altitude, as well as payload mass, endurance and manoeuvrability.
 The latter is especially interesting, as it can greatly vary between platform types.
 For example, lighter than air crafts, such as high altitude balloons have relatively limited manoeuvrability, as they rely on atmospheric air currents to carry them around.
@@ -814,8 +813,8 @@ The first message, a common one, which is intended for both receivers, is meant 
 If the second message is only transmitted, the channel is called a \textit{wiretap channel} \cite{bloch2011physical}.
 
 These seminal works form the foundation for physical layer security research.
-Experimental portion of the thesis will examine security of communications channels in the context of NGSO VSAT networks, bridging the theoretical underpinnings with real-world considerations.
-As we delve into the experimental portion of the thesis, we aim to apply and extend these foundational ideas to the specific challenges of NGSO VSAT networks.
+Analytical portion of the thesis will examine security of communications channels in the context of NGSO VSAT networks, bridging the theoretical underpinnings with real-world considerations.
+As we delve into the analytical portion of the thesis, we aim to apply and extend these foundational ideas to the specific challenges of NGSO VSAT networks.
 By examining the security of communications channels in a practical, applied setting, we seek to elucidate the real-world implications of these seminal theories and contribute to the evolving field of physical layer security in satellite communication systems.
 
 % TODO: Sidosteisuutta muuhun tekstiin, physical security, cia triad.
@@ -830,7 +829,7 @@ JP 2-0 \cite{jp2-0}, titled \textit{Joint Intelligence} and serving as the keyst
 In JP 2-0, the domain of signals intelligence (SIGINT) is categorized into three distinct subdomains. Communications Intelligence (COMINT) involves gathering intelligence from intercepted foreign communications via radio, wire, or electromagnetic means, extending to encoded imagery.
 Electronic Intelligence (ELINT) focuses on non-communications emitters like radar, with operational electronic intelligence emphasizing operationally relevant information and technical electronic intelligence delving into technical aspects of the target systems.
 Lastly, Foreign Instrumentation Signals Intelligence (FISINT) analyses data from foreign equipment and control systems, offering insights into telemetry, electronic interrogators, and command systems, providing a comprehensive understanding of foreign technological capabilities.
-In other SIGINT methodologies \cite{kosola2013digitaalinen}, FISINT is often grouped together into ELINT when its definition is taken in the broader non-communications sense.
+In other SIGINT methodologies \cite{kosola2013digitaalinen}, FISINT is often grouped together with ELINT, if the latter is discussed in the broader non-communications context.
 
 Signals intelligence (SIGINT) is intelligence gathering through the exploitation of communication systems and noncommunications emitters.
 Based on the nature of the target system, the discipline of SIGINT can be further subdivided into the sub-disciplines of communications intelligence (COMINT) and electronic intelligence (ELINT) \cite{national2015bulk} [JP 1-02, JP 2-0 (2013), JP 3-85].
@@ -930,21 +929,21 @@ Over-the-air transmission of data presents also questions on the jamming resilie
 
 This poses challenges during situations where a nation is under an external threat, be it a military conflict or an act of a rogue organisation, as sensitive operational information needs to remain only in the hands of its intended users. In addition to these general architectural considerations, the technical solutions themselves should be verifiable on the national or at least at the EU level for both the hardware and software.
 
-Preparedness is a key aspect in the operating model of public safety organisations. It covers the actions required for ensuring the smooth execution of tasks central to the overall safety of a nation in large emergency situations and societal disruptions. Preparedness actions include contingency planning, continuity management, advance preparations, training of operatives and readiness exercises. The concept revolves around the goal of anticipating threats rather than having to react to them [12].
+Preparedness is a key aspect in the operating model of public safety organisations. It covers the actions required for ensuring the smooth execution of tasks central to the overall safety of a nation in large emergency situations and societal disruptions. Preparedness actions include contingency planning, continuity management, advance preparations, training of operatives and readiness exercises. The concept revolves around the goal of anticipating threats rather than having to react to them [12]. % TODO: viite
 
 In the case of public safety communications, this leads to high requirements for availability even in a state of emergency.
 Like more traditional terrestrial solutions, the requirements apply also to the emerging satellite links, which will most likely serve as a back-up solution in the case of larger scale failures of other options.
 
 Satellite links are likely the best suited to natural disasters and major accidents, but open questions remain related to human-made threat situations, like terrorist attacks and military conflicts, where external actors may deliberately interfere with the communications links.
-This raises questions on the political regimes where these current and future constellations are owned and operated. Nationally controlled satellite communications solutions would be the most optimal but are unfeasible for most of the World’s nations to implement. This is due to the immense capital requirements, especially when considering LEO options, which require at minimum hundreds and often thousands of satellites.
+This raises questions on the political regimes where these current and future constellations are owned and operated. Nationally controlled satellite communications solutions would be the most optimal but are unfeasible for even most nation-states to implement. This is due to the immense capital requirements, especially when considering LEO options, which require at minimum hundreds and often thousands of satellites.
 
-These budgetary requirements lead to a situation where most nations need to rely on satellite services that are provided by operators from foreign countries. As discussed later, many of the emerging new operators are either US or UK based, while the EU has also been considering entering the constellation sector with its own alternative. In the context of EU member states, the latter is probably the most attractive option, especially from the point of critical communications. Control over the constellation and its ground segment will be as close to the national level as is feasible with the capital intensive satellite systems. US and UK based solutions might be also in this sense allowable but are likely to require significant legislative work when used by governmental public safety users.
+These budgetary requirements lead to a situation where most nations need to rely on satellite services that are provided by operators from foreign countries. As discussed later, many of the emerging new operators are either US or UK based, while the EU has also been considering entering the constellation sector with its own alternative. In the context of EU member states, the latter is probably the most attractive option, especially from the perspective of critical communications users. Control over the constellation and its ground segment will be as close to the national level as is feasible with the capital intensive satellite systems. US and UK based solutions might be also in this sense allowable but are likely to require significant legislative work when used by governmental public safety users.
 
-Straightforward usability of the systems is highly critical from the perspective of public safety users based on the interviews with Finnish Public Safety actors. The success rate in emergency situations depends heavily on the timeliness of the response, which means that the communication systems used in field activities need to be available on a standby basis. Thus, the future satellite link would need to be highly integrated with the existing communications infrastructure for it to be effective, so that it can be used when necessary.
+Straightforward usability of the systems is crucial from the perspective of public safety users based on the interviews with Finnish Public Safety actors. The success rate in emergency situations depends heavily on the timeliness of the response, which means that the communication systems used in field activities need to be available on a standby basis. Thus, the future satellite link would need to be tightly integrated with the existing communications infrastructure for it to be effective, so that it can be used when necessary.
 
 Considering these usability requirements, an ideal user terminal would be a handset with integrated satellite communication capabilities, but this is not feasible with the current satellite terminal sizes. The more feasible alternative in the near-term would be the integration of the terminal to the vehicles used by the authorities in daily activities.
 
-In addition to conveniently sized and well-integrated user terminals, satellite services should be agnostic to the applications that are run through the link they provide. Currently used applications include PTT, data and video, while in future the systems should be able to accommodate more complex applications, like the verified positioning services provided by the Galileo Public Regulated Service (PRS). This may though require special arrangements in timing critical applications, as satellite systems have longer end-to-end delay times compared to terrestrial systems.
+In addition to conveniently sized and well-integrated user terminals, satellite services should be agnostic to the applications that are run through the link they provide. Currently used applications include PTT, data and video, while in future the systems should be able to accommodate more complex applications, like the verified positioning services provided by the Galileo Public Regulated Service (PRS). This may require special arrangements in timing critical applications, as satellite systems have longer end-to-end delay times compared to terrestrial systems.
 
 Cost considerations are another important point of discussion as they have been a limiting factor for the adoption of the existing satellite services. The new constellations need to achieve significantly lower per user costs for the solutions to gain widespread adoption. The public safety sector is a niche market from the point of view of the constellation operators, which is especially the case for smaller countries like Finland. Volume based pricing models are a possible way of achieving cost advantages but are likely to require the tendering processes to include multiple possible user groups. One straightforward model for providing satellite access to the user organisations could be to include it to the services provided by a national critical communications operator (e.g. Erillisverkot in Finland).
 
@@ -952,7 +951,7 @@ For the solutions to become widely used, their monthly cost should be tens of eu
 
 \subsubsection{Technical considerations}
 
-Implementation-wise, permanent use cases are maybe the most straight forward, as they may be realised just as a simple FSS backhaul link of an individual base station site.
+Implementation-wise, permanent use cases are the most straight forward, as they can be realised just as a simple FSS backhaul link of an individual base station site.
 Direct satellite connectivity is also something that may be feasible in these regions long-term, but as was discussed in chapter \ref{ch-constellation-characteristics}, its technological maturity remains relatively at the time of writing rather low. 
 
 Implementation-wise, satellite networks are in the short-to-medium term envisioned to integrate into the terrestrial networks through portable tactical bubbles, where the satellite link serves as a backhaul solution for a local (?100 meters to kilometres?) wireless connectivity bubble. In practice, current equipment form factor and cost supports best a vehicular deployment model. For example the French RRF envisions satellite networks as one backhaul option for its vehicular relay (\textit{relais véhiculaire}), an emergency vehicle with a tactical bubble for local coverage and capacity. On the other hand, integration point for satellite systems in the Finnish VIRVE2 has been envisioned as command vehicles of fire, rescue and police forces \cite{saynevirta2021satellite,dominguez2021resilience,kokkoniemitarkkanen2024missioncritical}. %TODO (??)
@@ -961,7 +960,7 @@ Long-term, evolution towards direct-to-smartphone type solutions is a potential 
 
 \begin{table}[h]
   \centering
-  \caption{Technical and functional requirements for tactical bubbles \cite{heikkila2021field}.}
+  \caption{Technical and functional requirements for tactical bubbles \cite{heikkila2021field}.} % tähän viittaus tekstiin?
   \begin{tabular}{@{}lll@{}}
   \toprule
   Communication type            & Requirement category  & Identified requirements \\ \midrule
@@ -1027,7 +1026,7 @@ In this sense, each submodel helps us understand potential strengths and vulnera
 
 Critical communications users place high expectations on the communications solutions that they utilise.
 Satcom solutions have seen previously somewhat limited especially in the public safety sector, while at the same time commercial systems have turned out to be not the most robust when it comes to fundamental concepts of security, such as confidentiality, integrity and availability.
-With the recent drive to integrate satcom into both commercial and critical use cases, it is paramount to understand the underlying factors of the systems.
+With the recent drive to integrate satcom into both commercial and mission-critical communications solutions, it is paramount to understand the underlying factors of the systems. % TODO: Huono virke
 Physics-driven analysis helps us to evaluate the limits of a systems in a way that allows for sufficient risk mitigations to be engineered. %% TODO: Miten liittyy public safety caseen? DONE?
 
 \begin{table}[h]
@@ -1216,7 +1215,7 @@ Thus, in practice eavesdropping even a small number of VSATs in a limited geogra
   \label{fig-orbit-geometry}
 \end{figure}
 
-In addition to being aligned along the line-of-sight of the VSAT's main lobe, the eavesdropper needs to be able to intercept sufficiently long transmission to be able to intercept and detect a legitimate VSAT transmission. 
+In addition to being aligned along the LOS of the VSAT's main lobe, the eavesdropper needs to be able to intercept sufficiently long transmission in order to have a chance to detect a target VSAT transmitter from background noise and potential other active transmitters.
 This time dimension brings another point to consider when evaluating the risk of eavesdropping.
 Different durations of interception have varying implications for the legitimate transmitter.
 As a practical example, millisecond-level signal capture may be enough for DF applications, while in COMINT monitoring the signal for longer periods ranging all the way from seconds to days would be useful for gathering enough data. % TODO: parempi ilmaus tähän
@@ -1293,9 +1292,9 @@ For reference, high velocity artillery cannons have muzzle velocities in a simil
 
 \subsection{Submodel 2b: Beam tracking potential in inclined orbits} \label{ch-results-submodel-2b-tracking-inclined}
 
-Circular equatorial orbits are a good starting point for listening window analysis but their real-world applications are somewhat in limited when considering relationship of orbital altitude to coverage and latency.
-As discussed in chapter \ref{ch-constellation-characteristics}, modern satellite megaconstellations, such as the systems in appendix \ref{appendix-constellation-comparison}, aim to achieve worldwide coverage by placing a number of satellites into inclined circular Earth orbits.
-Common configurations include the Walker Star and Delta constellation configurations, the advantages and disadvantages of which are discussed in more detail in the previously mentioned chapter.
+Circular equatorial orbits are a good starting point for listening window analysis but their real-world applications are somewhat limited when considering relationship of orbital altitude to coverage and latency.
+This is due to the space segment architecture of modern satellite megaconstellations that aim to achieve worldwide coverage by placing a number of satellites into Earth orbits that are inclined in nature.
+Often, real-world satcom systems, such as those in appendix \ref{appendix-constellation-comparison}, follow the Walker Star and Delta constellation configurations, whose basic characteristics are outlined briefly in chapter \ref{ch-constellation-characteristics}.
 
 The same analysis methods remain valid for inclined orbits, but some additional factors need to be considered.
 Equatorial orbits have only a single velocity component parallel to the xy-plane in both ECI and ECF coordinate frames.
@@ -1400,18 +1399,14 @@ In some cases, jammer may even be at an advantage based on their geographical lo
 Minimum CNR requirements for modulation and coding schemes (modcod) determine the ability of the jammer to interfere with the legitimate transmission.
 As discussed in chapter \ref{ch-oneweb}, OneWeb uses adaptive modcod scheme comprised of QPSK, 8PSK and 16-QAM modulation techniques. Higher end requires significantly greater CNR at the receiver, while the lower end can still function even with very low CNR, if significant forward error correction (FEC) is utilised. \cite{allen2022terrestrial,etsi2012en302307}
 
-% Downlink
-% When it comes to jamming, two main scenarios arise. The jammer can either be in the rough area of the main beam or elsewhere, which leads to different gain figures at the receiver's end. This means that the jammer is either transmitting in the receiver's main lobe, side lobe or nulls between these. While the latter can be simply be ruled out due to the high attenuation, the two prior provide a chance for the jammer to interfere with the legitimate transmission. Side lobe level (SLL) of the modern constellations is not known for both the satellites and the terminals. We can though estimate it based on constraints like the ITU radio regulations, which set inherent limits for the maximum allowable power flux density to limit interference. In \cite{hills2023controlling}, the authors estimated maximum allowable sidelobe levels for the first generation Starlink and OneWeb constellations at $-32.9$ and \qty{-24.0}{\decibel} respectively.
-
 Jamming of the uplink signal can be done from both aircraft and earth-bound platforms.
 Scenario-wise, the altitude of the interfering system does not make a major difference, if ground-level obstruction caused by structures and natural land formations is ignored.
-This simplified scenario allows E2E performance of a communications link can be analysed through a link budget, a theoretical calculation where gains and losses of a RF system are summed in order to compute a figures of merit, such as x, y and z.%TODO: Listaa tähän jatkoksi 
+This simplified scenario allows end-to-end performance of a communications link can be analysed through a link budget, a theoretical calculation where gains and losses of a RF system are summed in order to compute a figures of merit, such as x, y and z.%TODO: Listaa tähän jatkoksi 
 Table \ref{table-ul-jamming-link-budget} presents an uplink link budget for the Kymeta Hawk u8 UT interfacing with the OneWeb LEO megaconstellation.
 Parameters of the UT are taken from \cite{kymeta2022hawk} and \cite{kymeta2020mod}, while parameters for the space segment of the OneWeb constellation are based on the values in \cite{worldvu2016loi} and \cite{allen2022terrestrial} for the first generation constellation.
 For the advantage of the legitimate user, the modcod scheme is assumed to be the less demanding QPSK with $1/2$ FEC.
 
 Propagation paths in satellite links inherently cover long distances ranging from hundreds to thousands of kilometres depending on the orbit of a satellite.
-When accounting for the losses in the RF path, this realisation allows for certain simplifications to be made without major losses in accuracy.
 RF path between the satellite and UT experiences losses primarily due to free space path loss (FSPL), a loss driven by the dispersion of RF energy into the medium it propagates through.
 FSPL in decibels can be computed from equation \ref{eq-fspl} based on the approximate orbital altitude satellites $d$ in meters and UL frequency $f$ in hertz.
 
@@ -1424,9 +1419,12 @@ In addition to FSPL, RF path may see varying losses from the atmospheric phenome
 It is worth noting, that the latter three tend to less significant when considering Ku and Ka-band propagation over signal paths ranging from hundreds to thousands of kilometres in space.
 This is due to FSPL growing to the square, while the other losses remain constant to a certain degree and tend to be magnitudes smaller.
 
-Equation \ref{eq-signal-power-full} was then simplified by summing the transmitter and jammer-related variables into the figure of effective isotropic radiated power (EIRP) with the satellite's receiver side boiled down to the figure of gain-to-noise-temperature (G/T).
+Jammer's relative position to the receiver's beam pattern is another point to consider. In practice, the jammer can either be in the rough area of the main beam or elsewhere, which leads to different gain figures at the receiver's end. This means that the jammer is either transmitting in the receiver's main lobe, side lobe or nulls between these. While the latter can be simply be ruled out due to the high attenuation, the two prior provide a chance for the jammer to interfere with the legitimate transmission. Side lobe level (SLL) of the modern constellations is not known for both the satellites and the terminals. Some estimation can be made based on constraints like the ITU radio regulations, which set inherent limits for the maximum allowable power flux density to limit interference. In \cite{hills2023controlling}, the authors estimated maximum allowable sidelobe levels for the first generation Starlink and OneWeb constellations at $-32.9$ and \qty{-24.0}{\decibel} respectively. 
+
+Finally, equation \ref{eq-signal-power-full} was then simplified by summing the transmitter and jammer-related variables into the figure of effective isotropic radiated power (EIRP) with the satellite's receiver side boiled down to the figure of gain-to-noise-temperature (G/T).
 On the propagation side, both the legitimate transmitter and the jammer were assumed to be earth-bound and unobstructed.
-This allows the propagation losses to be estimated with the figures of FSPL and atmospheric loss.
+Side lobe related losses were ignored in the analysis due to their uncertainty.
+This allows the propagation losses to be estimated with just the figures of FSPL and atmospheric loss.
 For the latter, a figure of \SI{0.35}{\deci\bel} from \cite{kymeta2019link} was applied. SNR was also normalised over \SI{1}{\hertz} of bandwidth.
 
 \begin{equation} \label{eq-signal-power-simplified}
@@ -1465,22 +1463,22 @@ For the latter, a figure of \SI{0.35}{\deci\bel} from \cite{kymeta2019link} was 
   \end{tabular}
 \end{table}
 
-The computations show that the jammer needs to achieve \SI{1}{\deci\bel} smaller signal power at the satellite than the legitimate transmitter, meaning still a certain degree of advantage to the jammer at even the baseline scenario.
-Applying any of the more demanding modcod schemes, such as aforementioned 8PSK or 16-QAM, would push the SJR further to the jammer's benefit.
+Jammer's detailed RF characteristics would the next point to consider, and link budget allows these to be examined in the same manner as the legitimate uplink of the VSAT.
+Analysis in table \ref{table-ul-jamming-link-budget} was ended at the receiver of the satellite due to limited information available in the jammer's end.
+Jamming devices range from handheld ones all the way from high power vehicle or aircraft mounted systems both stationary and mobile in their mode of operation.
+It is worth noting that most of the devices are also highly classified military technology, exacerbating the issue of data scarcity.
 
-Jammer's capabilities are another point to consider.
-In principle, link budgets allow to examine the whole end-to-end RF chain.
-Despite this, analysis in table \ref{table-ul-jamming-link-budget} was ended at the receiver of the satellite due to limited information available in the jammer's end.
-The spectrum of jamming devices varies from handheld ones all the way from high power vehicle or aircraft mounted systems.
-Most of the devices are highly classified military technology, exacerbating the issue of data scarcity even further.
+Despite this, some comments can be made in regard to the susceptibility of VSAT satcom systems to uplink jamming.
+Based on the computations, jammer needs to achieve roughly \SI{1}{\deci\bel} smaller signal power at the satellite than the legitimate transmitter, meaning still a certain degree of advantage to the jammer at even the baseline scenario.
+Applying any of the more demanding modcod schemes, such as aforementioned 8PSK or 16-QAM, would push the SJR further to the jammer's benefit.
 
 \clearpage
 
 \section{Discussion}
 
-Critical communication users demand robust solutions, particularly in terms of confidentiality, integrity, and availability. The historical limitations of satcom solutions, especially in the public safety sector, alongside the challenges faced by commercial systems, underscore the necessity for a nuanced understanding of these systems. With the increasing integration of satcom into both commercial and critical applications, the imperative to comprehend the underlying factors of these systems becomes paramount.
+Critical communication users demand robust solutions, particularly in terms of confidentiality, integrity, and availability. The historical limitations of satcom solutions, especially in the public safety sector, alongside the challenges faced by commercial systems, underscore the necessity for a nuanced understanding of these systems. With the potential integration of satcom into both mission-critical applications, it is crucial to understand the security of these systems from first principles.
 
-The primary focus involved applying quantitative analysis through the development of a robust threat model, targeting a Walker-type LEO megaconstellation, fixed Very Small Aperture Terminals (VSAT), and the influence of airborne eavesdroppers. The research framework comprised four smaller submodels, each explored through a parametric study, with a specific dependent variable and a set of independent ones.
+In this thesis, quantitative analysis was applied to develop a robust threat model targeting a Walker-type LEO megaconstellation, fixed VSAT ground equipment, as well as adversial airborne eavesdroppers and jammers. The research framework comprised four smaller submodels, each of which was explored through a parametric study with a specific dependent variable and a set of independent ones.
 The foundation of the four submodels rested on a first principles approach, employing geometric and kinematic analyses, as well as link budgets based on a representative hardware configuration.
 By deconstructing the target system into fundamental components, each submodel highlighted the potential strengths and vulnerabilities of satcom systems in relation to various threats.
 
