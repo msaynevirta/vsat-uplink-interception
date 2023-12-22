@@ -714,19 +714,16 @@ Table \ref{table-starlink-orbits} presents the distribution of the satellites to
   \label{fig-f-plan}
 \end{figure}
 
-Starlink satellites communicate with UTs through Ku-band links.
-From the space segment, traffic is either relayed to other satellites via optical ISL or to gateways on higher frequency Ka-band links.
+First generation Starlink satellites communicate with UTs through Ku-band links at a minimum elevation angle of 25 degrees.
+In the space segment, traffic is either relayed to other satellites via optical ISL or to gateways on higher frequency Ka-band links.
 Satellites have four phased array antennas, three of which function as DL and one as UL.
-All four arrays are // capable of projecting eight // independently shapeable and steerable spot beams, resulting in a 3-to-1 DL-to-UL ratio.
-Figure \ref{fig-f-plan} presents Starlink and OneWeb frequency plans in relation to each other \cite{spacex2016loa}. % TODO: Cleanup
-
-Beam radiation pattern is dependent mainly on the steering angle of the beam with angles farther from boresight making the beam footprint more elliptical.
-Starlink 3 dB beam footprints vary between x and x kilometres in their major axis.
-Minor axis varies less with values ranging between x and x kilometres depending on the beam steering angle. % TODO
-Overall beamwidth is controlled by selectively switching on additional array elements as the steering angle rises.
-Minimum elevation angle of the SpaceX system is 25 degrees \cite{spacex2016loa, spacex2020mod}.
+All four arrays are capable of projecting eight independently shapeable and steerable spot beams, resulting in a 3-to-1 DL-to-UL ratio.
+Figure \ref{fig-f-plan} presents Starlink and OneWeb frequency plans in relation to each other % TODO: Cleanup
+Gain contours for both Ku and Ka-band beams are mainly dependent on the steering angle, with values farther from boresight making the beam footprint more elliptical.
+Overall beamwidth is controlled by selectively switching on additional phased array elements as the steering angle gets farther from nadir \cite{spacex2016loa, spacex2020mod}.
 
 Ground segment 1.5 m Ka-band antennas %TODO
+Compared to OneWeb, Starlink's UT lineup is more straight forward, as only SpaceX's own terminals are compatible with the constellation as of December 2023. 
 
 Starlink dish variants. Common feature ESA technology. Some flat panel while others use steering. Size varies between x and x m. % TODO: Cleanup
 
