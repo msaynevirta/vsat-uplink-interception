@@ -709,7 +709,7 @@ Table \ref{table-starlink-orbits} presents the distribution of the satellites to
   \label{table-starlink-orbits}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}[h] % TODO: Figure
   \centering
   \input{tikz_figures/fig-electronic-warfare.tikz}
   \caption{Frequency plan.}
@@ -718,24 +718,21 @@ Table \ref{table-starlink-orbits} presents the distribution of the satellites to
 
 First generation Starlink satellites communicate with UTs through Ku-band links at a minimum elevation angle of 25 degrees.
 In the space segment, traffic is either relayed to other satellites via optical ISL or to gateways on higher frequency Ka-band links.
+Figure \ref{fig-f-plan} presents Starlink and OneWeb frequency plans in relation to each other.
 Satellites have four phased array antennas, three of which function as DL and one as UL.
 All four arrays are capable of projecting eight independently shapeable and steerable spot beams, resulting in a 3-to-1 DL-to-UL ratio.
-Figure \ref{fig-f-plan} presents Starlink and OneWeb frequency plans in relation to each other % TODO: Cleanup
 Gain contours for both Ku and Ka-band beams are mainly dependent on the steering angle, with values farther from boresight making the beam footprint more elliptical.
-Overall beamwidth is controlled by selectively switching on additional phased array elements as the steering angle gets farther from nadir \cite{spacex2016loa, spacex2020mod}.
+Overall beamwidth is controlled by selectively switching on additional phased array elements as the steering angle gets farther from nadir. Depending on the steering angle, a spot beam can cover a range of individual cells, which are arranged based on Uber's H3 hexagonal cell system. Each spot beam covers roughly one size 5 hex cell at nadir \cite{spacex2016loa, spacex2020mod}. % TODO: Medium-artikkeli Uber-celleille, parempia SpaceX-lähtöisiä lähteitä?
 
-SpaceX has released limited details on the modcod scheme used in Starlink UL and DL communications. In \cite{humphreys2023signal}, the researchers were able to reverse engineer the Starlink waveform in order to evaluate its usefulness in PNT applications. They found that the DL signal of a Starlink satellite is Orthogonal frequency-division multiplexing (OFDM). Empirical signal caputures showed that the OFDM symbols use quadrature amplitude modulation with 4 and 16 point constellations (4-QAM and 16-QAM). This aligns with SpaceX FCC filings, such as \cite{SpaceX-SES-AMD-20210731-01295} concerning blanket-authorised terminals and aeroconnectivity, stating that the UTs support modulation schemes up to 64-QAM on both Ku-band UL and DL. 
+SpaceX has released somewhat limited details on the modcod scheme used in Starlink UL and DL communications. In \cite{humphreys2023signal}, the researchers were able to reverse engineer the Starlink waveform in order to evaluate its usefulness in PNT applications. They found that the DL signal of a Starlink satellite is Orthogonal frequency-division multiplexing (OFDM). Empirical signal caputures showed that the OFDM symbols use quadrature amplitude modulation with 4 and 16 point constellations (4-QAM and 16-QAM). This aligns with SpaceX FCC filings, such as \cite{SpaceX-SES-AMD-20210731-01295} concerning blanket-authorised terminals and aeroconnectivity, stating that the UTs support modulation schemes up to 64-QAM on both Ku-band UL and DL. 
 
-Ground segment 1.5 m Ka-band antennas %TODO
-Compared to OneWeb, Starlink's UT lineup is more straight forward, as only SpaceX's own terminals are compatible with the constellation as of December 2023. 
-
-First generation of SpaceX's blanket-authorised had . According to \cite{SpaceX-SES-AMD-20210731-01295},
-Starlink dish variants. Common feature ESA technology. Some flat panel while others use steering. Size varies between x and x m. % TODO: Cleanup
-
-Starlink's cell pattern is based on Uber's H3 hexagonal cell system. Each spot beam covers roughly 1 size 5 hex cell at nadir. It is worth noting that the beam becomes more elliptical at higher steering angles, thus covering more cells at the same time. % TODO: Citation
+Similar to OneWeb, Starlink's ground segment comprises of both UTs and gateways and their associated network infrastructure, such as PoPs and NDCs. Starlink's Ka-band 1.5 m gateway antennas are globally distributed and arranged generally in x to y clusters of antennas per site. %TODO
+When it comes to UTs, Starlink's lineup is somewhat simpler thanks to the vertically integrated terminal strategy that SpaceX follows.
+Half-power bandwidt of first generation Starlink terminals varies between 2.8 and 5.5 degrees depending on the beam steering angle and whether the terminal is receiving or sending. HPBW figures are smaller for transmission and angles closer to boresight \cite{SpaceX-SES-AMD-20210731-01295}. Some flat panel while others use steering. Size varies between smaller consumer termials at an array size of x by x m to larger entreprise variants at x by y meters. % TODO: Cleanup
 
 \subsection{Classification of aerial platforms} \label{ch-aerial-platforms}
 
+% TODO: Sidosteisuutta?
 Aerial platforms come in many shapes and sizes with widely varying capabilities.
 Based on these, the systems can be categorised in a few ways depending on the end goal of the classification effort.
 For example, aviation regulation can be thought to form a comprehensive risk-based classification framework for the whole spectrum of platforms all the way from small drones and lighter-than-air balloons to heavy manned jet aircraft.
