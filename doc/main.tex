@@ -476,6 +476,8 @@ NAV                     & Nano Air Vehicle \\
 NDC                     & Network Data Centre \\
 NGSO                    & Non-GeoStationary Orbit \\
 NTN                     & Non-Terrestrial Network \\
+OFDM                    & Orthogonal Frequency-Division Multiplexing \\
+QAM                     & Quadrature Amplitude Modulation \\
 PAV                     & Pico Air Vehicle \\
 PoP                     & Point-of-Presence \\
 PTT                     & Push-To-Talk \\
@@ -722,9 +724,12 @@ Figure \ref{fig-f-plan} presents Starlink and OneWeb frequency plans in relation
 Gain contours for both Ku and Ka-band beams are mainly dependent on the steering angle, with values farther from boresight making the beam footprint more elliptical.
 Overall beamwidth is controlled by selectively switching on additional phased array elements as the steering angle gets farther from nadir \cite{spacex2016loa, spacex2020mod}.
 
+SpaceX has released limited details on the modcod scheme used in Starlink UL and DL communications. In \cite{humphreys2023signal}, the researchers were able to reverse engineer the Starlink waveform in order to evaluate its usefulness in PNT applications. They found that the DL signal of a Starlink satellite is Orthogonal frequency-division multiplexing (OFDM). Empirical signal caputures showed that the OFDM symbols use quadrature amplitude modulation with 4 and 16 point constellations (4-QAM and 16-QAM). This aligns with SpaceX FCC filings, such as \cite{SpaceX-SES-AMD-20210731-01295} concerning blanket-authorised terminals and aeroconnectivity, stating that the UTs support modulation schemes up to 64-QAM on both Ku-band UL and DL. 
+
 Ground segment 1.5 m Ka-band antennas %TODO
 Compared to OneWeb, Starlink's UT lineup is more straight forward, as only SpaceX's own terminals are compatible with the constellation as of December 2023. 
 
+First generation of SpaceX's blanket-authorised had . According to \cite{SpaceX-SES-AMD-20210731-01295},
 Starlink dish variants. Common feature ESA technology. Some flat panel while others use steering. Size varies between x and x m. % TODO: Cleanup
 
 Starlink's cell pattern is based on Uber's H3 hexagonal cell system. Each spot beam covers roughly 1 size 5 hex cell at nadir. It is worth noting that the beam becomes more elliptical at higher steering angles, thus covering more cells at the same time. % TODO: Citation
