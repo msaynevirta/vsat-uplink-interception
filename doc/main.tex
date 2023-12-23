@@ -294,9 +294,7 @@
 %% as the abstract page.
 %%
 \thesisabstract{
-In recent years, the satellite communications industry has witnessed a paradigm shift with the rise of large Non-Geostationary Orbit (NGSO) megaconstellations. This shift, fuelled by reduced space launch costs and the widespread use of Commercial Off-The-Shelf (COTS) technology, has ushered in a new era of global connectivity. In the future, commercial satcom systems are likely to play a crucial role as a complementary solution for terrestrial mission-critical (MC) networks, addressing distinct set of use cases varying in their nature, duration, and forecastability. In practice, the potential applications range from serving traditionally underserved rural and maritime regions to providing vital connectivity during planned events and responding swiftly to unplanned incidents such as natural disasters.
-The rapid proliferation of commercial satellite solutions has not been without its challenges, particularly in the realm of cybersecurity. The absence of widely accepted cybersecurity standards, coupled with the proprietary nature of satellite solutions, leaves open potential vulnerabilities. For example, the ubiquitous broadcast nature of satellite transmissions further exposes them to eavesdropping and adversarial actions across wide geographic footprints. Adversarial groups, spanning state actors to individual enthusiasts armed with accessible Software-Defined Radios (SDR), have demonstrated the feasibility of interception deliberate interference with commercial satellite systems.
-This thesis investigated the threat posed by airborne adversaries to Very Small Aperture Terminals (VSAT) interfacing with satcom megaconstellations in Low Earth Orbit (LEO). A comprehensive research framework comprising four submodels was developed with the models examining VSAT interception ranges, airborne eavesdropper tracking potential, temporal considerations for capturing RF data, and the active threat of jamming. Findings showed the physical resilience of NGSO VSAT systems against signal interception and intentional jamming, with the distributed infrastructure of NGSO systems offering many inherent advantages. Satellite networks have great potential to enable new capabilities in traditionally tough-to-serve use cases in the fields of public safety and defence. Proper care in their integration needs to be taken as robust cybersecurity measures are a key starting point in these markets.
+% TODO: Kopio englanninkielisestä abstraktista
 }
 
 %% Copyright text. Copyright of a work is with the creator/author of the work
@@ -353,7 +351,7 @@ This thesis investigated the threat posed by airborne adversaries to Very Small 
 \begin{abstractpage}[english]
   In recent years, the satellite communications industry has witnessed a paradigm shift with the rise of large Non-Geostationary Orbit (NGSO) megaconstellations. This shift, fuelled by reduced space launch costs and the widespread use of Commercial Off-The-Shelf (COTS) technology, has ushered in a new era of global connectivity. In the future, commercial satcom systems are likely to play a crucial role as a complementary solution for terrestrial mission-critical (MC) networks, addressing distinct set of use cases varying in their nature, duration, and forecastability. In practice, the potential applications range from serving traditionally underserved rural and maritime regions to providing vital connectivity during planned events and responding swiftly to unplanned incidents such as natural disasters.
 
-  The rapid proliferation of commercial satellite solutions has not been without its challenges, particularly in the realm of cybersecurity. The absence of widely accepted cybersecurity standards, coupled with the proprietary nature of satellite solutions, leaves open potential vulnerabilities. For example, the ubiquitous broadcast nature of satellite transmissions further exposes them to eavesdropping and adversarial actions across wide geographic footprints. Adversarial groups, spanning state actors to individual enthusiasts armed with accessible Software-Defined Radios (SDR), have demonstrated the feasibility of interception deliberate interference with commercial satellite systems.
+  The rapid proliferation of commercial satellite solutions has not been without its challenges, particularly in the realm of cybersecurity. The absence of widely accepted cybersecurity standards, coupled with the proprietary nature of satellite solutions, leaves open potential vulnerabilities. For example, the ubiquitous broadcast nature of satellite transmissions further exposes them to eavesdropping and adversarial actions across wide geographic footprints. Adversarial groups, spanning from state actors to individual enthusiasts armed with accessible Software-Defined Radios (SDR), have demonstrated the feasibility of interception and deliberate interference with commercial satellite systems.
 
   This thesis investigated the threat posed by airborne adversaries to Very Small Aperture Terminals (VSAT) interfacing with satcom megaconstellations in Low Earth Orbit (LEO). A comprehensive research framework comprising four submodels was developed with the models examining VSAT interception ranges, airborne eavesdropper tracking potential, temporal considerations for capturing radio frequency (RF) data, and the active threat of jamming. Findings showed the physical resilience of NGSO VSAT systems against signal interception and intentional jamming, with the distributed infrastructure of NGSO systems offering many inherent advantages. Satellite networks have great potential to enable new capabilities in traditionally tough-to-serve use cases in the fields of public safety and defence. Proper care in their integration needs to be taken as robust cybersecurity measures are a key starting point in these markets.
 \end{abstractpage}
@@ -447,6 +445,7 @@ EP                      & Electromagnetic Protection \\
 ES                      & Electromagnetic Support \\
 EU                      & European Union \\
 EW                      & Electronic Warfare \\
+FDMA                    & Frequency Division Multiple Access \\
 FEC                     & Forward Error Correction \\
 FHSS                    & Frequency Hopping Spread Spectrum \\
 FSPL                    & Free Space Path Loss \\
@@ -484,11 +483,13 @@ PTT                     & Push-To-Talk \\
 RF                      & Radio Frequency \\
 RRF                     & Réséau Radio du Futur \\
 satcom                  & SATellite COMmunication \\
+SC                      & Single Carrier \\
 SDR                     & Software-Defined Radio \\
 SHF                     & Super High Frequency \\
 SIGINT                  & SIGnals INTelligence \\
 SNP                     & Satellite Network Portal \\
 SNR                     & Signal to noise ratio \\
+TDMA                    & Time Division Multiple Access \\
 TN                      & Terrestrial Network \\
 UAS                     & Unmanned Aerial System \\
 UAV                     & Unmanned Aerial Vehicle \\
@@ -512,7 +513,7 @@ VTOL                    & Vertical TakeOff and Landing
 Over the past five decades, satellite systems have emerged as indispensable enablers of our modern way of life within an increasingly technology-driven human society.
 Innovation in fields such as Global Navigation Satellite Systems \cite{oconnor2019economic}, Earth Observation \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and Satellite Communication (satcom) \cite{euroconsult-space-economy-2023} has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in positioning, navigation, and timing, as well as intelligence, surveillance, and reconnaissance.
 Recently, the satellite communications industry has entered an era of rapid change.
-Since the early 2010s, the most prominent new trend has been emergence of megaconstellations with hundreds to thousands of satellites in LEO.
+Since the early 2010s, the most prominent new trend has been the emergence of megaconstellations with hundreds to thousands of satellites in LEO.
 The raise of large constellations in NGSO has been enabled by the falling cost of space launches and mass-production of satellite hardware based on COTS technology \cite{euroconsult-space-economy-2023}.
 
 Aside from commercial markets, governmental organisations such as civilian public safety authorities and defence ministries have expressed great interest in emerging commercial satellite communication solutions.
@@ -546,8 +547,8 @@ Considering this prior history and recent rapid growth, it is important to addre
 
 This thesis seeks to assess whether the presence of airborne eavesdroppers poses a risk to the uplink (UL) communications of emerging NGSO VSAT networks. % TODO: in the context of public safety ...
 To achieve this goal, a conceptual-analytical research approach is applied through a threat model focusing on a Walker-type LEO megaconstellation, fixed VSATs and airborne eavesdroppers.
-The resilience of NGSO broadband systems is explored via a parametric study of threat model consisting of four discrete submodels.
-Dependent variable of each submodel is chosen in a manner that helps build understanding of the fundamental constraints of NGSO satcom systems from the perspective of VSAT UL communication with orbiting satellites.
+The resilience of NGSO broadband systems is explored via a parametric study of a threat model consisting of four discrete submodels.
+Dependent variables of the submodels are the key to understanding the fundamental constraints of NGSO satcom systems from the perspective of VSAT UL communication with orbiting satellites.
 In this context, adversarial actions, such as deliberate eavesdropping and interference like jamming, are considered.
 To build a quantitative picture of the prevalent threat landscape, we need to look into geometric and kinematic factors, as well as RF link budgets. 
 The conceptual-analytical model will be evaluated numerically against a set of known real-world system parameters and the results will be discussed in relation to the requirements set out by both public safety and defence user groups.
@@ -566,12 +567,11 @@ Chapter 6 summarizes this work by discussing the security performance of LEO bro
 \subsection{NGSO megaconstellations}
 \subsubsection{History and recent developments}
 During the last five years the satellite communications industry has entered an era of change.
-The most prominent new trend has ben the emergence of megaconstellations with hundreds to thousands of satellites in LEO.
+The most prominent new trend has been the emergence of megaconstellations with hundreds to thousands of satellites in LEO.
 These systems have been enabled by the falling costs in space launches and the mass-production of satellite hardware based on COTS technology \cite{portillo2019technical}.
 
 GEO satellites provided most of satellite internet capacity in throughput-terms until 2020 when the emerging NGSO megaconstellations started gaining significant share in the satellite internet market.
-Combined, SpaceX Starlink, EutelSat OneWeb, Amazon Kuiper, Telesat Lightspeed and SES O3b mPOWER have are estimated to bring roughly USD 70 billion of capital investment into the space during the deployment of their generation 1 and 2 constellations.
-Everything has not though been smooth sailing.
+Combined, SpaceX Starlink, EutelSat OneWeb, Amazon Kuiper, Telesat Lightspeed and SES O3b mPOWER have been estimated to bring roughly USD 70 billion of capital investment into the space during the deployment of their generation 1 and 2 constellations.
 Megaconstellations are a very capex heavy industry and broader economic pressures have led to significant delays for the companies operating in the space.
 For example, OneWeb went through a bankruptcy restructuring following the Covid-19 pandemic, while SES's O3b mPOWER faced significant delays from the same pandemic.
 Similarly, Canadian Telesat and its Lightspeed constellation have been hit with supply chain and financing related challenges, delaying the project and leading to descoping of some of the originally planned satellite fleet.
@@ -591,10 +591,10 @@ Standardised services have the greatest potential in mid to long-term timescales
 Appendix \ref{appendix-constellation-comparison} has a table with a non-exhaustive sample of recent LEO megaconstellation projects and their key design parameters.
 One interesting takeaway from the metrics is the sum of the theoretical throughputs of the systems with the figure landing into a range of hundreds of terabits-per-second (Tbps).
 As a reference, global internet bandwidth was estimated at 1.2 petabytes-per-second globally in 2023, an order of magnitude difference when compared to the fully deployed capability of the first generation NGSO systems \cite{telegeography-ip-networks-2023}.
-Thus, satellite internet services are unlikely to complete replace terrestrial networks (TN) but will act likely as a complimentary coverage and capacity solution for both commercial and government user segments.
+Thus, satellite internet services are unlikely to completely replace terrestrial networks (TN) but will act likely as a complimentary coverage and capacity solution for both commercial and government user segments.
 
 \subsubsection{Key technical characteristics} \label{ch-constellation-characteristics}
-The design of a complete satellite system is a complex, multi-objective and multi-modal optimisation problem due to the inherently varying conditions and constraints in the three segments.
+The design of a complete satellite system is a complex, multi-objective and multi-modal optimisation problem due to the inherently varying conditions and constraints in the ground, space and user segments.
 Practically speaking, this requires tackling the overall optimisation problem segment-by-segment while considering the requirements of the target application.
 In \cite{celikbilek2022survey}, the main elements of a LEO satellite system were characterised into distinct space, ground and user segments, which are visualised in figure \ref{fig-constellation-segments}. % TODO: Kuvaaja puuttuu
 
@@ -664,11 +664,16 @@ In OneWeb's case, forward link is roughly five times the capacity of the return 
 
 OneWeb satellite system makes use of a bent pipe architecture for both its forward and return links. In the forward direction, each Ku-band user terminal DL maps onto a predetermined Ka-band gateway UL and vice-versa in the return direction. \cite{worldvu2016loi, portillo2019technical}
 
-Different transmission schemes are employed depending on the link direction. In the forward direction, transmissions utilise time-division multiplexing on a single 250 MHz wideband carrier. Each user terminal receives the carrier and demodulates it, extracting relevant payload information based on the headers. \cite{worldvu2016loi}
+In its air interface, OneWeb uses a modified LTE waveform capable of adaptive modulation and coding (modcod).
+Different transmission schemes are employed depending on the link direction.
+In the forward direction, transmissions utilise time-division multiple access on a single 250 MHz wideband carrier (SC-TDMA) with each user terminal receiving the carrier and demodulating it, extracting relevant payload information based on the headers. Forward links employ turbo/convolutional/block
+channel coding and QPSK, 8PSK and 16QAM modulation \cite{allen2022terrestrial, worldvu2016loi}.
 
-a modified LTE waveform capable of adaptive modulation and coding (modcod) \cite{allen2022terrestrial} % TODO: katkennut virke
-
-In the return direction, transmissions utilise a single-carrier time and frequency division multiple access (SC-TDMA/FDMA) scheme. Return direction user terminal to satellite links transmit data in time bursts on a relatively narrow carrier that varies between 1.25 MHz and 20 MHz in bandwidth. Multiple user terminals are able to access a single UL carrier based on time slots allocated by the network control centre. Terminals are also able to access multiple UL carriers based on the FDMA channel arrangement of the satellite in question. \cite{worldvu2016loi}
+In the return direction, transmissions utilise a single-carrier time and frequency division multiple access (SC-TDMA/FDMA) scheme.
+Return direction user terminal to satellite links transmit data in time bursts on a relatively narrow carrier that varies between 1.25 MHz and 20 MHz in bandwidth.
+Multiple user terminals are able to access a single UL carrier based on time slots allocated by the network control centre.
+Terminals are also able to access multiple UL carriers based on the FDMA channel arrangement of the satellite in question. Like the forward link,
+return channel employs QPSK, 8PSK and 16QAM modulation but supports only turbo and block encoding \cite{worldvu2016loi}.
 
 Generally speaking, Ka-band gateway-to-satellite links are asymmetric in nature. In terms of their channel configuration, the links employ 16 up and DL channels, bandwidth of individual channels being 155 MHz in the UL and 250 MHz in the DL direction. The links alternate between right and left-hand polarised (RHCP / LHCP) signals. \cite{portillo2019technical}
 
@@ -828,7 +833,7 @@ The equations outlined in this section enable the derivation of various relation
 Thorough analysis through derivation of equations is typically unnecessary if the goal is to gain general understanding of the performance of different classes of aircraft.
 Like the aforementioned classification frameworks for UAS, manned aircraft can be categorized through a number of parameters.
 In \cite{filippone2000data}, the authors propose a very comprehensive synthetic and comparative approach to evaluate both aircraft and rotorcraft.
-Parameters examined included detailed geometric characteristics for both aircraft and rotorcraft, with former comprising of metrics such as wingspan, area, aspect-ratio, sweep angle, dihedral/anhedral angle, thickness and taper ratios, and the latter ones like type of rotor, diameter, number of blades, solidity, rpm, tip Mach numbers.
+Parameters examined included detailed geometric characteristics for both aircraft and rotorcraft, with former comprising metrics such as wingspan, area, aspect-ratio, sweep angle, dihedral/anhedral angle, thickness and taper ratios, and the latter ones like type of rotor, diameter, number of blades, solidity, rpm, tip Mach numbers.
 In addition, the authors looked at the aerodynamic characteristics of the platforms under evaluation through the drag coefficients at zero lift and cruise, as well as maximum absolute glide ratio.
 The performance of different platforms was evaluated through metrics such as wing and disk loading, Mach number, service ceiling, rate of climb, g-limits, MTOM, payload mass and thrust-to-weight ratio.
 
