@@ -396,7 +396,7 @@
 I want to thank Professor Pirjo Professori and my instructor Dr Alan Advisor for their good and poor guidance.\\
 
 \vspace{5cm}
-Espoo, 31.7.2023
+Nice, 31.12.2023
 
 \vspace{5mm}
 {\hfill Markus\ Säynevirta \hspace{1cm}}
@@ -409,20 +409,7 @@ Espoo, 31.7.2023
 %%
 \thesistableofcontents
 
-\mysection{Symbols and abbreviations}
-
-\subsection*{Symbols}
-
-\begin{tabular}{ll}
-$\mathbf{B}$  & magnetic flux density  \\
-$c$              & speed of light in vacuum $\approx 3\times10^8$ [m/s]\\
-$\omega_{\mathrm{D}}$    & Debye frequency \\
-$\omega_{\mathrm{latt}}$ & average phonon frequency of lattice \\
-$\uparrow$       & electron spin direction up\\
-$\downarrow$     & electron spin direction down
-\end{tabular}
-
-\subsection*{Abbreviations}
+\mysection{Abbreviations}
 
 \begin{tabular}{ll}
 3GPP                    & 3\textsuperscript{rd} Generation Partnership Project \\
@@ -590,7 +577,7 @@ Standardised services have the greatest potential in mid to long-term timescales
 
 Appendix \ref{appendix-constellation-comparison} has a table with a non-exhaustive sample of recent LEO megaconstellation projects and their key design parameters.
 One interesting takeaway from the metrics is the sum of the theoretical throughputs of the systems with the figure landing into a range of hundreds of terabits-per-second (Tbps).
-As a reference, global internet bandwidth was estimated at 1.2 petabytes-per-second globally in 2023, an order of magnitude difference when compared to the fully deployed capability of the first generation NGSO systems \cite{telegeography-ip-networks-2023}.
+As a reference, global internet bandwidth was estimated at 1.2~petabytes-per-second globally in 2023, an order of magnitude difference when compared to the fully deployed capability of the first generation NGSO systems \cite{telegeography-ip-networks-2023}.
 Thus, satellite internet services are unlikely to completely replace terrestrial networks (TN) but will act likely as a complimentary coverage and capacity solution for both commercial and government user segments.
 
 \subsubsection{Key technical characteristics} \label{ch-constellation-characteristics}
@@ -626,8 +613,8 @@ The services are built around vendor-specific UT working as WiFi routers that re
 \end{figure}
 
 The space segment of the OneWeb system comprises a megaconstellation of 648 LEO satellites distributed into 12 polar orbital planes of 49 evenly spaced satellites, as well as several in-orbit spares. 
-Operational satellites fly in an inclined polar orbit with an altitude of 1200 km.
-Each satellite transmits and receives UT traffic via its 16 fixed Ku-band beams, each of which covers a geographic area with dimensions of 1600 km in longitude and 65 km in latitude.
+Operational satellites fly in an inclined polar orbit with an altitude \SI{1200}{\kilo\meter}.
+Each satellite transmits and receives UT traffic via its 16 fixed Ku-band beams, each of which covers a geographic area with dimensions of \SI{1600}{\kilo\meter} in longitude and \SI{65}{\kilo\meter} in latitude.
 Gateway traffic is forwarded to the satellite network portals (SNP) via two identical steerable Ka-band spot beams with a significantly more focused circular coverage pattern \cite{henri2020oneweb, worldvu2016loi} First generation OneWeb satellites do not utilise inter-satellite links (ISL) \cite{portillo2019technical}.
 
 Earth Stations of the OneWeb system can be broadly divided into three categories: tracking, telemetry and control (TT\&C) sites, gateways and UTs.
@@ -637,7 +624,7 @@ Going deeper into the gateway-side architecture, the infrastructure can be furth
 NDCs host the authentication, authorization, policy and UT databases and are deployed in key global locations.
 PoPs connect the OneWeb network to the Internet and are deployed at key Internet peering points.
 Finally, SNPs maintain the connectivity to the LEO space segment composed of the OneWeb satellite constellation.
-They are situated in remote locations around the globe with room for large antenna arrays of 7 to 30 full motion antennas (on average 16) equipped with a 3.5 m Ka-band dish \cite{henri2020oneweb}.
+They are situated in remote locations around the globe with room for large antenna arrays of 7 to 30 full motion antennas (on average 16) equipped with a \SI{3.5}{\meter} Ka-band dish \cite{henri2020oneweb}.
 
 On the user terminal side, a similar architectural breakdown can be made -- the terminal consists of a satellite antenna, receiver and a customer network exchange router.
 The latter connects the terminal to the end-user devices such as laptops or smartphones \cite{henri2020oneweb}. RF transmissions received by the satellite antenna are demodulated and converted to a digital data stream by the receiver hardware of the terminal.
@@ -666,18 +653,18 @@ OneWeb satellite system makes use of a bent pipe architecture for both its forwa
 
 In its air interface, OneWeb uses a modified LTE waveform capable of adaptive modulation and coding (modcod).
 Different transmission schemes are employed depending on the link direction.
-In the forward direction, transmissions utilise time-division multiple access on a single 250 MHz wideband carrier (SC-TDMA) with each user terminal receiving the carrier and demodulating it, extracting relevant payload information based on the headers. Forward links employ turbo/convolutional/block
+In the forward direction, transmissions utilise time-division multiple access on a single \SI{250}{\mega\hertz} wideband carrier (SC-TDMA) with each user terminal receiving the carrier and demodulating it, extracting relevant payload information based on the headers. Forward links employ turbo/convolutional/block
 channel coding and QPSK, 8PSK and 16QAM modulation \cite{allen2022terrestrial, worldvu2016loi}.
 
 In the return direction, transmissions utilise a single-carrier time and frequency division multiple access (SC-TDMA/FDMA) scheme.
-Return direction user terminal to satellite links transmit data in time bursts on a relatively narrow carrier that varies between 1.25 MHz and 20 MHz in bandwidth.
+Return direction user terminal to satellite links transmit data in time bursts on a relatively narrow carrier that varies between \SI{1.25}{\mega\hertz} and \SI{20}{\mega\hertz} in bandwidth.
 Multiple user terminals are able to access a single UL carrier based on time slots allocated by the network control centre.
 Terminals are also able to access multiple UL carriers based on the FDMA channel arrangement of the satellite in question. Like the forward link,
 return channel employs QPSK, 8PSK and 16QAM modulation but supports only turbo and block encoding \cite{worldvu2016loi}.
 
-Generally speaking, Ka-band gateway-to-satellite links are asymmetric in nature. In terms of their channel configuration, the links employ 16 up and DL channels, bandwidth of individual channels being 155 MHz in the UL and 250 MHz in the DL direction. The links alternate between right and left-hand polarised (RHCP / LHCP) signals. \cite{portillo2019technical}
+Generally speaking, Ka-band gateway-to-satellite links are asymmetric in nature. In terms of their channel configuration, the links employ 16 up and DL channels, bandwidth of individual channels being \SI{155}{\mega\hertz} in the UL and \SI{250}{\mega\hertz} in the DL direction. The links alternate between right and left-hand polarised (RHCP / LHCP) signals. \cite{portillo2019technical}
 
-Similar to the gateway links, the Ku-band satellite-to-user terminal links are asymmetric in nature, but at the same time they are more limited in terms of the available bandwidth. The four UL channels occupy 125 MHz of bandwidth while there are eight 250 MHz DL channels. Unlike the gateway links, the polarisation scheme of the signals is fixed based on the link direction, where UL utilises RHCP and DL LHCP. \cite{portillo2019technical}
+Similar to the gateway links, the Ku-band satellite-to-user terminal links are asymmetric in nature, but at the same time they are more limited in terms of the available bandwidth. The four UL channels occupy \SI{125}{\mega\hertz} of bandwidth while there are eight \SI{250}{\mega\hertz} DL channels. Unlike the gateway links, the polarisation scheme of the signals is fixed based on the link direction, where UL utilises RHCP and DL LHCP. \cite{portillo2019technical}
 
 \subsubsection{Starlink system architecture}
 
@@ -689,8 +676,8 @@ Similar to the gateway links, the Ku-band satellite-to-user terminal links are a
 \end{figure}
 
 SpaceX's Starlink constellation is a combination of an inclined Walker Delta and a polar Walker Star configuration.
-The system consists of 4,408 satellites divided into five orbital shells at altitudes ranging between 540 and 570 km. % TODO: Check units and thousands (comma / space)
-Inclination-wise, a large majority of the fleet is situated in 70 to 72 degree orbits covering the higher populated latitudes, while a reduced set in 97.6 degree orbits covering the remaining polar regions.
+The system consists of 4,408 satellites divided into five orbital shells at altitudes ranging between 540 and \SI{570}{\kilo\meter}.
+Inclination-wise, a large majority of the fleet is situated in 70 to 72~degree orbits covering the higher populated latitudes, while a reduced set in 97.6 degree orbits covering the remaining polar regions.
 Table \ref{table-starlink-orbits} presents the distribution of the satellites to the orbital shells and planes in more detail \cite{spacex2020mod, pachler2021updated}.
 
 \begin{table}[h]
@@ -721,13 +708,13 @@ Table \ref{table-starlink-orbits} presents the distribution of the satellites to
   \label{fig-f-plan}
 \end{figure}
 
-First generation Starlink satellites communicate with UTs through Ku-band links at a minimum elevation angle of 25 degrees.
+First generation Starlink satellites communicate with UTs through Ku-band links at a minimum elevation angle of 25~degrees.
 In the space segment, traffic is either relayed to other satellites via optical ISL or to gateways on higher frequency Ka-band links.
 Figure \ref{fig-f-plan} presents Starlink and OneWeb frequency plans in relation to each other.
 Satellites have four phased array antennas, three of which function as DL and one as UL.
 All four arrays are capable of projecting eight independently shapeable and steerable spot beams, resulting in a 3-to-1 DL-to-UL ratio.
 Gain contours for both Ku and Ka-band beams are mainly dependent on the steering angle, with values farther from boresight making the beam footprint more elliptical.
-Overall beamwidth is controlled by selectively switching on additional phased array elements as the steering angle gets farther from nadir. Depending on the steering angle, a spot beam can cover a range of individual cells, which are arranged based on Uber's H3 hexagonal cell system. Each spot beam covers roughly one size 5 hex cell at nadir \cite{spacex2016loa, spacex2020mod}. % TODO: Medium-artikkeli Uber-celleille, parempia SpaceX-lähtöisiä lähteitä?
+Overall beamwidth is controlled by selectively switching on additional phased array elements as the steering angle gets farther from nadir. Depending on the steering angle, a spot beam can cover a range of individual cells, which are arranged based on Uber's H3 hexagonal cell system. Each spot beam covers roughly one size~5 hex cell at nadir \cite{spacex2016loa, spacex2020mod}. % TODO: Medium-artikkeli Uber-celleille, parempia SpaceX-lähtöisiä lähteitä?
 
 SpaceX has released somewhat limited details on the modcod scheme used in Starlink UL and DL communications. In \cite{humphreys2023signal}, the researchers were able to reverse engineer the Starlink waveform in order to evaluate its usefulness in PNT applications. They found that the DL signal of a Starlink satellite is Orthogonal frequency-division multiplexing (OFDM). Empirical signal caputures showed that the OFDM symbols use quadrature amplitude modulation with 4 and 16 point constellations (4-QAM and 16-QAM). This aligns with SpaceX FCC filings, such as \cite{SpaceX-SES-AMD-20210731-01295} concerning blanket-authorised terminals and aeroconnectivity, stating that the UTs support modulation schemes up to 64-QAM on both Ku-band UL and DL.
 
@@ -1037,14 +1024,14 @@ Long-term, evolution towards direct-to-smartphone type solutions is a potential 
   Generic                       & Availability          & 99\% to 99.999\%        \\
                                 & Start-up time         & 0 to few minutes        \\
                                 & Configuration efforts & Zero-configuration      \\ \addlinespace[0.5em]
-  Combined user traffic (avg.)  & DL / user             & 50 Mbps                 \\
-                                & UL / user             & 25 Mbps                 \\ \addlinespace[0.5em]
-  PTT                           & Packet delay          & 75 ms                   \\ \addlinespace[0.5em]
-  Group video                   & Packet delay          & 100 ms                  \\ \addlinespace[0.5em]
-  Virtual reality (4K GC video) & Data rate             & 50 to 200 Mbps          \\
-                                & Latency               & \textless 16 ms         \\ \addlinespace[0.5em]
+  Combined user traffic (avg.)  & DL / user             & 50~Mbps                 \\
+                                & UL / user             & 25~Mbps                 \\ \addlinespace[0.5em]
+  PTT                           & Packet delay          & 75~ms                   \\ \addlinespace[0.5em]
+  Group video                   & Packet delay          & 100~ms                  \\ \addlinespace[0.5em]
+  Virtual reality (4K GC video) & Data rate             & 50 to 200~Mbps          \\
+                                & Latency               & \textless 16~ms         \\ \addlinespace[0.5em]
   Sensor data                   & Sensor amount / cell  & 0 to massive            \\ \addlinespace[0.5em]
-  Machine remote control (UAV)  & Latency               & 40 ms to 1 s            \\ \bottomrule
+  Machine remote control (UAV)  & Latency               & 40~ms to 1~s            \\ \bottomrule
   \end{tabular}
   \label{table-mcx-requirements}
 \end{table}
@@ -1168,8 +1155,8 @@ This can be thought as  arise where eavesdropping is either simply impossible or
   \item The eavesdropper falls outside the main lobe of the VSAT Earth station. % mikä on main lobe?
 \end{enumerate}
 
-As presented in appendix \ref{appendix-constellation-comparison}, both existing and under development broadband VSAT systems tend to operate in the Ku and Ka bands (12--18 and 26.5--40 GHz respectively), with the former being the more commonly used in user links between the orbiting satellite and user terminal and vice-versa, although some systems, such as Amazon's Project Kuiper deviate from this general rule.
-In terms of frequencies, both bands fall under super high (SHF, 3-30 GHz) to extremely high frequencies (EHF, 30-300 GHz), where the principal propagation mode is LOS propagation.
+As presented in appendix \ref{appendix-constellation-comparison}, both existing and under development broadband VSAT systems tend to operate in the Ku and Ka bands (12--18 and 26.5--\SI{40}{\giga\hertz} respectively), with the former being the more commonly used in user links between the orbiting satellite and user terminal and vice-versa, although some systems, such as Amazon's Project Kuiper deviate from this general rule.
+In terms of frequencies, both bands fall under super high (SHF, 3--\SI{30}{\giga\hertz} ) to extremely high frequencies (EHF, 30--\SI{300}{\giga\hertz} ), where the principal propagation mode is LOS propagation.
 In LOS propagation, the radio horizon of a transmitter can be derived from the trigonometric law of cosines, if the planetary body can be assumed to be spherical in shape. If the minimum elevation angle of the satellite system is assumed to be zero, the geometry of the problem simplifies into a right triangle, whose hypotenuse and legs are described by the Pythagorean theorem.
 
 \begin{figure}[h]
@@ -1203,7 +1190,7 @@ Radio horizon allows us to examine situations where the transmitting antenna is 
 This is not always the case with the highly directional beam of a VSAT, thus requiring additional factors to be considered.
 Here, one of the most important parameters is the minimum elevation angle of the satellite system in question.
 Like radio horizon, maximum VSAT interception range can be examined through a trigonometric approximation model.
-Typical minimum elevation angles range from 20 to 55 degrees in modern LEO megaconstellations, as shown in appendix \ref{appendix-constellation-comparison}.
+Typical minimum elevation angles range from 20 to 55~degrees in modern LEO megaconstellations, as shown in appendix \ref{appendix-constellation-comparison}.
 In this case, a more accurate interception range estimate can be computed based on the rule of cosines, where the model also accounts for the curvature of the body.
 
 \begin{figure}[h]
@@ -1618,8 +1605,6 @@ Similarly, the physical and network security of the gateways is another interest
 Finally, the conceptual-analytical framework applied in this thesis could be further expanded by building a channel-level simulation for the airborne eavesdropping scenario.
 
 To understand the threat posed by airborne adversaries to a VSAT interfacing with a LEO megaconstellation, a research framework consisting of four distinct submodels was developed in this thesis. A quantitative conceptual analytical research approach was followed, employing a first principles approach, each submodel relying on geometric and kinematic analyses as well as and link budgets was subjected to a parametric study derived for a representative hardware configuration.
-
-Submodel 1 submodel scrutinized the interception range of VSAT from aircraft, emphasizing constraints imposed by the Earth's curvature and atmospheric conditions. Submodels 2a and 2b explored the tracking potential of airborne eavesdroppers in equatorial and inclined orbits, revealing the matching challenge of matching high sub-satellite velocities. Submodel 3 shifted focus to temporal considerations, assessing the risk of capturing RF data from UL transmissions of a VSAT over varying durations. Finally, Submodel 4 investigated the active threat of jamming, demonstrating the impact of the chosen modcod scheme and RF path considerations on disrupting legitimate transmissions.
 
 The unique attributes of the space environment, in which the satellite's space segment resides, give certain advantages to the LEO systems.
 Orbital motion of the satellites in LEO limits the listening window for communication interception, necessitating large-scale collusion between eavesdroppers for effective COMINT.
