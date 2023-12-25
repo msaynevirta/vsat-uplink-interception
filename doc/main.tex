@@ -458,12 +458,10 @@ MAV                     & Micro Air Vehicle \\
 MC                      & Mission-Critical \\
 MCX                     & Mission-Critical X \\
 modcod                  & Modulation and coding \\
-MSS                     & Mobile Satellite Service \\
 MTOM                    & Maximum Take-Off Mass \\
 NAV                     & Nano Air Vehicle \\
 NDC                     & Network Data Centre \\
 NGSO                    & Non-GeoStationary Orbit \\
-NTN                     & Non-Terrestrial Network \\
 OFDM                    & Orthogonal Frequency-Division Multiplexing \\
 QAM                     & Quadrature Amplitude Modulation \\
 PAV                     & Pico Air Vehicle \\
@@ -575,8 +573,8 @@ Amazon Kuiper and Telesat are still being developed, with service start expected
 Technologically, all five constellations are characterised by their employment of dedicated and vendor-specific technologies in their implementation with all five currently operating or planning to operate on dedicated Ku and Ka-band frequencies.
 Additionally, their user equipment (UE) is vendor-specific in nature, be they more traditional parabolic or modern flat-panel phased array technology-based VSATs.
 On the other hand, startups like Lynk and AST SpaceMobile are planning to deliver broadband service from orbit directly to unmodified 3\textsuperscript{rd} Generation Partnership Project (3GPP) standardised 5G handsets.
-Support for the implementation of 5G NTN standards defined by the 3GPP to the maximum extent possible but following a gradual implementation approach is also a key requirement in the EU's IRIS\textsuperscript{2} programme.
-All in all, 3GPP NTN services are still less technologically mature and have been demonstrated in practice to a very limited extent.
+Support for the implementation of 5G non-terrestrial network standards defined by the 3GPP to the maximum extent possible but following a gradual implementation approach is also a key requirement in the EU's IRIS\textsuperscript{2} programme.
+All in all, 3GPP non-terrestrial services are still less technologically mature and have been demonstrated in practice to a very limited extent.
 Thus, services based on the standard are likely still to require significant research and development expenditure before becoming a viable option.
 Standardised services have the greatest potential in mid to long-term timescales, while proprietary solutions are likely to dominate in the interim \cite{iris2-industryday-2023-03, nsr-5g-via-satellite-2023, nsr-direct-to-device-market-2023}.
 
@@ -595,8 +593,8 @@ Constellation optimization is typically the primary design problem in LEO-based 
 
 % TODO: Describe Walker constellations
 Ground segment optimisation tends to be more straightforward.
-Ground station (GS) planning involves placing a number of stations in appropriate locations around the globe.
-Key performance indicators include the achieved sky coverage, system throughput, link capacity as well as the overall deployment and maintenance costs of the GS network \cite{celikbilek2022survey}.
+Ground station planning involves placing a number of stations in appropriate locations around the globe.
+Key performance indicators include the achieved sky coverage, system throughput, link capacity as well as the overall deployment and maintenance costs of the ground station network \cite{celikbilek2022survey}.
 
 When considering optimisation, the user segment is the most case-specific of the three.
 End user applications range from communication to sensing and navigation with their optimisation criteria often contradicting each other.
@@ -1023,7 +1021,7 @@ Considering these requirements as well as form-factor and cost of COTS satellite
 For example, the French RRF envisions satellite networks as one backhaul option for its vehicular relay (\textit{relais véhiculaire}), an emergency vehicle with a tactical bubble for local coverage and capacity.
 Similarly, the potential integration point for satellite systems in the Finnish Virve 2 has been envisioned as a command vehicles of fire, rescue and police forces, but the solution is in the Finnish case on a very early conceptual stage \cite{kokkoniemitarkkanen2024missioncritical,saynevirta2021satellite,dominguez2021resilience}. 
 
-Long-term, evolution towards direct-to-smartphone type solutions is a potential development path. 3GPP has been working towards integrating satellite connectivity as one of the options in the 5G Non-terrestrial networks (NTN), a development item also present on the longer-reaching 5G Advanced and 6G roadmaps \cite{ray2021perspective, jiang2021road}. It is worth noting, that these solutions remain rather low in terms of their technological maturity. In-orbit demonstrations of the technology have been very limited in number and work has focused more on the technological standardisation work \cite{sn-2023-09-19-ast, sn-2023-11-07-lynk, 5g-americas-update-on-5g-ntn, jain2023rel18}.
+Long-term, evolution towards direct-to-smartphone type solutions is a potential development path. 3GPP has been working towards integrating satellite connectivity as one of the options in the 5G Non-terrestrial networks, a development item also present on the longer-reaching 5G Advanced and 6G roadmaps \cite{ray2021perspective, jiang2021road}. It is worth noting, that these solutions remain rather low in terms of their technological maturity. In-orbit demonstrations of the technology have been very limited in number and work has focused more on the technological standardisation work \cite{sn-2023-09-19-ast, sn-2023-11-07-lynk, 5g-americas-update-on-5g-ntn, jain2023rel18}.
 
 \begin{table}[h]
   \centering
@@ -1230,18 +1228,13 @@ Thus, we end up with the following equation:
 \begin{figure}[h]
   \centering
   \input{tikz_figures/fig-interception-range-2d.tikz}
-  \caption{Interception range ($d$) as a function of minimum elevation angle ($e$) and operational altitude of the eavesdropper ($h$).}
+  \caption{Interception range ($d$) as a function of minimum elevation angle ($e$). Different coloured graphs represent a range of  operational altitude of the eavesdropper ($h$).}
   \label{fig-interception-range-2d}
 \end{figure}
 
-The convex surface shows linear growth in relation to altitude $h_{Eve}$ and accelerating tangential growth in relation to $e_{Alice}$.
-Therefore, we can deduce that the minimum elevation angle is in most cases the driving factor of the maximum interception range of a VSAT GS.
-The influence of $h_{Eve}$ on $d_{Eve}$ is markedly smaller but still significant, especially when considering terminals with small $e_{Alice}$.
-The tangent function has asymptotes at $e_{Alice} = \pi / 2 + n\pi$. Within the given limits, the asymptotes are not reached, and the resulting surface is smooth and continuous.
-
-Figure \ref{fig-interception-range-3d} shows the interception range $d_{Eve}$ over a range of minimum elevation angles $e_{Alice} = [0^\circ, 90^\circ]$ and number of operational altitudes ranging from $h_{Eve} = [0,20000]$ kilometres. % TODO: Korjaa rajojen kirjoitusasua
-In the resulting plot,
-Independent variables $e_{Alice}$ is on the horizontal axis, while the dependent variable $d_{Eve}$ is on the vertical axis and has been calculated for a number of $h_{Eve}$ values.
+Figure \ref{fig-interception-range-2d} shows the interception range $d$ as a function of minimum elevation angles $e = [0^\circ, 90^\circ]$.
+Values of $e$ were plotted for six operational altitudes ranging between $h = [0,20]$ kilometres.
+Independent variables $e$ is on the horizontal axis, while the dependent variable $d$ is on the vertical axis and has been calculated for a number of $h$ values.
 
 \begin{figure}[h]
   \centering
@@ -1250,26 +1243,29 @@ Independent variables $e_{Alice}$ is on the horizontal axis, while the dependent
   \label{fig-interception-range-3d}
 \end{figure}
 
-Figure \ref{fig-interception-range-3d} shows a three-dimensional representation of the same interception range $d_{Eve}$ function over the range $e_{Alice} = [10^\circ, 85^\circ], h_{Eve} = [100,20000]$.
-In the resulting plot, the dependent variable or the interception range ($d_{Eve}$) of the airborne eavesdropper is on the vertical axis.
-Independent variables or the minimum elevation angle of the terminal ($e_{Alice}$) and operational altitude of the airborne eavesdropper ($h_{Eve}$) are on the horizontal axes.
+Figure \ref{fig-interception-range-3d} shows a three-dimensional representation of the same relationship within the limits $e = [10^\circ, 85^\circ], h_{Eve} = [100,20000]$.
+In the resulting 3D plot, the dependent variable $d$ is on the vertical axis while independent variables $e$ and $h$ form the horizontal axes.
+
+The convex surface shows linear growth in relation to altitude $h$ and accelerating tangential growth in relation to $e$.
+Therefore, we can deduce that the minimum elevation angle is in most cases the driving factor of the maximum interception range of a VSAT ground station.
+The influence of $h$ on $d$ is markedly smaller but still significant, especially when considering terminals with small $e$.
 
 Although not applied in the analytical work in the thesis, the problem may be still simplified further if the curvature of the body can be ignored, a typical situation when it comes to LOS propagation at short ranges of tens of kilometres.
 In this further simplified scenario, the trigonometric tangent function of the interception range triangle can be written as
 
 \begin{equation} \label{eq-range-1}
-  \tan(e_{Alice}) = \frac{h_{Eve}}{d_{Eve}}
+  \tan(e) = \frac{h}{d}
 \end{equation}
 
 \noindent
-where $e_{Alice}$ is the minimum elevation angle of the user terminal, $h_{Eve}$ is the operational altitude of the intercepting airborne platform and $d_{Eve}$ is its distance from Alice on the ground, in essence the interception range.
-Rearranging (\ref{eq-range-1}) for $d_{Eve}$ gives
+where $e$ is the minimum elevation angle of the user terminal, $h$ is the operational altitude of the intercepting airborne platform and $d$ is its distance from Alice on the ground, in essence the interception range.
+Rearranging (\ref{eq-range-1}) for $d$ gives
 
 \begin{equation} \label{eq-range-2}
-  d_{Eve} = \frac{h_{Eve}}{\tan(e_{Alice})}
+  d = \frac{h}{\tan(e)}
 \end{equation}
 
-Although not exact in its results, this simplification may be used to gain quick insight into the threat of an eavesdropper operating at close ranges.
+Although approximate in its results, this simplification may be used to gain quick insight into the threat of an eavesdropper operating at close ranges.
 
 Based on the interception range estimations, we can say that eavesdropping a VSAT interfacing with a NGSO satcom constellation is a rather difficult endeavour, as was postulated in the hypothesis of the submodel.
 LOS-only propagation at SHF and EHF ranges means that it is simply impossible to intercept the signal when the eavesdropper is out of range or obstructed in relation to the legitimate transmitter.
@@ -1287,7 +1283,7 @@ Thus, in practice eavesdropping even a small number of VSATs in a limited geogra
 In addition to being aligned along the LOS of the VSAT's main lobe, the eavesdropper needs to be able to intercept sufficiently long transmission in order to have a chance to detect a target VSAT transmitter from background noise and potential other active transmitters.
 This time dimension brings another point to consider when evaluating the risk of eavesdropping.
 Different durations of interception have varying implications for the legitimate transmitter.
-As a practical example, millisecond-level signal capture may be enough for DF applications, while in COMINT monitoring the signal for longer periods ranging all the way from seconds to days would be useful for gathering enough data. % TODO: parempi ilmaus tähän
+As a practical example, millisecond-level signal capture may be enough for DF applications, while useful insights for proper COMINT would likely require longer-term interception of a VSAT's UL signal over periods ranging from seconds to days.
 
 Maximum duration of signal interception is set by the ability of the airborne platform to track the main lobe of the Earth station.
 The beam movement is primarily driven by the motion of the receiving satellite in orbit, which is in turn governed by Kepler's laws of orbital motion.
@@ -1420,7 +1416,7 @@ With velocity ranges in the single digit kilometre-per-second range, even the fa
 Tracking potential is one way to evaluate risk of an airborne adversary trying to intercept and collect useful RF data from UL transmissions of a VSAT.
 Theoretical length of a capture window, or the listening window of an eavesdropper is a useful metric in evaluating the potential attack types.
 As mentioned in submodel 2a, different durations of interception have varying implications for the legitimate transmitter.
-Relatively short RF samples may still enable an adversary to geolocate a transmitter based on methods discussed in chapter \ref{ch-df-radiopositioning}, while useful insights for proper COMINT would require longer-term interception of a VSAT's UL signal over periods ranging from seconds to days. % TODO, puuttuu luku
+Relatively short RF samples may still enable an adversary to geolocate a transmitter based on methods discussed in chapter \ref{ch-df-radiopositioning}, while useful insights for proper COMINT would likely require longer-term interception of a VSAT's UL signal over periods ranging from seconds to days. % TODO, puuttuu luku
 
 Quantitative analysis of the listening window of an eavesdropper is somewhat more complex in terms of input parameters that need to be considered.
 On a high level, the window is primarily influenced by the relative motion between the UL RF beam of the terminal and the kinematic characteristics of the airborne eavesdropper.
@@ -1549,12 +1545,12 @@ Critical communication users demand robust solutions, particularly in terms of t
 The historical limitations of satcom solutions, especially in the public safety sector, alongside the challenges faced by commercial systems, underscore the necessity for a nuanced understanding of these systems.
 With the potential integration of satcom into both MC applications, it is crucial to understand the security of these systems from first principles.
 
-In this thesis, quantitative analysis was applied to develop a robust threat model targeting a Walker-type LEO megaconstellation, fixed VSAT GS, as well as adversial airborne eavesdroppers and jammers. The research framework comprised four smaller submodels, each of which was explored through a parametric study with a specific dependent variable and a set of independent ones.
+In this thesis, quantitative analysis was applied to develop a robust threat model targeting a Walker-type LEO megaconstellation, fixed VSAT ground station, as well as adversial airborne eavesdroppers and jammers. The research framework comprised four smaller submodels, each of which was explored through a parametric study with a specific dependent variable and a set of independent ones.
 The foundation of the four submodels rested on a first principles approach, employing geometric and kinematic analyses, as well as link budgets based on a representative hardware configuration.
 By deconstructing the target system into fundamental components, each submodel highlighted the potential strengths and vulnerabilities of satcom systems in relation to various threats.
 
 Going a little deeper into the model structure and results, submodel 1 evaluated the interception range of a VSAT from an aircraft. The submodel looked into the concept of radio horizon, building a trigonometric model by applying the rule of cosines.
-A model accounting for the curvature of the Earth as well as simplified atmospheric refraction was used to estimate the maximum interception range of the UL transmissions of a VSAT GS. The findings highlighted the constraints imposed by the Earth's curvature and atmospheric conditions on intercepting satellite signals, making it simply impossible for a high-altitude aircraft to intercept the legitimate signal from distances beyond little over 100 kilometres due to the LOS-only RF propagation of a SHF signal.
+A model accounting for the curvature of the Earth as well as simplified atmospheric refraction was used to estimate the maximum interception range of the UL transmissions of a VSAT ground station. The findings highlighted the constraints imposed by the Earth's curvature and atmospheric conditions on intercepting satellite signals, making it simply impossible for a high-altitude aircraft to intercept the legitimate signal from distances beyond little over 100 kilometres due to the LOS-only RF propagation of a SHF signal.
 This means that the threat of an airborne adversary is generally quite localised, especially if the adversary is unable to operate in the airspace over of the target system's jurisdiction. More stealthier platforms like balloons may be able to evade detection and tracking and can thus fly even in a target country's airspace. If these stealthy systems can then collude with each other, these adversarial systems may be able to collect sufficiently long signal samples from even LEO systems with more distributed space segments. On the other hand, effective collusion requires individual adversaries to exchange information that needs to be then post-processed in order to extract the desired intelligence. Practically speaking, the non-trivial investment into both communications infrastructure and computational processing capabilities is likely to limit the more sophisticated collusion strategies only to the best-resourced adversaries.
 
 Capabilities of the aircraft were further explored in submodels 2a and 2b through the concept of beam tracking potential with the first model focusing on equatorial and the latter on generalised inclined orbits. The submodel outlined the capability of an airborne eavesdropper to track the main lobe of a communication satellite by comparing the cruising velocities of typical man-made platforms to the sub-satellite velocity of a VSAT beam intersecting the aircraft's flight path at these altitudes.
