@@ -478,7 +478,6 @@ SIGINT                  & SIGnals INTelligence \\
 SNP                     & Satellite Network Portal \\
 SNR                     & Signal-to-noise ratio \\
 TDMA                    & Time Division Multiple Access \\
-TN                      & Terrestrial Network \\
 UAS                     & Unmanned Aerial System \\
 UAV                     & Unmanned Aerial Vehicle \\
 UE                      & User Equipment \\
@@ -529,7 +528,7 @@ Similarly, intrusive acts such as the Chinese high-altitude balloons flying thro
 One way to understand the reason for these vulnerabilities is through the paradigm of "security through obscurity", a practice with a long-running history in the commercial satellite industry that relies on hiding the structure and the interfaces of the system from the public \cite{lin2022defending}.
 The validity of this approach has long been debated within research and industry circles \cite{johansson2008great}, with the recent consensus being that security of a system should never rely exclusively on obscurity \cite{diehl2016law, guo2018defending}.
 
-Although much work has focused on long-standing GEO broadband and NGSO narrowband systems, as well as longer-term evolution of 5G and 6G non-terrestrial networks (NTN), little attention has been directed towards the security of emerging LEO broadband systems.
+Although much work has focused on long-standing GEO broadband and NGSO narrowband systems, as well as longer-term evolution of 5G and 6G non-terrestrial networks, little attention has been directed towards the security of emerging LEO broadband systems.
 Operators of the emerging systems tout their architecture-level resilience in their marketing, but academic literature on the topic is still rather scarce.
 Moreover, most of the research on satellite system protection has examined DL communication between the satellite and different Earth stations \cite{abdelsalam2023physical}.
 Furthermore, more capital-intensive space or airborne platforms have received relatively little attention, with a greater emphasis being placed on the study of ground-based adversaries.
@@ -581,7 +580,7 @@ Standardised services have the greatest potential in mid to long-term timescales
 Appendix \ref{appendix-constellation-comparison} has a table with a non-exhaustive sample of recent LEO megaconstellation projects and their key design parameters.
 One interesting takeaway from the metrics is the sum of the theoretical throughputs of the systems with the figure landing into a range of hundreds of terabits-per-second (Tbps).
 As a reference, global internet bandwidth was estimated at 1.2~petabytes-per-second globally in 2023, an order of magnitude difference when compared to the fully deployed capability of the first generation NGSO systems \cite{telegeography-ip-networks-2023}.
-Thus, satellite internet services are unlikely to completely replace terrestrial networks (TN) but will act likely as a complimentary coverage and capacity solution for both commercial and government user segments.
+Thus, satellite internet services are unlikely to completely replace terrestrial networks but will act likely as a complimentary coverage and capacity solution for both commercial and government user segments.
 
 \subsubsection{Key technical characteristics} \label{ch-constellation-characteristics}
 The design of a complete satellite system is a complex, multi-objective and multi-modal optimisation problem due to the inherently varying conditions and constraints in the ground, space and user segments.
@@ -596,14 +595,17 @@ Ground segment optimisation tends to be more straightforward.
 Ground station planning involves placing a number of stations in appropriate locations around the globe.
 Key performance indicators include the achieved sky coverage, system throughput, link capacity as well as the overall deployment and maintenance costs of the ground station network \cite{celikbilek2022survey}.
 
+% TODO: Beam pattern, Flat panel vs parabolic
 When considering optimisation, the user segment is the most case-specific of the three.
 End user applications range from communication to sensing and navigation with their optimisation criteria often contradicting each other.
 Here, \cite{celikbilek2022survey} raises a good example with bandwidth and carrier frequency, where higher numbers are generally desired for example in high-throughput communication applications while the opposite applies to achieving suitable link budgets for example in navigation satellite systems or when users are situated in challenging urban terrain or indoors.
-
-The LEO altitude leads to significantly lower latency and the large number of satellites allows for relatively high overall data throughput when compared with the earlier satellite systems but still significantly lower when compared to TNs.
-While NGSO constellations are nothing new, the emerging operators are promising to offer significantly better broadband service when compared to the earlier services offered by e.g. SES O3b and Iridium while providing the services also at a price point that is competitive with other forms of connectivity [x]. % TODO: viite
-
 The services are built around vendor-specific UT working as WiFi routers that relay the communications on dedicated Ka and Ku-band frequencies to the satellite constellation. % TODO: Irtovirke, viite?
+
+If we consider the strengths and weaknesses of LEO systems over these three segments, some general findings arise. % TODO: vähän huono virke
+The LEO altitude enables significantly lower latency and the large number of satellites allows for relatively high overall data throughput throughout a constellation when compared with the earlier satellite systems.
+Still, the most modern LEO megaconstellations fall short of the throughput of their terrestrial counterparts.
+Thus, satellite contellations are unlikely to displace the terrestrial mobile networks but rather support and augment them in typically hard-to-serve market segments. % TODO: onko toistoa?
+This has not put limits on the ambitions of the new market entrants. In fact, emerging NGSO operators are often promising to offer significantly better broadband service when compared to the earlier services offered by e.g. SES O3b and Iridium while providing the services also at a price point that is competitive with other forms of connectivity, be it satellite or terrestrial in nature [x]. % TODO: viite
 
 \subsubsection{OneWeb system architecture} \label{ch-oneweb}
 % TODO: Beam forming etc. painotusta pitää säätää uuden suunnan mukaiseksi
@@ -639,9 +641,9 @@ On the other hand, phased array antennas require only a single aperture as their
 
 %%%%%%%%%%%%%%%%%  FIGURE: ONEWEB NETWORK ARCHITECTURE HERE  %%%%%%%%%%%%%%%%%%
 Continuing with the distinguishing qualities of the OneWeb system, maybe the most significant is the nature of its air interface coverage pattern, also known as the cell layout.
-In the OneWeb satellite radio access network, the cells are inherently varying and mobile, while on the contrary they are practically geographically static and pre-defined in a TN of fixed base stations.
+In the OneWeb satellite radio access network, the cells are inherently varying and mobile, while on the contrary they are practically geographically static and pre-defined in a terrestrial network of fixed base stations.
 Consequently, the movement of the UTs (for example equipment mounted on an aircraft or a high-speed train) is relatively slow when compared to the relative velocities of the satellites in orbit.
-This means that UT handovers happen mostly due to the orbital movement of the satellites rather than the movement of the UT relative to the surface of the Earth, which is the dominating cause of UE handovers in TNs \cite{corson2019admission}.
+This means that UT handovers happen mostly due to the orbital movement of the satellites rather than the movement of the UT relative to the surface of the Earth, which is the dominating cause of UE handovers in terrestrial networks \cite{corson2019admission}.
 
 In addition to their moving nature, satellite cells are significantly larger in their coverage area when compared to their terrestrial counterparts.
 This has multiple consequences for \cite{corson2019admission}
@@ -722,8 +724,8 @@ Overall beamwidth is controlled by selectively switching on additional phased ar
 SpaceX has released somewhat limited details on the modcod scheme used in Starlink UL and DL communications. In \cite{humphreys2023signal}, the researchers were able to reverse engineer the Starlink waveform in order to evaluate its usefulness in PNT applications. They found that the DL signal of a Starlink satellite is Orthogonal frequency-division multiplexing (OFDM). Empirical signal caputures showed that the OFDM symbols use quadrature amplitude modulation with 4 and 16 point constellations (4-QAM and 16-QAM). This aligns with SpaceX FCC filings, such as \cite{SpaceX-SES-AMD-20210731-01295} concerning blanket-authorised terminals and aeroconnectivity, stating that the UTs support modulation schemes up to 64-QAM on both Ku-band UL and DL.
 
 Similar to OneWeb, Starlink's ground segment comprises of both UTs and gateways and their associated network infrastructure, such as PoPs and NDCs. Starlink's Ka-band 1.5 m gateway antennas are globally distributed and arranged generally in x to y clusters of antennas per site. %TODO
-When it comes to UTs, Starlink's lineup is somewhat simpler thanks to the vertically integrated terminal strategy that SpaceX follows.
-Half-power bandwidt of first generation Starlink terminals varies between 2.8 and 5.5 degrees depending on the beam steering angle and whether the terminal is receiving or sending. HPBW figures are smaller for transmission and angles closer to boresight \cite{SpaceX-SES-AMD-20210731-01295}. Some flat panel while others use steering. Size varies between smaller consumer termials at an array size of x by x m to larger entreprise variants at x by y meters. % TODO: Cleanup
+When it comes to UTs, Starlink's lineup is somewhat simpler thanks to the SpaceX's vertically integrated terminal strategy.
+Half-power beamwidth (HPBW) of first generation Starlink terminals varies between 2.8 and 5.5 degrees depending on the beam steering angle and whether the terminal is receiving or sending. HPBW figures are smaller for transmission and angles closer to boresight \cite{SpaceX-SES-AMD-20210731-01295}. Some flat panel while others use steering. Size varies between smaller consumer termials at an array size of x by x m to larger entreprise variants at x by y meters. % TODO: Cleanup
 
 \subsection{Classification of aerial platforms} \label{ch-aerial-platforms}
 
@@ -958,12 +960,12 @@ Unplanned events can be both man-made or acts of nature and can range from local
 
 Another differentiating factor of the above-mentioned events is their forecastability and typical duration.
 Both planned and unplanned events can last from days to months, with the duration having different implications for the choice of the best suited technological solution.
-Satellite connectivity may even be needed permanently when it comes to backhaul applications in very remote locations to where building TNs might be simply unfeasible.
+Satellite connectivity may even be needed permanently when it comes to backhaul applications in very remote locations to where building terrestrial networks might be simply unfeasible.
 The cut to planned and unplanned events is also not black-and-white, but these notions exist on a spectrum of different tones of grey.
 For example, natural disasters such as earthquakes might cause unplanned damage that requires immediate response.
 On the other hand, some weather events, such as hurricanes and forest fires may be forecasted to differing extents.
 
-All in all, satellite connectivity does not replace the traditional TNs but complements them. If deployed to their envisioned state, broadband satellite systems may work as a cost-efficient way to serve these regions and events. Thanks to their truly global coverage pattern, while the lower user density in these regions is still within the load carrying capacity of these networks.
+All in all, satellite connectivity does not replace the traditional terrestrial networks but complements them. If deployed to their envisioned state, broadband satellite systems may work as a cost-efficient way to serve these regions and events. Thanks to their truly global coverage pattern, while the lower user density in these regions is still within the load carrying capacity of these networks.
 
 \subsubsection{Requirements}
 
@@ -977,7 +979,7 @@ This poses challenges during situations where a nation is under an external thre
 Preparedness is a key aspect in the operating model of public safety organisations. It covers the actions required for ensuring the smooth execution of tasks central to the overall safety of a nation in large emergency situations and societal disruptions. Preparedness actions include contingency planning, continuity management, advance preparations, training of operatives and readiness exercises. The concept revolves around the goal of anticipating threats rather than having to react to them [12]. % TODO: viite
 
 In the case of public safety communications, this leads to high requirements for availability even in a state of emergency.
-Like more traditional TNs, the requirements apply also to the emerging satellite links, which will most likely serve as a back-up solution in the case of larger scale failures of other options.
+Like more traditional terrestrial networks, the requirements apply also to the emerging satellite links, which will most likely serve as a back-up solution in the case of larger scale failures of other options.
 
 Satellite links are likely the best suited to natural disasters and major accidents, but open questions remain related to human-made threat situations, like terrorist attacks and military conflicts, where external actors may deliberately interfere with the communications links.
 This raises questions on the political regimes where these current and future constellations are owned and operated. Nationally controlled satellite communications solutions would be the most optimal but are unfeasible for even most nation-states to implement. This is due to the immense capital requirements, especially when considering LEO options, which require at minimum hundreds and often thousands of satellites.
@@ -1015,7 +1017,7 @@ The broadband transition also means a shift from custom technology solutions to 
 When it comes to satcom integration for critical communications use cases, permanent ones tend to be the most straight forward. They can be realised just as a simple FSS backhaul link of an individual base station site with currently available COTS satcom equipment.
 On the other hand, direct satellite connectivity is also something that may be feasible in these regions long-term, but as was discussed in chapter \ref{ch-constellation-characteristics}, its technological maturity remains relatively low at the time of writing.
 
-Implementation-wise, satellite networks are in the short-to-medium term envisioned to integrate into the TNs through portable tactical bubbles, where the satellite link serves as a backhaul solution for a local, 100 meters to kilometres in radius, wireless connectivity bubble.
+Implementation-wise, satellite networks are in the short-to-medium term envisioned to integrate into their terrestrial counterparts through portable tactical bubbles, where the satellite link serves as a backhaul solution for a local, 100 meters to kilometres in radius, wireless connectivity bubble.
 Table \ref{table-mcx-requirements} lists technical and functional requirements relevant for dimensioning a backhaul link for a 4G tactical bubble.
 Considering these requirements as well as form-factor and cost of COTS satellite connectivity equipment, best deployment model for MC satcom integration seems to be a vehicular solution, an approach that is already seen to some extent in the ongoing migration projects.
 For example, the French RRF envisions satellite networks as one backhaul option for its vehicular relay (\textit{relais véhiculaire}), an emergency vehicle with a tactical bubble for local coverage and capacity.
@@ -1107,12 +1109,13 @@ In this sense, each submodel helps us understand potential strengths and vulnera
   \label{table-submodel-descriptions}
 \end{table}
 
-% TODO: eikö oleellista ole se, että kuuntelija kuulee yhtä aikaa maaterminaalon ja satelliitin? Toisaalta jammingiin riittää noista vain toinen? Voisit vääntää tämän logiikan johonkin rautalangasta. 
+% TODO: eikö oleellista ole se, että kuuntelija kuulee yhtä aikaa maaterminaalon ja satelliitin? Toisaalta jammingiin riittää noista vain toinen? Voisit vääntää tämän logiikan johonkin rautalangasta.
+% TODO: HPBW muuttujaksi?
 Submodel 1 examines the maximum interception range of a fixed satellite terminal.
 This metric helps us to evaluate the potential maximal area where a single satellite terminal is vulnerable to airborne eavesdroppers.
 Airborne platforms may listen to transmissions from great distances, for example flying in an airspace of another country.
 Submodels 2 and 3 examine an aircraft's ability to track an UT's RF beam.
-VSATs have typically a relatively narrow beam pattern of a few degrees of half power beamwidth.
+VSATs have typically a relatively narrow beam pattern of a few degrees of HPBW.
 Relative motion between the beam and an intercepting aircraft is a major consideration when it comes to evaluating the vulnerability of different satellite systems.
 Submodel 4 examines a jammer's ability to interfere with a legitimate UT interfacing with a LEO megaconstellation.
 Link budget for an UL connection from an UT to a satellite is computed.
@@ -1151,7 +1154,6 @@ In the scenario, the jammer competes with the legitimate transmitter in RF signa
 \section{Results}
 
 \subsection{Submodel 1: Maximum interception range} \label{ch-results-submodel-1-range}
-% TODO: Scenario description: häritsijän sijainti, muuttujat. Orientoi lukija miksi tätä kautta ?
 To successfully eavesdrop on a target transmitter, an eavesdropper must intercept a sufficiently strong UL signal. 
 Being firmly out of range of an Earth station, in other words inside a white zone, is the most fundamental limit to an eavesdropper's ability to eavesdrop. 
 This can be thought as  arise where eavesdropping is either simply impossible or a very tough uphill battle:
@@ -1599,7 +1601,7 @@ In recent years, the satellite communications industry has witnessed a paradigm 
 The proliferation of these constellations, facilitated by reduced space launch costs and wide-scale application of COTS technology, has opened new frontiers of connectivity.
 In the future, commercial satcom systems are likely to play a crucial role as a complementary solution for terrestrial MC networks, addressing distinct a multitude of use cases varying in their nature, duration, and forecastability.
 
-Critical communications use cases can be roughly divided into permanent, planned temporary and unplanned temporary, with the first primarily catering to regions traditionally challenging to serve, such as sparsely populated rural areas and maritime settings, where TN coverage is limited. Temporary use cases, whether planned or unplanned, cover a diverse range of locations. Planned events, including large gatherings and political summits, demand coverage augmentation and increased capacity. On the other hand, unplanned events, both natural disasters like earthquakes and man-made incidents like airplane crashes, necessitate immediate response, showcasing the versatility of satellite connectivity. The forecastability and duration of these events vary, influencing the choice of technological solutions. Satellite systems, with their global coverage and ability to serve low-density regions, emerge as a cost-efficient complement to traditional TNs, ensuring connectivity in remote and challenging environments.
+Critical communications use cases can be roughly divided into permanent, planned temporary and unplanned temporary, with the first primarily catering to regions traditionally challenging to serve, such as sparsely populated rural areas and maritime settings, where terrestrial coverage is limited. Temporary use cases, whether planned or unplanned, cover a diverse range of locations. Planned events, including large gatherings and political summits, demand coverage augmentation and increased capacity. On the other hand, unplanned events, both natural disasters like earthquakes and man-made incidents like airplane crashes, necessitate immediate response, showcasing the versatility of satellite connectivity. The forecastability and duration of these events vary, influencing the choice of technological solutions. Satellite systems, with their global coverage and ability to serve low-density regions, emerge as a cost-efficient complement to traditional terrestrial networks, ensuring connectivity in remote and challenging environments.
 
 However, the rapid roll-out of commercial satellite solutions has not been without challenges, particularly in the area of cybersecurity.
 The absence of widely accepted cybersecurity standards and the proprietary nature of technical solutions leave open potential vulnerabilities, while the wide-area broadcast nature of satellite transmissions makes them inherently susceptible to eavesdropping and other adversarial actions from a wide geographic footprint.
