@@ -435,6 +435,7 @@ EW                      & Electronic Warfare \\
 FDMA                    & Frequency Division Multiple Access \\
 FEC                     & Forward Error Correction \\
 FHSS                    & Frequency Hopping Spread Spectrum \\
+FISINT                  & Foreign Instrumentation Signals INTelligence \\
 FSPL                    & Free Space Path Loss \\
 FSS                     & Fixed Satellite Service \\
 G/T                     & Gain-to-noise-Temperature \\
@@ -477,7 +478,7 @@ SDR                     & Software-Defined Radio \\
 SHF                     & Super High Frequency \\
 SIGINT                  & SIGnals INTelligence \\
 SNP                     & Satellite Network Portal \\
-SNR                     & Signal to noise ratio \\
+SNR                     & Signal-to-noise ratio \\
 TDMA                    & Time Division Multiple Access \\
 TN                      & Terrestrial Network \\
 UAS                     & Unmanned Aerial System \\
@@ -485,6 +486,7 @@ UAV                     & Unmanned Aerial Vehicle \\
 UE                      & User Equipment \\
 UL                      & UpLink \\
 UT                      & User Terminal \\
+VSAT                    & Very Small Aperture Terminal \\
 VTOL                    & Vertical TakeOff and Landing
 \end{tabular}
 
@@ -492,6 +494,7 @@ VTOL                    & Vertical TakeOff and Landing
 
 \section{Introduction}
 
+% TODO: AIKAMUODOT: Nyt esiintyy preesensiä futuuria imperfektiä -> kaikki imperfektiin.
 %TODO:
 %Viranomaistoimijoiden kiinnostus uusiin LEO-palveluihin - NB/BB-migraatio, laajakaistapalvelut, kaupallisten MNO-verkkojen käyttö
 %Viranomaisten korkeat tietoturvavaatimukset - muilta osin LEO-palveluilla on hyvä vastaavuus vaatimuksiin, tietoturva on merkittävä kysymys
@@ -868,7 +871,7 @@ Analytical portion of the thesis will examine security of communications channel
 As we delve into the analytical portion of the thesis, we aim to apply and extend these foundational ideas to the specific challenges of NGSO VSAT networks.
 By examining the security of communications channels in a practical, applied setting, we seek to elucidate the real-world implications of these seminal theories and contribute to the evolving field of physical layer security in satellite communication systems.
 
-% TODO: Sidosteisuutta muuhun tekstiin, physical security, cia triad.
+% TODO: physical security, cia triad.
 
 \subsubsection{Signals intelligence: ELINT, COMINT and FISINT}
 U.S. DoD terminology serves as the foundational framework for discussions on diverse facets within the realm of signals intelligence.
@@ -877,9 +880,9 @@ JPs establish foundational doctrinal framework, ensuring standardized procedures
 
 Within this landscape, intelligence practices are covered in the JP 2-0 Intelligence Series.
 JP 2-0 \cite{jp2-0}, titled \textit{Joint Intelligence} and serving as the keystone document of the series, provides the doctrinal foundation and fundamental principles guiding joint and national intelligence products, services, and assessments in support of joint operations.
-In JP 2-0, the domain of signals intelligence (SIGINT) is categorized into three distinct subdomains. Communications Intelligence (COMINT) involves gathering intelligence from intercepted foreign communications via radio, wire, or electromagnetic means, extending to encoded imagery.
-Electronic Intelligence (ELINT) focuses on non-communications emitters like radar, with operational electronic intelligence emphasizing operationally relevant information and technical electronic intelligence delving into technical aspects of the target systems.
-Lastly, Foreign Instrumentation Signals Intelligence (FISINT) analyses data from foreign equipment and control systems, offering insights into telemetry, electronic interrogators, and command systems, providing a comprehensive understanding of foreign technological capabilities.
+In JP 2-0, the domain of signals intelligence (SIGINT) is categorized into three distinct subdomains. Communications intelligence (COMINT) involves gathering intelligence from intercepted foreign communications via radio, wire, or electromagnetic means, extending to encoded imagery.
+electronic intelligence (ELINT) focuses on non-communications emitters like radar, with operational electronic intelligence emphasizing operationally relevant information and technical electronic intelligence delving into technical aspects of the target systems.
+Lastly, foreign instrumentation signals intelligence (FISINT) analyses data from foreign equipment and control systems, offering insights into telemetry, electronic interrogators, and command systems, providing a comprehensive understanding of foreign technological capabilities.
 In other SIGINT methodologies \cite{kosola2013digitaalinen}, FISINT is often grouped together with ELINT, if the latter is discussed in the broader non-communications context.
 
 SIGINT is intelligence gathering through the exploitation of communication systems and noncommunications emitters.
@@ -1020,11 +1023,11 @@ Considering these requirements as well as form-factor and cost of COTS satellite
 For example, the French RRF envisions satellite networks as one backhaul option for its vehicular relay (\textit{relais véhiculaire}), an emergency vehicle with a tactical bubble for local coverage and capacity.
 Similarly, the potential integration point for satellite systems in the Finnish Virve 2 has been envisioned as a command vehicles of fire, rescue and police forces, but the solution is in the Finnish case on a very early conceptual stage \cite{kokkoniemitarkkanen2024missioncritical,saynevirta2021satellite,dominguez2021resilience}. 
 
-Long-term, evolution towards direct-to-smartphone type solutions is a potential development path. 3GPP has been working towards integrating satellite connectivity as one of the options in the 5G Non-terrestrial networks (NTN), a development item also present on the longer-reaching 5G Advanced and 6G roadmaps \cite{6G_ROADMAP, 3GPP_NTN_PAPERS}. It is worth noting, that these solutions remain rather low in terms of their technological maturity. In-orbit demonstrations of the technology have been very limited in number and work has focused more on the technological standardisation work %TODO: \cite{AST_TESTIT, LYNK_TESTIT, SPACEX_TESTIT, PAPEREITA}
+Long-term, evolution towards direct-to-smartphone type solutions is a potential development path. 3GPP has been working towards integrating satellite connectivity as one of the options in the 5G Non-terrestrial networks (NTN), a development item also present on the longer-reaching 5G Advanced and 6G roadmaps \cite{ray2021perspective, jiang2021road}. It is worth noting, that these solutions remain rather low in terms of their technological maturity. In-orbit demonstrations of the technology have been very limited in number and work has focused more on the technological standardisation work \cite{sn-2023-09-19-ast, sn-2023-11-07-lynk, 5g-americas-update-on-5g-ntn, jain2023rel18}.
 
 \begin{table}[h]
   \centering
-  \caption{Technical and functional requirements for tactical bubbles \cite{heikkila2021field}.} % tähän viittaus tekstiin?
+  \caption{Technical and functional requirements for tactical bubbles \cite{heikkila2021field}.}
   \begin{tabular}{@{}lll@{}}
   \toprule
   Communication type            & Requirement category  & Identified requirements \\ \midrule
@@ -1047,9 +1050,18 @@ Long-term, evolution towards direct-to-smartphone type solutions is a potential 
 
 \section{Research material and methods}
 
-\subsection{Methodology} %Research questions and methodology
+\subsection{Research questions and methodology}
 
-% TODO: Mitä halutaan tutkia? Miten liittyy menetelmiin?
+Critical communications users place high expectations on the communications solutions that they utilise.
+Less-capable narrowband NGSO and higher-latency GEO satcom solutions have seen previously limited use in the public safety sector. Commercial systems have also turned out to be not the most robust when it comes to fundamental concepts of security, such as confidentiality, integrity and availability, with critical vulnerabilities reported regularly in research literature over the years \cite{lin2022defending,pavur2020tale,santamarta2014wake,schia2023subsea}.
+With the recent drive to integrate satcom into both commercial and MC communications solutions, satellite systems need to be able to prove that they can overcome these previous challenges.
+Here, understanding these systems from first principles is a good starting point for building a solid foundation for applied security research over factors like encryption, authorisation and authentication.
+
+The thesis seeks to answer whether airborne eavesdroppers and jammers are able to interfere with or intercept and decode UL communications in NGSO VSAT networks.
+In practical terms, the modelling approach in this thesis is grounded on theoretical background of RF systems and more specifically concepts related to EW and SIGINT.
+Threat model builds upon theory discussed in \cite{kosola2013digitaalinen} and \cite{wiley2006elint}.
+Target systems are explored through a parametric study of an analytical model comprised of multiple submodels that incorporate relevant parameters for aerial SIGINT platforms and both space and ground segments of a satellite communications system.
+
 \begin{figure}[h]
   \centering
   \input{tikz_figures/fig-research-taxonomy.tikz}
@@ -1057,16 +1069,11 @@ Long-term, evolution towards direct-to-smartphone type solutions is a potential 
   \label{fig-research-taxonomy}
 \end{figure}
 
-Järvinen \cite{jarvinen2011tutkimustyon, jarvinen2004research} offers a comprehensive framework for categorizing research approaches, building upon the foundation laid by March and Smith \cite{march1995design}.
-This taxonomy constitutes six distinct research approaches: mathematical, conceptual-analytical, theory-testing, theory-creating, innovation-building, and innovation-evaluating.
+Järvinen \cite{jarvinen2011tutkimustyon, jarvinen2004research} offers a comprehensive framework for categorizing research approaches, building upon the foundation laid by March and Smith \cite{march1995design}. Within this taxonomy, this thesis falls under the conceptual-analytical research approach, the scope being technology-oriented in nature.
+The other five research approaches of the taxonomy are mathematical, theory-testing, theory-creating, innovation-building, and innovation-evaluating.
 Mathematical approaches primarily engage with abstract concepts detached from the constraints of the real-world, while research approaches studying reality fall into two main categories-natural and social science approaches (conceptual-analytical, theory-testing, and theory-creating) and design science approaches (innovation-building and innovation-evaluating).
+On the other hand, conceptual-analytical approach relies on logical reasoning and draws extensively from prior research and established theories. Conceptual-analytical approaches within the natural and social sciences do not necessarily rely on empirical data, while theory-testing and theory-creating approaches use data to either validate existing theories or formulate new ones. The primary objective of conceptual-analytical research is to generate new creating theoretical concepts or analysing existing theories.
 The taxonomy proposed by Järvinen in \cite{jarvinen2011tutkimustyon, jarvinen2004research} is presented in figure \ref{fig-research-taxonomy}.
-
-Within the taxonomy, this thesis falls under the conceptual-analytical research approach, the scope being technology-oriented in nature. This approach relies on logical reasoning and draws extensively from prior research and established theories. Conceptual-analytical approaches within the natural and social sciences do not necessarily rely on empirical data, while theory-testing and theory-creating approaches use data to either validate existing theories or formulate new ones. The primary objective of conceptual-analytical research is to generate new creating theoretical concepts or analysing existing theories.
-
-In practical terms, the modelling approach in this thesis is grounded on theoretical background of RF systems and more specifically concepts related to EW and SIGINT.
-Threat model builds upon theory discussed in \cite{kosola2013digitaalinen} and \cite{wiley2006elint}.
-Target systems are explored through a parametric study of an analytical model comprised of multiple submodels that incorporate relevant parameters for aerial SIGINT platforms and both space and ground segments of a satellite communications system.
 
 %\subsection{Data sources}
 
@@ -1086,12 +1093,7 @@ Descriptions for the submodels are given in table \ref{table-submodel-descriptio
 
 The models explore the target system from first principles using geometric and kinematic analysis, as well as link budgets based on an example hardware configuration.
 First principles thinking is a powerful problem-solving approach that involves breaking down a problem or a concept into its elemental parts.
-In this sense, each submodel helps us understand potential strengths and vulnerability of different satcom systems through an elemental understanding of the underlying physical phenomena. %% TODO: Miksi relevantteja tutkittavia asioita? DONE?
-
-Critical communications users place high expectations on the communications solutions that they utilise.
-Satcom solutions have seen previously somewhat limited especially in the public safety sector, while at the same time commercial systems have turned out to be not the most robust when it comes to fundamental concepts of security, such as confidentiality, integrity and availability.
-With the recent drive to integrate satcom into both commercial and MC communications solutions, it is paramount to understand the underlying factors of the systems. % TODO: Huono virke
-Physics-driven analysis helps us to evaluate the limits of a systems in a way that allows for sufficient risk mitigations to be engineered. %% TODO: Miten liittyy public safety caseen? DONE?
+In this sense, each submodel helps us understand potential strengths and vulnerabilities of satcom systems through an elemental understanding of the underlying physical phenomena.
 
 \begin{table}[h]
   \centering
@@ -1504,7 +1506,7 @@ For the latter, a figure of \SI{0.35}{\deci\bel} from \cite{kymeta2019link} was 
     Parameter                             & Value     & Notes         \\ \midrule
                                           &           &               \\
     Constants                             &           &               \\ 
-    atmospheric loss {[}dB{]}            & 0.35      &               \\
+    Atmospheric loss {[}dB{]}             & 0.35      &               \\
     Bolzmann’s constant {[}dBW/K/Hz{]}    & -228.60   &               \\
     Speed of light {[}m/s{]}              & 3.00E+08  &               \\
                                           &           &               \\
@@ -1618,23 +1620,16 @@ Orbital motion of the satellites in LEO limits the listening window for communic
 Additionally, the radio horizon arising from higher minimum elevation angles in VSATs imposes further constraints on eavesdroppers, requiring them to approach relatively close to transmitting terminals for effective UL interception.
 
 On the other hand, using lower orbits leads to certain disadvantages.
-While higher orbits like GEO require the eavesdropper to transmit at equivalent EIRP levels compared to the legitimate transmitter, the lower altitude of LEO introduces situations where jamming or hijacking the legitimate signal is possible to achieve even with relatively simple and inexpensive radio hardware, such as COTS SDRs and satellite TV equipment.
+While higher orbits like GEO require the eavesdropper to transmit at equivalent EIRP levels compared to the legitimate transmitter, the lower altitude of LEO introduces situations where jamming the legitimate signal is possible to achieve even with relatively simple and inexpensive radio hardware, such as COTS SDRs and satellite TV equipment due to the nature of varying path loss based on the jammer's location in relation to the legitimate user. On the other hand, high number of satellites in a LEO system allows for greater redundancy in satellite choice, making it possible to avoid localised jamming by switching to a satellite in a different part of the sky. 
 
-Findings of the thesis highlighted the inherent physical resilience of NGSO VSAT systems against both long and short-term signal interception as well as intentional and unintentional jamming.
+All in all, findings of the thesis highlighted the inherent physical resilience of NGSO VSAT systems against both long and short-term signal interception as well as intentional and unintentional jamming.
 In this sense, the emerging commercial NGSO satcom systems do not have inherent physical flaws that would directly jeopardise the security of these systems.
 The results show that the architecture of these systems makes it tough to eavesdrop or disrupt their operation on a system-wide scale, although more localised adversarial actions may still be feasible to some extent.
 In fact, compared to their predecessors, the distributed infrastructure of the NGSO systems, especially when it comes to the space segment, bring certain advantages that make the systems rather robust against a multitude of potential threat factors.
-All in all, satellite networks have great potential to enable previously unforeseen commercial connectivity capabilities in traditionally tough-to-serve use cases even in the demanding field of public safety and defence.
-Robust cybersecurity measures are a key starting point in these markets.
+Satellite networks have great potential to enable previously unforeseen commercial connectivity capabilities in traditionally tough-to-serve use cases even in the demanding field of public safety and defence, but robust cybersecurity measures are a key starting point for deployment into these markets.
 Thus, proper care needs to be taken when implementing solutions involving these technologies, especially when they are placed into systems with previously limited satcom integration.
 
-%TODO: Recommendations
-
-% migraatio, leo backup / peitto -> PS vaatimukset
-% MNO consumer vs entreprise vaatimukset?
-
 \clearpage
-%% L\"ahdeluettelo
 
 \thesisbibliography
 
