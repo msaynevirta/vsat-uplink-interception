@@ -1,6 +1,3 @@
-%% Environment initialisation
-addpath("matlab2tikz/src/");
-
 %% Physical constants
 
 G = 6.673e-11; % universal gravitational constant, m3 * kg-1 * s-2
@@ -35,8 +32,6 @@ xlabel('e (deg)');
 ylabel('h (m)');
 zlabel('d (km)');
 
-matlab2tikz('doc/tikz_figures/fig-interception-range.tikz');
-
 %% Overlaid line graphs in a single plot
 ele = 10:2.5:90; % elevation angle in degrees
 h = 0:4000:20000; % aircraft altitude in meters
@@ -53,9 +48,7 @@ xlabel('e (deg)');
 ylabel('d (km)');
 grid on;
 
-matlab2tikz('doc/tikz_figures/fig-interception-range-2d.tikz');
-%% 
-% Orbital radius in relation to velocity of the sub-satellite point (in km/s), 
+%% Orbital radius in relation to velocity of the sub-satellite point (in km/s), 
 % ECI coordinate frame.
 
 v_air = @(h,r_orbit)( (h+R) .* sqrt( (G*M_E) ./ (r_orbit + R).^3 ) );
@@ -72,12 +65,7 @@ ylabel('v (m/s)');
 
 grid on;
 
-matlab2tikz('doc/tikz_figures/fig-subsat-velocity-equatiorial.tikz');
-
-%% 
-
-
-In the case of GEO, Earth's rotation cancels the velocity of the sub-satellite 
+%% In the case of GEO, Earth's rotation cancels the velocity of the sub-satellite 
 % point. Next, we will evaluate the effect of orbital period and inclination to 
 % the velocity of the sub-satellite point. We setup the orbits in the ECI coordinate 
 % system and account for the Earth's rotation by converting to ECF.
@@ -106,8 +94,6 @@ ylabel('h (m)'); % orbital altitude
 zlabel('v (m/s)'); % sub-satellite velocity 
 view(-135,10);
 
-matlab2tikz('doc/tikz_figures/fig-subsat-velocity-inclined.tikz');
-
 %% Listening window at a set beamwidth.
 
 orbital_period = 5400:1000:42400; % in seconds 
@@ -132,8 +118,6 @@ xlabel('i (deg)'); % inclination
 ylabel('h (m)'); % orbital altitude
 zlabel('t (s)'); % maximum listening window / satellite pass
 view([-318 10]);
-
-matlab2tikz('doc/tikz_figures/fig-listening-window.tikz');
 
 %% Constellation visualisation from TLEs
 
