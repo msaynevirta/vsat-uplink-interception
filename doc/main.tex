@@ -441,6 +441,7 @@ G/T                     & Gain-to-noise-Temperature \\
 GEO                     & Geostationary Earth Orbit \\
 HALE                    & High Altitude Long Endurance \\
 IRIS\textsuperscript{2} & Infrastructure for Resilience, Interconnectivity and Security by Satellite \\
+ISR                     & Intelligence, Surveillance, and Reconnaissance \\
 JP                      & Joint Publication \\
 \end{tabular}
 
@@ -465,6 +466,7 @@ NTN                     & Non-Terrestrial Network \\
 OFDM                    & Orthogonal Frequency-Division Multiplexing \\
 QAM                     & Quadrature Amplitude Modulation \\
 PAV                     & Pico Air Vehicle \\
+PNT                     & Positioning, Navigation, and Timing \\
 PoP                     & Point-of-Presence \\
 PTT                     & Push-To-Talk \\
 RF                      & Radio Frequency \\
@@ -498,7 +500,7 @@ VTOL                    & Vertical TakeOff and Landing
 %Sisältö, rakenne
 
 Over the past five decades, satellite systems have emerged as indispensable enablers of our modern way of life within an increasingly technology-driven human society.
-Innovation in fields such as Global Navigation Satellite Systems \cite{oconnor2019economic}, Earth Observation \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and Satellite Communication (satcom) \cite{euroconsult-space-economy-2023} has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in positioning, navigation, and timing, as well as intelligence, surveillance, and reconnaissance.
+Innovation in fields such as Global Navigation Satellite Systems \cite{oconnor2019economic}, Earth Observation \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and Satellite Communication (satcom) \cite{euroconsult-space-economy-2023} has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in positioning, navigation, and timing (PNT), as well as intelligence, surveillance, and reconnaissance (ISR).
 Recently, the satellite communications industry has entered an era of rapid change.
 Since the early 2010s, the most prominent new trend has been the emergence of megaconstellations with hundreds to thousands of satellites in LEO.
 The raise of large constellations in NGSO has been enabled by the falling cost of space launches and mass-production of satellite hardware based on COTS technology \cite{euroconsult-space-economy-2023}.
@@ -724,17 +726,14 @@ Half-power bandwidt of first generation Starlink terminals varies between 2.8 an
 
 \subsection{Classification of aerial platforms} \label{ch-aerial-platforms}
 
-% TODO: Sidosteisuutta? lentäviä alustoja voidaan käyttää signaalitiedusteluun, ja jotta niiden kyvykkyyksiä voidaan arvioida tämän tutkimuksen kysymyksiin liityyen, on tarpeen ymmärtää niiden fysikaalisia ominaisuuksia.
+Aerial platforms have a long history in ISR, going back all the way to the use of observation balloons in the battle of Fleurus in the late 18\textsuperscript{th} century \cite{centennial-balloons-fleurus}.
+Modern platforms have come a long way from these primitive systems reliant on the human eye for surveillance in terms of sensing capability, manoeuvrability and performance.
+Nowadays, mainstream aerial surveillance platforms range all the way from COTS multirotor drones to manned electronic warfare and signal intelligence capable jet aircraft in the tens tonnes of dry mass.
+Understanding the defining physical features and potential limitations of these platforms is a key stage in evaluating their threat to VSAT satellite systems.
 
-Aerial platforms have a long history in ISR, going back all the way to % reconnaissance balloons in x-century china.
-Modern platforms, be they have come a long way from these primitive systems reliant on the so-called "mark 1 eyeball".
-Modern mainstream aerial surveillance platform tend to range all the way from COTS multirotor drones to manned electronic warfare and signal intelligence sensored jets in the tonnes of dry mass. In order to evaluate the threat of these platforms, it is paramount to understand their defining physical features and potential limitations. % TODO: Kieliasu, vähän kankeaa
-
-Aerial platforms come in many shapes and sizes with widely varying capabilities. % TODO: Toistoa
-Based on these, the systems can be categorised in a few ways depending on the end goal of the classification effort.
+Aerial platforms can be categorised in a multitude of ways depending on the end goal of the classification effort.
 For example, aviation regulation can be thought to form a comprehensive risk-based classification framework for the whole spectrum of platforms all the way from small drones and lighter-than-air balloons to heavy manned jet aircraft.
 On the other hand, these regulatory classifications tend to be very coarse in their breakdown to avoid ambiguity, limiting their applicability for evaluating platforms based on their capabilities rather than their inherent risks.
-
 This is something that can be seen for example in the drone regulation of the European Union Aviation Safety Agency.
 The framework in the 2020 regulation splits UAS into three distinct operational categories, which are open, specific and certified.
 The risk model considers four core factors in its evaluation: maximum take-off mass (MTOM) of the UAS, whether the payload is hazardous, whether the vehicle is flown in visual line-of-sight (LOS) of the operator and at what altitude \cite{alamouri2021exploratory}.
@@ -982,17 +981,25 @@ Like more traditional TNs, the requirements apply also to the emerging satellite
 Satellite links are likely the best suited to natural disasters and major accidents, but open questions remain related to human-made threat situations, like terrorist attacks and military conflicts, where external actors may deliberately interfere with the communications links.
 This raises questions on the political regimes where these current and future constellations are owned and operated. Nationally controlled satellite communications solutions would be the most optimal but are unfeasible for even most nation-states to implement. This is due to the immense capital requirements, especially when considering LEO options, which require at minimum hundreds and often thousands of satellites.
 
-These budgetary requirements lead to a situation where most nations need to rely on satellite services that are provided by operators from foreign countries. As discussed later, many of the emerging new operators are either US or UK based, while the EU has also been considering entering the constellation sector with its own alternative. In the context of EU member states, the latter is probably the most attractive option, especially from the perspective of critical communications users. Control over the constellation and its ground segment will be as close to the national level as is feasible with the capital intensive satellite systems. US and UK based solutions might be also in this sense allowable but are likely to require significant legislative work when used by governmental public safety users. %TODO: Felixin gradu tähän?
+These budgetary requirements lead to a situation where most nations need to rely on satellite services that are provided by operators from foreign countries.
+Many of the emerging new operators are either US or UK based, while the EU has also been considering entering the constellation sector with its own alternative.
+In the context of EU member states, the latter is probably the most attractive option, especially from the perspective of critical communications users.
+Control over the constellation and its ground segment will be as close to the national level as is feasible with the capital intensive satellite systems.
+US and UK based solutions might be also in this sense allowable but are likely to require significant legislative work when used by governmental public safety users \cite{snellman2022european}.
 
-Straightforward usability of the systems is crucial from the perspective of public safety users based on the interviews with Finnish Public Safety actors. The success rate in emergency situations depends heavily on the timeliness of the response, which means that the communication systems used in field activities need to be available on a standby basis. Thus, the future satellite link would need to be tightly integrated with the existing communications infrastructure for it to be effective, so that it can be used when necessary.
+Straightforward usability of the systems is crucial from the perspective of public safety users based on the interviews with Finnish Public Safety actors.
+The success rate in emergency situations depends heavily on the timeliness of the response, which means that the communication systems used in field activities need to be available on a standby basis.
+Thus, the future satellite link would need to be tightly integrated with the existing communications infrastructure for it to be effective, so that it can be used when necessary.
 
 Considering these usability requirements, an ideal user terminal would be a handset with integrated satellite communication capabilities, but this is not feasible with the current satellite terminal sizes. The more feasible alternative in the near-term would be the integration of the terminal to the vehicles used by the authorities in daily activities.
 
 In addition to conveniently sized and well-integrated user terminals, satellite services should be agnostic to the applications that are run through the link they provide. Currently used applications include PTT, data and video, while in future the systems should be able to accommodate more complex applications, like the verified positioning services provided by the Galileo Public Regulated Service. This may require special arrangements in timing critical applications, as satellite systems have longer end-to-end delay times compared to terrestrial systems.
 
-Cost considerations are another important point of discussion as they have been a limiting factor for the adoption of the existing satellite services. The new constellations need to achieve significantly lower per user costs for the solutions to gain widespread adoption. The public safety sector is a niche market from the point of view of the constellation operators, which is especially the case for smaller countries like Finland. Volume based pricing models are a possible way of achieving cost advantages but are likely to require the tendering processes to include multiple possible user groups. One straightforward model for providing satellite access to the user organisations could be to include it to the services provided by a national critical communications operator (e.g. Erillisverkot in Finland).
-
-For the solutions to become widely used, their monthly cost should be tens of euros for an individual user terminal. If implemented as a vehicular solution, these kinds of monthly costs would lead to a country wide cost in millions of euros.
+Cost considerations are another important point of discussion as they have been a limiting factor for the adoption of the existing satellite services.
+The new constellations need to achieve significantly lower per user costs for the solutions to gain widespread adoption.
+The public safety sector is a niche market from the point of view of the constellation operators, which is especially the case for smaller countries like Finland.
+Volume based pricing models are a possible way of achieving cost advantages but are likely to require the tendering processes to include multiple possible user groups.
+One straightforward model for providing satellite access to the user organisations could be to include it to the services provided by a national critical communications operator (e.g. Erillisverkot in Finland) \cite{saynevirta2021satellite}.
 
 \subsubsection{Satcom in the narrowband-to-broadband evolution}
 Critical communications are entering a major paradigm shift. Thus far, national authorities have relied globally on dedicated, purpose-built narrowband technologies such as TETRA, Tetrapol and P25 in their operational communications. Broadband standardisation initiated by The Critical Communications Association Critical Communications Broadband Group in 2012 and developed in a working group of 3GPP's Technical Specification Group since 2015 have adapted the commercial 4G/5G standards to the strict requirements of critical communications. Roll-out of systems built around these standards is currently ongoing in many countries, for example through migration projects such as Virve 2 in Finland, Réséau Radio du Futur (RRF) in France and Emergency Services Network (ESN) in the United Kingdom \cite{stojkovic2016public}.
