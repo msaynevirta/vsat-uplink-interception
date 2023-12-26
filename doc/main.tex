@@ -349,11 +349,13 @@
 %% above.
 %%
 \begin{abstractpage}[english]
-  In recent years, the satellite communications industry has witnessed a paradigm shift with the rise of large Non-Geostationary Orbit (NGSO) megaconstellations. This shift, fuelled by reduced space launch costs and the widespread use of Commercial Off-The-Shelf (COTS) technology, has ushered in a new era of global connectivity. In the future, commercial satcom systems are likely to play a crucial role as a complementary solution for terrestrial mission-critical (MC) networks, addressing distinct set of use cases varying in their nature, duration, and forecastability. In practice, the potential applications range from serving traditionally underserved rural and maritime regions to providing vital connectivity during planned events and responding swiftly to unplanned incidents such as natural disasters.
+  Since the late 2010s, the satellite communications industry has witnessed a paradigm shift with the rise of large Non-Geostationary Orbit (NGSO) megaconstellations.
+  This shift, fuelled by reduced space launch costs and the widespread use of Commercial Off-The-Shelf (COTS) technology, has ushered in a new era of global broadband connectivity.
+  In the future, commercial satcom systems are likely to play a crucial role as a complementary solution for terrestrial mission-critical (MC) networks.
 
-  The rapid proliferation of commercial satellite solutions has not been without its challenges, particularly in the realm of cybersecurity. The absence of widely accepted cybersecurity standards, coupled with the proprietary nature of satellite solutions, leaves open potential vulnerabilities. For example, the ubiquitous broadcast nature of satellite transmissions further exposes them to eavesdropping and adversarial actions across wide geographic footprints. Adversarial groups, spanning from state actors to individual enthusiasts armed with accessible Software-Defined Radios (SDR), have demonstrated the feasibility of interception and deliberate interference with commercial satellite systems.
+  The rapid proliferation of commercial satellite solutions has not been without its challenges, particularly in the realm of cybersecurity. The absence of widely accepted cybersecurity standards, coupled with the proprietary nature of satellite solutions, leave open their potential vulnerabilities. Prior literature has demonstrated the feasibility of interception and deliberate interference with commercial satellite systems.
 
-  This thesis investigated the threat posed by airborne adversaries to Very Small Aperture Terminals (VSAT) interfacing with satcom megaconstellations in Low Earth Orbit (LEO). A comprehensive research framework comprising four submodels was developed with the models examining VSAT interception ranges, airborne eavesdropper tracking potential, temporal considerations for capturing radio frequency (RF) data, and the active threat of jamming. Findings showed the physical resilience of NGSO VSAT systems against signal interception and intentional jamming, with the distributed infrastructure of NGSO systems offering many inherent advantages. Satellite networks have great potential to enable new capabilities in traditionally tough-to-serve use cases in the fields of public safety and defence. Proper care in their integration needs to be taken as robust cybersecurity measures are a key starting point in these markets.
+  In this context, this thesis investigated the threat posed by airborne adversaries to the uplink communications of a Very Small Aperture Terminal (VSAT) interfacing with a satcom megaconstellation in Low Earth Orbit (LEO). A comprehensive research framework comprising four submodels was developed with the models examining VSAT interception ranges, airborne eavesdropper tracking potential, temporal considerations for capturing radio frequency (RF) data, and the active threat of jamming. Findings showed the physical resilience of NGSO VSAT systems against signal interception and intentional jamming, with the distributed infrastructure of NGSO systems offering many inherent advantages. Commercial LEO megaconstellations have great potential to enable new capabilities and enhance existing ones in the fields of public safety and defence, but their integration into these systems requires proper care due to the stringent cybersecurity requirements in these markets.
 \end{abstractpage}
 
 %% The text in the \thesisabstract macro is stored in the macro \abstractext, so
@@ -382,11 +384,12 @@
 \keywords{Vastus, resistanssi, lämpötila}
 %% Abstract text
 \begin{abstractpage}[finnish]
-  Tiivistelmässä on lyhyt selvitys
-  kirjoituksen tärkeimmästä sisällöstä: mitä ja miten on tutkittu,
-  sekä mitä tuloksia on saatu. 
-\end{abstractpage}
+  Ei-geostationaaristen satelliittimegakonstellaatioiden nousu 2010-luvun lopulla on vienyt satelliittiviestintäalan merkittävään paradigmamuutokseen. Pudonneiden laukaisukustannusten ja kaupallisen teknologian laajamittaisen käytön mahdollistamat megakonstellaatiot ovat tuoneet mukanaan kokonaan uuden aikakauden maailmanlaajuisessa laajakaistaviestinnässä. Kaupallisten megakonstellaatioden käyttökohteet laajenevat odotettavasti tulevaisuudessa turvallisuuskriittisten käyttäjäryhmien, kuten viranomaisten ja maanpuolustusorganisaatioiden käyttöön, missä satelliitit tukisivat ja täydentisivät nykyisiä maanpäällisiä tehtäväkriittisen viestinnän verkkoja.
 
+  Kaupallisten satelliittipalveluiden kasvu ei ole tullut ilman ongelmiaan, etenkin jos tarkastellaan asiaa tietoturvallisuuden näkökulmasta. Standardoimattomat kyberturvallisuusratkaisut yhdistettynä satelliittiverkkojen teknisten ratkaisujen suljettuun luonne jättävät verkkojen mahdolliset tietoturvahaavoittuvuudet avoimeksi kysymykseksi. Tutkijat ovatkin kyenneet näyttämään monia haavoittuvuuksia kaupallisissa satelliittiverkoissa, jotka ovat jättäneet kyseiset verkot ainakin jossain määrin avoimiksi salakuuntelulle ja tarkoitukselliselle häirinnälle.
+
+  Tämä diplomityö pyrki arvioimaan ilmasta tapahtuvan salakuuntelun ja tarkoituksellisen häirinnän uhkaa hyvin pienen apertuurin päätelaitteen (engl. very small aperture terminal, VSAT) uplink-suunnan viestiliikenteelle, joka liikkuu VSAT-päätelaitteelta matalalla Maan kiertoradalla lentävään satelliittimegakonstellaatioon. Tutkimuskysymykseen pureuduttiin neljästä alamallista kootulla uhkamallilla, jossa tarkasteltiin radiotaajuista häirintää, ilma-aluksen saavutettavissa olevia sieppausetäisyyksiä ja -ikkunoita, sekä lentävän salakuuntelijan kykyä seurata VSAT-päätelaitteen kapeaa radiokeilaa. Mallin pohjalta tehdyt havainnot osoittavat, että megakonstellaatioiden kanssa toimivat VSAT-päätelaitteet ovat oikein toteutettuna varsin resilienttejä signaalin kuuntelua vastaan ja sietävät tahallista häirintää varsin hyvin konstellaatioden hajautetun luonteen ansiosta. Kaupalliset matalan Maan kiertoradan megakonstellaatiot ovatkin näin hyvin soveltuva pala täydentämään turvallisuuskriittisen viestinnän kykyjä, joskin niiden integraatio vaatii edelleen riittävää huolellisuutta toimialan tiukoista tietoturvavaatimuksista johtuen.
+\end{abstractpage}
 
 %% Preface
 %%
@@ -472,7 +475,6 @@ RF                      & Radio Frequency \\
 RRF                     & Réséau Radio du Futur \\
 satcom                  & SATellite COMmunication \\
 SC                      & Single Carrier \\
-SDR                     & Software-Defined Radio \\
 SHF                     & Super High Frequency \\
 SIGINT                  & SIGnals INTelligence \\
 SNP                     & Satellite Network Portal \\
@@ -516,7 +518,7 @@ Despite their decades-long development history, current satellite systems still 
 Varying technical solutions and their proprietary nature have raised a set of potential vulnerabilities.
 Moreover, the wide-area broadcast nature of satellite transmissions renders them vulnerable to adversarial groups from abroad or even across an entire continent.
 This was demonstrated in \cite{pavur2020tale} where the feasibility of eavesdropping downlink (DL) satellite traffic was proven practically using widely available and relatively inexpensive satellite television equipment.
-Within the field of wireless communication, one key driver for this development have been the proliferation of inexpensive signals processing equipment, such as open source and open hardware SDRs.
+Within the field of wireless communication, one key driver for this development have been the proliferation of inexpensive signals processing equipment, such as open source and open hardware software-defined radios.
 These devices have enabled interaction with satellite systems by not only nation states but also even individual enthusiast-level actors.
 Moreover, the vulnerabilities in satellite systems are not limited to only the air interface of these commercial systems.
 Another third-party vulnerability assessment \cite{santamarta2014wake} uncovered serious design flaws in the implementation of satellite user terminal (UT) firmware, such as backdoors, hardcoded credentials, weak encryption algorithms as well as undocumented and insecure protocols.
@@ -1605,11 +1607,11 @@ Critical communications use cases can be roughly divided into permanent, planned
 
 However, the rapid roll-out of commercial satellite solutions has not been without challenges, particularly in the area of cybersecurity.
 The absence of widely accepted cybersecurity standards and the proprietary nature of technical solutions leave open potential vulnerabilities, while the wide-area broadcast nature of satellite transmissions makes them inherently susceptible to eavesdropping and other adversarial actions from a wide geographic footprint.
-Adversarial groups, including state actors and individual enthusiasts armed with accessible SDRs, have demonstrated the feasibility of intercepting satellite traffic.
+Adversarial groups, including state actors and individual enthusiasts armed with accessible software-defined radios, have demonstrated the feasibility of intercepting satellite traffic.
 
 Security of commercial satellite systems is a rather young field of study, and much work remains for future researchers.
 Regarding commercial broadband networks, approaches such as practical waveform studies through open-source black-box reverse engineering could be an interesting approach to study the threat of less resourced adversaries.
-Here, COTS SDR devices and satellite TV equipment have already been verified to be somewhat feasible technology platform that even a less-resourced attacker could exploit.
+Here, COTS software-defined radios and satellite TV equipment have already been verified to be somewhat feasible technology platform that even a less-resourced attacker could exploit.
 Similarly, the physical and network security of the gateways is another interesting topic with less attention in the research literature.
 Finally, the conceptual-analytical framework applied in this thesis could be further expanded by building a channel-level simulation for the airborne eavesdropping scenario.
 
@@ -1620,7 +1622,7 @@ Orbital motion of the satellites in LEO limits the listening window for communic
 Additionally, the radio horizon arising from higher minimum elevation angles in VSATs imposes further constraints on eavesdroppers, requiring them to approach relatively close to transmitting terminals for effective UL interception.
 
 On the other hand, using lower orbits leads to certain disadvantages.
-While higher orbits like GEO require the eavesdropper to transmit at equivalent EIRP levels compared to the legitimate transmitter, the lower altitude of LEO introduces situations where jamming the legitimate signal is possible to achieve even with relatively simple and inexpensive radio hardware, such as COTS SDRs and satellite TV equipment due to the nature of varying path loss based on the jammer's location in relation to the legitimate user. On the other hand, high number of satellites in a LEO system allows for greater redundancy in satellite choice, making it possible to avoid localised jamming by switching to a satellite in a different part of the sky. 
+While higher orbits like GEO require the eavesdropper to transmit at equivalent EIRP levels compared to the legitimate transmitter, the lower altitude of LEO introduces situations where jamming the legitimate signal is possible to achieve even with relatively simple and inexpensive radio hardware, such as COTS software-defined radios and satellite TV equipment due to the nature of varying path loss based on the jammer's location in relation to the legitimate user. On the other hand, high number of satellites in a LEO system allows for greater redundancy in satellite choice, making it possible to avoid localised jamming by switching to a satellite in a different part of the sky. 
 
 All in all, findings of the thesis highlighted the inherent physical resilience of NGSO VSAT systems against both long and short-term signal interception as well as intentional and unintentional jamming.
 In this sense, the emerging commercial NGSO satcom systems do not have inherent physical flaws that would directly jeopardise the security of these systems.
