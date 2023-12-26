@@ -6,16 +6,17 @@ R = 6371008.8; % radius of the Earth, m
 Gravitational_parameter_E = 3.986004418e14;
 Omega_E = 2*pi / 86400; % earth's rotation in rad / s
 
-Omega_E_vector = [0;0;Omega_E]; % angular velocity vector for Earth's rotation in the ECI coordinate system
+% angular velocity vector for Earth's rotation in the ECI coordinate system
+Omega_E_vector = [0;0;Omega_E];
 
-%%  Effect of observation altitude to the range of a eavesdropping sensor in relation 
-% to different elevation angles of the terminal.
+%%  Effect of observation altitude to the range of a eavesdropping sensor in
+% relation to different elevation angles of the terminal.
 
 d = @(h,ele)(1/2 .* (sqrt(4 .* h .* (h + 2 * R) + 4 .* R.^2 ...
                 .* cosd(90+ele).^2) + 2 .* R .* cosd(90+ele)) / 1000);
 
-%% 3D plot of elevation range of 10 deg to 90 deg and observation altitude 
-% in range of 100 meters to 20 km.
+%% 3D plot of elevation range of 10 deg to 90 deg and observation altitude in
+% range of 100 meters to 20 km.
 
 ele = 10:2.5:85; % elevation angle in degrees
 h = 0:750:20000; % aircraft altitude in meters
@@ -65,17 +66,19 @@ ylabel('v (m/s)');
 
 grid on;
 
-%% In the case of GEO, Earth's rotation cancels the velocity of the sub-satellite 
-% point. Next, we will evaluate the effect of orbital period and inclination to 
-% the velocity of the sub-satellite point. We setup the orbits in the ECI coordinate 
-% system and account for the Earth's rotation by converting to ECF.
+%% In the case of GEO, Earth's rotation cancels the velocity of the
+% sub-satellite point. Next, we will evaluate the effect of orbital period and
+% inclination to the velocity of the sub-satellite point. We setup the orbits in
+% the ECI coordinate system and account for the Earth's rotation by converting
+% to ECF.
 
 inclination = 0:0.04:pi/2; % inclination in rad
 orbital_period = 5400:2000:86400; % in seconds
 
 roty = @(t)[cos(t) 0 sin(t); 0 1 0; -sin(t) 0 cos(t)] ;
 
-omega_ECF_magnitude = @(i, T)( norm(roty(i) * ( (2*pi / T) .* [0;0;1] ) - Omega_E_vector));
+omega_ECF_magnitude = @(i, T)( norm(roty(i) * ( (2*pi / T) .* [0;0;1] ) ...
+                        - Omega_E_vector));
 
 [I_orbit, T_orbit] = meshgrid(inclination, orbital_period);
 
@@ -85,7 +88,8 @@ omega_arr = arrayfun(omega_ECF_magnitude, I_orbit, T_orbit);
 
 v_air_arr = R .* omega_arr;
 
-orbital_altitude = (((Gravitational_parameter_E * ( T_orbit/(2*pi)).^2).^(1/3)) - R);
+orbital_altitude = (((Gravitational_parameter_E ...
+                    * ( T_orbit/(2*pi)).^2).^(1/3)) - R);
 
 s_omega_ECF_norm = surf(I_orbit_deg, orbital_altitude, v_air_arr);
 
