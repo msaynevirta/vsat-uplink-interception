@@ -1650,95 +1650,37 @@ Thus, proper care needs to be taken when implementing solutions involving these 
 \begin{landscape}
   \thispagestyle{empty}
 
-  \section{Appendix: Comparison of broadband satellite systems\label{appendix-constellation-comparison}}
+  \section{Appendix: Comparison of 1st generation broadband satcom systems\label{appendix-constellation-comparison}}
 
-  % TODO: Redesign
   \begin{table}[h]
-    \centering
-    \makebox[0pt][c]{
-    \begin{tabular}{@{}lllllllll@{}}
+    \scriptsize
+    \begin{tabular}{@{}llllll@{}}
     \toprule
-    \multicolumn{1}{c}{Operator} &
-      \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Frequency\\ band\end{tabular}} &
-      \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Number of\\ satellites,\\ ph. 1\\ (launced /\\ planned)\end{tabular}} &
-      \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Number of\\ satellites,\\ ph. 2\\ (launced /\\ planned)\end{tabular}} &
-      \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Orbital altitude\\ (km)\end{tabular}} &
-      \multicolumn{1}{c}{Latency (ms)} &
-      \multicolumn{1}{c}{UT datarate} &
-      \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}System\\ throughput\\ (Tbps)\end{tabular}} &
-      \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Country\\ of\\ origin\end{tabular}} \\ \midrule
-    \begin{tabular}[c]{@{}l@{}}Amazon\\ Kuiper\end{tabular} &
-      Ka &
-      0 / 548 &
-      0 / 3236 &
-      590-630 &
-      &
-      400 Mbps in tests &
-      &
-      US \\
-    OneWeb &
-      Ku, Ka &
-      648 / 648 &
-      0 / 6372 &
-      1200 &
-      < 50 ms &
-      &
-      10 Gbps &
-      UK \\ \addlinespace[0.5em]
-    \begin{tabular}[c]{@{}l@{}}SpaceX\\ Starlink\end{tabular} &
-      \begin{tabular}[c]{@{}l@{}}Ku, Ka\\ V, E, S\end{tabular} &
-      x / 4408 &
-      0 / 7518 &
-      \begin{tabular}[c]{@{}l@{}}$\sim$550 (ph. 1),\\ $\sim$350 (ph. 2)\end{tabular} &
-      270-TODO &
-      150 / 15 Mbps &
-      \begin{tabular}[c]{@{}l@{}}$\sim$88 (ph. 1),\\ $\sim$350 (ph. 2)\end{tabular} &
-      US \\ \addlinespace[0.5em]
-    \begin{tabular}[c]{@{}l@{}}Telesat\\ Lightspeed\end{tabular} &
-      Ka &
-      0 / 298 &
-      0 / 1671 &
-      1015, 1325 &
-      700 &
-      \begin{tabular}[c]{@{}l@{}}7.5 Gbps UT,\\ 20 Gbps "hotspot"\end{tabular} &
-      &
-      Canada \\ \addlinespace[0.5em]
-    \begin{tabular}[c]{@{}l@{}}AST\\ SpaceMobile\end{tabular} &
-      S, V &
-      0 / 20 &
-      0 / 223 &
-      700 &
-      1500 &
-      35 / 3 Mbps &
-      &
-      US \\ \addlinespace[0.5em]
-    Lynk &
-      S &
-      0 / 5000 &
-      &
-      500 &
-      85 &
-      &
-      &
-      US \\ \addlinespace[0.5em]
-    \begin{tabular}[c]{@{}l@{}}Iridium\\ NEXT\end{tabular} &
-      L &
-      75 / 66 &
-      &
-      780 &
-      680 &
-      &
-      &
-      US \\ \bottomrule
+                                & SpaceX       & Eutelsat OneWeb & Amazon       & Telesat             & SES              \\ \midrule
+    Constellation               & Starlink     & OneWeb          & Kuiper       & Lightspeed          & O3b mPOWER       \\
+    Number of sats              & 4408         & 588             & 3326         & 198                 & 11               \\
+    Status &
+      \begin{tabular}[c]{@{}l@{}}1st generation deployed,\\ 5627 satellites launched\end{tabular} &
+      \begin{tabular}[c]{@{}l@{}}1st generation fully deployed,\\ 640 satellites launched. Global\\ coverage available\\ January 2024.\end{tabular} &
+      \begin{tabular}[c]{@{}l@{}}No satellites deployed.\\ To be fully deployed by\\ July 2026\\ per FCC authorisation\end{tabular} &
+      \begin{tabular}[c]{@{}l@{}}Contract for satellite\\ manufacturing announced\\ in August 2023. \\ Deployments planned to start\\ in 2026.\end{tabular} &
+      \begin{tabular}[c]{@{}l@{}}6 satellites operational,\\ 2 planned to be launched in 2024\\ + 3 more in 2025.\end{tabular} \\
+    Total throughput {[}Tbps{]} & $\sim$88     & $\sim$5         & $\sim$164    & $\sim$10            & $\sim$2.7        \\
+    Per satellite throughput    & $\sim$20     & $\sim$7.5       & $\sim$50     & $\sim$50            & 200--315         \\
+    User link band              & Ku           & Ku              & Ka           & Ka                  & Ka               \\
+    Orbit                       & LEO (550 km) & LEO (1200 km)   & LEO (600 km) & LEO (1000--1350 km) & MEO (8062 km)    \\
+    Satellite mass {[}kg{]}     & $\sim$260    & $\sim$150       & $\sim$650    & $\sim$700           & $\sim$1700       \\
+    Satellite life {[}years{]}  & $\sim$5      & $\sim$7         & 5--7         & $\sim$10            & \textgreater{}10 \\
+    Latency {[}ms{]}            & \textless 50 & \textless 50    & \textless 50 & \textless 50        & $\sim$150        \\ \bottomrule
     \end{tabular}
-    }
-  \end{table}
+    \end{table}
 
-  \vfill
-\raisebox{-10pt}{\makebox[\linewidth]{\thepage}}
+    Source: \cite{euspa-secure-satcom-2023}
+
+    \vfill
+  \raisebox{-10pt}{\makebox[\linewidth]{\thepage}}
 
 \end{landscape}
-
 
 \clearpage
 \section{Appendix: Matlab code} \label{appendix-matlab-code}
