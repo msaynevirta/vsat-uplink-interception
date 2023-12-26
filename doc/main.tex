@@ -595,7 +595,7 @@ Thus, satellite internet services are unlikely to completely replace terrestrial
 
 The design of a complete satellite system is a complex, multi-objective and multi-modal optimisation problem due to the inherently varying conditions and constraints in the ground, space and user segments.
 Practically speaking, this requires tackling the overall optimisation problem segment-by-segment while considering the requirements of the target application.
-Figure \ref{fig-constellation-segments} presents the three segments and interactions between them based on representations in \cite{euspa-secure-satcom-2023} and \cite{celikbilek2022survey}. % TODO: Kuvaaja puuttuu
+Figure \ref{fig-constellation-segments} presents the three segments and interactions between them based on representations in \cite{euspa-secure-satcom-2023} and \cite{celikbilek2022survey}.
 
 Space segment comprises the satellite constellation flying in orbit.
 Constellation optimization is typically the primary design problem in LEO-based satellite networks as the parameters, such as orbital altitude, density of satellites, the number and inclination of orbital planes and the phasing between them, affect directly the feasibility of user applications.%and tend to drive the majority of implementation costs.
@@ -609,16 +609,13 @@ Key performance indicators include the achieved sky coverage, system throughput,
 When considering optimisation, the user segment is the most case-specific of the three.
 End user applications range from communication to sensing and navigation with their optimisation criteria often contradicting each other.
 Here, \cite{celikbilek2022survey} raises a good example with bandwidth and carrier frequency, where higher numbers are generally desired for example in high-throughput communication applications while the opposite applies to achieving suitable link budgets for example in navigation satellite systems or when users are situated in challenging urban terrain or indoors.
-The services are built around vendor-specific UT working as WiFi routers that relay the communications on dedicated Ka and Ku-band frequencies to the satellite constellation. % TODO: Irtovirke, viite?
+In practice, NGSO satcom constellations are often built around vendor-specific UTs that relay the communications on dedicated Ka and Ku-band frequencies to the satellite constellation \cite{euspa-secure-satcom-2023}.
 
-If we consider the strengths and weaknesses of LEO systems over these three segments, some general findings arise. % TODO: vähän huono virke
-The LEO altitude enables significantly lower latency and the large number of satellites allows for relatively high overall data throughput throughout a constellation when compared with the earlier satellite systems.
-Still, the most modern LEO megaconstellations fall short of the throughput of their terrestrial counterparts.
-Thus, satellite contellations are unlikely to displace the terrestrial mobile networks but rather support and augment them in typically hard-to-serve market segments. % TODO: onko toistoa?
-This has not put limits on the ambitions of the new market entrants. In fact, emerging NGSO operators are often promising to offer significantly better broadband service when compared to the earlier services offered by e.g. SES O3b and Iridium while providing the services also at a price point that is competitive with other forms of connectivity, be it satellite or terrestrial in nature [x]. % TODO: viite
+When it comes to LEO constellations, their altitude enables significantly lower latency and the large number of satellites allows for relatively high overall data throughput throughout a constellation when compared with the earlier satellite systems.
+Still, the most modern LEO megaconstellations fall short of the throughput of their terrestrial counterparts and are unlikely to completely replace the terrestrial mobile networks in their entirety.
+This has not put limits on the ambitions of the new market entrants. In fact, emerging NGSO operators are often promising to offer significantly better broadband service when compared to the earlier services offered by e.g. SES O3b and Iridium while providing the services also at a price point that is competitive with other forms of connectivity, be it satellite or terrestrial in nature \cite{euspa-secure-satcom-2023}.
 
 \subsubsection{OneWeb system architecture} \label{ch-oneweb}
-% TODO: Beam forming etc. painotusta pitää säätää uuden suunnan mukaiseksi
 
 \begin{figure}[h]
   \centering
