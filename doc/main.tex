@@ -585,9 +585,17 @@ As a reference, global internet bandwidth was estimated at 1.2~petabytes-per-sec
 Thus, satellite internet services are unlikely to completely replace terrestrial networks but will act likely as a complimentary coverage and capacity solution for both commercial and government user segments.
 
 \subsubsection{Key technical characteristics} \label{ch-constellation-characteristics}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=100mm]{figures/fig-constellation-segments.eps}
+  \caption{Typical high-level architecture of a satellite network. Differently shaded arrows between the segments correspond to individual data streams from the mobile and fixed user.}
+  \label{fig-constellation-segments}
+\end{figure}
+
 The design of a complete satellite system is a complex, multi-objective and multi-modal optimisation problem due to the inherently varying conditions and constraints in the ground, space and user segments.
 Practically speaking, this requires tackling the overall optimisation problem segment-by-segment while considering the requirements of the target application.
-In \cite{celikbilek2022survey}, the main elements of a LEO satellite system were characterised into distinct space, ground and user segments, which are visualised in figure \ref{fig-constellation-segments}. % TODO: Kuvaaja puuttuu
+Figure \ref{fig-constellation-segments} presents the three segments and interactions between them based on representations in \cite{euspa-secure-satcom-2023} and \cite{celikbilek2022survey}. % TODO: Kuvaaja puuttuu
 
 Space segment comprises the satellite constellation flying in orbit.
 Constellation optimization is typically the primary design problem in LEO-based satellite networks as the parameters, such as orbital altitude, density of satellites, the number and inclination of orbital planes and the phasing between them, affect directly the feasibility of user applications.%and tend to drive the majority of implementation costs.
