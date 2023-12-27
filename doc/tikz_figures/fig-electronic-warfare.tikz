@@ -1,10 +1,62 @@
 \begin{tikzpicture}[
-  node distance = 0pt,
-  square/.style = {draw=blue!60, fill=blue!5, very thick, 
-                   minimum height=1.2em, minimum width=3em, % <---
-                   outer sep=0pt},                          % <---
-      ]
-  %Nodes
-  \node[square]   (maintopic) {(Placeholder)};
-  \node[square, right=of maintopic] (mynode) {test};
+ declare function={
+   boxunit=1cm;
+   boxsep=0.2cm;
+   bigboxW=boxunit*4 + 3*boxsep;
+   midboxW=boxunit*2 + boxsep;
+ },
+ box/.style={draw,minimum width=#1},
+ box/.default={boxunit}
+]
+
+\node [box=bigboxW,name=1] {1};
+
+\begin{scope}[
+  start chain=r1,
+  node distance=boxsep-\pgflinewidth,
+  every node/.style={box=boxunit, on chain}
+]
+
+\node [below=boxsep-\pgflinewidth of 1.south west,anchor=north west] {2};
+\node {3};
+\node {4};
+\node {5};
+\end{scope}
+
+\begin{scope}[
+  start chain=r2,
+  node distance=boxsep-\pgflinewidth,
+  every node/.style={box=boxunit, on chain}
+]
+
+\node [below=boxsep of r1-1.south west,anchor=north west] {6};
+\node {7};
+\node {8};
+\node {9};
+\end{scope}
+
+\begin{scope}[
+  start chain=c1 going below,
+  node distance=boxsep-\pgflinewidth,
+  every node/.style={box=midboxW, on chain}
+]
+
+\node [below=boxsep of r2-1.south west,anchor=north west] {10};
+\node {12};
+\node {14};
+\end{scope}
+
+\begin{scope}[
+  start chain=c2 going below,
+  node distance=boxsep-\pgflinewidth,
+  every node/.style={box=midboxW, on chain}
+]
+
+\node [below=boxsep of r2-3.south west,anchor=north west] {11};
+\node {13};
+\node {15};
+\end{scope}
+
+\node [inner sep=boxsep,fit=(1)(c2-3),draw] {};
+
 \end{tikzpicture}

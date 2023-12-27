@@ -195,7 +195,7 @@
 \usepackage{xcolor}
 \usepackage{tikz-3dplot}
 \usepackage{pgfplots}
-\usetikzlibrary{calc,positioning,angles,quotes,babel}
+\usetikzlibrary{calc,positioning,chains,fit,angles,quotes,babel}
 
 %% Change the school field to specify your school if the automatically set name
 %% is wrong
@@ -906,7 +906,7 @@ Interception of user traffic in satellite networks falls under the discipline CO
 
 \begin{figure}[h]
   \centering
-  \input{tikz_figures/fig-electronic-warfare.tikz}
+  \includegraphics[width=147.36mm]{figures/fig-electronic-warfare.eps}
   \caption{Electronic warfare taxonomy based on \cite{kosola2013digitaalinen}.}
   \label{fig-electronic-warfare}
 \end{figure}
@@ -1167,7 +1167,7 @@ This can be thought as  arise where eavesdropping is either simply impossible or
 
 \begin{enumerate}
   \item The VSAT Earth station falls behind the radio horizon of the eavesdropper.
-  \item The eavesdropper falls outside the main lobe of the VSAT Earth station. % mikä on main lobe?
+  \item The eavesdropper falls outside the main lobe of the VSAT Earth station. % TODO: mikä on main lobe?
 \end{enumerate}
 
 As presented in appendix \ref{appendix-constellation-comparison}, both existing and under development broadband VSAT systems tend to operate in the Ku and Ka bands (12--18 and 26.5--\SI{40}{\giga\hertz} respectively), with the former being the more commonly used in user links between the orbiting satellite and user terminal and vice-versa, although some systems, such as Amazon's Project Kuiper deviate from this general rule.
@@ -1425,7 +1425,7 @@ With velocity ranges in the single digit kilometre-per-second range, even the fa
 Tracking potential is one way to evaluate risk of an airborne adversary trying to intercept and collect useful RF data from UL transmissions of a VSAT.
 Theoretical length of a capture window, or the listening window of an eavesdropper is a useful metric in evaluating the potential attack types.
 As mentioned in submodel 2a, different durations of interception have varying implications for the legitimate transmitter.
-Relatively short RF samples may still enable an adversary to geolocate a transmitter based on methods discussed in chapter \ref{ch-df-radiopositioning}, while useful insights for proper COMINT would likely require longer-term interception of a VSAT's UL signal over periods ranging from seconds to days. % TODO, puuttuu luku
+Millisecond-length RF samples may still enable an adversary to geolocate a transmitter based on methods discussed in chapter \ref{ch-df-radiopositioning}, while useful insights for proper COMINT would likely require longer-term interception of a VSAT's UL signal over periods ranging from seconds to days. % TODO, puuttuu luku
 
 Quantitative analysis of the listening window of an eavesdropper is somewhat more complex in terms of input parameters that need to be considered.
 On a high level, the window is primarily influenced by the relative motion between the UL RF beam of the terminal and the kinematic characteristics of the airborne eavesdropper.
