@@ -663,7 +663,7 @@ In OneWeb's case, forward link is roughly five times the capacity of the return 
 
 OneWeb satellite system makes use of a bent pipe architecture for both its forward and return links. In the forward direction, each Ku-band user terminal DL maps onto a predetermined Ka-band gateway UL and vice-versa in the return direction. \cite{worldvu2016loi, portillo2019technical}
 
-In its air interface, OneWeb uses a modified LTE waveform capable of adaptive modulation and coding (modcod).
+In the user link air interface, OneWeb uses a modified LTE waveform capable of adaptive modulation and coding (modcod).
 Different transmission schemes are employed depending on the link direction.
 In the forward direction, transmissions utilise time-division multiple access on a single \SI{250}{\mega\hertz} wideband carrier (SC-TDMA) with each user terminal receiving the carrier and demodulating it, extracting relevant payload information based on the headers. Forward links employ turbo/convolutional/block
 channel coding and QPSK, 8PSK and 16QAM modulation \cite{allen2022terrestrial, worldvu2016loi}.
@@ -672,11 +672,26 @@ In the return direction, transmissions utilise a single-carrier time and frequen
 Return direction user terminal to satellite links transmit data in time bursts on a relatively narrow carrier that varies between \SI{1.25}{\mega\hertz} and \SI{20}{\mega\hertz} in bandwidth.
 Multiple user terminals are able to access a single UL carrier based on time slots allocated by the network control centre.
 Terminals are also able to access multiple UL carriers based on the FDMA channel arrangement of the satellite in question. Like the forward link,
-return channel employs QPSK, 8PSK and 16QAM modulation but supports only turbo and block encoding \cite{worldvu2016loi}.
+return channel employs QPSK, 8PSK and 16QAM modulation but supports only turbo and block encoding \cite{allen2022terrestrial,worldvu2016loi}.
 
-Generally speaking, Ka-band gateway-to-satellite links are asymmetric in nature. In terms of their channel configuration, the links employ 16 up and DL channels, bandwidth of individual channels being \SI{155}{\mega\hertz} in the UL and \SI{250}{\mega\hertz} in the DL direction. The links alternate between right and left-hand polarised (RHCP / LHCP) signals. \cite{portillo2019technical}
+Generally speaking, Ka-band gateway-to-satellite links are asymmetric in nature. In terms of their channel configuration, the links employ 16 up and DL channels, bandwidth of individual channels being \SI{155}{\mega\hertz} in the UL and \SI{250}{\mega\hertz} in the DL direction. The links alternate between right and left-hand polarised (RHCP and LHCP) signals.
+Similar to the gateway links, the Ku-band satellite-to-user terminal links are asymmetric in nature, but at the same time they are more limited in terms of the available bandwidth.
+The four UL channels occupy \SI{125}{\mega\hertz} of bandwidth while there are eight \SI{250}{\mega\hertz} DL channels.
+Unlike the gateway links, the polarisation scheme of the signals is fixed based on the link direction, where UL utilises RHCP and DL is LHCP \cite{portillo2019technical,allen2022terrestrial}.
 
-Similar to the gateway links, the Ku-band satellite-to-user terminal links are asymmetric in nature, but at the same time they are more limited in terms of the available bandwidth. The four UL channels occupy \SI{125}{\mega\hertz} of bandwidth while there are eight \SI{250}{\mega\hertz} DL channels. Unlike the gateway links, the polarisation scheme of the signals is fixed based on the link direction, where UL utilises RHCP and DL LHCP. \cite{portillo2019technical}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=145mm]{figures/fig-ku-band.eps}
+  \caption{User link frequency band allocations of OneWeb and Starlink in the Ku-band \cite{portillo2019technical}.}
+  \label{fig-ku-band}
+\end{figure}
+
+Figure \ref{fig-ku-band} visualises OneWeb's user link frequency band allocations in the Ku-band.
+User link structure is key information for the analytical portion of this thesis, and it is thus presented in more detail in figure \ref{fig-ku-band}.
+In the figure, UU denotes the transmission direction for uplink (UL), while UD indicates the direction for downlink (DL).
+The channel's placement on the upper right-hand (RH) or lower left-hand (LH) side signifies its polarisation, either right-hand or left-hand, respectively.
+Finally, the service type of the channel is denoted by the three letter acronym above its band.
+FSS refers to fixed satellite services while TMS and TFS denote terrestrial fixed and terrestrial mobile services respectively.
 
 \subsubsection{Starlink system architecture}
 
@@ -713,22 +728,15 @@ Table \ref{table-starlink-orbits} presents the distribution of the satellites to
   \label{table-starlink-orbits}
 \end{table}
 
-\begin{figure}[h] % TODO: Figure
-  \centering
-  \input{tikz_figures/fig-electronic-warfare.tikz}
-  \caption{Frequency plan.}
-  \label{fig-f-plan}
-\end{figure}
-
 First generation Starlink satellites communicate with UTs through Ku-band links at a minimum elevation angle of 25~degrees.
 In the space segment, traffic is either relayed to other satellites via optical ISL or to gateways on higher frequency Ka-band links.
-Figure \ref{fig-f-plan} presents Starlink and OneWeb frequency plans in relation to each other.
 Satellites have four phased array antennas, three of which function as DL and one as UL.
 All four arrays are capable of projecting eight independently shapeable and steerable spot beams, resulting in a 3-to-1 DL-to-UL ratio.
 Gain contours for both Ku and Ka-band beams are mainly dependent on the steering angle, with values farther from boresight making the beam footprint more elliptical.
 Overall beamwidth is controlled by selectively switching on additional phased array elements as the steering angle gets farther from nadir. Depending on the steering angle, a spot beam can cover a range of individual cells, which are arranged based on Uber's H3 hexagonal cell system. Each spot beam covers roughly one size~5 hex cell at nadir \cite{spacex2016loa, spacex2020mod}. % TODO: Medium-artikkeli Uber-celleille, parempia SpaceX-lähtöisiä lähteitä?
 
 SpaceX has released somewhat limited details on the modcod scheme used in Starlink UL and DL communications. In \cite{humphreys2023signal}, the researchers were able to reverse engineer the Starlink waveform in order to evaluate its usefulness in PNT applications. They found that the DL signal of a Starlink satellite is Orthogonal frequency-division multiplexing (OFDM). Empirical signal caputures showed that the OFDM symbols use quadrature amplitude modulation with 4 and 16 point constellations (4-QAM and 16-QAM). This aligns with SpaceX FCC filings, such as \cite{SpaceX-SES-AMD-20210731-01295} concerning blanket-authorised terminals and aeroconnectivity, stating that the UTs support modulation schemes up to 64-QAM on both Ku-band UL and DL.
+Starlink's user link frequency allocations in the Ku-band are presented along OneWeb's in figure \ref{fig-ku-band}.
 
 Similar to OneWeb, Starlink's ground segment comprises of both UTs and gateways and their associated network infrastructure, such as PoPs and NDCs. Starlink's Ka-band 1.5 m gateway antennas are globally distributed and arranged generally in x to y clusters of antennas per site. %TODO
 When it comes to UTs, Starlink's lineup is somewhat simpler thanks to the SpaceX's vertically integrated terminal strategy.
@@ -906,7 +914,7 @@ Interception of user traffic in satellite networks falls under the discipline CO
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=147.36mm]{figures/fig-electronic-warfare.eps}
+  \includegraphics[width=145mm]{figures/fig-electronic-warfare.eps}
   \caption{Electronic warfare taxonomy based on \cite{kosola2013digitaalinen}.}
   \label{fig-electronic-warfare}
 \end{figure}
