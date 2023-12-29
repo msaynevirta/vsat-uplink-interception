@@ -1446,7 +1446,9 @@ Figure \ref{fig-listening-window} shows numerical results for listening windows 
 As we can see from 3D plot, the window starts to grow as the period approaches that of a GEO. In theory, the period goes to infinity for satellites in GEO as the sub-satellite velocity matches the rotation of the Earth, making it possible for an aircraft to theoretically indefinitly loiter inside a VSAT beam communicating with the same GEO satellite.
 
 \subsection{Submodel 4: Jamming link budget} \label{ch-results-submodel-4-link-budget}
-Jamming relies on the deliberately weakening of the useful signal in relation to prevailing noise floor and interference. In situations where the jamming dominates over the natural noise sources, the relationship can be simplified to a signal-to-jamming ratio (SJR). In low jamming power scenarios, noise sources need to be also accounted for leading to the term of signal-to-noise+jamming ratio (SJNR) \cite{kosola2013digitaalinen}. % TODO: kankea jälkimmäinen lause
+Jamming is the intentional act of drowning out a useful signal relative to the prevailing noise floor with intentional interference.
+In situations where the jamming dominates over the natural noise sources, the relationship between it and the legitimate signal can be expressed as the signal-to-jamming ratio (SJR).
+In scenarios with low jamming power, noise sources also need to be considered, resulting in the term signal-to-noise+jamming ratio (SJNR) \cite{kosola2013digitaalinen}.
 
 \begin{equation*}
   \text{SJR} = \frac{S}{J} \qquad
@@ -1469,25 +1471,28 @@ As discussed in chapter \ref{ch-oneweb}, OneWeb uses adaptive modcod scheme comp
 
 Jamming of the UL signal can be done from both aircraft and Earth-bound platforms.
 Scenario-wise, the altitude of the interfering system does not make a major difference, if ground-level obstruction caused by structures and natural land formations is ignored.
-This simplified scenario allows end-to-end performance of a communications link to be analysed through a link budget, a theoretical calculation where gains and losses of a RF system are summed in order to compute the figures of merit, such as x, y and z.%TODO: Listaa tähän jatkoksi 
+This simplified scenario allows end-to-end performance of a communications link to be analysed through a link budget, a theoretical calculation where gains and losses of a RF system are summed in order to compute the figures of merit, such as SNR, spectral efficiency,  and theoretical throughput \cite{kymeta2019link}.
 Table \ref{table-ul-jamming-link-budget} presents an UL link budget for the Kymeta Hawk u8 UT interfacing with the OneWeb LEO megaconstellation.
 Parameters of the UT are taken from \cite{kymeta2022hawk} and \cite{kymeta2020mod}, while parameters for the space segment of the OneWeb constellation are based on the values in \cite{worldvu2016loi} and \cite{allen2022terrestrial} for the first generation constellation.
 For the advantage of the legitimate user, the modcod scheme is assumed to be the less demanding QPSK with $1/2$ FEC.
 
 Propagation paths in satellite links inherently cover long distances ranging from hundreds to thousands of kilometres depending on the orbit of the satellite.
-RF path between the satellite and UT experiences losses primarily due to FSPL, a loss driven by the dispersion of RF energy into the medium it propagates through.
-FSPL in decibels can be computed from equation \ref{eq-fspl} based on the approximate orbital altitude satellites $d$ in meters and UL frequency $f$ in hertz.
+This type of RF path experiences losses primarily due to free-space path loss (FSPL), a loss driven by the dispersion of RF energy into the medium it propagates through.
+FSPL can be computed in decibels from equation \ref{eq-fspl} given that an approximate orbital altitude satellites $d$ in meters and UL frequency $f$ in hertz are known.
 
 \begin{equation} \label{eq-fspl}
   \mathrm{FSPL} = 20\log(d)+20\log(f)-20\log(4\pi / c) \qquad \text{[dB]}
 \end{equation}
 
-% kankeaa kieltä
-In addition to FSPL, RF path may see varying losses from the atmospheric phenomena, such as rain or clouds or the atmosphere itself.
-It is worth noting that the latter three tend to less significant when considering Ku and Ka-band propagation over signal paths ranging from hundreds to thousands of kilometres in space.
-This is due to FSPL growing to the square, while the other losses remain constant to a certain degree and tend to be magnitudes smaller.
+In addition to FSPL, RF path may experience losses from phenomena like rain, clouds, or atmospheric conditions.
+It is worth highlighting that the impact of the latter three factors is generally less significant when dealing with Ku and Ka-band propagation over signal paths ranging from hundreds to thousands of kilometres in space.
+This can be attributed to FSPL increasing with the square of the distance, while the other losses remain constant and significantly smaller in magnitude.
 
-Jammer's relative position to the receiver's beam pattern is another point to consider. In practice, the jammer can either be in the rough area of the main beam or elsewhere, which leads to different gain figures at the receiver's end. This means that the jammer is either transmitting in the receiver's main lobe, side lobe or nulls between these. While the latter can be simply be ruled out due to the high attenuation, the two prior provide a chance for the jammer to interfere with the legitimate transmission. Side lobe level of the modern constellations is not known for both the satellites and the terminals. Some estimation can be made based on constraints like the International Telecommunications Union radio regulations, which set inherent limits for the maximum allowable power flux density to limit interference. In \cite{hills2023controlling}, the authors estimated maximum allowable sidelobe levels for the first generation Starlink and OneWeb constellations at $-32.9$ and \qty{-24.0}{\decibel} respectively. 
+The relative position of the jammer to the receiver's beam pattern is another crucial consideration.
+In practical scenarios, the jammer may be situated within the receiver's main beam or outside it, resulting in varying gain figures at the receiver's end. More specifically, the jammer can be transmitting within the receiver's main lobe, side lobe, or nulls between them.
+While the latter can be readily dismissed due to high attenuation, the former two scenarios offer opportunities for the jammer to disrupt the legitimate transmission.
+The side lobe level of modern constellations remains unknown for both satellites and terminals, but estimations can be derived based on constraints such as the International Telecommunication Union radio regulations, which establish inherent limits for the maximum allowable power flux density.
+In \cite{hills2023controlling}, the authors estimated maximum allowable sidelobe levels for the first generation Starlink and OneWeb constellations at $-32.9$ and \qty{-24.0}{\decibel} respectively. 
 
 Finally, equation \ref{eq-signal-power-full} was then simplified by summing the transmitter and jammer-related variables into the figure of effective isotropic radiated power (EIRP) with the satellite's receiver side boiled down to the figure of gain-to-noise-temperature (G/T).
 On the propagation side, both the legitimate transmitter and the jammer were assumed to be Earth-bound and unobstructed.
