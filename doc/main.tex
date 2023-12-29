@@ -394,8 +394,6 @@
 \end{abstractpage}
 
 %% Preface
-%%
-%% This section is optional. Remove it if you do not want a preface.
 \mysection{Preface}
 
 I would like to express my sincere appreciation to both, my advisor, Tapio Savunen, and supervisor, Jaan Praks, who helped me navigate through the process of writing my thesis while working at Airbus Defence and Space during the latter part of my Master's studies.
@@ -498,12 +496,6 @@ VTOL                    & Vertical TakeOff and Landing
 \section{Introduction}
 
 % TODO: AIKAMUODOT: Nyt esiintyy preesensiä futuuria imperfektiä -> kaikki imperfektiin.
-%TODO:
-%Viranomaistoimijoiden kiinnostus uusiin LEO-palveluihin - NB/BB-migraatio, laajakaistapalvelut, kaupallisten MNO-verkkojen käyttö
-%Viranomaisten korkeat tietoturvavaatimukset - muilta osin LEO-palveluilla on hyvä vastaavuus vaatimuksiin, tietoturva on merkittävä kysymys
-%Research gap: tutkimusta ei ole tehty riittävästi (alueelta, josta työsi on) onko research gap:stä evidenssiä? referenssejä?
-%Työn kontribuutio (tämä on tärkein osuus johdannossa) - tutkimuskysymykset, työn rajauksesta, menetelmistä
-%Sisältö, rakenne
 
 Over the past five decades, satellite systems have emerged as indispensable enablers of our modern way of life within an increasingly technology-driven human society.
 Innovation in fields such as Global Navigation Satellite Systems \cite{oconnor2019economic}, Earth Observation \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and Satellite Communication (satcom) \cite{euspa-secure-satcom-2023, euroconsult-space-economy-2023} has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in positioning, navigation, and timing (PNT), as well as intelligence, surveillance, and reconnaissance (ISR).
@@ -511,10 +503,11 @@ Recently, the satellite communications industry has entered an era of rapid chan
 Since the early 2010s, the most prominent new trend has been the emergence of megaconstellations with hundreds to thousands of satellites in LEO.
 The raise of large constellations in NGSO has been enabled by the falling cost of space launches and mass-production of satellite hardware based on COTS technology \cite{euroconsult-space-economy-2023}.
 
-Aside from commercial markets, governmental organisations such as civilian public safety authorities and defence ministries have expressed great interest in emerging commercial satellite communication solutions.
-In terms of user segments, governmental organisations tend to pay greater attention to the security and resilience aspects of the communications solutions they utilise, which has in turn raised questions regarding the conformity of these systems to the strict requirements of these user groups.
-Protecting commercial satellite systems against a growing number of increasingly cyber-capable adversaries is a prerequisite for adopting new satellite systems by governmental agencies.
-Here, robust understanding of the evolving threat landscape is a key starting point for design of effective cybersecurity measures.
+Aside from commercial markets, governmental organisations, such as civilian public safety authorities and defense ministries, are showing significant interest in the emerging commercial satellite communication solutions \cite{erve-teknologiatrendit-2022}.
+The transition of public safety organizations from narrowband to broadband terrestrial networks has highlighted commercial NGSO satellite systems as a promising option for establishing ubiquitous, low-latency broadband connectivity.
+This is particularly relevant in traditionally hard-to-serve areas, such as low-density rural regions with limited commercial potential for terrestrial mobile network operators.
+Government entities, placing a premium on the security and resilience of their communication solutions, are raising questions about the conformity of these systems to their stringent requirements.
+Therefore, demonstrating the robustness of commercial satellite systems against a growing number of cyber-capable adversaries is a prerequisite for their adoption in these market segments.
 
 Despite their decades-long development history, current satellite systems still lack widely accepted cybersecurity standards \cite{lin2022defending}, while technical solutions and their proprietary nature have raised a set of potential vulnerabilities.
 Moreover, the wide-area broadcast nature of satellite transmissions renders them vulnerable to adversarial groups from abroad or even across an entire continent.
@@ -525,7 +518,7 @@ Moreover, the vulnerabilities in satellite systems are not limited to only the a
 Another third-party vulnerability assessment \cite{santamarta2014wake} uncovered serious design flaws in the implementation of satellite user terminal (UT) firmware, such as backdoors, hardcoded credentials, weak encryption algorithms as well as undocumented and insecure protocols.
 
 Recent adversarial actions against satellite systems and their supporting infrastructure have raised questions concerning the vulnerability of these systems to a range of potential attack vectors, including cyberattacks, as well as the physical destruction of individual satellites or their supporting ground infrastructure.
-Recent examples include the cyberattack against the KA-SAT satellite network in February 2022 \cite{boschetti2022space} and the cable cut in one of the optical cables connecting the SvalSat ground station (GS) to mainland Norway \cite{schia2023subsea}.
+Recent examples include the cyberattack against the KA-SAT satellite network in February 2022 \cite{boschetti2022space} and the cable cut in one of the optical cables connecting the SvalSat ground station to mainland Norway \cite{schia2023subsea}.
 Similarly, intrusive acts such as the Chinese high-altitude balloons flying through North American airspace in early 2023 have highlighted the threat of aerial signals intelligence platforms \cite{ap-news-2023-02-balloon-signals}.
 
 One way to understand the reason for these vulnerabilities is through the paradigm of "security through obscurity", a practice with a long-running history in the commercial satellite industry that relies on hiding the structure and the interfaces of the system from the public \cite{lin2022defending}.
@@ -962,16 +955,19 @@ Permanent applications tend to be the most obvious when it comes to the typical 
 For example, sparsely populated rural areas and maritime settings have been typically rather poorly served by mobile network operators due to their limited commercial potential.
 On the other hand, the temporary use cases tend to be more varied in terms of the potential types of locations. While coverage augmentation is typically still needed only in underserved locations, capacity needs may arise in areas with normally sufficient terrestrial coverage.
 For example, large events are a typical example of temporary use cases that can be planned for in advance. These include mass events like sports and concerts and political events like state visits and summits \cite{erve2018trump, tcca2021airbus, airbus2023bahrain}.
-Unplanned events can be both man-made or acts of nature and can range from localised to widespread in affected area. For example, natural disasters, like earthquakes, floods, or forest fires, can lead to widespread infrastructure damage, while man-made disasters like airplane crashes or multiple vehicle collisions are usually more limited in terms of the affected area \cite{firstnet2021wildfire, firstnet2021nashville}.
+Unplanned events can be both man-made or acts of nature and can range from localised to widespread in affected area.
+For example, natural disasters, like earthquakes, floods, or forest fires, can lead to widespread infrastructure damage, while man-made disasters like airplane crashes or multiple vehicle collisions are usually more limited in terms of the affected area \cite{firstnet2021wildfire, firstnet2021nashville}.
 
-Another differentiating factor of the above-mentioned events is their forecastability and typical duration.
-Both planned and unplanned events can last from days to months, with the duration having different implications for the choice of the best suited technological solution.
-Satellite connectivity may even be needed permanently when it comes to backhaul applications in very remote locations to where building terrestrial networks might be simply unfeasible.
-The cut to planned and unplanned events is also not black-and-white, but these notions exist on a spectrum of different tones of grey.
-For example, natural disasters such as earthquakes might cause unplanned damage that requires immediate response.
-On the other hand, some weather events, such as hurricanes and forest fires may be forecasted to differing extents.
+Another distinguishing factor among the aforementioned events lies in their predictability and typical duration.
+Both planned and unplanned occurrences can extend from days to months, influencing the selection of the most appropriate technological solution.
+The distinction between planned and unplanned events is not straightforward; rather, these concepts exist on a spectrum of various shades of gray.
+For instance, natural disasters like earthquakes can inflict unforeseen damage, necessitating an immediate response.
+Conversely, certain weather events, such as hurricanes and forest fires, may exhibit varying degrees of predictability.
+On the other hand, permanent satellite connectivity is the best suited to backhaul applications in extremely remote locations where constructing terrestrial networks proves to be impractical.
 
-All in all, satellite connectivity does not replace the traditional terrestrial networks but complements them. If deployed to their envisioned state, broadband satellite systems may work as a cost-efficient way to serve these regions and events. Thanks to their truly global coverage pattern, while the lower user density in these regions is still within the load carrying capacity of these networks.
+All in all, satellite connectivity serves as a complement to traditional terrestrial networks rather than a replacement due to the limited load-carrying capacity in terms of total and per-satellite throughput.
+It is worth noting, that this limitation is generally not problematic in lower user density geographies, which represent the primary areas for their utilisation.
+Thus, once deployed to their first generation configuration, broadband satellite systems offer a cost-efficient solution for serving filling the gaps in global mobile connectivity, be they permanent or temporary in nature.
 
 \subsubsection{Requirements}
 
