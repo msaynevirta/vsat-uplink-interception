@@ -385,12 +385,12 @@
 \keywords{fyysisen kerroksen turvallisuus, satelliittien tietoturva, kriittinen viestintä}
 %% Abstract text
 \begin{abstractpage}[finnish]
-  Uudet ei-geostationaaristen ratojen megakonstellaatiot ovat vieneet satelliittiviestintäalan merkittävään paradigmamuutokseen 2010-luvun lopulla. Laskevien laukaisukustannusten ja kaupallisen teknologian laajamittaisen käytön mahdollistamat megakonstellaatiot ovat avanneet uuden aikakauden laajakaistaviestinnässä maailmanlaajuisten ja suorituskykyisten palvelujensa kautta. Kuluttajien ja bisneskäyttäjien ohella turvallisuuskriittiset toimijat, kuten viranomaiset ja maanpuolustusorganisaatiot, ovat osoittaneet kiinnostusta kaupallisten satelliittiverkkojen laajempaan käyttöön.
+  Satelliittiviestintä on mullistunut 2010-luvun lopulta alkaen uusien ei-geostationaarisia ratoja käyttävien satelliittien megakonstellaatioiden yleistyessä. Laskevien laukaisukustannusten ja kaupallisen teknologian laajamittaisen käytön mahdollistamat megakonstellaatiot ovat avanneet uuden aikakauden laajakaistaviestinnässä maailmanlaajuisten ja suorituskykyisten palvelujensa kautta. Kuluttajien ja bisneskäyttäjien ohella turvallisuuskriittiset toimijat, kuten viranomaiset ja maanpuolustusorganisaatiot, ovat osoittaneet kiinnostusta kaupallisten satelliittiverkkojen laajempaan käyttöön.
 
   Kaupallisten satelliittipalveluiden nopea kasvu ei ole tapahtunut ilman ongelmia, etenkin, kun asiaa tarkastellaan tietoturvan kannalta. Standardoimattomat kyberturvallisuusratkaisut ja satelliittiverkkojen teknisten ratkaisujen suljettu luonne jättävät verkkoihin mahdollisia haavoittuvuuksia.
-  Tutkimuskirjallisuudessa onkin tullut vastaan tilanteita, joissa puutteelliset tietoturvaratkaisut ovat jättäneet kaupalliset järjestelmät ainakin jossain määrin avoimiksi salakuuntelulle ja tarkoitukselliselle häirinnälle.
+  Tutkimuksissa on löytynyt tilanteita, joissa puutteelliset tietoturvaratkaisut ovat jättäneet kaupalliset järjestelmät ainakin jossain määrin avoimiksi salakuuntelulle ja tarkoitukselliselle häirinnälle.
   
-  Tämä diplomityö pyrki arvioimaan ilmasta tapahtuvan salakuuntelun ja tarkoituksellisen häirinnän uhkaa hyvin pienen apertuurin päätelaitteen (engl. very small aperture terminal, VSAT) uplink-suunnan viestiliikenteelle, joka liikkuu VSAT-päätelaitteelta matalalla Maan kiertoradalla lentävään satelliittimegakonstellaatioon. Tutkimuskysymykseen pureuduttiin neljästä alamallista kootulla uhkamallilla, jossa tarkasteltiin radiotaajuista häirintää, ilma-aluksen saavutettavissa olevia sieppausetäisyyksiä ja -ikkunoita, sekä lentävän salakuuntelijan kykyä seurata VSAT-päätelaitteen kapeaa radiokeilaa. Mallin pohjalta tehdyt havainnot osoittavat, että megakonstellaatioiden kanssa toimivat VSAT-päätelaitteet ovat oikein toteutettuna resilienttejä signaalin kuuntelua vastaan ja sietävät tahallista häirintää varsin hyvin konstellaatioden hajautetun luonteen ansiosta. Kaupalliset matalan Maan kiertoradan megakonstellaatiot soveltuvat näin täydentämään turvallisuuskriittisen viestinnän kykyjä, joskin niiden integraatio vaatii edelleen riittävää huolellisuutta toimialan tiukoista tietoturvavaatimuksista johtuen.
+  Tämä diplomityö pyrki arvioimaan ilmasta tapahtuvan salakuuntelun ja tarkoituksellisen häirinnän uhkaa hyvin pienen apertuurin päätelaitteen (engl. very small aperture terminal, VSAT) uplink-suunnan viestiliikenteelle, jota lähetetään VSAT-päätelaitteelta matalalla Maan kiertoradalla lentävään satelliittimegakonstellaatioon. Tutkimuskysymykseen pureuduttiin neljästä alamallista kootulla uhkamallilla, jossa tarkasteltiin radiotaajuista häirintää, ilma-aluksen saavutettavissa olevia sieppausetäisyyksiä ja -ikkunoita, sekä lentävän salakuuntelijan kykyä seurata VSAT-päätelaitteen kapeaa radiokeilaa. Mallin pohjalta tehdyt havainnot osoittavat, että megakonstellaatioiden kanssa toimivat VSAT-päätelaitteet ovat oikein toteutettuna resilienttejä signaalin kuuntelua vastaan ja sietävät tahallista häirintää varsin hyvin konstellaatioden hajautetun luonteen ansiosta. Kaupalliset matalan Maan kiertoradan megakonstellaatiot soveltuvat näin täydentämään turvallisuuskriittisen viestinnän kykyjä, joskin niiden integraatio vaatii edelleen riittävää huolellisuutta toimialan tiukoista tietoturvavaatimuksista johtuen.
 \end{abstractpage}
 
 %% Preface
@@ -500,8 +500,8 @@ VTOL                    & Vertical TakeOff and Landing
 Over the past five decades, satellite systems have emerged as indispensable enablers of our modern way of life within an increasingly technology-driven human society.
 Innovation in fields such as Global Navigation Satellite Systems \cite{oconnor2019economic}, Earth Observation \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and Satellite Communication (satcom) \cite{euspa-secure-satcom-2023, euroconsult-space-economy-2023} has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in positioning, navigation, and timing (PNT), as well as intelligence, surveillance, and reconnaissance (ISR).
 Recently, the satellite communications industry has entered an era of rapid change.
-Since the early 2010s, the most prominent new trend has been the emergence of megaconstellations with hundreds to thousands of satellites in LEO.
-The raise of large constellations in NGSO has been enabled by the falling cost of space launches and mass-production of satellite hardware based on COTS technology \cite{euroconsult-space-economy-2023}.
+Since the early 2010s, the most prominent new trend has been the emergence of megaconstellations with hundreds to thousands of satellites in low Earth orbit (LEO).
+The raise of large constellations in non-geostationary orbits (NGSO) has been enabled by the falling cost of space launches and mass-production of satellite hardware based on COTS technology \cite{euroconsult-space-economy-2023}.
 
 Aside from commercial markets, governmental organisations, such as civilian public safety authorities and defense ministries, are showing significant interest in the emerging commercial satellite communication solutions \cite{erve-teknologiatrendit-2022}.
 The transition of public safety organizations from narrowband to broadband terrestrial networks has highlighted commercial NGSO satellite systems as a promising option for establishing ubiquitous, low-latency broadband connectivity.
@@ -514,7 +514,7 @@ Moreover, the wide-area broadcast nature of satellite transmissions renders them
 This was demonstrated in \cite{pavur2020tale} where the feasibility of eavesdropping downlink (DL) satellite traffic was proven practically using widely available and relatively inexpensive satellite television equipment.
 Within the field of wireless communication, one key driver for this development have been the proliferation of inexpensive signals processing equipment, such as open source and open hardware software-defined radios.
 These devices have enabled interaction with satellite systems by not only nation states but also even individual enthusiast-level actors.
-Moreover, the vulnerabilities in satellite systems are not limited to only the air interface of these commercial systems.
+Moreover, the vulnerabilities in satellite systems are not limited only to the air interface of these commercial systems.
 Another third-party vulnerability assessment \cite{santamarta2014wake} uncovered serious design flaws in the implementation of satellite user terminal (UT) firmware, such as backdoors, hardcoded credentials, weak encryption algorithms as well as undocumented and insecure protocols.
 
 Recent adversarial actions against satellite systems and their supporting infrastructure have raised questions concerning the vulnerability of these systems to a range of potential attack vectors, including cyberattacks, as well as the physical destruction of individual satellites or their supporting ground infrastructure.
@@ -527,7 +527,7 @@ The validity of this approach has long been debated within research and industry
 Although much work has focused on long-standing GEO broadband and NGSO narrowband systems, as well as longer-term evolution of 5G and 6G non-terrestrial networks, little attention has been directed towards the security of emerging LEO broadband systems.
 Operators of the emerging systems tout their architecture-level resilience in their marketing, but academic literature on the topic is still rather scarce.
 Moreover, most of the research on satellite system protection has examined DL communication between the satellite and different Earth stations \cite{abdelsalam2023physical}.
-Furthermore, more capital-intensive space or airborne platforms have received relatively little attention, with a greater emphasis being placed on the study of ground-based adversaries.
+Furthermore, more capital-intensive space or airborne signals intelligence platforms have received relatively little attention, with a greater emphasis being placed on the study of ground-based adversaries.
 Considering this prior history and recent rapid growth, it is important to address the gaps in understanding of the security aspects of this rapidly evolving technology. 
 
 This thesis assessed whether the presence of airborne eavesdroppers pose a risk to the uplink (UL) communications of emerging NGSO VSAT networks.
@@ -535,7 +535,7 @@ To achieve this goal, a conceptual-analytical research approach was applied in t
 The threat model consisted of four discrete submodels and explored the resilience of NGSO broadband systems through a parametric study.
 Here, a set of dependent variables of the submodels were the key to understanding the fundamental constraints of NGSO satcom systems from the perspective of VSAT UL communication with orbiting satellites with adversarial actions, such as deliberate eavesdropping and interference like jamming, being considered.
 To build a quantitative picture of the prevalent threat landscape, the analysis looked into geometric and kinematic factors, as well as RF link budgets. 
-Finally, the conceptual-analytical model was evaluated numerically against a set of known real-world system parameters and the findings were be discussed in relation to the requirements set out by both public safety and defence user groups.
+Finally, the conceptual-analytical model was evaluated numerically against a set of known real-world system parameters and the findings were discussed in relation to the requirements set out by both public safety and defence user groups.
 
 The thesis is structured as follows:
 Chapter 2 describes the key characteristics of LEO megaconstellations, the different aerial platforms used for eavesdropping, and signals intelligence.
@@ -555,7 +555,7 @@ The most prominent new trend has been the emergence of megaconstellations with h
 These systems have been enabled by the falling costs in space launches and the mass-production of satellite hardware based on COTS technology \cite{portillo2019technical,euspa-secure-satcom-2023,euroconsult-ngso-tracker-2023-q3}.
 
 GEO satellites provided most of satellite internet capacity in throughput-terms until 2020 when the emerging NGSO megaconstellations started gaining significant share in the satellite internet market.
-Combined, SpaceX Starlink, EutelSat OneWeb, Amazon Kuiper, Telesat Lightspeed and SES O3b mPOWER have been estimated to bring roughly USD 70 billion of capital investment into the space during the deployment of their generation 1 and 2 constellations.
+Combined, SpaceX Starlink, EutelSat OneWeb, Amazon Kuiper, Telesat Lightspeed and SES O3b mPOWER have been estimated to bring roughly USD 70 billion of capital investment into the space during the deployment of their generation 1 and 2 constellations over the next two decades.
 Megaconstellations are a very capex heavy industry and broader economic pressures have led to significant delays for the companies operating in the space.
 For example, OneWeb went through a bankruptcy restructuring following the Covid-19 pandemic, while SES's O3b mPOWER faced significant delays from the same pandemic.
 Similarly, Canadian Telesat and its Lightspeed constellation have been hit with supply chain and financing related challenges, delaying the project and leading to descoping of some of the originally planned satellite fleet.
