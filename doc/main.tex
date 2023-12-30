@@ -592,6 +592,13 @@ Figure \ref{fig-constellation-segments} presents the three segments and interact
 Space segment comprises the satellite constellation flying in orbit.
 Constellation optimization is typically the primary design problem in LEO-based satellite networks as the parameters, such as orbital altitude, density of satellites, the number and inclination of orbital planes and the phasing between them, affect directly the feasibility of user applications.
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=145mm]{figures/walker-constellations-compressed.png}
+  \caption{Three Walker constellation geometries: star, delta and hybrid combining the first two \cite{leyvamayorga2022nongeostationary}.}
+  \label{fig-walker-constellations}
+\end{figure}
+
 Walker constellations are a commonly used configuration for modern NGSO satellite systems thanks to its global coverage arising from the symmetrical distribution of satellites.
 Proposed originally in \cite{walker1970circular} and further developed in \cite{walker1984satellite}, Walker constellations consist of circular orbits described in terms of four design parameters: inclination $i$, number of satellites $n$, number of orbital planes $p$ and relative spacing between satellites in adjacent planes $f$. The three latter parameters are often presented in the form $n/p/f$ when discussing different configurations.
 For example, Iridium's NGSO constellation could be described as a 66/6/2 Walker Star constellation with an inclination of 86.4~degrees.
@@ -599,6 +606,7 @@ For example, Iridium's NGSO constellation could be described as a 66/6/2 Walker 
 Constellations can be further broken down into two main types based on the inclination: Walker Star constellations fly in near-polar orbits, covering the poles of the astronomical body, while Walker Delta constellations are lower-inclined, covering only lower latitudes of a body.
 Modern megaconstellations often consist of multiple Walker constellations at different altitudes and inclinations. In these hybrid configurations, a sub-constellation at a set altitude and inclination is typically called an orbital shell.
 In practice, Starlink is a great example of a hybrid constellation, while Iridium and first generation OneWeb are pure Walker Star constellations.
+Figure \ref{fig-walker-constellations} visualises the three constellation geometries.
 
 Ground segment optimisation tends to be more straightforward.
 Ground station planning involves placing a number of stations in appropriate locations around the globe based on economic indicators such as overall deployment and ongoing maintenance costs of the ground station network, as well as more technical parameters like achieved sky coverage, system throughput and link capacity \cite{celikbilek2022survey}. % TODO: Beam pattern, Flat panel vs parabolic
