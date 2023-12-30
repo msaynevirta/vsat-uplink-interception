@@ -1,12 +1,16 @@
-\usetikzlibrary{calc,3d,intersections, positioning,shapes}
 
-\begin{tikzpicture}[scale=2]
-  \pgfmathsetmacro{\Re}{1.5}
-  \pgfmathsetmacro{\Ro}{3} 
-  \fill[ball color=white!10, opacity=0.025] (0,0,0) circle ({\Re}); % 3D lighting effect
+\begin{tikzpicture}[scale=5]
+  \pgfmathsetmacro{\r}{.8}
+  \pgfmathsetmacro{\O}{45} % right ascension of ascending node [deg]
+  \pgfmathsetmacro{\i}{30} % inclination [deg]
+  \pgfmathsetmacro{\f}{35} % true anomaly [deg]
+
+  \coordinate (O) at (0,0,0);
+
+  \pgfmathsetmacro{\Re}{0.4}
+  \fill[ball color=gray!10, opacity=0.045] (0,0,0) circle ({\Re}); % 3D lighting effect
   \tdplotsetmaincoords{70}{110}
   \begin{scope}[tdplot_main_coords, shift={(0,0)}]
-    \coordinate (O) at (0,0,0); % origin
 
     % ball perimeter, gray
     \pgfmathsetmacro{\thetavec}{70}
@@ -20,40 +24,50 @@
     \tdplotsetrotatedcoords{\phivec}{\thetavec}{0}
     \tdplotdrawarc[tdplot_rotated_coords,color=black!50]{(O)}{\Re}{-70}{110}{}{}
     \tdplotdrawarc[tdplot_rotated_coords,color=black!50, dashed]{(O)}{\Re}{110}{290}{}{}
-    %\node[] at (-1,2,1) {\textcolor{blue}{\scriptsize $\alpha=\thetavec \, ,  \, $\beta=\phivec}};
 
-    % equatorial orbit
-    \pgfmathsetmacro{\thetavec}{0}
-    \pgfmathsetmacro{\phivec}{0}
-    \tdplotsetrotatedcoords{\phivec}{\thetavec}{0}
-    \tdplotdrawarc[tdplot_rotated_coords,color=black!60]{(O)}{3}{-136}{176}{}{}
-    \tdplotdrawarc[tdplot_rotated_coords,color=black!60, dashed]{(O)}{3}{110}{290}{}{}
+    \draw [->] (O) -- (2,0,0) node[anchor=north east] {$x$};
+    \draw [->] (O) -- (0,1,0) node[anchor=north west] {$y$};
+    \draw [->] (O) -- (0,0,1) node[anchor=south] {$z$};
 
-    % inclined orbit
-    \pgfmathsetmacro{\i}{-30}
-    \pgfmathsetmacro{\p}{90}
-    \pgfmathsetmacro{\thetavec}{\i}
-    \pgfmathsetmacro{\phivec}{\p}
-    \tdplotsetrotatedcoords{\phivec}{\thetavec}{0}
-    \tdplotdrawarc[tdplot_rotated_coords,color=red]{(O)}{3}{-214}{88}{}{}
-    \tdplotdrawarc[tdplot_rotated_coords,color=red, dashed]{(O)}{3}{360-214}{88}{}{}
+    \node at (0,-\r,0) [left,text width=4em] {Ecliptic Plane};
 
-    % inclination
-    \pgfmathsetmacro{\alpha}{12.5}
-    \path ({\Ro * cos(\alpha)},{\Ro * sin(\alpha)},{0}) coordinate (I1);
-    \path[tdplot_rotated_coords] ({\Ro * cos(-(\alpha - \p))},
-      {\Ro * sin(-(\alpha + \p))},{0}) coordinate (I2);
-    \draw[color=black!80] (I1) to[out=390,in=0] node[pos=0.5,right] {$i$} (I2);
+    \tdplotdrawarc[dashed]{(O)}{\r}{0}{360}{}{}
 
-    %axis
-    \coordinate (X) at (4.5,0,0) ;
-    \coordinate (Y) at (0,3.75,0) ;
-    \coordinate (Z) at (0,0,2) ;
+    \tdplotsetrotatedcoords{\O}{0}{0}
 
-    \draw[-latex] (O) -- (X) node[anchor=west] {$X$};
-    \draw[-latex] (O) -- (Y) node[anchor=west] {$Y$};
-    \draw[-latex] (O) -- (Z) node[anchor=west] {$Z$};
+    \draw [tdplot_rotated_coords] (-1,0,0) -- (1,0,0) node [below right] {Line of Nodes};
+    \tdplotdrawarc[->]{(O)}{.33*\r}{0}{\O}{anchor=north}{$\Omega$}
+
+    \tdplotsetrotatedcoords{-\O}{\i}{0}
+    \pgfmathsetmacro{\alpha}{62.5}
+    \pgfmathsetmacro{\p}{45}
+    \path ({\r * cos(\alpha)},{\r * sin(\alpha)},{0}) coordinate (I1);
+    \path[tdplot_rotated_coords] ({\r * cos(\alpha+\p)},{\r * sin(\alpha+\p)},{0}) coordinate (I2);
+    \draw[->] (I1) to[out=360,in=0] node[pos=0.7,right] {$i$} (I2);
+    \tdplotdrawarc[tdplot_rotated_coords,color=blue]{(O)}{\r}{0}{360}{}{} 
+ 
+    \begin{scope}[tdplot_rotated_coords]
+      \draw[->] (O) -- (0,0,1) node [above] {$\bm{\vec{\omega}}$};
+      \draw[color=blue] (-\r,0,0) -- (\r,0,0);
+      \fill[color=blue] (-\r,0,0) circle (0.5pt);
+      \node[yshift=4pt,right] at (-\r,0,0) {Satellite};
+      %\fill (-\r,0,0) circle[color=blue,radius=0.5pt] \node {Satellite};
+      \coordinate (P) at (180:\Re);
+      %\draw (O) -- (P);
+      %\tdplotdrawarc[->]{(O)}{.33*\r}{180}{180+\f}{anchor=south west}{$\nu$}
+    \end{scope}
+
+    \tdplotsetrotatedcoords{-\O}{\i}{0}
+    \tdplotsetrotatedcoordsorigin{(P)}
+    \begin{scope}[tdplot_rotated_coords,scale=.2]
+      %\draw [->] (P) -- (-1,0,0) node [right] {$\hat{r}$};
+      \draw [->] (P) -- (0,1,0) node [pos=0.8,left] {$\bm{\vec{v}}$};
+      %\draw [->] (P) -- (0,0,1) node [above] {$\hat{k}$};
+      
+    \end{scope}
 
   \end{scope}
-  
+
+  \tdplotsetthetaplanecoords{-\f}
+  \tdplotdrawarc[tdplot_rotated_coords,->]{(O)}{.75*\r}{0}{\i}{anchor=south}{$i$} % not accurate :(
 \end{tikzpicture}

@@ -191,11 +191,10 @@
 \usepackage{url}
 \def\UrlBreaks{\do\/\do-}
 
-\usepackage{tikz}
+\usepackage{tikz,tikz-3dplot}
 \usepackage{xcolor}
-\usepackage{tikz-3dplot}
 \usepackage{pgfplots}
-\usetikzlibrary{calc,positioning,chains,fit,angles,quotes,babel}
+\usetikzlibrary{calc,3d,positioning,chains,fit,angles,quotes,babel}
 
 %% Change the school field to specify your school if the automatically set name
 %% is wrong
@@ -591,9 +590,16 @@ Practically speaking, this requires tackling the overall optimisation problem se
 Figure \ref{fig-constellation-segments} presents the three segments and interactions between them based on representations in \cite{euspa-secure-satcom-2023} and \cite{celikbilek2022survey}.
 
 Space segment comprises the satellite constellation flying in orbit.
-Constellation optimization is typically the primary design problem in LEO-based satellite networks as the parameters, such as orbital altitude, density of satellites, the number and inclination of orbital planes and the phasing between them, affect directly the feasibility of user applications.%and tend to drive the majority of implementation costs.
+Constellation optimization is typically the primary design problem in LEO-based satellite networks as the parameters, such as orbital altitude, density of satellites, the number and inclination of orbital planes and the phasing between them, affect directly the feasibility of user applications.
 
-% TODO: Describe Walker constellations
+Walker constellations are a commonly used configuration for modern NGSO satellite systems thanks to its global coverage arising from the symmetrical distribution of satellites.
+Proposed originally in \cite{walker1970circular} and further developed in \cite{walker1984satellite}, Walker constellations consist of circular orbits described in terms of four design parameters: inclination $i$, number of satellites $n$, number of orbital planes $p$ and relative spacing between satellites in adjacent planes $f$. The three latter parameters are often presented in the form $n/p/f$ when discussing different configurations.
+For example, Iridium's NGSO constellation could be described as a 66/6/2 Walker Star constellation with an inclination of 86.4~degrees.
+
+Constellations can be further broken down into two main types based on the inclination: Walker Star constellations fly in near-polar orbits, covering the poles of the astronomical body, while Walker Delta constellations are lower-inclined, covering only lower latitudes of a body.
+Modern megaconstellations often consist of multiple Walker constellations at different altitudes and inclinations. In these hybrid configurations, a sub-constellation at a set altitude and inclination is typically called an orbital shell.
+In practice, Starlink is a great example of a hybrid constellation, while Iridium and first generation OneWeb are pure Walker Star constellations.
+
 Ground segment optimisation tends to be more straightforward.
 Ground station planning involves placing a number of stations in appropriate locations around the globe based on economic indicators such as overall deployment and ongoing maintenance costs of the ground station network, as well as more technical parameters like achieved sky coverage, system throughput and link capacity \cite{celikbilek2022survey}. % TODO: Beam pattern, Flat panel vs parabolic
 Finally, when considering optimisation, the user segment is the most case-specific of the three.
@@ -1295,11 +1301,12 @@ As a practical example, millisecond-level signal capture may be enough for DF ap
 
 Maximum duration of signal interception is set by the ability of the airborne platform to track the main lobe of the Earth station.
 The beam movement is primarily driven by the motion of the receiving satellite in orbit, which is in turn governed by Kepler's laws of orbital motion.
-Tracking capability of the aircraft can be evaluated by analysing the velocity of the sub-satellite point at the eavesdropper's operational altitude (point x on figure \ref{fig-orbit-geometry}). % TODO: figure ref
+Tracking capability of the aircraft can be evaluated by analysing the velocity of the sub-satellite point at the eavesdropper's operational altitude (vector $\bm{\vec{v}}$ on figure \ref{fig-orbit-geometry}).
 If this velocity exceeds the cruise speed of the eavesdropper, the airborne platform is not able to continuously follow the UL RF beam, which limits the time window into individual satellite passes.
-
 Communication satellites reside often in circular orbits, which are a special case when evaluating Kepler's laws of orbital motion.
-Here, the velocity of the sub-satellite point can be computed by solving Kepler's third law for the orbital velocity at a set altitude.
+Figure \ref*{fig-orbit-geometry} introduces visually the basic geometry of an circular inclined orbit, as well as some  variables relevant to the models 2a and 2b.
+
+The velocity of the sub-satellite point can be computed by solving Kepler's third law for the orbital velocity at a set altitude.
 In equatorial orbits, Earth's rotation can be directly subtracted from the angular velocity of the satellite, as both share roughly the same rotational axis.
 
 \begin{equation} \label{eq-kepler-3}
@@ -1372,7 +1379,6 @@ Often, real-world satcom systems, such as those in appendix \ref{appendix-conste
 The same analysis methods remain valid for inclined orbits, but some additional factors need to be considered.
 Equatorial orbits have only a single velocity component parallel to the xy-plane in both ECI and ECEF coordinate frames.
 On the other hand, any inclination induces additional velocity component perpendicular to this original equatorial component.
-%This velocity component is visualised by $v_z$ in figure \ref{fig-inclined-v-components}. % TODO: Kuvaaja puuttuu
 
 Transitioning from the simple scalar representation into a vector space makes analysing inclined orbital motion less cumbersome.
 Here, angular velocity is a very useful abstraction, as it allows to sum different rotational speed components together.
@@ -1401,7 +1407,8 @@ This can be in turn be converted to the velocity of the sub-satellite by taking 
 \end{equation*}
 
 $\omega_{ECEF}$ is the scalar angular velocity of the satellite in the ECEF coordinate frame.
-$\bm{\vec{\omega_{sat, i}}}$ and $\bm{\vec{\omega_{E}}}$ are the angular velocity vectors of the inclined satellite orbit and the spin of the Earth.
+$\bm{\vec{\omega_{sat, i}}}$ and $\bm{\vec{\omega_{E}}}$ are the angular velocity vectors of the inclined satellite orbit and the spin of the Earth. Vector $\bm{\vec{\omega_{sat, i}}}$ is visaulised in \ref{fig-orbit-geometry} as vector $\bm{\vec{\omega}}$ perpendicular to the orbital plane of the satellite.
+
 Finally, the sub-satellite velocity figure can be solved based on the scalar angular velocity by applying equation (\ref{eq-ang-vel-2}), as the altitude of the airborne platform $h_{air}$ and the mean radius of the Earth $R_E$ are known.
 
 \begin{equation}
