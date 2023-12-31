@@ -253,7 +253,7 @@
 
 %% The date for the bachelor's thesis is the day it is presented
 %%
-\date{31.12.2023}
+\date{29.12.2023}
 %%
 
 %% Thesis supervisor
@@ -286,7 +286,7 @@
 %% Thesis keywords:
 %% Note! The keywords are separated using the \spc macro
 %%
-\keywords{physical layer security\spc satellite security\spc critical communications}
+\keywords{physical layer security\spc satellite security\spc critical communications\spc megaconstellations}
 %%
 
 %% The abstract text. This text is included in the metadata of the pdf file as well
@@ -348,13 +348,13 @@
 %% above.
 %%
 \begin{abstractpage}[english]
-  Since the late 2010s, the satellite communications (satcom) industry has gone through a paradigm shift with the rise of large Non-Geostationary Orbit (NGSO) megaconstellations.
+  Since the late 2010s, the satellite communications industry has gone through a paradigm shift with the rise of large Non-Geostationary Orbit (NGSO) megaconstellations.
   This shift, fuelled by reduced space launch costs and the widespread use of Commercial Off-The-Shelf (COTS) technology, has ushered in a new era of broadband connectivity with truely ubiquitous availability of high quality network access.
-  Going forward, commercial satcom systems are likely to play a crucial role as a complementary solution for terrestrial mission-critical (MC) networks.
+  Going forward, NGSO megaconstellations are likely to play a crucial role as a complementary solution for terrestrial mission-critical networks.
 
-  The rapid proliferation of commercial satellite solutions has not been without its challenges, particularly in the realm of cybersecurity where the absence of widely accepted cybersecurity standards, coupled with the proprietary nature of the technology, leave satcom systems open to potential vulnerabilities. Prior literature has demonstrated this vulnerability, showcasing instances of interception and intentional interference achieved with readily available and affordable radio equipment accessible even to hobbyists.
+  The rapid proliferation of commercial satellite solutions has not been without its challenges, particularly in the realm of cybersecurity where the absence of widely accepted cybersecurity standards, coupled with the proprietary nature of the technology, leave satellite systems open to potential vulnerabilities. Prior literature has demonstrated this vulnerability, showcasing instances of interception and intentional interference achieved with readily available and affordable radio equipment accessible even to hobbyists.
 
-  In this context, this thesis investigated the threat posed by airborne adversaries to the uplink communications of a Very Small Aperture Terminal (VSAT) interfacing with a satcom megaconstellation in Low Earth Orbit (LEO). A comprehensive research framework comprising four submodels was developed with the models examining VSAT interception ranges, airborne eavesdropper tracking potential, temporal considerations for capturing radio frequency (RF) data, and the active threat of jamming. Findings showed the physical resilience of NGSO VSAT systems against signal interception and intentional jamming, with the distributed infrastructure of NGSO systems offering many inherent advantages. Thus, commercial LEO megaconstellations can enable new capabilities and enhance existing ones, even in the demanding fields of public safety and defence, but their integration into these systems requires proper care due to the stringent cybersecurity requirements in these markets.
+  In this context, this thesis investigated the threat posed by airborne adversaries to the uplink communications of a Very Small Aperture Terminal (VSAT) interfacing with a megaconstellation in Low Earth Orbit (LEO). A comprehensive research framework comprising four submodels was developed with the models examining VSAT interception ranges, airborne eavesdropper tracking potential, temporal considerations for capturing radio frequency (RF) data, and the active threat of jamming. Findings showed the physical resilience of NGSO VSAT systems against signal interception and intentional jamming, with the distributed infrastructure of NGSO systems offering many inherent advantages. Thus, commercial LEO megaconstellations can enable new capabilities and enhance existing ones, even in the demanding fields of public safety and defence, but their integration into these systems requires proper care due to the stringent cybersecurity requirements in these markets.
 \end{abstractpage}
 
 %% The text in the \thesisabstract macro is stored in the macro \abstractext, so
@@ -374,14 +374,14 @@
 
 %%Uplink security of non-geostationary satellite communications against airborne adversaries
 %% Securing Uplink against Airborne Adversaries: A Security Analysis in Non-Geostationary Satellite Systems
-\thesistitle{Uplinkin suojaus vihollisen ilma-aluksilta: turvallisuusanalyysi ei-geostationaarisista satelliittiverkoista}
+\thesistitle{Uplinkin suojaaminen vihollisen ilma-aluksilta: turvallisuusanalyysi ei-geostationaarisista satelliittiverkoista}
 \supervisor{Apul. prof.\ Jaan Praks}
 \advisor{DI Tapio Savunen}
 \degreeprogram{Automaatio- ja sähkötekniikan maisteriohjelma}
 %\department{Elektroniikan ja nanotekniikan laitos}
 \major{Elektroniset ja digitaaliset järjestelmät}
 %% The keywords need not be separated by \spc now.
-\keywords{fyysisen kerroksen turvallisuus, satelliittien tietoturva, kriittinen viestintä}
+\keywords{fyysisen kerroksen turvallisuus, satelliittien tietoturva, kriittinen viestintä, megakonstellaatiot}
 %% Abstract text
 \begin{abstractpage}[finnish]
   Satelliittiviestintä on mullistunut 2010-luvun lopulta alkaen uusien ei-geostationaarisia ratoja käyttävien satelliittien megakonstellaatioiden yleistyessä. Laskevien laukaisukustannusten ja kaupallisen teknologian laajamittaisen käytön mahdollistamat megakonstellaatiot ovat avanneet uuden aikakauden laajakaistaviestinnässä maailmanlaajuisten ja suorituskykyisten palvelujensa kautta. Kuluttajien ja bisneskäyttäjien ohella turvallisuuskriittiset toimijat, kuten viranomaiset ja maanpuolustusorganisaatiot, ovat osoittaneet kiinnostusta kaupallisten satelliittiverkkojen laajempaan käyttöön.
@@ -400,7 +400,7 @@ I would like to express my sincere appreciation to both, my advisor, Tapio Savun
 Looking back at my time at Aalto, there are several individuals to whom I owe gratitude for the enriching experiences of the past years. I want to especially acknowledge the Fjört boys and the community around Bikepoli, the cycling association at Aalto. Additionally, heartfelt thanks to some of my closest friends who have been with me since pre and primary school times. Thanks to all of you for making these years undoubtedly some of the most memorable ones.
 
 \vspace{5cm}
-Nice, 29.12.2023
+Nice, 28.12.2023
 
 \vspace{5mm}
 {\hfill Markus\ Säynevirta \hspace{1cm}}
@@ -417,77 +417,48 @@ Nice, 29.12.2023
 
 \begin{tabular}{ll}
 3GPP                    & 3\textsuperscript{rd} Generation Partnership Project \\
-CNR                     & Carrier-to-Noise Ratio \\
-COMINT                  & COMmunications INTelligence \\
-COTS                    & Commercial Off-The-Shelf \\
-DF                      & Direction Finding \\
-DL                      & DownLink \\
+CNR                     & carrier-to-noise Ratio \\
+COMINT                  & communications intelligence \\
+COTS                    & commercial off-the-shelf \\
+DL                      & downlink \\
 DoD                     & Department of Defense (U.S.) \\
-DWTC                    & Degraded WireTap Channel \\
-EA                      & Electronic Attack \\
-ECEF                    & Earth-Centered -- Earth-Fixed \\
-ECI                     & Earth-Centered Inertial \\
-EHF                     & Extremely High Frequency \\
-EIRP                    & Effective Isotropic Radiated Power \\
-ELINT                   & ELectronic INTelligence \\
-EM                      & ElectroMagnetic \\
-EMS                     & ElectroMagnetic Spectrum \\
-EP                      & Electromagnetic Protection \\
-ES                      & Electromagnetic Support \\
+EA                      & electronic attack \\
+ECEF                    & Earth-eentered -- Earth-fixed \\
+ECI                     & Earth-centered inertial \\
+EIRP                    & effective isotropic radiated power \\
+ELINT                   & electronic intelligence \\
+EP                      & electromagnetic protection \\
+ES                      & electromagnetic support \\
 EU                      & European Union \\
-EW                      & Electronic Warfare \\
-FDMA                    & Frequency Division Multiple Access \\
-FEC                     & Forward Error Correction \\
-FHSS                    & Frequency Hopping Spread Spectrum \\
-FISINT                  & Foreign Instrumentation Signals INTelligence \\
-FSPL                    & Free Space Path Loss \\
-FSS                     & Fixed Satellite Service \\
-G/T                     & Gain-to-noise-Temperature \\
-GEO                     & Geostationary Earth Orbit \\
-HALE                    & High Altitude Long Endurance \\
+FDMA                    & frequency division multiple access \\
+FHSS                    & frequency hopping spread spectrum \\
+FISINT                  & foreign instrumentation signals intelligence \\
+FSPL                    & free-space path loss \\
+G/T                     & gain-to-noise-temperature \\
+GEO                     & geostationary Earth orbit \\
+HALE                    & high altitude long endurance \\
 IRIS\textsuperscript{2} & Infrastructure for Resilience, Interconnectivity and Security by Satellite \\
-ISR                     & Intelligence, Surveillance, and Reconnaissance \\
-JP                      & Joint Publication \\
-\end{tabular}
-
-\pagebreak
-
-\begin{tabular}{ll}
-LASE                    & Low Altitude Short Endurance \\
-LALE                    & Low Altitude Long Endurance \\
-LEO                     & Low Earth Orbit \\
-LOS                     & Line-Of-Sight \\
-MALE                    & Medium Altitude Long Endurance \\
-MAV                     & Micro Air Vehicle \\
-MC                      & Mission-Critical \\
-MCX                     & Mission-Critical X \\
-modcod                  & Modulation and coding \\
-MTOM                    & Maximum Take-Off Mass \\
-NAV                     & Nano Air Vehicle \\
-NDC                     & Network Data Centre \\
-NGSO                    & Non-GeoStationary Orbit \\
-OFDM                    & Orthogonal Frequency-Division Multiplexing \\
-QAM                     & Quadrature Amplitude Modulation \\
-PAV                     & Pico Air Vehicle \\
-PNT                     & Positioning, Navigation, and Timing \\
-PoP                     & Point-of-Presence \\
-PTT                     & Push-To-Talk \\
-RF                      & Radio Frequency \\
-RRF                     & Réséau Radio du Futur \\
-satcom                  & SATellite COMmunication \\
-SC                      & Single Carrier \\
-SHF                     & Super High Frequency \\
-SIGINT                  & SIGnals INTelligence \\
-SNP                     & Satellite Network Portal \\
-SNR                     & Signal-to-noise ratio \\
-TDMA                    & Time Division Multiple Access \\
-UAS                     & Unmanned Aerial System \\
-UAV                     & Unmanned Aerial Vehicle \\
-UE                      & User Equipment \\
-UL                      & UpLink \\
-UT                      & User Terminal \\
-VSAT                    & Very Small Aperture Terminal \\
-VTOL                    & Vertical TakeOff and Landing
+JP                      & joint publication \\
+LASE                    & low altitude short endurance \\
+LALE                    & low altitude long endurance \\
+LEO                     & low Earth Orbit \\
+LOS                     & line-of-Sight \\
+MALE                    & medium altitude long endurance \\
+MTOM                    & maximum take-off Mass \\
+NDC                     & network data centre \\
+NGSO                    & non-geostationary orbit \\
+QAM                     & quadrature amplitude modulation \\
+PoP                     & point-of-presence \\
+RF                      & radio frequency \\
+SIGINT                  & signals intelligence \\
+SNP                     & satellite network portal \\
+SNR                     & signal-to-noise ratio \\
+TDMA                    & time division multiple access \\
+UAS                     & unmanned aerial system \\
+UL                      & uplink \\
+UT                      & user terminal \\
+VSAT                    & very small aperture terminal \\
+VTOL                    & vertical takeoff and landing
 \end{tabular}
 
 \cleardoublepage
@@ -497,7 +468,7 @@ VTOL                    & Vertical TakeOff and Landing
 % TODO: AIKAMUODOT: Nyt esiintyy preesensiä futuuria imperfektiä -> kaikki imperfektiin.
 
 Over the past five decades, satellite systems have emerged as indispensable enablers of our modern way of life within an increasingly technology-driven human society.
-Innovation in fields such as Global Navigation Satellite Systems \cite{oconnor2019economic}, Earth Observation \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and Satellite Communication (satcom) \cite{euspa-secure-satcom-2023, euroconsult-space-economy-2023} has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in positioning, navigation, and timing (PNT), as well as intelligence, surveillance, and reconnaissance (ISR).
+Innovation in fields such as global navigation satellite systems \cite{oconnor2019economic}, Earth observation \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and satellite communications \cite{euspa-secure-satcom-2023, euroconsult-space-economy-2023} has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in positioning, navigation, and timing, as well as intelligence, surveillance, and reconnaissance.
 Recently, the satellite communications industry has entered an era of rapid change.
 Since the early 2010s, the most prominent new trend has been the emergence of megaconstellations with hundreds to thousands of satellites in low Earth orbit (LEO).
 The raise of large constellations in non-geostationary orbits (NGSO) has been enabled by the falling cost of space launches and mass-production of satellite hardware based on COTS technology \cite{euroconsult-space-economy-2023}.
@@ -532,7 +503,7 @@ Considering this prior history and recent rapid growth, it is important to addre
 This thesis assessed whether the presence of airborne eavesdroppers pose a risk to the uplink (UL) communications of emerging NGSO VSAT networks.
 To achieve this goal, a conceptual-analytical research approach was applied in the form of a threat model focusing on a Walker-type LEO megaconstellation, fixed VSATs and airborne eavesdroppers.
 The threat model consisted of four discrete submodels and explored the resilience of NGSO broadband systems through a parametric study.
-Here, a set of dependent variables of the submodels were the key to understanding the fundamental constraints of NGSO satcom systems from the perspective of VSAT UL communication with orbiting satellites with adversarial actions, such as deliberate eavesdropping and interference like jamming, being considered.
+Here, a set of dependent variables of the submodels were the key to understanding the fundamental constraints of a NGSO megaconstellation from the perspective of VSAT UL communication with orbiting satellites with adversarial actions, such as deliberate eavesdropping and interference like jamming, being considered.
 To build a quantitative picture of the prevalent threat landscape, the analysis looked into geometric and kinematic factors, as well as RF link budgets. 
 Finally, the conceptual-analytical model was evaluated numerically against a set of known real-world system parameters and the findings were discussed in relation to the requirements set out by both public safety and defence user groups.
 
@@ -559,14 +530,14 @@ Megaconstellations are a very capex heavy industry and broader economic pressure
 For example, OneWeb went through a bankruptcy restructuring following the Covid-19 pandemic, while SES's O3b mPOWER faced significant delays from the same pandemic.
 Similarly, Canadian Telesat and its Lightspeed constellation have been hit with supply chain and financing related challenges, delaying the project and leading to descoping of some of the originally planned satellite fleet.
 In addition to the more aforementioned more mature players currently or soon deploying their constellation, multiple actors from around the world have expressed interest in similar projects.
-These include everything from smaller startups like Lynk and AST SpaceMobile, developing direct-to-smartphone satellite connectivity, to large national and multinational projects like the EU's Infrastructure for Resilience, Interconnectivity and Security by Satellite (IRIS\textsuperscript{2}) and the Chinese Guo Wang megaconstellation \cite{euspa-secure-satcom-2023,euroconsult-ngso-tracker-2023-q3}.
+These include everything from smaller startups like Lynk and AST SpaceMobile, developing direct-to-smartphone satellite connectivity, to large national and multinational projects like Infrastructure for Resilience, Interconnectivity and Security by Satellite (IRIS\textsuperscript{2}) in the EU and the Guo Wang megaconstellation in China \cite{euspa-secure-satcom-2023,euroconsult-ngso-tracker-2023-q3}.
 
 In terms of maturity, SpaceX, OneWeb and SES O3b mPOWER are the farthest into the deployment with full global connectivity available as of December 2023.
 Amazon Kuiper and Telesat are still being developed, with service start expected for 2026 and 2027 respectively \cite{euspa-secure-satcom-2023,euroconsult-ngso-tracker-2023-q3}.
 Technologically, all five constellations are characterised by their employment of dedicated and vendor-specific technologies in their implementation with all five currently operating or planning to operate on dedicated Ku and Ka-band frequencies.
-Additionally, their user equipment (UE) is vendor-specific in nature, be they more traditional parabolic or modern flat-panel phased array technology-based VSATs.
+Additionally, their user equipment is vendor-specific in nature, be they more traditional parabolic or modern flat-panel phased array technology-based VSATs.
 On the other hand, startups like Lynk and AST SpaceMobile are planning to deliver broadband service from orbit directly to unmodified 3\textsuperscript{rd} Generation Partnership Project (3GPP) standardised 5G handsets.
-Support for the implementation of 5G non-terrestrial network standards defined by the 3GPP to the maximum extent possible but following a gradual implementation approach is also a key requirement in the EU's IRIS\textsuperscript{2} programme.
+Support for the implementation of 5G non-terrestrial network standards defined by the 3GPP to the maximum extent possible but following a gradual implementation approach is also a key requirement in the European IRIS\textsuperscript{2} programme.
 All in all, 3GPP non-terrestrial services are still less technologically mature and have been demonstrated in practice to a very limited extent.
 Thus, services based on the standard are likely still to require significant research and development expenditure before becoming a viable option.
 Standardised services have the greatest potential in mid to long-term timescales, while proprietary solutions are likely to dominate in the interim \cite{iris2-industryday-2023-03, nsr-5g-via-satellite-2023, nsr-direct-to-device-market-2023}.
@@ -613,7 +584,7 @@ Ground station planning involves placing a number of stations in appropriate loc
 Finally, when considering optimisation, the user segment is the most case-specific of the three.
 End-user applications range from communication to sensing and navigation with their optimisation criteria often contradicting each other.
 Here, \cite{celikbilek2022survey} raises a good example with bandwidth and carrier frequency, where higher numbers are generally desired for example in high-throughput communication applications while the opposite applies to achieving suitable link budgets for example in navigation satellite systems or when users are situated in challenging urban terrain or indoors.
-In practice, NGSO satcom constellations are often built around vendor-specific UTs that relay the communications on dedicated Ka and Ku-band frequencies to the satellite constellation \cite{euspa-secure-satcom-2023}.
+In practice, NGSO megaconstellations are often built around vendor-specific UTs that relay the communications on dedicated Ka and Ku-band frequencies to the satellite constellation \cite{euspa-secure-satcom-2023}.
 
 When it comes to LEO constellations, their altitude enables significantly lower latency and the large number of satellites allows for relatively high overall data throughput throughout a constellation when compared with the earlier satellite systems.
 Still, the most modern LEO megaconstellations fall short of the throughput of their terrestrial counterparts and are unlikely to completely replace the terrestrial mobile networks in their entirety.
@@ -654,7 +625,7 @@ On the other hand, phased array antennas require only a single aperture as their
 Continuing with the distinguishing qualities of the OneWeb system, maybe the most significant is the nature of its air interface coverage pattern, also known as the cell layout.
 In the OneWeb satellite radio access network, the cells are inherently varying and mobile, while on the contrary they are practically geographically static and pre-defined in a terrestrial network of fixed base stations.
 Consequently, the movement of the UTs (for example equipment mounted on an aircraft or a high-speed train) is relatively slow when compared to the relative velocities of the satellites in orbit.
-This means that UT handovers happen mostly due to the orbital movement of the satellites rather than the movement of the UT relative to the surface of the Earth, which is the dominating cause of UE handovers in terrestrial networks \cite{corson2019admission}.
+This means that UT handovers happen mostly due to the orbital movement of the satellites rather than the movement of the UT relative to the surface of the Earth, which is the dominating cause of handovers in terrestrial networks \cite{corson2019admission}.
 
 In addition to their moving nature, satellite cells are significantly larger in their coverage area when compared to their terrestrial counterparts.
 This has multiple consequences for \cite{corson2019admission}
@@ -667,7 +638,7 @@ In OneWeb's case, forward link is roughly five times the capacity of the return 
 
 OneWeb satellite system makes use of a bent pipe architecture for both its forward and return links. In the forward direction, each Ku-band user terminal DL maps onto a predetermined Ka-band gateway UL and vice-versa in the return direction. \cite{worldvu2016loi, portillo2019technical}
 
-In the user link air interface, OneWeb uses a modified LTE waveform capable of adaptive modulation and coding (modcod).
+In the user link air interface, OneWeb uses a modified LTE waveform capable of adaptive modulation and coding.
 Different transmission schemes are employed depending on the link direction.
 In the forward direction, transmissions utilise time-division multiple access on a single \SI{250}{\mega\hertz} wideband carrier (SC-TDMA) with each user terminal receiving the carrier and demodulating it, extracting relevant payload information based on the headers. Forward links employ turbo/convolutional/block
 channel coding and QPSK, 8PSK and 16QAM modulation \cite{allen2022terrestrial, worldvu2016loi}.
@@ -737,9 +708,9 @@ In the space segment, traffic is either relayed to other satellites via optical 
 Satellites have four phased array antennas, three of which function as DL and one as UL.
 All four arrays are capable of projecting eight independently shapeable and steerable spot beams, resulting in a 3-to-1 DL-to-UL ratio.
 Gain contours for both Ku and Ka-band beams are mainly dependent on the steering angle, with values farther from boresight making the beam footprint more elliptical.
-Overall beamwidth is controlled by selectively switching on additional phased array elements as the steering angle gets farther from nadir. Depending on the steering angle, a spot beam can cover a range of individual cells, which are arranged based on Uber's H3 hexagonal cell system. Each spot beam covers roughly one size~5 hex cell at nadir \cite{spacex2016loa, spacex2020mod}. % TODO: Medium-artikkeli Uber-celleille, parempia SpaceX-lähtöisiä lähteitä?
+Overall beamwidth is controlled by selectively switching on additional phased array elements as the steering angle gets farther from nadir. Depending on the steering angle, a spot beam can cover a range of individual cells, which are arranged based on Uber's H3 hexagonal cell system. Each spot beam covers roughly one size~5 hex cell at nadir \cite{spacex2016loa, spacex2020mod}.
 
-SpaceX has released somewhat limited details on the modcod scheme used in Starlink UL and DL communications. In \cite{humphreys2023signal}, the researchers were able to reverse engineer the Starlink waveform in order to evaluate its usefulness in PNT applications. They found that the DL signal of a Starlink satellite is Orthogonal frequency-division multiplexing (OFDM). Empirical signal caputures showed that the OFDM symbols use quadrature amplitude modulation with 4 and 16 point constellations (4-QAM and 16-QAM). This aligns with SpaceX FCC filings, such as \cite{SpaceX-SES-AMD-20210731-01295} concerning blanket-authorised terminals and aeroconnectivity, stating that the UTs support modulation schemes up to 64-QAM on both Ku-band UL and DL.
+SpaceX has released somewhat limited details on the modulation and coding used in Starlink UL and DL communications. In \cite{humphreys2023signal}, the researchers were able to reverse engineer the Starlink waveform in order to evaluate its usefulness in positioning, navigation and timing applications. They found that the DL signal of a Starlink satellite is orthogonal frequency-division multiplexing. Empirical signal caputures showed that the symbols in a Starlink DL transmission use quadrature amplitude modulation with 4 and 16 point constellations (4-QAM and 16-QAM). This aligns with SpaceX FCC filings, such as \cite{SpaceX-SES-AMD-20210731-01295} concerning blanket-authorised terminals and aeroconnectivity, stating that the UTs support modulation schemes up to 64-QAM on both Ku-band UL and DL.
 Starlink's user link frequency allocations in the Ku-band are presented along OneWeb's in figure \ref{fig-ku-band}.
 
 Similar to OneWeb, Starlink's ground segment comprises of both UTs and gateways and their associated network infrastructure, such as PoPs and NDCs. Starlink's Ka-band 1.5 m gateway antennas are globally distributed and arranged generally in clusters of nine antennas per site.
@@ -748,7 +719,7 @@ Half-power beamwidth (HPBW) of first generation Starlink terminals varies betwee
 
 \subsection{Classification of aerial platforms} \label{ch-aerial-platforms}
 
-Aerial platforms have a long history in ISR, going back all the way to the use of observation balloons in the battle of Fleurus in the late 18\textsuperscript{th} century \cite{centennial-balloons-fleurus}.
+Aerial platforms have a long history in reconnaissance applications, going back all the way to the use of observation balloons in the battle of Fleurus in the late 18\textsuperscript{th} century \cite{centennial-balloons-fleurus}.
 Modern platforms have come a long way from these primitive systems reliant on the human eye for surveillance in terms of sensing capability, manoeuvrability and performance.
 Nowadays, mainstream aerial surveillance platforms range all the way from COTS multirotor drones to manned electronic warfare and signal intelligence capable jet aircraft in the tens tonnes of dry mass.
 Understanding the defining physical features and potential limitations of these platforms is a key stage in evaluating their threat to VSAT satellite systems.
@@ -757,11 +728,11 @@ Aerial platforms can be categorised in a multitude of ways depending on the end 
 For example, aviation regulation can be thought to form a comprehensive risk-based classification framework for the whole spectrum of platforms all the way from small drones and lighter-than-air balloons to heavy manned jet aircraft.
 On the other hand, these regulatory classifications tend to be very coarse in their breakdown to avoid ambiguity, limiting their applicability for evaluating platforms based on their capabilities rather than their inherent risks.
 This is something that can be seen for example in the drone regulation of the European Union Aviation Safety Agency.
-The framework in the 2020 regulation splits UAS into three distinct operational categories, which are open, specific and certified.
+The framework in the 2020 regulation splits unmanned aerial systems (UAS) into three distinct operational categories, which are open, specific and certified.
 The risk model considers four core factors in its evaluation: maximum take-off mass (MTOM) of the UAS, whether the payload is hazardous, whether the vehicle is flown in visual line-of-sight (LOS) of the operator and at what altitude \cite{alamouri2021exploratory}.
 
 Risk-based approaches tend to be primarily mass-driven. Thus, to gain a more holistic picture of the platform under evaluation, we may want to introduce some additional factors into the classification.
-While there is an almost endless list of potential variables to classify a complex system, the top-level categories of performance, payload, system configuration tend to encompass a majority of the ones relevant for different aerial platforms, be they a heavier manned aircraft, lighter-than-air craft or fixed or rotary wing unmanned aerial vehicles (UAV).
+While there is an almost endless list of potential variables to classify a complex system, the top-level categories of performance, payload, system configuration tend to encompass a majority of the ones relevant for different aerial platforms, be they a heavier manned aircraft, lighter-than-air craft or fixed or rotary wing UAS.
 Figure \ref{fig-3d-dhs-uas-classification} visualises the classification originally devised by the U.S.
 Department of Homeland Security in terms of operational altitude and endurance.
 
@@ -772,7 +743,7 @@ Department of Homeland Security in terms of operational altitude and endurance.
   \label{fig-3d-dhs-uas-classification}
 \end{figure}
 
-In \cite{watts2012unmanned}, the authors looked at classifying variety of unmanned aerial systems (UAS) platforms and sensor payloads based on their capabilities and applicability for meeting the demands of users in the scientific research sector.
+In \cite{watts2012unmanned}, the authors looked at classifying variety of UAS and potential sensor payloads based on their capabilities and applicability for meeting the demands of users in the scientific research sector.
 The authors adopted a UAS classification framework that draws heavily from earlier military categorizations used by the security establishment in the United States.
 The framework divides UAS platforms into seven categories based upon characteristics such as size, flight endurance, and capabilities.
 The categories are in ascending order by mass and performance micro air vehicles (MAV), vertical takeoff and landing craft (VTOL), low altitude short endurance (LASE) UAS, close proximity LASE (LASE Close) UAS, as well as low, medium and high-altitude long endurance UAS (LALE, MALE and HALE).
@@ -825,9 +796,9 @@ The imperial units of the original classification have been converted to metric 
 
 In \cite{hassanalian2017classifications}, the authors propose a more fine-grained classification. 
 While the classification is very detailed in terms of different structural sub-types, the basic approach is still like the previous classification models following a mass-and-size-based approach.
-On the highest level, their classification breaks UAS into six categories: normal and small UAVs, and micro-, nano- and pico air vehicles (MAV, NAV and PAV).
-The mass-and-size top-level classification is complemented by a more fine-grained structural configuration based classification. Figure \ref{fig-hassanalian-uas-classification} presents the UAV classification in more detail.
-Third-level categories of rotary wing and Bio NAV / MAV types have been omitted from the figure.
+On the highest level, their classification breaks UAS into six categories: normal and small UASs, and micro-, nano- and pico air vehicles denoted by UAV, \textmu UAV, MAV, NAV, PAV, while SD refers to the so called smart dust, the smallest air vehicle type currently in existance. 
+The mass-and-size top-level classification is complemented by a more fine-grained structural configuration based classification. Figure \ref{fig-hassanalian-uas-classification} presents the classification in more detail.
+Third-level categories of rotary wing and Bio nano and micro air vehicle types have been omitted from the figure.
 
 \begin{figure}[h]
   \centering
@@ -879,13 +850,13 @@ This core principle of secure communications was formalised by Shannon \cite{sha
 Shannon's secrecy system assumes that both the intended recipient and the eavesdropper acquire the encoded codeword without any degradation, i.e. the communication channel is error-free.
 This theoretical assumption applies very rarely to real-world systems, where some noise is almost always present \cite{bloch2011physical}.
 
-Wyner \cite{wyner1975thewiretap} expanded on Shannon's original system by exploring the role of noise in the context of secure communications through the channel model called \textit{degraded wiretap channel} (DWTC).
+Wyner \cite{wyner1975thewiretap} expanded on Shannon's original system by exploring the role of noise in the context of secure communications through the channel model called \textit{degraded wiretap channel}.
 The model assumes a situation where the sender (Alice) attempts to communicate with the legitimate recipient (Bob) over a noisy channel.
 Simultaneously an eavesdropper (Eve) observes a degraded version of the signal received by the legitimate recipient \cite{barros2006secrecy}.
 Wyner's wiretap channel introduced many mathematical tools for modelling information-theoretic security without the added complexity of fully general channel models.
 One of these important concepts is the secrecy capacity of the channel, which describes the greatest amount of information that can be confidentially communicated between the legitimate transmitter and receiver from the information-theoretic secrecy perspective \cite{bloch2011physical}.
 
-Wyner's DWTC model is not entirely satisfactory as it assumes the eavesdropper to be at a disadvantage to the legitimate user. To address this issue, Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approach that they termed the \textit{broadcast channel with confidential messages}.
+Wyner's degraded wiretap channel model is not entirely satisfactory as it assumes the eavesdropper to be at a disadvantage to the legitimate user. To address this issue, Csiszár and Körner \cite{csiszar1978broadcast} developed a more general approach that they termed the \textit{broadcast channel with confidential messages}.
 The model involves two receivers and a sender transmitting two messages at the same time.
 The first message, a common one, which is intended for both receivers, is meant for both receivers, while the second, an individual secret message, is only for the intended receiver, treating the other receiver as an eavesdropper.
 If the second message is only transmitted, the channel is called a \textit{wiretap channel} \cite{bloch2011physical}.
@@ -912,7 +883,7 @@ Similar thinking is echoed in \cite{national2015bulk}.
 
 Considering satellite communication systems, the two disciplines of signals intelligence provide a wide range of tools for intelligence gathering at different levels of abstraction.
 On the most resource-intense end, we have the interception and extraction of user traffic, the defined scope of COMINT.
-However, less sophisticated methods, such as signal detection and fingerprinting, direction finding (DF) and radiopositioning may still yield valuable insights into the nature of the utilized systems, the user organisations, use patterns.
+However, less sophisticated methods, such as signal detection and fingerprinting, direction finding and radiopositioning may still yield valuable insights into the nature of the utilized systems, the user organisations, use patterns.
 
 \subsubsection{Electronic warfare: attack, protection and support}
 
@@ -923,14 +894,14 @@ However, less sophisticated methods, such as signal detection and fingerprinting
   \label{fig-electronic-warfare}
 \end{figure}
 
-Electronic warfare (EW) involves military actions leveraging Electromagnetic (EM) and directed energy to either control the EM Spectrum (EMS) or to launch attacks against the enemy. This multifaceted domain comprises three distinct divisions: Electronic Attack (EA), Electromagnetic Support (ES), and Electromagnetic Protection (EP) \cite{jp3-85,kosola2013digitaalinen}.
+Electronic warfare involves military actions leveraging electromagnetic and directed energy to either control the electromagnetic spectrum or to launch attacks against the enemy. This multifaceted domain comprises three distinct divisions: electronic attack (EA), electromagnetic support (ES), and electromagnetic protection (EP) \cite{jp3-85,kosola2013digitaalinen}.
 
 ES involves actions to search for, intercept, identify, and locate or localize sources of intentional and unintentional radiated electromagnetic energy. It serves immediate threat recognition, aids in targeting, contributes to planning, and supports the conduct of future operations on a tactical level. Notwithstanding the similarities, ES is a separate discipline from SIGINT. The distinction between the two is delineated by purpose, scope, and context. While ES is focused on immediate operational needs, it shares commonalities with SIGINT, with both potentially using the same assets to simultaneously collect information meeting operational and intelligence requirements.
-To quote JP3-85 \cite{jp3-85}, "it can be said that information collected from the EMS has “two lives.”
-The first is as ES, unprocessed information used by operational forces to develop and maintain SA for an operationally defined period.
+To quote JP3-85 \cite{jp3-85}, "it can be said that information collected from the [electromagnetic spectrum] has “two lives.”
+The first is as ES, unprocessed information used by operational forces to develop and maintain [situational awareness] for an operationally defined period.
 The second is as SIGINT, retained and processed under appropriate intelligence authorities in response to specified intelligence requirements." % TODO: Example methods include eavesdropping, direction finding and z.
 
-EA constitutes another key facet of EW, deploying electromagnetic energy, directed energy, or antiradiation weapons to attack enemy personnel, facilities, or equipment. The intent is to degrade, neutralize, or destroy the combat capability of the adversary.
+EA constitutes another key facet of electronic warfare, deploying electromagnetic energy, directed energy, or antiradiation weapons to attack enemy personnel, facilities, or equipment. The intent is to degrade, neutralize, or destroy the combat capability of the adversary.
 This division, also known as EA, is considered a form of fires within the military context, illustrating its role in directly influencing and diminishing enemy combat effectiveness.
 EP, the third division, encompasses actions taken to shield personnel, facilities, and equipment from the detrimental effects of friendly or enemy use of the electromagnetic spectrum. EP is essential for maintaining the integrity and functionality of friendly combat capability in the face of electromagnetic threats.
 
@@ -1021,26 +992,26 @@ Straightforward usability of the systems is crucial from the perspective of publ
 The success rate in emergency situations depends heavily on the timeliness of the response, which means that the communication systems used in field activities need to be available on a standby basis.
 Thus, the future satellite link would need to be tightly integrated with the existing communications infrastructure for it to be effective, so that it can be used when necessary.
 
-In addition to conveniently sized and well-integrated user terminals, satellite services should be agnostic to the applications that are run through the link they provide. Currently used applications include PTT, data and video, while in future the systems should be able to accommodate more complex applications, like the verified positioning services provided by the Galileo Public Regulated Service. This may require special arrangements in timing critical applications, as satellite systems have longer end-to-end delay times compared to terrestrial systems.
+In addition to conveniently sized and well-integrated user terminals, satellite services should be agnostic to the applications that are run through the link they provide. Currently used applications include push-to-talk, data and video, while in future the systems should be able to accommodate more complex applications, like the verified positioning services provided by the Galileo Public Regulated Service. This may require special arrangements in timing critical applications, as satellite systems have longer end-to-end delay times compared to terrestrial systems.
 Considering these usability requirements, an ideal user terminal would be a handset with integrated satellite communication capabilities, but this is not feasible with the current satellite terminal sizes. The more feasible alternative in the near-term would be the integration of the terminal to the vehicles used by the authorities in daily activities \cite{saynevirta2021satellite}.
 
 \subsubsection{Satcom in the narrowband-to-broadband evolution}
-Critical communications are entering a major paradigm shift. Thus far, national authorities have relied globally on dedicated, purpose-built narrowband technologies such as TETRA, Tetrapol and P25 in their operational communications. Broadband standardisation initiated by The Critical Communications Association Critical Communications Broadband Group in 2012 and developed in a working group of 3GPP's Technical Specification Group since 2015 have adapted the commercial 4G/5G standards to the strict requirements of critical communications. Roll-out of systems built around these standards is currently ongoing in many countries, for example through migration projects such as Virve 2 in Finland, Réséau Radio du Futur (RRF) in France and Emergency Services Network (ESN) in the United Kingdom \cite{stojkovic2016public}.
+Critical communications are entering a major paradigm shift. Thus far, national authorities have relied globally on dedicated, purpose-built narrowband technologies such as TETRA, Tetrapol and P25 in their operational communications. Broadband standardisation initiated by The Critical Communications Association Critical Communications Broadband Group in 2012 and developed in a working group of 3GPP's Technical Specification Group since 2015 have adapted the commercial 4G/5G standards to the strict requirements of critical communications. Roll-out of systems built around these standards is currently ongoing in many countries, for example through migration projects such as Virve 2 in Finland, Réséau Radio du Futur in France and Emergency Services Network in the United Kingdom \cite{stojkovic2016public}.
 
-The evolution is not limited to just wireless communication technology. In the public safety context, the shift to the more versatile broadband ecosystem enables transitioning from the current voice-only operating model to a more diverse one with voice, video and data capabilities, the so-called MCX services, where the X stands for MC services like push-to-talk (PTT, i.e. voice), data, video.
-At the same time, reliable access to magnitudes greater bandwidth is crucial to enable nonstop access the full suite of MCX services.
+The evolution is not limited to just wireless communication technology. In the public safety context, the shift to the more versatile broadband ecosystem enables transitioning from the current voice-only operating model to a more diverse one with voice, video and data capabilities, the so-called MCX services, where the X stands for mission-critical services like push-to-talk (i.e. voice), data, video.
+At the same time, reliable access to magnitudes greater bandwidth is crucial to enable nonstop access the full suite of mission-critical services.
 In narrowband networks, building coverage was often the main factor to be considered.
 On the other hand, ensuring adequate capacity alongside coverage requires additional consideration in broadband networks \cite{saynevirta2021satellite}.
 
 The broadband transition also means a shift from custom technology solutions to more mainstream ones. Critical communications segment places strict requirements on availability, reliability, security, and coverage. For example, the coverage requirement for a national critical communications network can be close to 100 percent of the geographic coverage, while commercial networks are built based on a business case primarily driven by population density. In general, this leads to coverage figures far from 100 percent \cite{saynevirta2021satellite}.
 
-When it comes to satcom integration for critical communications use cases, permanent ones tend to be the most straight forward. They can be realised just as a simple FSS backhaul link of an individual base station site with currently available COTS satcom equipment.
+When it comes to integration of satellite communications for critical communications use cases, permanent ones tend to be the most straight forward. They can be realised just as a simple fixed backhaul link of an individual base station site with currently available COTS satellite equipment.
 On the other hand, direct satellite connectivity is also something that may be feasible in these regions long-term, but as was discussed in chapter \ref{ch-constellation-characteristics}, its technological maturity remains relatively low at the time of writing.
 
 Implementation-wise, satellite networks are in the short-to-medium term envisioned to integrate into their terrestrial counterparts through portable tactical bubbles, where the satellite link serves as a backhaul solution for a local, 100 meters to kilometres in radius, wireless connectivity bubble.
 Table \ref{table-mcx-requirements} lists technical and functional requirements relevant for dimensioning a backhaul link for a 4G tactical bubble.
-Considering these requirements as well as form-factor and cost of COTS satellite connectivity equipment, best deployment model for MC satcom integration seems to be a vehicular solution, an approach that is already seen to some extent in the ongoing migration projects.
-For example, the French RRF envisions satellite networks as one backhaul option for its vehicular relay (\textit{relais véhiculaire}), an emergency vehicle with a tactical bubble for local coverage and capacity.
+Considering these requirements as well as form-factor and cost of COTS satellite equipment, best deployment model for integration of satellite services in mission-critical contexts seems to be a vehicular solution, an approach that is already seen to some extent in the ongoing migration projects.
+For example, in the future French broadband network, satellites are included as one backhaul option for a vehicular relay (\textit{relais véhiculaire}), an emergency vehicle with a tactical bubble for local coverage and capacity.
 Similarly, the potential integration point for satellite systems in the Finnish Virve 2 has been envisioned as a command vehicles of fire, rescue and police forces, but the solution is in the Finnish case on a very early conceptual stage \cite{kokkoniemitarkkanen2024missioncritical,saynevirta2021satellite,dominguez2021resilience}. 
 
 Long-term, evolution towards direct-to-smartphone type solutions is a potential development path. 3GPP has been working towards integrating satellite connectivity as one of the options in the 5G Non-terrestrial networks, a development item also present on the longer-reaching 5G Advanced and 6G roadmaps \cite{ray2021perspective, jiang2021road}. It is worth noting, that these solutions remain rather low in terms of their technological maturity. In-orbit demonstrations of the technology have been very limited in number and work has focused more on the technological standardisation work \cite{sn-2023-09-19-ast, sn-2023-11-07-lynk, 5g-americas-update-on-5g-ntn, jain2023rel18}.
@@ -1056,12 +1027,12 @@ Long-term, evolution towards direct-to-smartphone type solutions is a potential 
                                 & Configuration efforts & Zero-configuration      \\ \addlinespace[0.5em]
   Combined user traffic (avg.)  & DL / user             & 50~Mbps                 \\
                                 & UL / user             & 25~Mbps                 \\ \addlinespace[0.5em]
-  PTT                           & Packet delay          & 75~ms                   \\ \addlinespace[0.5em]
+  Push-to-talk                  & Packet delay          & 75~ms                   \\ \addlinespace[0.5em]
   Group video                   & Packet delay          & 100~ms                  \\ \addlinespace[0.5em]
   Virtual reality (4K GC video) & Data rate             & 50 to 200~Mbps          \\
                                 & Latency               & \textless 16~ms         \\ \addlinespace[0.5em]
   Sensor data                   & Sensor amount / cell  & 0 to massive            \\ \addlinespace[0.5em]
-  Machine remote control (UAV)  & Latency               & 40~ms to 1~s            \\ \bottomrule
+  Machine remote control (UAS)  & Latency               & 40~ms to 1~s            \\ \bottomrule
   \end{tabular}
   \label{table-mcx-requirements}
 \end{table}
@@ -1073,12 +1044,12 @@ Long-term, evolution towards direct-to-smartphone type solutions is a potential 
 \subsection{Research questions and methodology}
 
 Critical communications users place high expectations on the communications solutions that they utilise.
-Less-capable narrowband NGSO and higher-latency GEO satcom solutions have seen previously limited use in the public safety sector. Commercial systems have also turned out to be not the most robust when it comes to fundamental concepts of security, such as confidentiality, integrity and availability, with critical vulnerabilities reported regularly in research literature over the years \cite{lin2022defending,pavur2020tale,santamarta2014wake,schia2023subsea}.
-With the recent drive to integrate satcom into both commercial and MC communications solutions, satellite systems need to be able to prove that they can overcome these previous challenges.
+Less-capable narrowband NGSO and higher-latency GEO solutions have seen previously limited use in the public safety sector. Commercial systems have also turned out to be not the most robust when it comes to fundamental concepts of security, such as confidentiality, integrity and availability, with critical vulnerabilities reported regularly in research literature over the years \cite{lin2022defending,pavur2020tale,santamarta2014wake,schia2023subsea}.
+With the recent drive to integrate satellite communications into both commercial and mission-critical communications solutions, satellite systems need to be able to prove that they can overcome these previous challenges.
 Here, understanding these systems from first principles is a good starting point for building a solid foundation for applied security research over factors like encryption, authorisation and authentication.
 
 The thesis seeks to answer whether airborne eavesdroppers and jammers are able to interfere with or intercept and decode UL communications in NGSO VSAT networks.
-In practical terms, the modelling approach in this thesis is grounded on theoretical background of RF systems and more specifically concepts related to EW and SIGINT.
+In practical terms, the modelling approach in this thesis is grounded on theoretical background of RF systems and more specifically concepts related to electronic warfare and SIGINT.
 Threat model builds upon theory discussed in \cite{kosola2013digitaalinen} and \cite{wiley2006elint}.
 Target systems are explored through a parametric study of an analytical model comprised of multiple submodels that incorporate relevant parameters for aerial SIGINT platforms and both space and ground segments of a satellite communications system.
 
@@ -1112,7 +1083,7 @@ Descriptions for the submodels are given in table \ref{table-submodel-descriptio
 
 The models explore the target system from first principles using geometric and kinematic analysis, as well as link budgets based on an example hardware configuration.
 First principles thinking is a powerful problem-solving approach that involves breaking down a problem or a concept into its elemental parts.
-In this sense, each submodel helps us understand potential strengths and vulnerabilities of satcom systems through an elemental understanding of the underlying physical phenomena.
+In this sense, each submodel helps us understand potential strengths and vulnerabilities of satellite systems through an elemental understanding of the underlying physical phenomena.
 
 \begin{table}[h]
   \centering
@@ -1180,11 +1151,11 @@ This can be thought as  arise where eavesdropping is either simply impossible or
 
 \begin{enumerate}
   \item The VSAT Earth station falls behind the radio horizon of the eavesdropper.
-  \item The eavesdropper falls outside the main lobe of the VSAT Earth station. % TODO: mikä on main lobe?
+  \item The eavesdropper falls outside the main lobe of the VSAT Earth station.
 \end{enumerate}
 
 As presented in appendix \ref{appendix-constellation-comparison}, both existing and under development broadband VSAT systems tend to operate in the Ku and Ka bands (12--18 and 26.5--\SI{40}{\giga\hertz} respectively), with the former being the more commonly used in user links between the orbiting satellite and user terminal and vice-versa, although some systems, such as Amazon's Project Kuiper deviate from this general rule.
-In terms of frequencies, both bands fall under super high (SHF, 3--\SI{30}{\giga\hertz} ) to extremely high frequencies (EHF, 30--\SI{300}{\giga\hertz} ), where the principal propagation mode is LOS propagation.
+In terms of frequencies, both bands fall under super high (3--\SI{30}{\giga\hertz}) to extremely high frequencies (30--\SI{300}{\giga\hertz}), where the principal propagation mode is LOS propagation.
 In LOS propagation, the radio horizon of a transmitter can be derived from the trigonometric law of cosines, if the planetary body can be assumed to be spherical in shape. If the minimum elevation angle of the satellite system is assumed to be zero, the geometry of the problem simplifies into a right triangle, whose hypotenuse and legs are described by the Pythagorean theorem.
 
 \begin{figure}[h]
@@ -1289,8 +1260,8 @@ Rearranging (\ref{eq-range-1}) for $d$ gives
 
 Although approximate in its results, this simplification may be used to gain quick insight into the threat of an eavesdropper operating at close ranges.
 
-Based on the interception range estimations, we can say that eavesdropping a VSAT interfacing with a NGSO satcom constellation is a rather difficult endeavour, as was postulated in the hypothesis of the submodel.
-LOS-only propagation at SHF and EHF ranges means that it is simply impossible to intercept the signal when the eavesdropper is out of range or obstructed in relation to the legitimate transmitter.
+Based on the interception range estimations, we can say that eavesdropping a VSAT interfacing with a NGSO megaconstellation is a rather difficult endeavour, as was postulated in the hypothesis of the submodel.
+LOS-only propagation at high gigahertz frequencies means that it is simply impossible to intercept the signal when the eavesdropper is out of range or obstructed in relation to the legitimate transmitter.
 Thus, in practice eavesdropping even a small number of VSATs in a limited geographical area of tens of square kilometres would require a significant number of colluding eavesdroppers due to these inherent interception range constraints, making the feat rather impractical for even better resourced adversaries.
 
 \subsection{Submodel 2a: Beam tracking potential in equatorial orbits} \label{ch-results-submodel-2a-tracking-equatorial}
@@ -1305,7 +1276,7 @@ Thus, in practice eavesdropping even a small number of VSATs in a limited geogra
 In addition to being aligned along the LOS of the VSAT's main lobe, the eavesdropper needs to be able to intercept sufficiently long transmission in order to have a chance to detect a target VSAT transmitter from background noise and potential other active transmitters.
 This time dimension brings another point to consider when evaluating the risk of eavesdropping.
 Different durations of interception have varying implications for the legitimate transmitter.
-As a practical example, millisecond-level signal capture may be enough for DF applications, while useful insights for proper COMINT would likely require longer-term interception of a VSAT's UL signal over periods ranging from seconds to days.
+As a practical example, millisecond-level signal capture may be enough for direction finding applications, while useful insights for proper COMINT would likely require longer-term interception of a VSAT's UL signal over periods ranging from seconds to days.
 
 Maximum duration of signal interception is set by the ability of the airborne platform to track the main lobe of the Earth station.
 The beam movement is primarily driven by the motion of the receiving satellite in orbit, which is in turn governed by Kepler's laws of orbital motion.
@@ -1382,7 +1353,7 @@ For reference, high velocity artillery cannons have muzzle velocities in a simil
 
 Circular equatorial orbits are a good starting point for listening window analysis but their real-world applications are somewhat limited when considering relationship of orbital altitude to coverage and latency.
 This is due to the space segment architecture of modern satellite megaconstellations that aim to achieve worldwide coverage by placing a number of satellites into Earth orbits that are inclined in nature.
-Often, real-world satcom systems, such as those in appendix \ref{appendix-constellation-comparison}, follow the Walker Star and Delta constellation configurations, whose basic characteristics are outlined briefly in chapter \ref{ch-constellation-characteristics}.
+Often, real-world satellite systems, such as those in appendix \ref{appendix-constellation-comparison}, follow the Walker Star and Delta constellation configurations, whose basic characteristics are outlined briefly in chapter \ref{ch-constellation-characteristics}.
 
 The same analysis methods remain valid for inclined orbits, but some additional factors need to be considered.
 Equatorial orbits have only a single velocity component parallel to the xy-plane in both ECI and ECEF coordinate frames.
@@ -1486,15 +1457,15 @@ Transmission and jamming power levels $S$ and $J$ in decibel-watts (dBW) at the 
 \end{equation}
 
 In some cases, jammer may even be at an advantage based on their geographical location through a shorter signal path and smaller free space path loss, as demonstrated in \cite{pavur2022defcon}.
-Minimum carrier-to-noise ratio (CNR) requirements for a modcod scheme determine the ability of the jammer to interfere with the legitimate transmission.
-As discussed in chapter \ref{ch-oneweb}, OneWeb uses adaptive modcod scheme comprised of QPSK, 8PSK and 16-QAM modulation techniques. Higher end requires significantly greater CNR at the receiver, while the lower end can still function even with very low CNR, if significant forward error correction (FEC) is utilised. \cite{allen2022terrestrial,etsi2012en302307}
+Minimum carrier-to-noise ratio (CNR) requirements for modulation and coding determine the ability of the jammer to interfere with the legitimate transmission.
+As discussed in chapter \ref{ch-oneweb}, OneWeb uses adaptive modulation and coding comprised of QPSK, 8PSK and 16-QAM modulation techniques. Higher end requires significantly greater CNR at the receiver, while the lower end can still function even with very low CNR, if significant forward error correction is utilised. \cite{allen2022terrestrial,etsi2012en302307}
 
 Jamming of the UL signal can be done from both aircraft and Earth-bound platforms.
 Scenario-wise, the altitude of the interfering system does not make a major difference, if ground-level obstruction caused by structures and natural land formations is ignored.
 This simplified scenario allows end-to-end performance of a communications link to be analysed through a link budget, a theoretical calculation where gains and losses of a RF system are summed in order to compute the figures of merit, such as SNR, spectral efficiency,  and theoretical throughput \cite{kymeta2019link}.
 Table \ref{table-ul-jamming-link-budget} presents an UL link budget for the Kymeta Hawk u8 UT interfacing with the OneWeb LEO megaconstellation.
 Parameters of the UT are taken from \cite{kymeta2022hawk} and \cite{kymeta2020mod}, while parameters for the space segment of the OneWeb constellation are based on the values in \cite{worldvu2016loi} and \cite{allen2022terrestrial} for the first generation constellation.
-For the advantage of the legitimate user, the modcod scheme is assumed to be the less demanding QPSK with $1/2$ FEC.
+For the advantage of the legitimate user, the modulation and coding scheme in use is assumed to be the less demanding QPSK with $1/2$ forward error correction.
 
 Propagation paths in satellite links inherently cover long distances ranging from hundreds to thousands of kilometres depending on the orbit of the satellite.
 This type of RF path experiences losses primarily due to free-space path loss (FSPL), a loss driven by the dispersion of RF energy into the medium it propagates through.
@@ -1561,21 +1532,21 @@ Analysis in table \ref{table-ul-jamming-link-budget} was ended at the receiver o
 Jamming devices range from handheld ones all the way from high power vehicle or aircraft mounted systems both stationary and mobile in their mode of operation.
 It is worth noting that most of the devices are also highly classified military technology, exacerbating the issue of data scarcity.
 
-Despite this, some comments can be made in regard to the susceptibility of VSAT satcom systems to UL jamming.
+Despite this, some comments can be made in regard to the susceptibility of VSAT systems to UL jamming.
 Based on the computations, jammer needs to achieve roughly \SI{1}{\deci\bel} smaller signal power at the satellite than the legitimate transmitter, meaning still a certain degree of advantage to the jammer at even the baseline scenario.
-Applying any of the more demanding modcod schemes, such as aforementioned 8PSK or 16-QAM, would push the SJR further to the jammer's benefit.
+Applying any of the more demanding modulation and coding schemes, such as aforementioned 8PSK or 16-QAM, would push the SJR further to the jammer's benefit.
 
 \clearpage
 
 \section{Discussion}
 
 Critical communication users demand robust solutions, particularly in terms of the CIA triad of confidentiality, integrity, and availability.
-The historical limitations of satcom solutions, especially in the public safety sector, alongside the challenges faced by commercial systems, underscore the necessity for a nuanced understanding of these systems.
-With the potential integration of satcom into both MC applications, it is crucial to understand the security of these systems from first principles.
+The historical limitations of satellite communications solutions, especially in the public safety sector, alongside the challenges faced by commercial systems, underscore the necessity for a nuanced understanding of these systems.
+With the potential integration of satellite communications into both mission-critical applications, it is crucial to understand the security of these systems from first principles.
 
 In this thesis, quantitative analysis was applied to develop a robust threat model targeting a Walker-type LEO megaconstellation, fixed VSAT ground station, as well as adversial airborne eavesdroppers and jammers. The research framework comprised four smaller submodels, each of which was explored through a parametric study with a specific dependent variable and a set of independent ones.
 The foundation of the four submodels rested on a first principles approach, employing geometric and kinematic analyses, as well as link budgets based on a representative hardware configuration.
-By deconstructing the target system into fundamental components, each submodel highlighted the potential strengths and vulnerabilities of satcom systems in relation to various threats.
+By deconstructing the target system into fundamental components, each submodel highlighted the potential strengths and vulnerabilities of satellite systems in relation to various threats.
 
 Going a little deeper into the model structure and results, submodel 1 evaluated the interception range of a VSAT from an aircraft. The submodel looked into the concept of radio horizon, building a trigonometric model by applying the rule of cosines.
 A model accounting for the curvature of the Earth as well as simplified atmospheric refraction was used to estimate the maximum interception range of the UL transmissions of a VSAT ground station. The findings highlighted the constraints imposed by the Earth's curvature and atmospheric conditions on intercepting satellite signals, making it simply impossible for a high-altitude aircraft to intercept the legitimate signal from distances beyond little over 100 kilometres due to the LOS-only RF propagation of a SHF signal.
@@ -1595,14 +1566,14 @@ Legacy GEO systems may allow for a conveniently flying eavesdropper to intercept
 In \cite{bingen2023space}, the authors reckon that this vulnerability of GEO satellites is likely already exploited by space-borne inspection satellites, like the Luch-1 and Luch-2 of the Russian Aerospace Forces.
 These SIGINT satellites were launched in 2014 and 2022 and have been operating in proximity of western geostationary communications satellites over the years.
 
-Finally, submodel 4 looked into active measures an adversary might take against a LEO satcom system. More specifically, the threat vector of jamming was evaluated by computing a representative link budget for a representative LEO satcom system, in this case the OneWeb generation 1 megaconstellation.
+Finally, submodel 4 looked into active measures an adversary might take against a LEO megaconstellation. More specifically, the threat vector of jamming was evaluated by computing a representative link budget for a representative LEO satellite system, in this case the OneWeb generation 1 megaconstellation.
 Signal-to-jamming ratio (SJR) and signal-to-noise+jamming ratio (SJNR) equations were formulated and various factors for link budgeting, such as atmospheric and path losses, as well as modulation schemes used in satellite communication were discussed.
-The results illustrated the minimum jamming power required for interference, emphasizing the impact of the chosen modcod scheme on the adversary's ability to disrupt legitimate transmissions. 
+The results illustrated the minimum jamming power required for interference, emphasizing the impact of the chosen modulation and coding on the adversary's ability to disrupt legitimate transmissions. 
 
 One limitation of the link budget approach is that only part of the RF environment can be modelled with reasonable level of baseline assumptions. For example, jamming systems tend to vary greatly from handheld devices all the way from high power vehicle or aircraft mounted ones. Most of the devices are also highly classified military technology data availability being the key issue.
 
 Interestingly, the computed link budget proves that that the jammer and legitimate user tend to be on rather equal footing with each other when it comes to basic service availability. The situation is though different, if we consider the requirements for higher QoS.
-Achieving higher throughputs necessiates the use of more complex modcod schemes that in turn require greater SNR, or in our case SJR, at the receiver's end. Here, the advantage can range from single to tens of decibels depending on the modulation utilised.
+Achieving higher throughputs necessiates the use of more complex modulation and coding that in turn require greater SNR, or in our case SJR, at the receiver's end. Here, the advantage can range from single to tens of decibels depending on the modulation utilised.
 Thus, jamming might be the most feasible vector for an adversary to affect LEO satellite communications thanks to geometry of the problem.
 In some situations, the jammer experiences less path loss thanks to a shorter RF path in comparison to the legitimate transmitter.
 Still, the large number of LEO satellites in the megaconstellations leads to major redundancy in the choice of satellite.
@@ -1625,7 +1596,7 @@ Although this is primarily a measure for improving spectrum efficiency, it bring
 
 In recent years, the satellite communications industry has witnessed a paradigm shift with the rise of large NGSO megaconstellations.
 The proliferation of these constellations, facilitated by reduced space launch costs and wide-scale application of COTS technology, has opened new frontiers of connectivity.
-In the future, commercial satcom systems are likely to play a crucial role as a complementary solution for terrestrial MC networks, addressing distinct a multitude of use cases varying in their nature, duration, and forecastability.
+In the future, commercial satellite communications are likely to play a crucial role as a complementary solution for terrestrial mission-critical networks, addressing distinct a multitude of use cases varying in their nature, duration, and forecastability.
 
 Critical communications use cases can be roughly divided into permanent, planned temporary and unplanned temporary, with the first primarily catering to regions traditionally challenging to serve, such as sparsely populated rural areas and maritime settings, where terrestrial coverage is limited. Temporary use cases, whether planned or unplanned, cover a diverse range of locations. Planned events, including large gatherings and political summits, demand coverage augmentation and increased capacity. On the other hand, unplanned events, both natural disasters like earthquakes and man-made incidents like airplane crashes, necessitate immediate response, showcasing the versatility of satellite connectivity. The forecastability and duration of these events vary, influencing the choice of technological solutions. Satellite systems, with their global coverage and ability to serve low-density regions, emerge as a cost-efficient complement to traditional terrestrial networks, ensuring connectivity in remote and challenging environments.
 
@@ -1649,11 +1620,11 @@ On the other hand, using lower orbits leads to certain disadvantages.
 While higher orbits like GEO require the eavesdropper to transmit at equivalent EIRP levels compared to the legitimate transmitter, the lower altitude of LEO introduces situations where jamming the legitimate signal is possible to achieve even with relatively simple and inexpensive radio hardware, such as COTS software-defined radios and satellite TV equipment due to the nature of varying path loss based on the jammer's location in relation to the legitimate user. On the other hand, high number of satellites in a LEO system allows for greater redundancy in satellite choice, making it possible to avoid localised jamming by switching to a satellite in a different part of the sky. 
 
 All in all, findings of the thesis highlighted the inherent physical resilience of NGSO VSAT systems against both long and short-term signal interception as well as intentional and unintentional jamming.
-In this sense, the emerging commercial NGSO satcom systems do not have inherent physical flaws that would directly jeopardise the security of these systems.
+In this sense, the emerging NGSO megaconstellations do not have inherent physical flaws that would directly jeopardise the security of these systems.
 The results show that the architecture of these systems makes it tough to eavesdrop or disrupt their operation on a system-wide scale, although more localised adversarial actions may still be feasible to some extent.
 In fact, compared to their predecessors, the distributed infrastructure of the NGSO systems, especially when it comes to the space segment, bring certain advantages that make the systems rather robust against a multitude of potential threat factors.
 Satellite networks have great potential to enable previously unforeseen commercial connectivity capabilities in traditionally tough-to-serve use cases even in the demanding field of public safety and defence, but robust cybersecurity measures are a key starting point for deployment into these markets.
-Thus, proper care needs to be taken when implementing solutions involving these technologies, especially when they are placed into systems with previously limited satcom integration.
+Thus, proper care needs to be taken when implementing solutions involving these technologies, especially when they are placed into systems with previously limited satellite communications integration.
 
 \clearpage
 
@@ -1670,7 +1641,7 @@ Thus, proper care needs to be taken when implementing solutions involving these 
 \begin{landscape}
   \thispagestyle{empty}
 
-  \section{Appendix: Comparison of 1st generation broadband satcom systems\label{appendix-constellation-comparison}}
+  \section{Appendix: Comparison of 1st generation broadband satellite communications systems\label{appendix-constellation-comparison}}
 
   \begin{table}[h]
     \scriptsize
