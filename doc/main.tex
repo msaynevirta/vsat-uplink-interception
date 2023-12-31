@@ -715,8 +715,8 @@ Overall beamwidth is controlled by selectively switching on additional phased ar
 SpaceX has released limited details on the modulation and coding used in Starlink UL and DL communications. In \cite{humphreys2023signal}, the researchers were able to reverse engineer the Starlink waveform to evaluate its usefulness in positioning, navigation, and timing applications. They found that the DL signal of a Starlink satellite is orthogonal frequency-division multiplexing. Empirical signal captures showed that the symbols in a Starlink DL transmission use quadrature amplitude modulation with 4- and 16-point constellations (4-QAM and 16-QAM). This aligns with SpaceX FCC filings, such as \cite{SpaceX-SES-AMD-20210731-01295} concerning blanket-authorised terminals and in-flight connectivity, stating that the UTs support modulation schemes up to 64-QAM on both Ku-band UL and DL.
 Starlink's user link frequency allocations in the Ku-band are presented along OneWeb's in figure \ref{fig-ku-band}.
 
-Like OneWeb, Starlink's ground segment comprises of both UTs and gateways and their associated network infrastructure, such as PoPs and NDCs. Starlink's Ka-band \qty{1.5}{\meter} gateway antennas are globally distributed and arranged generally in clusters of nine antennas per site.
-When it comes to UTs, Starlink's lineup is somewhat simpler thanks to the SpaceX's vertically integrated terminal strategy.
+Like OneWeb, Starlink's ground segment comprises of both UTs and gateways and their associated network infrastructure, such as PoPs and NDCs. Starlink's Ka-band \qty{1.5}{\meter} gateway antennas are globally distributed and arranged in clusters of nine antennas per site.
+When it comes to UTs, Starlink's lineup is simpler thanks to the SpaceX's vertically integrated terminal strategy.
 Half-power beamwidth of first-generation Starlink terminals varies between 2.8 and 5.5~degrees depending on the beam steering angle and whether the terminal is receiving or sending. Beamwidth figures are smaller for transmission and angles closer to boresight \cite{SpaceX-SES-AMD-20210731-01295}. As of December 2023, SpaceX's terminal lineup includes two fixed flat panel terminals and two actuated ones. Size varies from smaller consumer terminals at an array size of \qty{303}{\milli\meter} by \qty{513}{\milli\meter} to larger high-performance variants at \qty{575}{\milli\meter} by \qty{511}{\milli\meter} \cite{starlink-terminal-specs}.
 
 \subsection{Classification of aerial platforms} \label{ch-aerial-platforms}
@@ -988,7 +988,7 @@ Cost considerations are also crucial in this discussion, given that they have hi
 The success of the new constellations hinges on achieving significantly lower per-user costs, a vital factor for gaining broad acceptance.
 In the context of the public safety sector, it is important to note that this sector, particularly for smaller countries like Finland, is considered a niche market in the eyes of constellation operators.
 Consequently, achieving wider adoption in commercial markets becomes crucial in order to realize the economies of scale necessary for cost-competitive solutions that align with the limited budgets of public safety organizations.
-In practice, volume based pricing models are a possible way of achieving cost advantages but are likely to require the tendering processes to include multiple possible user groups when it comes to niche segments like public safety.
+In practice, volume-based pricing models are a possible way of achieving cost advantages but are likely to require the tendering processes to include multiple possible user groups when it comes to niche segments like public safety.
 In this senses, one straightforward model for providing satellite access to the user organisations could be to include it to the services provided by a national critical communications operator, like Erillisverkot in Finland or BDBOS in Germany \cite{saynevirta2021satellite}.
 
 Straightforward usability of the systems is crucial from the perspective of public safety users based on the interviews with Finnish Public Safety actors.
@@ -1224,7 +1224,7 @@ Thus, we end up with the following equation:
 \begin{figure}[h]
   \centering
   \input{tikz_figures/fig-interception-range-2d.tikz}
-  \caption{Interception range ($d$) as a function of minimum elevation angle ($e$). Different coloured graphs represent a range of  operational altitude of the eavesdropper ($h$).}
+  \caption{Interception range ($d$) as a function of minimum elevation angle ($e$). Different coloured graphs represent a range of operational altitude of the eavesdropper ($h$).}
   \label{fig-interception-range-2d}
 \end{figure}
 
@@ -1286,7 +1286,7 @@ The beam movement is primarily driven by the motion of the receiving satellite i
 Tracking capability of the aircraft can be evaluated by analysing the velocity of the sub-satellite point at the eavesdropper's operational altitude (vector $\bm{\vec{v}}$ on figure \ref{fig-orbit-geometry}).
 If this velocity exceeds the cruise speed of the eavesdropper, the airborne platform is not able to continuously follow the UL RF beam, which limits the time window into individual satellite passes.
 Communication satellites reside often in circular orbits, which are a special case when evaluating Kepler's laws of orbital motion.
-Figure \ref*{fig-orbit-geometry} introduces visually the basic geometry of a circular inclined orbit, as well as some  variables relevant to the models 2a and 2b.
+Figure \ref*{fig-orbit-geometry} introduces visually the basic geometry of a circular inclined orbit, as well as some variables relevant to the models 2a and 2b.
 
 The velocity of the sub-satellite point can be computed by solving Kepler's third law for the orbital velocity at a set altitude.
 In equatorial orbits, Earth's rotation can be directly subtracted from the angular velocity of the satellite, as both share roughly the same rotational axis.
@@ -1344,7 +1344,7 @@ $\omega_E$ is the angular velocity of the Earth at the equator.
 
 Figure \ref{fig-subsat-velocity-equatiorial} shows the sub-satellite velocity ($v_{r, air}$) of a satellite in equatorial orbit as a function of orbital height $h_{sat} = r_{sat} - R_{E}$, where $R_{E}$ is the radius of the Earth.
 Velocities are examined in orbits ranging from LEO to GEO, which corresponds to the range $h_{sat} = [5 \cdot 10^5, 3.7 \cdot 10^7]$. The UT is assumed to have a half-power beamwidth of 3.5~degrees, the figure for the first-generation blanket-authorised Starlink UT \cite{SpaceX-SES-AMD-20210731-01295}.
-In the resulting graph, the dependent variable or the sub-satellite velocity ($v_{r, air}$) is on the vertical axis, while the independent variable of the orbital height $h_{sat}$ is on the horizontal axis.
+In the resulting graph, the dependent variable, or the sub-satellite velocity ($v_{r, air}$) is on the vertical axis, while the independent variable of the orbital height $h_{sat}$ is on the horizontal axis.
 The graph can be observed approaching the rotational velocity of the Earth when $h_{sat}$ approaches the height of GEO at \SI{35786}{\kilo\meter}.
 As the graph is computed in the ECEF coordinate frame, sub-satellite velocity approaches zero at GEO altitudes, meaning that the satellite appears fixed in its position in the sky.
 Cubically decreasing nature of $v_{sat}$ leads to radically higher values for LEO with $v_{sat}$ values ranging between 5 and 7\ km/s in orbital altitudes between $h_{sat} = [5 \cdot 10^5, 2 \cdot 10^6]$.
@@ -1461,7 +1461,7 @@ Transmission and jamming power levels $S$ and $J$ in decibel-watts (dBW) at the 
 
 In some cases, jammer may even be at an advantage based on their geographical location through a shorter signal path and smaller free space path loss, as demonstrated in \cite{pavur2022defcon}.
 Minimum carrier-to-noise ratio (CNR) requirements for modulation and coding determine the ability of the jammer to interfere with the legitimate transmission.
-As discussed in chapter \ref{ch-oneweb}, OneWeb uses adaptive modulation and coding comprised of QPSK, 8PSK and 16-QAM modulation techniques. Higher end requires significantly greater CNR at the receiver, while the lower end can still function even with very low CNR, if significant forward error correction is utilised. \cite{allen2022terrestrial,etsi2012en302307}
+As discussed in chapter \ref{ch-oneweb}, OneWeb uses adaptive modulation and coding comprised of QPSK, 8PSK and 16-QAM modulation techniques. Higher end requires significantly greater CNR at the receiver, while the lower end can still function even with exceptionally low CNR, if significant forward error correction is utilised. \cite{allen2022terrestrial,etsi2012en302307}
 
 Jamming of the UL signal can be done from both aircraft and Earth-bound platforms.
 Scenario-wise, the altitude of the interfering system does not make a major difference if ground-level obstruction caused by structures and natural land formations is ignored.
