@@ -34,7 +34,7 @@
     
     % hypotenuses
     \draw[dashed,dash phase=-3pt] (vsat) -- (5,\R) node (tangent) {};
-    \draw[rotate around with nodes={{90-\angleg}:(vsat)}] (vsat) -- ({\d},\R) node [midway,fill=white] (eve) {$d$} node[circle,fill,inner sep=1.8pt,label=Eve] {};
+    \draw[rotate around with nodes={{90-\angleg}:(vsat)}] (vsat) -- ({\d},\R) node [midway,fill=white] (eve) {$d$} node[circle,fill,inner sep=1.8pt,label=Eavesdropper] {};
 
     % elevation angle
     \pic ["{$e$}", draw,
