@@ -587,7 +587,7 @@ In practice, NGSO megaconstellations are often built around vendor-specific UTs 
 
 When it comes to LEO constellations, their altitude enables significantly lower latency, and the large number of satellites allows for high overall data throughput throughout a constellation when compared with the earlier satellite systems.
 Still, the most modern LEO megaconstellations fall short of the throughput of their terrestrial counterparts and are unlikely to completely replace the terrestrial mobile networks in their entirety.
-This has not put limits on the ambitions of the new market entrants. In fact, emerging NGSO operators are often promising to offer significantly better broadband service when compared to the earlier services offered by e.g. SES O3b and Iridium while providing the services also at a price point that is competitive with other forms of connectivity, be it satellite or terrestrial in nature \cite{euspa-secure-satcom-2023}.
+This has not put limits on the ambitions of the new market entrants. In fact, emerging NGSO operators have been promising to offer significantly lower latency and better throughput when compared to the earlier services like SES O3b mPOWER and Iridium. In addition to the high quality of service, the new operators are also providing their services at a price point that is competitive with other forms of satellite connectivity or in some edge cases to even terrestrial alternatives \cite{euspa-secure-satcom-2023}.
 
 \subsubsection{OneWeb system architecture} \label{ch-oneweb}
 
@@ -620,7 +620,6 @@ This can be achieved either with traditional steerable dish or more modern phase
 With the prior, two apertures may need to be employed for uninterrupted connectivity, as retrace speed of a single aperture is the inherent limiting factor for hand-over time between satellites.
 On the other hand, phased array antennas require only a single aperture as their electronic switching can be considered almost instantaneous \cite{worldvu2016loi}.
 
-%%%%%%%%%%%%%%%%%  FIGURE: ONEWEB NETWORK ARCHITECTURE HERE  %%%%%%%%%%%%%%%%%%
 Continuing with the distinguishing qualities of the OneWeb system, maybe the most significant is the nature of its air interface coverage pattern, also known as the cell layout.
 In the OneWeb satellite radio access network, the cells are inherently varying and mobile, while on the contrary they are practically geographically static and pre-defined in a terrestrial network of fixed base stations.
 Consequently, the movement of the UTs (for example equipment mounted on an aircraft or a high-speed train) is relatively slow when compared to the relative velocities of the satellites in orbit.
@@ -846,7 +845,7 @@ Fundamentally, secure communications rely on two core objectives being fulfilled
 The intended receiver should be able to recover the original message without errors, while nobody else should be able to acquire any of the contained information.
 As is customary in cryptography, the transmitter is often referred to as Alice, the receiver as Bob and the eavesdropper as Eve \cite{bloch2011physical}.
 This core principle of secure communications was formalised by Shannon \cite{shannon1949communication} in his seminal 1949 paper through the notion of perfect secrecy achieved through a one-time pad.
-Shannon's secrecy system assumes that both the intended recipient and the eavesdropper acquire the encoded codeword without any degradation, i.e. the communication channel is error-free.
+Shannon's secrecy system assumes that both the intended recipient and the eavesdropper acquire the encoded codeword without any degradation, i.e.\ the communication channel is error-free.
 This theoretical assumption applies rarely to real-world systems, where some noise is always present \cite{bloch2011physical}.
 
 Wyner \cite{wyner1975thewiretap} expanded on Shannon's original system by exploring the role of noise in the context of secure communications through the channel model called \textit{degraded wiretap channel}.
@@ -995,7 +994,7 @@ Considering these usability requirements, an ideal user terminal would be a hand
 \subsubsection{NGSO connectivity in the narrowband-to-broadband evolution}
 Critical communications are entering a major paradigm shift. Thus far, national authorities have relied globally on dedicated, purpose-built narrowband technologies such as TETRA, Tetrapol and P25 in their operational communications. Broadband standardisation initiated by The Critical Communications Association Critical Communications Broadband Group in 2012 and developed in a working group of 3GPP's Technical Specification Group since 2015 have adapted the commercial 4G/5G standards to the strict requirements of critical communications. Roll-out of systems built around these standards is currently ongoing in many countries, for example through migration projects such as Virve 2 in Finland, Réséau Radio du Futur in France, and Emergency Services Network in the United Kingdom \cite{stojkovic2016public}.
 
-The evolution is not limited to just wireless communication technology. In the public safety context, the shift to the more versatile broadband ecosystem enables transitioning from the current voice-only operating model to a more diverse one with voice, video, and data capabilities, the so-called MCX services, where the X stands for mission-critical services like push-to-talk (i.e. voice), data, video.
+The evolution is not limited to just wireless communication technology. In the public safety context, the shift to the more versatile broadband ecosystem enables transitioning from the current voice-only operating model to a more diverse one with voice, video, and data capabilities, the so-called MCX services, where the X stands for mission-critical services like push-to-talk (i.e.\ voice), data, video.
 At the same time, reliable access to magnitudes greater bandwidth is crucial to enable nonstop access the full suite of mission-critical services.
 In narrowband networks, building coverage was often the main factor to be considered.
 On the other hand, ensuring adequate capacity alongside coverage requires additional consideration in broadband networks \cite{saynevirta2021satellite}.
