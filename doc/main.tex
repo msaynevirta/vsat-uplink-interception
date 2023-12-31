@@ -465,8 +465,6 @@ VTOL                    & vertical takeoff and landing
 
 \section{Introduction}
 
-% TODO: AIKAMUODOT: Nyt esiintyy preesensiä futuuria imperfektiä -> kaikki imperfektiin.
-
 Over the past five decades, satellite systems have emerged as indispensable enablers of our modern way of life within an increasingly technology-driven human society.
 Innovation in fields such as global navigation satellite systems \cite{oconnor2019economic}, Earth observation \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and satellite communications \cite{euspa-secure-satcom-2023, euroconsult-space-economy-2023} has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in positioning, navigation, and timing, as well as intelligence, surveillance, and reconnaissance.
 Recently, the satellite communications industry has entered an era of rapid change.
@@ -864,8 +862,6 @@ Analytical portion of the thesis will examine security of communications channel
 As we delve into the analytical portion of the thesis, we aim to apply and extend these foundational ideas to the specific challenges of NGSO VSAT networks.
 By examining the security of communications channels in a practical, applied setting, we seek to elucidate the real-world implications of these seminal theories and contribute to the evolving field of physical layer security in satellite communication systems.
 
-% TODO: physical security, cia triad.
-
 \subsubsection{Signals intelligence: ELINT, COMINT and FISINT}
 U.S. DoD terminology serves as the foundational framework for discussions on diverse facets within the realm of signals intelligence.
 Essential principles of doctrine, guiding the coordinated and integrated application of U.S. military force, are detailed in Joint Publications (JPs) published by the U.S. Joint Chiefs of Staff.
@@ -897,37 +893,13 @@ Electronic warfare involves military actions leveraging electromagnetic and dire
 ES involves actions to search for, intercept, identify, and locate or localize sources of intentional and unintentional radiated electromagnetic energy. It serves immediate threat recognition, aids in targeting, contributes to planning, and supports the conduct of future operations on a tactical level. Notwithstanding the similarities, ES is a separate discipline from SIGINT. The distinction between the two is delineated by purpose, scope, and context. While ES is focused on immediate operational needs, it shares commonalities with SIGINT, with both potentially using the same assets to simultaneously collect information meeting operational and intelligence requirements.
 To quote JP3-85 \cite{jp3-85}, "it can be said that information collected from the [electromagnetic spectrum] has “two lives.”
 The first is as ES, unprocessed information used by operational forces to develop and maintain [situational awareness] for an operationally defined period.
-The second is as SIGINT, retained and processed under appropriate intelligence authorities in response to specified intelligence requirements." % TODO: Example methods include eavesdropping, direction finding and z.
+The second is as SIGINT, retained and processed under appropriate intelligence authorities in response to specified intelligence requirements."
 
 EA constitutes another key facet of electronic warfare, deploying electromagnetic energy, directed energy, or antiradiation weapons to attack enemy personnel, facilities, or equipment. The intent is to degrade, neutralize, or destroy the combat capability of the adversary.
 This division, also known as EA, is considered a form of fires within the military context, illustrating its role in directly influencing and diminishing enemy combat effectiveness.
 EP, the third division, encompasses actions taken to shield personnel, facilities, and equipment from the detrimental effects of friendly or enemy use of the electromagnetic spectrum. EP is essential for maintaining the integrity and functionality of friendly combat capability in the face of electromagnetic threats.
 On the practical side, ES is often intelligence gathering and dissemination while EA involves direct action against an adversary via methods like jamming and spoofing.
 EP on the other hand is not concerned with directly affecting a target system or gaining information from it, but rather protecting friendly systems from external electromagnetic threats \cite{kosola2013digitaalinen,jp3-85}.
-
-%\subsubsection{TRANSEC and physical layer constraints}
-%TODO: Transec 
-
-%\subsubsection{Signal detection}
-%TODO: Digitaistelukentästä jotain? Siuppaus, ilmaisu etc. ketju? Linkkibudjetti lähtökohtana, spread spectrum?
-
-%\subsubsection{Direction finding and radiopositioning} \label{ch-df-radiopositioning}
-%Geolocating fixed VSAT terminals implemented as phased arrays, different direction finding techniques can be assessed for their suitability based on several factors.
-%Some of the modern techniques include:
-
-%Angle of Arrival (AoA): AoA techniques can be suitable for geolocating VSAT terminals.
-%By measuring the angles from which the signals arrive at the aircraft's direction finding array, the azimuth and elevation of the terminals can be estimated.
-%AoA techniques like beamforming, MUSIC, or ESPRIT can be effective in estimating the angles of arrival, especially if the phased array terminals have discernible sidelobes or beam characteristics.
-
-%Time Difference of Arrival (TDOA): TDOA relies on measuring the time delays between signals received at multiple spatially separated sensors.
-
-%Frequency Difference of Arrival (FDOA): FDOA relies on measuring the frequency differences of signals arriving at different sensors or antennas.
-% FDOA techniques may provide useful information if the signals have specific frequency characteristics or modulation patterns that can be exploited.
-
-% Beamforming: Since phased array VSATs employ beamforming, the listeners direction finding array can analyze the received signals' phase and amplitude information to estimate the direction of arrival.
-
-% Additionally, multiple techniques can be combined into a hybrid approach if the complexity and capabilities of the direction finding array permit.
-% For example, combining AoA and beamforming techniques can enhance the accuracy and robustness of geolocation estimates, especially if the phased array terminals exhibit unique radiation patterns or have challenging sidelobe characteristics.
 
 \subsection{Critical communications}
 \subsubsection{Use cases and scenarios}
@@ -1069,12 +1041,6 @@ The other five research approaches of the taxonomy are mathematical, theory-test
 Mathematical approaches primarily engage with abstract concepts detached from the constraints of the real-world, while research approaches studying reality fall into two main categories-natural and social science approaches (conceptual-analytical, theory-testing, and theory-creating) and design science approaches (innovation-building and innovation-evaluating).
 On the other hand, conceptual-analytical approach relies on logical reasoning and draws extensively from prior research and established theories. Conceptual-analytical approaches within the natural and social sciences do not necessarily rely on empirical data, while theory-testing and theory-creating approaches use data to either validate existing theories or formulate new ones. The primary objective of conceptual-analytical research is to generate new creating theoretical concepts or analysing existing theories.
 The taxonomy proposed by Järvinen in \cite{jarvinen2011tutkimustyon, jarvinen2004research} is presented in figure \ref{fig-research-taxonomy}.
-
-%\subsection{Data sources}
-
-% TODO: Data sources satellite systems: FCC filings for space segment and user terminals, UT product data sheets, 
-
-% TODO: Datalähteet: ilma-alusket, uas, manned, balloon
 
 \subsection{Threat model}
 
@@ -1598,8 +1564,6 @@ In practice, effective capture of FHSS signal requires either expensive RF equip
 FHSS-like techniques are already employed to some extent in commercial satellite systems, although they tend to not as robust in comparison to existing governmental counterparts.
 For example, OneWeb system discussed in \ref{ch-oneweb} employs a beam-hopping strategy with the satellite transmitting at 16 individual beams that the VSAT switches between every 11 seconds.
 Although this is primarily a measure for improving spectrum efficiency, it brings with it also some FHSS-like physical security qualities.
-
-% TODO: the approach is limited by its analytical nature. First principles thinking gives us the opportunity to explore foundational limiting factors of the problem set, making it possible to evaluate the threat through concrete quantitative factors. It is inherently a theoretical exercise. Next step would be to explore practical system implementations and potential shortcuts for overcoming certain physical limitations?
 
 \clearpage
 
