@@ -387,7 +387,7 @@
   Satelliittiviestintä on mullistunut 2010-luvun lopulta alkaen uusien ei-geostationaarisia ratoja käyttävien megakonstellaatioiden yleistyessä. Laskevien laukaisukustannusten ja kaupallisen teknologian laajamittaisen käytön mahdollistamat megakonstellaatiot ovat avanneet uuden aikakauden laajakaistaviestinnässä tarjoamiensa maailmanlaajuisten ja suorituskykyisten palvelujen myötä. Kuluttajien ja bisneskäyttäjien ohella turvallisuuskriittiset toimijat, kuten viranomaiset ja maanpuolustusorganisaatiot, ovat osoittaneet kiinnostusta kaupallisten satelliittiverkkojen laajempaan käyttöön.
 
   Kaupallisten satelliittipalveluiden nopea kasvu ei ole tapahtunut ilman ongelmia, etenkin, kun asiaa tarkastellaan tietoturvan kannalta. Standardoimattomat kyberturvallisuusratkaisut ja satelliittiverkkojen teknisten ratkaisujen suljettu luonne jättävät verkkoihin mahdollisia haavoittuvuuksia.
-  Tutkimuksissa on löytynyt tilanteita, joissa puutteelliset tietoturvaratkaisut ovat jättäneet kaupalliset järjestelmät ainakin jossain määrin avoimiksi salakuuntelulle ja tarkoitukselliselle häirinnälle.
+  Tutkimuksissa onkin löytynyt tilanteita, joissa puutteelliset tietoturvaratkaisut ovat jättäneet kaupalliset järjestelmät ainakin jossain määrin avoimiksi salakuuntelulle ja tarkoitukselliselle häirinnälle.
   
   Tämä diplomityö pyrki arvioimaan ilmasta tapahtuvan salakuuntelun ja tarkoituksellisen häirinnän uhkaa hyvin pienen apertuurin päätelaitteen (engl. very small aperture terminal, VSAT) uplink-suunnan viestiliikenteelle, jota lähetetään päätelaitteelta matalalla Maan kiertoradalla lentävään megakonstellaatioon. Tutkimuskysymykseen pureuduttiin neljästä alamallista kootulla uhkamallilla, jossa tarkasteltiin radiotaajuista häirintää, ilma-aluksen saavutettavissa olevia sieppausetäisyyksiä ja -ikkunoita, sekä lentävän salakuuntelijan kykyä seurata VSAT-päätelaitteen kapeaa radiokeilaa. Mallin pohjalta tehtyjä havaintoja tarkasteltiin kriittisen viestinnän näkökulmasta. Tulokset osoittavat, että megakonstellaatioiden kanssa toimivat VSAT-päätelaitteet ovat oikein toteutettuna resilienttejä signaalin kuuntelua vastaan ja sietävät tahallista häirintää varsin hyvin konstellaatioiden hajautetun luonteen ansiosta. Kaupalliset matalan Maan kiertoradan megakonstellaatiot soveltuvat näin täydentämään turvallisuuskriittisen viestinnän kykyjä, joskin niiden integraatio vaatii edelleen riittävää huolellisuutta toimialan tiukoista tietoturvavaatimuksista johtuen.
 \end{abstractpage}
@@ -430,7 +430,7 @@ ELINT                   & electronic intelligence \\
 EP                      & electromagnetic protection \\
 ES                      & electromagnetic support \\
 EU                      & European Union \\
-FDMA                    & frequency division multiple access \\
+FDMA                    & frequency-division multiple access \\
 FHSS                    & frequency hopping spread spectrum \\
 FISINT                  & foreign instrumentation signals intelligence \\
 FSPL                    & free-space path loss \\
@@ -453,7 +453,7 @@ RF                      & radio frequency \\
 SIGINT                  & signals intelligence \\
 SNP                     & satellite network portal \\
 SNR                     & signal-to-noise ratio \\
-TDMA                    & time division multiple access \\
+TDMA                    & time-division multiple access \\
 UAS                     & unmanned aerial system \\
 UL                      & uplink \\
 UT                      & user terminal \\
@@ -471,7 +471,7 @@ Over the past five decades, satellite systems have emerged as indispensable enab
 Innovation in fields such as global navigation satellite systems \cite{oconnor2019economic}, Earth observation \cite{lupi2022socioeconomic, tassa2020socioeconomic}, and satellite communications \cite{euspa-secure-satcom-2023, euroconsult-space-economy-2023} has brought us ubiquitous connectivity in every corner of this world, while unlocking previously unimaginable capabilities in positioning, navigation, and timing, as well as intelligence, surveillance, and reconnaissance.
 Recently, the satellite communications industry has entered an era of rapid change.
 Since the early 2010s, the most prominent new trend has been the emergence of megaconstellations with hundreds to thousands of satellites in low Earth orbit (LEO).
-The raise of large constellations in non-geostationary orbits (NGSO) has been enabled by the falling cost of space launches and mass-production of satellite hardware based on COTS technology \cite{euroconsult-space-economy-2023}.
+The raise of large constellations in non-geostationary orbits (NGSO) has been enabled by the falling cost of space launches and mass-production of satellite hardware based on commercial off-the-shelf (COTS) technology \cite{euroconsult-space-economy-2023}.
 
 Aside from commercial markets, governmental organisations, such as civilian public safety authorities and defence ministries, are showing significant interest in the emerging commercial satellite communication solutions \cite{erve-teknologiatrendit-2022}.
 The transition of public safety organizations from narrowband to broadband terrestrial networks has highlighted commercial NGSO satellite systems as a promising option for establishing ubiquitous, low-latency broadband connectivity.
@@ -479,20 +479,17 @@ This is particularly relevant in traditionally hard-to-serve areas, such as low-
 Government entities, placing a premium on the security and resilience of their communication solutions, are raising questions about the conformity of these systems to their stringent requirements.
 Therefore, demonstrating the robustness of commercial satellite systems against a growing number of cyber-capable adversaries is a prerequisite for their adoption in these market segments.
 
-Despite their decades-long development history, current satellite systems still lack widely accepted cybersecurity standards \cite{lin2022defending}, while technical solutions and their proprietary nature have raised a set of potential vulnerabilities.
-Moreover, the wide-area broadcast nature of satellite transmissions renders them vulnerable to adversarial groups from abroad or even across an entire continent.
-This was demonstrated in \cite{pavur2020tale} where the feasibility of eavesdropping downlink (DL) satellite traffic was proven practically using widely available and inexpensive satellite television equipment.
-Within the field of wireless communication, one key driver for this development have been the proliferation of inexpensive signals processing equipment, such as open source and open hardware software-defined radios.
-These devices have enabled interaction with satellite systems by not only nation states but also even individual enthusiast-level actors.
+Despite their decades-long development history, current satellite systems still lack widely accepted cybersecurity standards \cite{lin2022defending}.
+Moreover, the wide-area broadcast nature of satellite transmissions renders them in some cases vulnerable to adversarial groups from abroad or even across an entire continent.
+This was demonstrated in \cite{pavur2020tale}, where the feasibility of eavesdropping downlink (DL) satellite traffic was proven empirically using inexpensive and widely available satellite television equipment.
+One way to understand the reason for these vulnerabilities is through the paradigm of "security through obscurity", a practice with a long-running history in the commercial satellite industry that relies on hiding the structure and the interfaces of the system from the public \cite{lin2022defending}.
 Moreover, the vulnerabilities in satellite systems are not limited only to the air interface of these commercial systems.
 Another third-party vulnerability assessment \cite{santamarta2014wake} uncovered serious design flaws in the implementation of satellite user terminal (UT) firmware, such as backdoors, hardcoded credentials, weak encryption algorithms as well as undocumented and insecure protocols.
+The validity of this approach has long been debated within research and industry circles \cite{johansson2008great}, with the recent consensus being that security of a system should never rely exclusively on obscurity \cite{diehl2016law, guo2018defending}.
 
 Recent adversarial actions against satellite systems and their supporting infrastructure have raised questions concerning the vulnerability of these systems to a range of potential attack vectors, including cyberattacks, as well as the physical destruction of individual satellites or their supporting ground infrastructure.
 Recent examples include the cyberattack against the KA-SAT satellite network in February 2022 \cite{boschetti2022space} and the cable cut in one of the optical cables connecting the SvalSat ground station to mainland Norway \cite{schia2023subsea}.
 Similarly, intrusive acts such as the Chinese high-altitude balloons flying through North American airspace in early 2023 have highlighted the threat of aerial signals intelligence platforms \cite{ap-news-2023-02-balloon-signals}.
-
-One way to understand the reason for these vulnerabilities is through the paradigm of "security through obscurity", a practice with a long-running history in the commercial satellite industry that relies on hiding the structure and the interfaces of the system from the public \cite{lin2022defending}.
-The validity of this approach has long been debated within research and industry circles \cite{johansson2008great}, with the recent consensus being that security of a system should never rely exclusively on obscurity \cite{diehl2016law, guo2018defending}.
 
 Although much work has focused on long-standing geostationary Earth orbit (GEO) broadband and NGSO narrowband systems, as well as longer-term evolution of 5G and 6G non-terrestrial networks, little attention has been directed towards the security of emerging LEO broadband systems.
 Operators of the emerging systems tout their architecture-level resilience in their marketing, but academic literature on the topic is still rather scarce.
@@ -645,7 +642,7 @@ Different transmission schemes are employed depending on the link direction.
 In the forward direction, transmissions utilise time-division multiple access on a single \SI{250}{\mega\hertz} wideband carrier (SC-TDMA) with each user terminal receiving the carrier and demodulating it, extracting relevant payload information based on the headers. Forward links employ turbo/convolutional/block
 channel coding and QPSK, 8PSK and 16QAM modulation \cite{allen2022terrestrial, worldvu2016loi}.
 
-In the return direction, transmissions utilise a single-carrier time and frequency division multiple access (SC-TDMA/FDMA) scheme.
+In the return direction, transmissions utilise a single-carrier time and frequency-division multiple access (SC-TDMA/FDMA) scheme.
 Return direction user terminal to satellite links transmit data in time bursts on a relatively narrow carrier that varies between \SI{1.25}{\mega\hertz} and \SI{20}{\mega\hertz} in bandwidth.
 Multiple user terminals can access a single UL carrier based on time slots allocated by the network control centre.
 Terminals are also able to access multiple UL carriers based on the FDMA channel arrangement of the satellite in question. Like the forward link,
@@ -935,7 +932,6 @@ EP on the other hand is not concerned with directly affecting a target system or
 
 \subsection{Critical communications}
 \subsubsection{Use cases and scenarios}
-% FIGURE CRITICAL COMMS ARKKITEHTUURI AGNET OVER SATCOM.
 
 Critical communications service operators tend to see satellite systems as a complementary coverage and capacity solution, where the main use cases can be characterised through how long lasting and planned the events requiring response are.
 On a high level, the coverage and capacity needs can be either permanent, planned temporary or unplanned temporary in nature.
@@ -1009,11 +1005,19 @@ The broadband transition also means a shift from custom technology solutions to 
 When it comes to integration of satellite communications for critical communications use cases, permanent ones tend to be the most straight forward. They can be realised just as a simple fixed backhaul link of an individual base station site with currently available COTS satellite equipment.
 On the other hand, direct satellite connectivity is also something that may be feasible in these regions long-term, but its technological maturity remains low at the time of writing.
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=100mm]{figures/fig-satcom-in-ps.eps}
+  \caption{One potential architecture for integrating satellite connectivity into public safety use cases.}
+  \label{fig-satcom-in-ps}
+\end{figure}
+
 Implementation-wise, satellite networks are in the short-to-medium term envisioned to integrate into their terrestrial counterparts through portable tactical bubbles, where the satellite link serves as a backhaul solution for a local, 100 meters to kilometres in radius, wireless connectivity bubble.
-Table \ref{table-mcx-requirements} lists technical and functional requirements relevant for dimensioning a backhaul link for a 4G tactical bubble.
+Table \ref{table-mcx-requirements} lists technical and functional requirements relevant for dimensioning a backhaul link for a 4G tactical bubble. Figure \ref{fig-satcom-in-ps} introduces one potential architecture with users having access both to terrestrial and satellite communications, the latter being accessed through a local tactical bubble.
+
 Considering these requirements as well as form-factor and cost of COTS satellite equipment, best deployment model for integration of satellite services in mission-critical contexts seems to be a vehicular solution, an approach that is already seen to some extent in the ongoing migration projects.
 For example, in the future French broadband network, satellites are included as one backhaul option for a vehicular relay (\textit{relais véhiculaire}), an emergency vehicle with a tactical bubble for local coverage and capacity.
-Similarly, the potential integration point for satellite systems in the Finnish Virve 2 has been envisioned as a command vehicle of fire, rescue, and police forces, but the solution is in the Finnish case on an early conceptual stage \cite{kokkoniemitarkkanen2024missioncritical,saynevirta2021satellite,dominguez2021resilience}. 
+Similarly, the potential integration point for satellite systems in the Finnish Virve 2 has been envisioned as a command vehicle of fire, rescue, and police forces, but the solution is in the Finnish case on an early conceptual stage \cite{kokkoniemitarkkanen2024missioncritical,saynevirta2021satellite,dominguez2021resilience}.
 
 Long-term, evolution towards direct-to-smartphone type solutions is a potential development path. 3GPP has been working towards integrating satellites as one of the connectivity options in the 5G non-terrestrial networks, a development item also present on the longer reaching 5G Advanced and 6G roadmaps \cite{ray2021perspective, jiang2021road}. The technological maturity of integrating satellites into existing mobile networks is still relatively low. While some solutions have been demonstrated in orbit, they have not yet entered commercial markets as of December 2023 \cite{sn-2023-09-19-ast, sn-2023-11-07-lynk, 5g-americas-update-on-5g-ntn, jain2023rel18}.
 
