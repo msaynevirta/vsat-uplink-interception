@@ -1053,7 +1053,7 @@ Less-capable narrowband NGSO and higher-latency GEO solutions have seen previous
 With the recent drive to integrate satellite communications into both commercial and mission-critical communications solutions, satellite systems need to be able to prove that they can overcome these previous challenges.
 Here, understanding these systems from first principles is a good starting point for building a solid foundation for applied security research over factors like encryption, authorisation, and authentication.
 
-The thesis seeks to answer whether airborne eavesdroppers and jammers can interfere with or intercept and decode UL communications in NGSO VSAT networks.
+This thesis seeked to answer whether airborne eavesdroppers and jammers can interfere with or intercept and decode UL communications in NGSO -- VSAT networks.
 In practical terms, the modelling approach in this thesis was grounded on theoretical background of RF systems and more specifically concepts related to electronic warfare and SIGINT.
 Threat model built upon theory discussed in \cite{kosola2013digitaalinen} and \cite{wiley2006elint}.
 Target systems were explored through a parametric study of an analytical model comprised of multiple submodels that incorporate relevant parameters for aerial SIGINT platforms and both space and ground segments of a satellite communications system.
@@ -1065,7 +1065,7 @@ Target systems were explored through a parametric study of an analytical model c
   \label{fig-research-taxonomy}
 \end{figure}
 
-Järvinen \cite{jarvinen2011tutkimustyon, jarvinen2004research} offers a comprehensive framework for categorizing research approaches, building upon the foundation laid by March and Smith \cite{march1995design}. Within this taxonomy, this thesis falls under the conceptual-analytical research approach, the scope being technology-oriented in nature.
+Järvinen \cite{jarvinen2011tutkimustyon, jarvinen2004research} offers a comprehensive framework for categorizing research approaches, building upon the foundation laid by March and Smith \cite{march1995design}. Within this taxonomy, the approach in this thesis falls under the conceptual-analytical research approach, the scope being technology-oriented in nature.
 The other five research approaches of the taxonomy are mathematical, theory-testing, theory-creating, innovation-building, and innovation-evaluating.
 Mathematical approaches primarily engage with abstract concepts detached from the constraints of the real-world, while research approaches studying reality fall into two main categories-natural and social science approaches (conceptual-analytical, theory-testing, and theory-creating) and design science approaches (innovation-building and innovation-evaluating).
 On the other hand, conceptual-analytical approach relies on logical reasoning and draws extensively from prior research and established theories. Conceptual-analytical approaches within the natural and social sciences do not necessarily rely on empirical data, while theory-testing and theory-creating approaches use data to either validate existing theories or formulate new ones. The primary objective of conceptual-analytical research is to generate new creating theoretical concepts or analysing existing theories.
@@ -1079,8 +1079,8 @@ The taxonomy proposed by Järvinen in \cite{jarvinen2011tutkimustyon, jarvinen20
 
 \subsection{Threat model}
 
-The core goal of this thesis was to assess whether the presence of airborne eavesdroppers poses a risk to the UL communications of emerging NGSO VSAT networks.
-The research applied quantitative analysis by building a threat model focusing on a Walker-type LEO megaconstellation, fixed Very Small Aperture Terminals (VSAT) and airborne eavesdroppers.
+The core goal of this thesis was to assess whether the presence of airborne eavesdroppers pose a risk to the UL communications of emerging NGSO VSAT networks.
+To answer this question, a quantitative approach was applied through a threat model focusing on a Walker-type LEO megaconstellation, fixed Very Small Aperture Terminals (VSAT) and airborne eavesdroppers.
 The threat model was built around a set of four smaller submodels, each examining analytically a relevant dependent variable against several independent ones.
 The models were first introduced in a deductive manner tying reality to the underlying theoretical concepts.
 Individual submodels were then parametrically studied in a range of starting conditions mirroring the relevant characteristics of the platforms under evaluation.
@@ -1089,7 +1089,6 @@ Descriptions for the submodels are given in table \ref{table-submodel-descriptio
 For the adversary to interfere with or eavesdrop on a legitimate transmitter, it must receive a sufficiently strong RF signal from the transmitter or be able to drown it out at the satellite's receiver.
 The former is the case when intercepting and decoding a signal, and the latter when attempting to jam or spoof the legitimate user.
 This scenario was systematically examined from first principles using geometric and kinematic analysis, as well as link budgets based on an example hardware configuration.
-First principles thinking is a powerful problem-solving approach that involves breaking down a problem or a concept into its elemental parts.
 In this sense, each submodel helped understand potential strengths and vulnerabilities of satellite systems through an elemental understanding of the underlying physical phenomena.
 
 \begin{table}[h]
@@ -1108,13 +1107,13 @@ In this sense, each submodel helped understand potential strengths and vulnerabi
 \end{table}
 
 Submodel 1 examined the maximum interception range of a fixed satellite terminal.
-This metric helps evaluate the potential maximal area where a single satellite terminal is vulnerable to airborne eavesdroppers.
+This metric helped evaluate the potential maximal area where a single satellite terminal is vulnerable to airborne eavesdroppers.
 Airborne platforms may listen to transmissions from great distances, for example flying in an airspace of another country.
 Submodels 2 and 3 examined an aircraft's ability to track an UT's RF beam.
 VSATs have typically a narrow beam pattern of a few degrees of half-power beamwidth.
 Relative motion between the beam and an intercepting aircraft is a major consideration when it comes to evaluating the vulnerability of different satellite systems.
 Submodel 4 examined a jammer's ability to interfere with a legitimate UT interfacing with a LEO megaconstellation.
-Link budget for an UL connection from an UT to a satellite was computed.
+To achieve this, link budget for an UL connection from an UT to a satellite was computed.
 In the scenario, the jammer competed with the legitimate transmitter in RF signal power received by the satellite.
 
 \begin{table}[h]
@@ -1592,7 +1591,7 @@ In some situations, the jammer experiences less path loss thanks to a shorter RF
 Still, the enormous number of LEO satellites in the megaconstellations leads to major redundancy in the choice of satellite.
 If a UT is configured wisely, it may be able to avoid jamming, especially if the latter is localised in nature, by just transmitting in the direction of the clear sky.
 
-In addtion, the impact of jamming may be further reduced with the use of spread spectrum transmission techniques where the source signal is spread over a wider band in the frequency domain.
+In addition, the impact of jamming may be further reduced with the use of spread spectrum transmission techniques where the source signal is spread over a wider band in the frequency domain.
 One potential approach is frequency hopping spread spectrum (FHSS) where the carrier frequency is switched rapidly between a set of frequencies based on a code known by both the legitimate transmitter and receiver.
 FHSS makes transmissions highly resistant to narrowband interference and jamming while also complicating their interception as the adversary may be at an informational disadvantage when it comes to the transmission codes.
 In practice, effective capture of FHSS signal requires either expensive RF equipment with wideband intercept capabilities or intricate knowledge of the target system and transmission codes utilised by it.
